@@ -1,0 +1,1079 @@
+:root {
+  --primary-color: #F36C03;
+  --secondary-color: #fff;
+}
+
+
+
+i[class^="fa"] {
+  font-family: 'FontAwesome';
+  font-style: normal;
+}
+
+@media(max-width:1400px) {
+  .c-grid-col-2 {
+    max-width: 350px;
+  }
+
+  .image-inner {
+    right: -17px;
+  }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+  .support-form-wrapper {
+    padding: 30px 30px 0px 30px;
+  }
+
+  .c-grid-col-2 {
+    max-width: 320px;
+  }
+
+
+  .contactus-section {
+    box-shadow: none;
+  }
+
+  .img-below-wrap {
+    display: none;
+  }
+
+  .main-navigation a {
+    font-size: 18px;
+  }
+
+  .image-inner {
+    max-width: 18px;
+    position: absolute;
+    right: -17px;
+    bottom: 8px;
+  }
+}
+
+@media(max-width:991px) {
+  .fsp-products-wrapper {
+    margin-top: 30px;
+  }
+
+  .player-tab-left-wrapper {
+    margin-bottom: 50px;
+  }
+
+  .heading-tag,
+  p,
+  h2.left {
+    order: 2;
+  }
+
+  .main-tab-playimage {
+    display: none;
+  }
+
+  section#testimonials .heading-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-tab-inner {
+    width: 100%;
+  }
+
+  .stats-inner {
+    padding: 20px 20px 12px;
+    margin: 0px auto;
+  }
+
+  .player-tab-left-wrapper {
+    max-height: 106px;
+    margin: 30px 0px;
+  }
+
+  .main-tab {
+    padding: 25px 30px 30px;
+  }
+
+  .testimonial-left {
+    box-shadow: none;
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  section#blog-news {
+    padding-bottom: 0px;
+  }
+
+  .about-right {
+    margin-top: 50px;
+  }
+
+  section#upcoming-evt {
+    margin-top: 50px;
+  }
+
+  .outer-thumbnai-wrapper {
+    width: 45%;
+  }
+
+  .vs {
+    width: 100%;
+  }
+
+  .next-match-wrap a.theme-btn {
+    font: normal normal normal 14px / 20px Inter Tight;
+    padding: 14px 10px 14px 10px;
+    min-width: 100px;
+  }
+
+  .white-back {
+    background-color: #000;
+  }
+
+  .header-right {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    background: #fff;
+    border-radius: 6px;
+    padding: 10px 0px;
+  }
+
+  .site-header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    right: 0;
+    z-index: 999;
+  }
+
+  .team {
+    margin: auto;
+  }
+
+  .vs .live {
+    display: inline-block;
+
+  }
+
+  .whyChooseUs-right {
+    max-width: 550px;
+    margin: 50px auto 0px;
+  }
+
+  section.products {
+    margin-top: 50px;
+  }
+
+  .customer-image {
+    clip-path: polygon(100% 0%, 100% 100%, 100% 85%, 82% 100%, 0% 100%, 0% 0%);
+  }
+
+  div#vw-sticky-menu .container .row {
+    justify-content: flex-end !important;
+  }
+
+  div#comments {
+    flex-direction: column;
+  }
+
+  ol.comment-list {
+    width: 100% !important;
+  }
+
+  div#respond {
+    width: 100% !important;
+  }
+
+  div#comments {
+    flex-direction: column;
+  }
+
+  .counter-container {
+    padding: 25px 10px
+  }
+
+  .counter-img {
+    width: 60px;
+  }
+
+  span.counter-number {
+    font: normal normal 900 40px/28px Lato;
+  }
+
+  .counter-info,
+  p.counter-txt {
+    text-align: center;
+  }
+}
+
+@media(max-width:1400px) {
+
+  .team {
+    gap: 10px;
+    max-width: 240px;
+  }
+
+  .vs {
+    font: normal normal bold 30px / 75px Inter Tight;
+  }
+
+  .team img {
+    max-width: 100px;
+  }
+
+  section#testimonials .owl-dots {
+    width: 100%;
+    right: 0px;
+  }
+
+  ul#menu-primary-menu {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #site_top .topbar-text p,
+  span.topbar.data {
+    font-size: 15px;
+  }
+
+  .banner-image {
+    position: absolute;
+    width: 40%;
+    height: auto;
+    /* top: 0; */
+    right: 0;
+    bottom: -5%;
+  }
+}
+
+@media(min-width:1200px) and (max-width:1350px) {
+  .pricing-card {
+    clip-path: polygon(100% 0%, 100% 100%, 100% 90.55%, 83.48% 100%, 0% 100%, 0% 0%);
+  }
+
+
+}
+
+@media(max-width:1199px) {
+  .white-back {
+    position: initial;
+  }
+
+  .white-back::before {
+    display: none;
+  }
+
+  .team img {
+    max-width: 80px;
+  }
+
+  h6.the-name {
+    min-width: auto;
+    font: normal normal 600 16px / 20px Inter Tight;
+  }
+
+  .next-match-wrap a.theme-btn {
+    font: normal normal normal 14px / 20px Inter Tight;
+    padding: 14px 20px 14px 0px;
+    min-width: 140px;
+  }
+
+  .loaction-wrapper {
+    gap: 5px;
+  }
+
+
+}
+
+@media(max-width:1025px) {
+  .team-name-score-latest img {
+    width: 100px;
+  }
+
+  .team-name-score-latest {
+    padding: 27px 10px;
+  }
+
+  h6.the-name {
+    min-width: auto;
+  }
+
+  .team {
+    gap: 10px;
+  }
+}
+
+@media(max-width:991px) {
+  .outer-thumbnai-wrapper {
+    width: 49%;
+  }
+
+  .banner-background {
+    clip-path: polygon(100% 0, 100% 99.3%, 83.5% 90%, 0 100%, 0 0);
+  }
+
+  .primary_nav>li>ul.sub-menu>li a {
+    font-size: 18px !important;
+  }
+
+  .outer-footer {
+    position: unset;
+  }
+
+
+  section#blog-news {
+    margin-bottom: 50px;
+  }
+
+  .footer-last {
+    margin: 0px;
+  }
+
+  span.number {
+    font: normal normal 900 35px / 36px Inter Tight;
+
+  }
+
+  .ex-text {
+    font: normal normal 600 15px / 21px Inter Tight;
+  }
+}
+
+@media(min-width:992px)and (max-width:1199px) {
+
+  .faq-img-wrapper {
+    position: relative;
+    clip-path: polygon(100% 0%, 100% 100%, 100% 75%, 88.1% 100%, 0% 100%, 0% 0%);
+  }
+
+}
+
+@media(max-width:1024px) {
+  div#header .sticky.stickynavbar+.toggle-nav.mobile-menu {
+    top: 17px !important;
+  }
+
+  .main-navigation ul ul li:hover {
+    background-color: #0000;
+  }
+
+  .calc-container.vertical {
+    margin: 0px !important;
+  }
+
+  div#header {
+    box-shadow: 3px 3px 6px #00000029;
+    background-color: #000;
+    padding: 10px 0px;
+  }
+
+  div#header .container {
+    box-shadow: none;
+  }
+
+  .helmet-wrap {
+    height: 40%;
+    bottom: -20%;
+  }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+  .quote a {
+    padding: 10px 15px;
+  }
+
+  section#About-us {
+    padding: 70px 0px 50px;
+  }
+
+  section#whyChooseUs {
+    padding: 50px 0px 0px;
+  }
+
+  .testimonial-right {
+    margin-top: 0px;
+  }
+
+  .testimonial-right {
+    padding: 20px;
+  }
+
+  .comment-meta.commentmetadata+p {
+    max-width: 100%;
+    margin-left: 0%;
+    margin-right: 0;
+  }
+
+  .reply {
+    margin-left: 0px;
+    width: 100%;
+    padding: 0px 21px;
+  }
+
+  .calling-widget a {
+    font-size: 25px;
+  }
+
+  .widget_custom_services_widget {
+    padding: 34px 15px;
+  }
+
+  .widget-title {
+    font: normal normal 900 25px/40px Lato;
+  }
+
+
+}
+
+@media(min-width:521px) and (max-width:767px) {
+  /* .topbar-left {
+    display: none;
+  } */
+
+  h1#dynamic-color {
+    font: normal normal bold 50px / 60px Inter Tight;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+  }
+
+  .experience-wrap {
+    top: unset;
+    bottom: 0px;
+  }
+
+  .helmet-wrap {
+    width: 13%;
+    height: 30%;
+    bottom: 30%;
+    left: unset;
+    right: 0;
+    margin: auto;
+  }
+
+  span.second-word {
+    font: normal normal normal 46px / 50px Great Sejagad;
+  }
+}
+
+@media(max-width:767px) {
+  div#vw-sticky-menu .container .row {
+    justify-content: space-between !important;
+  }
+
+  .socialbox {
+    justify-content: center !important;
+    /* height: 20px; */
+  }
+
+  .socialbox a {
+    background-color: var(--primary-color);
+  }
+
+  p.clock-before {
+    margin-top: 50px;
+  }
+}
+
+@media(min-width:576px) and (max-width:767px) {
+
+
+  .img-below-wrap {
+    display: none;
+  }
+
+  .GetInTouch-features {
+    justify-content: initial;
+  }
+
+  .feature-info p {
+    text-align: left;
+  }
+
+  .mach-flex {
+    align-items: center;
+  }
+
+
+
+  .team {
+    margin: 0px auto;
+  }
+}
+
+@media(max-width:600px) {
+  h1.banner-heading {
+    font-size: 32px;
+    line-height: 41px;
+  }
+
+  .home h1::after,
+  .home h2::after,
+  .recent-posts h2::after,
+  section#About-us h2::after,
+  .best-left h3::after,
+  .getAquote h2::after {
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .home h2,
+  .recent-posts h2,
+  section#About-us h2,
+  .best-left h3,
+  .getAquote h2,
+  .tracking-your-order,
+  .GetInTouch.heading h2.left,
+  section.thebest h3.left,
+  .h3,
+  .client-heading h3,
+  section h2,
+  .single-post h2,
+  .quote-heading h4,
+  section#service-single h2 {
+    text-align: center;
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 600;
+    max-width: 100% !important;
+  }
+
+
+
+  .heading-tagline {
+    font: normal normal bold 17pt/25pt Lato;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .Achivement_block {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .mission-left h3 {
+    font: normal normal 900 26px/35px Lato;
+    text-align: center;
+  }
+
+  .dist-card span,
+  .whyChooseUs-counter p {
+    font: normal normal 900 30px/20px Lato;
+  }
+
+  .dist-card p {
+    font: normal normal bold 18px/30px Lato;
+  }
+
+  .para,
+  .banner-content,
+  section#About-us,
+  .testimonial-content p,
+  h3.accordion-click,
+  .answer,
+  .ewd-otp-form.ewd-otp-tracking-form-div,
+  .whyChooseUs-counter,
+  .blog-que,
+  .counter-info,
+  section h3 {
+    text-align: center;
+  }
+
+  .h3 {
+    text-align: center;
+  }
+
+  .brand-ul li {
+    text-align: center;
+  }
+
+  h2.left {
+    width: 100%;
+  }
+
+  .pricing-card p {
+    text-align: left;
+  }
+
+  .whyChooseUs-right p {
+    text-align: center;
+  }
+
+
+
+  .client-info {
+    margin: 0px auto;
+  }
+
+  .support-box,
+  .single-post ul {
+    justify-content: center;
+  }
+
+  .GetInTouch_wrapper {
+    padding-right: 0px;
+  }
+
+  section#whyChooseUs {
+    padding: 50px 0px 0px;
+  }
+
+  .GetInTouch_wrapper {
+    padding: 50px 0px;
+  }
+
+  section#order_tracking-us {
+    padding: 50px 0px 40px;
+  }
+
+  .client-heading h3 {
+    margin-bottom: 30px;
+  }
+
+  .info-bar p a,
+  .info-bar p {
+    font: normal normal normal 14px/23px Lato;
+    text-align: left;
+    color: var(--secondary-color);
+  }
+
+  .entry-date,
+  .entry-comments,
+  .entry-comments a,
+  li.entry-author a {
+    font-size: 13px;
+  }
+
+  .entry-author a {
+    margin-left: 20px;
+  }
+
+  .list-unstyled {
+    width: 100px;
+  }
+
+  .testimonial-right {
+    padding: 0px 40px;
+  }
+
+  .single-blog-img .my-5 {
+    margin: 20px 0px !important;
+  }
+
+  .testimonial-content p {
+    font: normal normal normal 16px Lato;
+  }
+}
+
+
+@media(max-width:370px) {
+  .quote a {
+    padding: 5px 5px;
+    font-size: 12px;
+  }
+}
+
+
+
+/* toggle menu  */
+
+
+@media(max-width:575px) {
+
+  .above_title {
+    padding: 300px 0 90px;
+  }
+
+  .heading-wrap h2 {
+    font: normal normal bold 26px / 40px Inter Tight;
+    text-align: center;
+  }
+
+  .about-us-inner {
+    display: flex;
+    gap: 20px;
+    flex-direction: column-reverse;
+  }
+
+  .services.heading.text-left {
+    padding: 35px 25px;
+  }
+
+  ul.tab-links {
+    padding: 0px 20px;
+  }
+
+  .stats-inner {
+    padding: 12px 12px 12px;
+    margin: 0px auto;
+  }
+
+  .heading-tag {
+    text-align: center;
+  }
+
+  section#upcoming-evt {
+    padding: 50px 0px;
+  }
+
+  section#copyright {
+    padding: 0px 0px 20px;
+  }
+
+  .evt-left {
+    display: none;
+  }
+
+  .customer-image {
+    display: none;
+  }
+
+  .upcoming-item {
+    padding: 30px 20px;
+  }
+
+  .main-tab-playimage {
+    display: none;
+  }
+
+  .main-tab-inner {
+    width: 100%;
+  }
+
+  .evt-right {
+    width: 100%;
+  }
+
+  .evt-right h3 {
+    text-align: center;
+  }
+
+  .image-inner {
+    display: none;
+  }
+
+  .ex-ball-wrap,
+  .bat-image {
+    display: none;
+  }
+
+  .testimonial-right-inner {
+    width: 100%;
+  }
+
+  a.theme-btn {
+    text-align: center;
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+  }
+
+  a.theme-btn.orange {
+    font: 14px / 18px Inter Tight;
+  }
+
+  h3.customer-name {
+    text-align: center;
+  }
+
+  p.service-used {
+    text-align: center;
+  }
+
+  #testimonials .star-rating {
+    margin: 10px auto 20px;
+    max-width: 91px;
+  }
+
+  .testimonial-right {
+    padding: 0px 20px;
+    text-align: center;
+  }
+
+  .outer-thumbnai-wrapper {
+    width: 100%;
+  }
+
+  .thumbnail-slider {
+    max-width: 85%;
+    margin: 0px auto;
+    height: 110px;
+  }
+
+  .testimonial-right p {
+
+    text-align: center;
+  }
+
+  .item {
+    text-align: center;
+    width: 40%;
+    margin: 0px auto;
+  }
+
+  .banner-right {
+    display: none;
+  }
+
+  section#slider {
+    padding: 320px 0px 100px;
+  }
+
+  .ewd-otp-tracking-results-value {
+    text-align: left !important;
+  }
+
+  html {
+    margin-top: 0px !important;
+  }
+
+  h1#dynamic-color {
+    font: normal normal bold 40px / 45px Inter Tight;
+  }
+
+  span.second-word {
+    font: normal normal normal 40px / 40px Great Sejagad;
+  }
+
+  .footer-last {
+    margin: 0px auto;
+    max-width: 90%;
+  }
+
+  a.theme-btn::before {
+    display: none;
+  }
+
+  a.play-btn-tag {
+    width: 46px;
+    height: 46px;
+  }
+
+  .banner-left {
+    text-align: center;
+  }
+
+  .banner-button-wrap {
+    justify-content: center;
+  }
+
+  .banner-background {
+
+    clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0 100%, 0 0);
+  }
+
+  p {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .toggle-nav.mobile-menu {
+    top: 17px !important;
+  }
+
+  div#header .sticky.stickynavbar+.toggle-nav.mobile-menu {
+    top: 17px !important;
+  }
+
+  section#site_top {
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .site-header.sticky {
+    top: 0 !important;
+  }
+
+  .white-back {
+    padding: 10px 0px 10px 0px;
+  }
+
+  img.custom-logo {
+    width: 80%;
+  }
+
+  .main-navigation a {
+    text-align: left;
+  }
+
+  .primary_nav>li>ul.sub-menu>li a {
+    text-align: left;
+  }
+
+  section.support-page .middle-content h2 {
+    font: normal normal bold 25px/28px Lato;
+    margin: 20px 0px 20px;
+  }
+
+  .middle-content p {
+    text-align: left;
+  }
+
+  section.support-page h4 {
+    font-size: 20px;
+  }
+
+  section.support-page {
+    padding-top: 30px;
+  }
+
+  .accordion-wrapper h3 {
+    font: normal bold normal 18px/25px Lato;
+  }
+
+  .calculator-settings.ccb-front {
+    max-width: 280px !important;
+  }
+
+  .banner-content {
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+  }
+
+  .GetInTouch-feature {
+    margin-bottom: 20px;
+  }
+
+  img.img-below {
+    display: none;
+  }
+
+  #comments h2#reply-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .banner-page-text.container .col-lg-4.col-sm-6.col-6 {
+    width: 55%;
+  }
+
+  .section-wrap {
+    padding-top: 40px;
+  }
+
+  .wpcf7 form.invalid .wpcf7-response-output {
+    bottom: -5px;
+  }
+
+  .title-box {
+    background: var(--secondary-color) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 12px #00000029;
+  }
+
+  .title-box .row .col-lg-4 {
+    background: var(--secondary-color) 0% 0% no-repeat padding-box;
+    box-shadow: none;
+  }
+
+
+  label.ewd-otp-field-label {
+    left: 17px;
+  }
+
+  ul.services-list {
+    max-width: 190px;
+    margin: 0px auto;
+  }
+
+  .bradcrumbs span,
+  .bradcrumbs a {
+    font: normal normal bold 14px/16px Inter Tight;
+  }
+
+  .outer-footer {
+    background-image: none !important;
+  }
+
+  .tracking-your-order::after {
+    display: none;
+  }
+
+  a.theme-btn {
+    padding: 10px 10px;
+  }
+
+  span.inner-text {
+    font: 14px / 21px Inter Tight;
+  }
+
+  .banner-button-wrap {
+    gap: 10px;
+  }
+
+  .banner-inner-wrap {
+    gap: 10px;
+  }
+
+  section.match {
+    padding: 50px 0px;
+  }
+
+  .mach-flex {
+    justify-content: center;
+  }
+
+  .team {
+    max-width: 70px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  h6.the-name {
+    min-width: auto;
+    font-size: 16px;
+  }
+
+  .slide-wrap {
+    padding: 20px 20px 20px;
+  }
+
+  .team img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  section.match h3 {
+    font: normal normal normal 30px / 42px Great Sejagad;
+  }
+
+  .result-wrap {
+    font: 14px / 20px Inter Tight;
+  }
+
+  .vs {
+    font: normal normal bold 20px / 25px Inter Tight;
+  }
+
+  p.countdown.sp-countdown time span {
+    font: normal normal bold 20px / 25px Inter Tight !important;
+    color: #000 !important;
+  }
+
+  .team img {
+    object-fit: contain;
+  }
+
+  .team-name-score-latest {
+    gap: 15px;
+    padding: 15px 10px;
+  }
+
+  .team-name-score-latest {
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+section#leagueTable {
+  padding: 80px 0px 100px;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
