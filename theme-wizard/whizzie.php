@@ -1184,7 +1184,7 @@ class ThemeWhizzie
 
 		add_post_meta($match_id, 'vw_title_banner_image_wp_custom_attachment', $attachment_url);
 
-		
+
 
 		// Events
 		$evt_title = 'Events';
@@ -1731,149 +1731,186 @@ class ThemeWhizzie
 		$product_data = array(
 			array(
 				'title' => 'Batting Pads',
-				'content' => 'Description for Product 1',
+				'content' => '
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+					</ul>
+						',
 				'regular_price' => '45',
 				'sale_price' => '40',
 				'categories' => array('Accessories', 'Apparel'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product01.png'      // Image URL for Product 1
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product01.png' ,     // Image URL for Product 2
+				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 1
 			),
 			array(
 				'title' => 'Stumps',
-				'content' => 'Description for Product 2',
+				'content' => '
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+					</ul>
+						',
 				'regular_price' => '50',
 				'sale_price' => '45',
 				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product02.png'      // Image URL for Product 2
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product02.png',     // Image URL for Product 2
+				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
 			),
 			array(
 				'title' => 'Bat',
-				'content' => 'Description for Product 3',
+				'content' => '
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+					</ul>
+						',
 				'regular_price' => '50',
 				'sale_price' => '45',
 				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product03.png'      // Image URL for Product 2
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product03.png' ,     // Image URL for Product 2
+				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 2
 			),
 			array(
 				'title' => 'Helmet',
-				'content' => 'Description for Product 4',
+				'content' => '
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+					</ul>
+						',
 				'regular_price' => '500',
 				'sale_price' => '450',
 				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product04.png'      // Image URL for Product 2
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product04.png',     // Image URL for Product 2
+				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
 			),
 			array(
 				'title' => 'Bat and Ball Combo Pack',
-				'content' => 'Description for Product 5',
+				'content' => '
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+					</ul>
+						',
 				'regular_price' => '1050',
 				'sale_price' => '1000',
 				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product05.png'      // Image URL for Product 2
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product05.png',     // Image URL for Product 2
+				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 2
 			),
 			array(
 				'title' => 'Balls And Bells Combo Pack',
-				'content' => 'Description for Product 6',
+				'content' => '
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+					</ul>
+						',
 				'regular_price' => '320',
 				'sale_price' => '300',
 				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product06.png'      // Image URL for Product 2
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product06.png',     // Image URL for Product 2
+				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
 			),
 			array(
 				'title' => 'Gloves',
-				'content' => 'Description for Product 7',
+				'content' => '
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+					</ul>
+						',
 				'regular_price' => '150',
 				'sale_price' => '125',
 				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product07.png'      // Image URL for Product 2
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product07.png',     // Image URL for Product 2
+				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',    // Image URL for Product 2
 			),
 			array(
 				'title' => 'Helmet Green',
-				'content' => 'Description for Product 8',
+				'content' => '
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+					</ul>
+						',
 				'regular_price' => '550',
 				'sale_price' => '500',
 				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product08.png'      // Image URL for Product 2
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product08.png',     // Image URL for Product 2
+				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
 			),
 			array(
 				'title' => 'Bells',
-				'content' => 'Description for Product 9',
+				'content' => '
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+					</ul>
+						',
 				'regular_price' => '120',
 				'sale_price' => '100',
 				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product09.png'      // Image URL for Product 2
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product09.png',     // Image URL for Product 2
+				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 2
 			),
 			array(
 				'title' => 'Batting Pads',
-				'content' => 'Description for Product 1',
+				'content' => '
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+					</ul>
+						',
 				'regular_price' => '45',
 				'sale_price' => '40',
 				'categories' => array('Accessories', 'Apparel'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product01.png'      // Image URL for Product 1
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product01.png',     // Image URL for Product 2
+				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 1
 			),
 			array(
 				'title' => 'Stumps',
+				'content' => '
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+				<ul>
+				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
+				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+				</ul>
+					',
 				'content' => 'Description for Product 2',
 				'regular_price' => '50',
 				'sale_price' => '45',
 				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product02.png'      // Image URL for Product 2
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product02.png',     // Image URL for Product 2
+				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',
 			),
 			array(
 				'title' => 'Bat',
-				'content' => 'Description for Product 3',
+				'content' => '
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+					</ul>
+						',
 				'regular_price' => '50',
 				'sale_price' => '45',
 				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product03.png'      // Image URL for Product 2
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product03.png',     // Image URL for Product 2
+				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',
 			),
-			array(
-				'title' => 'Helmet',
-				'content' => 'Description for Product 4',
-				'regular_price' => '500',
-				'sale_price' => '450',
-				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product04.png'      // Image URL for Product 2
-			),
-			array(
-				'title' => 'Bat and Ball Combo Pack',
-				'content' => 'Description for Product 5',
-				'regular_price' => '1050',
-				'sale_price' => '1000',
-				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product05.png'      // Image URL for Product 2
-			),
-			array(
-				'title' => 'Balls And Bells Combo Pack',
-				'content' => 'Description for Product 6',
-				'regular_price' => '320',
-				'sale_price' => '300',
-				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product06.png'      // Image URL for Product 2
-			),
-			array(
-				'title' => 'Gloves',
-				'content' => 'Description for Product 7',
-				'regular_price' => '150',
-				'sale_price' => '125',
-				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product07.png'      // Image URL for Product 2
-			),
-			array(
-				'title' => 'Helmet Green',
-				'content' => 'Description for Product 8',
-				'regular_price' => '550',
-				'sale_price' => '500',
-				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product08.png'      // Image URL for Product 2
-			),
-			array(
-				'title' => 'Bells',
-				'content' => 'Description for Product 9',
-				'regular_price' => '120',
-				'sale_price' => '100',
-				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product09.png'      // Image URL for Product 2
-			),
-			// Add data for other products
+
 		);
 
 		// Loop through the product data array
@@ -4512,13 +4549,13 @@ class ThemeWhizzie
 						for (var i = 0; i < premium_data.length; i++) {
 							var premium_product = premium_data[i];
 							var card_content = `<div class="o-products-col" data-id="` + premium_product.id + `">
-																																																																																															  <div class="o-products-image">
-																																																																																																  <img src="`+ premium_product.image + `">
-																																																																																															  </div>
-																																																																																															  <h3>`+ premium_product.title + `</h3>
-																																																																																															  <a href="`+ premium_product.permalink + `" target="_blank">Buy Now</a>
-																																																																																															  <a href="`+ premium_product.demo_url + `" target="_blank">View Demo</a>
-																																																																																														  </div>`;
+																																																																																																	  <div class="o-products-image">
+																																																																																																		  <img src="`+ premium_product.image + `">
+																																																																																																	  </div>
+																																																																																																	  <h3>`+ premium_product.title + `</h3>
+																																																																																																	  <a href="`+ premium_product.permalink + `" target="_blank">Buy Now</a>
+																																																																																																	  <a href="`+ premium_product.demo_url + `" target="_blank">View Demo</a>
+																																																																																																  </div>`;
 							jQuery('.wz-spinner-wrap').css('display', 'none');
 							jQuery('#other-products .o-product-row').append(card_content);
 						}
@@ -4534,8 +4571,8 @@ class ThemeWhizzie
 							}
 							let premium_product = premium_category[i];
 							let card_content = `<li data-ids="` + premium_product.product_ids + `" onclick="other_products(this);" class="` + active_class + `">
-																																																																																															  `+ premium_product.name + `<span class="badge badge-info">` + premium_product.product_ids.length + `</span>
-																																																																																														  </li>`;
+																																																																																																	  `+ premium_product.name + `<span class="badge badge-info">` + premium_product.product_ids.length + `</span>
+																																																																																																  </li>`;
 							jQuery('.o-product-col-1 ul').append(card_content);
 						}
 					});

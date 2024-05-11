@@ -4274,3 +4274,21 @@ input#submit {
   text-align: left;
   position: relative;
 }
+ol.flex-control-nav.flex-control-thumbs li {
+  height: 129px !important;
+  margin-bottom: 10px !important;
+}
+h2.desc-head::after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 160px);
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 1px;
+  background: #000;
+  right: 0;
+}
+h2.desc-head.pb-lg-2 {
+  position: relative;
+}
