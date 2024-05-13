@@ -12,216 +12,224 @@
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 3.4.0
+ * @version 3.6.3
  */
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly
+}
+get_header();
 
-defined( 'ABSPATH' ) || exit;
-get_header( 'shop' );
-global $product;
-?>
-	<div class="banner-page-text container">
-		<div class="above_title pt-4 pb-3">
-			<h1>Product</h1>
-			<div class=" bradcrumbs">Home / Product</div>
+global $post;
+$img = get_theme_mod('cricket_league_pro_inner_page_banner_bgimage');
+$display = '';
+$display_title_bbanner = '';
+$vw_title_banner_image_title_on_off = get_post_meta($post->ID, 'vw_title_banner_image_title_on_off', true);
+if ($vw_title_banner_image_title_on_off == 'on')
+	$display = 'style=display:none;';
+$vw_title_banner_image_title_below_on_off = get_post_meta($post->ID, 'vw_title_banner_image_title_below_on_off', true);
+if ($vw_title_banner_image_title_below_on_off != 'on')
+	$display_title_bbanner = 'style=display:none;';
+if ($img != '') { ?>
+
+	<div class="title-box text-center banner-img" style="background-image:url(<?php echo esc_url($img); ?>)">
+		<div class="banner-page-text container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 col-12">
+					<div class="above_title">
+						<h1>
+							SHOP
+						</h1>
+						<?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+							<div class="bradcrumbs py-2 b1">
+								<?php cricket_league_pro_the_breadcrumb(); ?>
+							</div>
+						<?php }
+						?>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
-<?php
-if ( get_theme_mod( 'cricket_league_pro_post_product_general_settings_shop_sidebar', true ) == '1' ) {
-	$postcol1 = "col-lg-12 col-md-12";
-	$postcol2 = "col-lg-12 col-md-4";
-} else {
-	$postcol1 = "col-lg-12 col-md-12";
-	$postcol2 = "";
-}
-?>
-<section class="position-relative filter-page-section ps-xl-3 ps-lg-3">
-
-<div class="shop shop-product">
-<?php /**
- * Hook: woocommerce_before_main_content.
- *
- * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
- * @hooked woocommerce_breadcrumb - 20
- * @hooked WC_Structured_Data::generate_website_data() - 30
- */
-do_action( 'woocommerce_before_main_content' );
-
-?>
-<div class="container1">
-	<div class="row position-relative">
-		<?php if(get_theme_mod('cricket_league_pro_products_shop_page_sidebar',true)=='1'){ ?>
-
-				<?php
-
-				/**
-				 * Hook: woocommerce_sidebar.
-				 *
-				 * @hooked woocommerce_get_sidebar - 10
-				 */
-				 ?>
-				 <?php
-					 get_template_part('template-parts/filters/filters');
-					 ?>
-
-		<?php } ?>
-		<div class="<?php echo esc_html($postcol1); ?>" style="box-shadow: 0px -2px 1px 0px #d8d8d8;">
-			<header class="woocommerce-products-header">
-				<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-					<h1 class="woocommerce-products-header__title page-title">
-						<?php woocommerce_page_title(); ?></h1>
-				<?php endif; ?>
-
-				<?php
-				/**
-				 * Hook: woocommerce_archive_description.
-				 *
-				 * @hooked woocommerce_taxonomy_archive_description - 10
-				 * @hooked woocommerce_product_archive_description - 10
-				 */
-				do_action( 'woocommerce_archive_description' );
-				?>
-			</header>
-			<?php
-
-			if ( have_posts() ) {
-
-				/**
-				 * Hook: woocommerce_before_shop_loop.
-				 *
-				 * @hooked wc_print_notices - 10
-				 * @hooked woocommerce_result_count - 20
-				 * @hooked woocommerce_catalog_ordering - 30
-				 */
-				do_action( 'woocommerce_before_shop_loop' );
-
-				woocommerce_product_loop_start();
-
-				if ( wc_get_loop_prop( 'total' ) ) {
-					while ( have_posts() ) {
-						the_post();
-						global $product;
-
-						/**
-						 * Hook: woocommerce_shop_loop.
-						 *
-						 * @hooked WC_Structured_Data::generate_product_data() - 10
-						 */
-
-						do_action( 'woocommerce_shop_loop' );
-						?>
-						<div class="product-inner-content-box shop-product-col mt-4 pt-3">
-							<div class="product-inner product-content">
-								<div class="product-image" style="position:relative;">
-									<div class="content-overlay"></div>
-                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo get_the_title(); ?>">
-
-                    <div class="product-hover-cart-icons">
-                      <div class="product-cart-icons" style="display:flex; justify-content:center;">
-                      <?php if ( class_exists( 'YITH_WCWL' ) ) {  ?>
-                      <div class="wishlist_text">
-                        <?php echo do_shortcode(get_theme_mod('cricket_league_pro_recommended_add_to_wishlist', '[yith_wcwl_add_to_wishlist]')); ?>
-                      </div>
-                      <?php } else {
-                      echo "Please install and activate YITH WooCommerce Wishlist to add product wishlist";
-                      }?>
-
-											<div class="cart-box">
-												<a href="<?php the_permalink(); ?>"><i class="fa fa-eye"></i></a>
-											</div>
-                    </div>
-                  </div>
-							  </div>
-								 <div class="product-details">
-									 <div class="product-rating-trade-content-box d-flex pt-2 pb-1">
-										 <div class="rating align-self-center pe-2">
-												<i class="fa fa-star" aria-hidden="true"></i>
-												<span>
-													<?php echo average_rating(); ?>
-												</span>
-											</div>
-											<div class="total_sale align-self-center">
-	                       <i class="fa fa-chart-simple ps-2" style="border-left: 2px solid #5b5b5b;" aria-hidden="true"></i>
-	                       <span>
-	                          <?php echo esc_html(get_post_meta($post->ID,'total_sales',true)); ?>
-	                       </span>
-	                     </div>
-											<div class="Discount-offer-text-box ps-lg-2 ps-md-3 ps-2 pt-0 align-self-center">
-												<?php if ($product->is_type('variable')) {
-													 $variations = $product->get_available_variations();
-
-													 foreach ($variations as $variation) {
-															 $variation_id = $variation['variation_id'];
-															 $variation_obj = wc_get_product($variation_id);
-															 if ($variation_obj->is_on_sale()) {
-																	 $regular_price = $variation_obj->get_regular_price();
-																	 $sale_price = $variation_obj->get_sale_price();
-																	 $discount_percentage = round(((($regular_price - $sale_price) / $regular_price) * 100), 2);
-																	 break;
-															 }
-													 }
-											 } ?>
-											<p><?php echo number_format($discount_percentage,0, '', '').'%'; ?>Off</p>
-										 </div>
-										</div>
-									 <h6 class="product-name m-0">
-										 <a href="<?php the_permalink(); ?>">
-											 <?php echo get_the_title(); ?>
-										 </a>
-									 </h6>
-									 <div class="products-meta d-flex flex-lg-wrap flex-xl-nowrap align-items-center justify-content-xl-between   justify-content-between">
-										 <div class="product-regular-price d-flex align-items-center" >
-											 <?php
-										    $product = wc_get_product( get_the_ID() );
-
-										    if ( $product->is_type( 'variable' ) ) {
-													woocommerce_get_template( 'single-product/price.php' );
-										    }
-												else {
-													 echo $product->get_price_html();
-												} ?>
-
-
-										 </div>
-									 </div>
-								 </div>
-							</div>
-						</div>
-
-						<!-- wc_get_template_part( 'content', 'product' ); -->
-				<?php
-				}
-				}
-
-				woocommerce_product_loop_end();
-
-				/**
-				 * Hook: woocommerce_after_shop_loop.
-				 *
-				 * @hooked woocommerce_pagination - 10
-				 */
-				do_action( 'woocommerce_after_shop_loop' );
-			} else {
-				/**
-				 * Hook: woocommerce_no_products_found.
-				 *
-				 * @hooked wc_no_products_found - 10
-				 */
-				do_action( 'woocommerce_no_products_found' );
-			} ?>
+	<div class="container main_title" <?php echo esc_attr($display_title_bbanner); ?>>
+		<h1>
+			<?php the_title(); ?>
+		</h1>
+		<?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+			<div class="container bradcrumbs py-3 b2">
+				<?php cricket_league_pro_the_breadcrumb(); ?>
 			</div>
+		<?php } ?>
 
 	</div>
-</div>
-	<?php
+<?php } else { ?>
+	<div class="container main_title">
+		<h1>
+			<?php the_title(); ?>
+		</h1>
+		<?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+			<div class="container bradcrumbs py-3 b2">
+				<?php cricket_league_pro_the_breadcrumb(); ?>
+			</div>
+		<?php } ?>
 
-	/**
-	 * Hook: woocommerce_after_main_content.
-	 *
-	 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-	 */
-	do_action( 'woocommerce_after_main_content' );?>
-</div>
-</section>
-<?php
-get_footer( 'shop' );
+	</div>
+<?php } ?>
+<main id="maincontent" role="main">
+	<div class="fsp-shop-page py-5">
+		<?php
+		/**
+		 * Hook: woocommerce_before_main_content.
+		 *
+		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+		 * @hooked woocommerce_breadcrumb - 20
+		 * @hooked WC_Structured_Data::generate_website_data() - 30
+		 */
+		do_action('woocommerce_before_main_content');
+		?>
+		<div class="">
+			<div class="">
+				<header class="woocommerce-products-header">
+					<?php if (apply_filters('woocommerce_show_page_title', true)): ?>
+						<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+					<?php endif; ?>
+
+					<?php
+					/**
+					 * Hook: woocommerce_archive_description.
+					 *
+					 * @hooked woocommerce_taxonomy_archive_description - 10
+					 * @hooked woocommerce_product_archive_description - 10
+					 */
+					do_action('woocommerce_archive_description');
+					?>
+				</header>
+				<div class="container">
+					<div class="fsp-shop-wrapper row">
+
+						<div class="fsp-filters-wrapper elemento-widget-sidebar col-lg-3" id="sidebar">
+							<?php
+							/**
+							 * Hook: woocommerce_sidebar.
+							 *
+							 * @hooked woocommerce_get_sidebar - 10
+							 */
+							?>
+							<?php
+
+							get_template_part('template-parts/filters/filters');
+							?>
+						</div>
+
+						<div class="fsp-products-wrapper row col-lg-9">
+							<div class="row">
+								<?php
+								// Define arguments for the WP_Query
+								$args = array(
+									'post_type' => 'product',
+									'posts_per_page' => 9, // Retrieve all products
+								);
+
+								// Instantiate the WP_Query
+								$loop = new WP_Query($args);
+
+								// Check if there are any products
+								if ($loop->have_posts()) {
+									// Start the loop
+									while ($loop->have_posts()) {
+										$loop->the_post();
+										// Get product meta fields
+										$product_price = get_post_meta(get_the_ID(), '_price', true);
+										$sale_price = get_post_meta(get_the_ID(), '_sale_price', true);
+										// Get product image URL
+										$product_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+										$current_currency = get_woocommerce_currency_symbol();
+										?>
+										<div class="item-product col-lg-4 col-md-6 col-12 mb-3">
+											<div class="product">
+												<?php if (class_exists('YITH_WCWL')): ?>
+													<div class="yith-wcwl-add-to-wishlist">
+														<?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>
+													</div>
+												<?php endif; ?>
+												<div class="product-image">
+													<img src="<?php echo $product_image_url; ?>" alt="<?php the_title(); ?>">
+												</div>
+												<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+												<?php
+												echo get_star_rating_custom();
+												?>
+												<div class="price-wrapper">
+													<p class="regular-price"><?php echo $current_currency;
+													echo $product_price; ?></p>
+													<?php if ($sale_price): ?>
+														<p class="sale-price"><?php echo $current_currency;
+														echo $sale_price; ?></p>
+													<?php endif; ?>
+												</div>
+												<?php  // Get the product ID
+														$product_id = get_the_ID();
+														// Get the add to cart URL
+														$add_to_cart_url = esc_url(wc_get_product($product_id)->add_to_cart_url());
+														?>
+												<a href="<?php echo $add_to_cart_url; ?>" class="button">Add to Cart</a>
+											</div>
+										</div>
+										<?php
+									}
+									wp_reset_postdata();
+
+								} else {
+									// If no products found
+									echo 'No products found.';
+								}
+								?>
+							</div>
+						</div>
+					</div>
+					<?php
+					global $wp_query;
+					$total_pages = $loop->max_num_pages;
+					if ($total_pages > 1) {
+						$current_page = max(1, get_query_var('paged'));
+						echo '<div class="pagination">';
+						echo paginate_links(
+							array(
+								'base' => get_pagenum_link(1) . '%_%',
+								'format' => '/page/%#%',
+								'current' => $current_page,
+								'total' => $total_pages,
+								'prev_text' => __('« Prev'),
+								'next_text' => __('Next »'),
+							)
+						);
+						echo '</div>';
+						// Reset post data
+						wp_reset_postdata();
+
+					}
+					?>
+				</div>
+			</div>
+			<!-- <div class="col-lg-3 col-md-4 elemento-widget-sidebar" id="sidebar"> -->
+			<?php /**
+			  * Hook: woocommerce_sidebar.
+			  *
+			  * @hooked woocommerce_get_sidebar - 10
+			  */
+			// do_action( 'woocommerce_sidebar' );   ?>
+
+		</div>
+		<?php	/**
+			 * Hook: woocommerce_after_main_content.
+			 *
+			 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+			 */
+		do_action('woocommerce_after_main_content');
+		?>
+	</div>
+	</div>
+</main>
+
+<?php get_footer();
+?>

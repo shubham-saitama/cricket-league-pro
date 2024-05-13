@@ -139,7 +139,7 @@ if (get_theme_mod('cricket_league_pro_player_tabbgcolor')) {
                                                     Role
                                                 </div>
                                                 <div class="deatial-value">
-                                                <?php echo !empty($position) ? $position : 'N/A'; ?>
+                                                    <?php echo !empty($position) ? $position : 'N/A'; ?>
                                                 </div>
                                             </div>
                                             <div class="deatils">
@@ -155,8 +155,7 @@ if (get_theme_mod('cricket_league_pro_player_tabbgcolor')) {
                                                     Age
                                                 </div>
                                                 <div class="deatial-value">
-                                                    <?php echo $age; ?>
-                                                    <?php echo !empty($height) ? $height : 'N/A'; ?>
+                                                    <?php echo !empty($age) ? $age : 'N/A'; ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -218,7 +217,7 @@ if (get_theme_mod('cricket_league_pro_player_tabbgcolor')) {
                                                 Role
                                             </div>
                                             <div class="deatial-value">
-                                            <?php echo !empty($position) ? $position : 'N/A'; ?>
+                                                <?php echo !empty($position) ? $position : 'N/A'; ?>
                                             </div>
                                         </div>
                                         <div class="deatils">

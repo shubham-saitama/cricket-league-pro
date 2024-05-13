@@ -55,6 +55,40 @@ i[class^="fa"] {
     margin-top: 30px;
   }
 
+  .entry-author a {
+    font-size: 14px !important;
+    margin-left: 10px;
+  }
+
+  .media.post-thumb {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+
+  ul.d-flex.text-lg-start {
+    gap: 0px;
+    flex-wrap: wrap !important;
+    justify-content: space-evenly;
+  }
+
+  a[class ^="custom_"] {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    width: calc(100%);
+  }
+
+  .custom-social-icons::after {
+    display: none;
+  }
+
+  .media-body.post-content {
+    padding: 0px !important;
+    margin-top: 10px;
+  }
+
   .player-tab-left-wrapper {
     margin-bottom: 50px;
   }
@@ -471,6 +505,14 @@ i[class^="fa"] {
   p.clock-before {
     margin-top: 50px;
   }
+
+  from-inner-wrap {
+    padding: 30px 30px;
+  }
+
+  .input-wrapper.half {
+    width: 100%;
+  }
 }
 
 @media(min-width:576px) and (max-width:767px) {
@@ -500,6 +542,14 @@ i[class^="fa"] {
 }
 
 @media(max-width:600px) {
+  .input-wrapper P {
+    text-align: left;
+  }
+
+  .from-inner-wrap {
+    padding: 30px 20px;
+  }
+
   h1.banner-heading {
     font-size: 32px;
     line-height: 41px;
@@ -643,7 +693,12 @@ i[class^="fa"] {
   .entry-date,
   .entry-comments,
   .entry-comments a,
-  li.entry-author a {
+  li.categories a,
+  .entry-date,
+  .entry-comments,
+  .entry-comments a,
+  li.categories a,
+  li.categories {
     font-size: 13px;
   }
 
@@ -687,9 +742,17 @@ i[class^="fa"] {
     padding: 300px 0 90px;
   }
 
+  #single-post-page p {
+    justify-content: center;
+  }
+
   .heading-wrap h2 {
     font: normal normal bold 26px / 40px Inter Tight;
     text-align: center;
+  }
+
+  .media.post-thumb {
+    align-items: center;
   }
 
   .about-us-inner {

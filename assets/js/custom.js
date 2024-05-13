@@ -983,32 +983,7 @@ jQuery(document).ready(function ($) {
   // Run the code when the DOM is fully loaded
 
   // Check if viewport width is greater than 991px
-  if (window.innerWidth > 991) {
-    // Find the footer element
-    var footer = jQuery("footer");
-    var shopMain = jQuery('#maincontent');
-    var otherPage = jQuery('#full-width-blog');
-    var pageClass = jQuery('.footer-bottom');
-    var footer = jQuery('.outer_dpage');
-    var innerPage = jQuery('.outer_dpage');
-    // Find the section before the footer
-    var sectionBeforeFooter = footer.prev("section");
-
-    // Check if a section exists before the footer
-    if (sectionBeforeFooter.length > 0) {
-
-      // Calculate the height of the footer
-      var footerHeight = footer.outerHeight();
-      // Apply margin-bottom to the section before the footer
-      sectionBeforeFooter.css("margin-bottom", footerHeight + "px");
-      shopMain.css("margin-bottom", footerHeight + "px");
-    }
-    var footerHeight = footer.outerHeight();
-    shopMain.css("margin-bottom", footerHeight + "px");
-    otherPage.css("margin-bottom", footerHeight + "px");
-    pageClass.css("margin-bottom", footerHeight + "px");
-    innerPage.css("margin-bottom", footerHeight + "px");
-  }
+ 
 
 
   jQuery(window).scroll(function () {
@@ -1081,3 +1056,174 @@ jQuery(document).ready(function ($) {
 });
 
 
+
+
+// filter js 
+
+
+//shop page work 
+
+jQuery(document).ready(function(){
+
+
+  
+  const get_woocommerce_currency_symbol = vw_cricket_pro_customscripts_obj.get_woocommerce_currency_symbol;
+  const finalAmount = get_woocommerce_currency_symbol + parseInt(vw_cricket_pro_customscripts_obj.product_max_price);
+  const StartAmountProduct = get_woocommerce_currency_symbol + 0;
+ 
+
+ 
+   jQuery( "#product-amount-final" ).text(finalAmount);
+   jQuery( "#product-amount-start" ).text(StartAmountProduct);
+ 
+ 
+  
+ 
+     jQuery( "#product-price-slider" ).slider({
+       range: true,
+       min: 0,
+       max: parseInt(vw_cricket_pro_customscripts_obj.product_max_price),
+       values: [ 0, parseInt(vw_cricket_pro_customscripts_obj.product_max_price) ],
+       change: function( event, ui ) {
+        vw_cricket_pro_filters();
+       },
+       slide: function( event, ui ) {
+ 
+         jQuery( "#product-amount-start" ).text(
+           get_woocommerce_currency_symbol + ui.values[ 0 ]
+         );
+         jQuery( "#product-amount-end" ).text(
+           get_woocommerce_currency_symbol + ui.values[ 1 ]
+         );
+       }
+     });
+
+
+ 
+ console.log('load');
+ // Event handler for category filter checkboxes using event delegation
+ jQuery(document).on('change', '.shop-page-filters ', function(event) {
+   console.log('Checkbox changed!');
+   // Get the name of the selected category checkbox
+  
+   
+   vw_cricket_pro_filters();
+ });
+ 
+ 
+ 
+ // Update pagination links click handler
+ //  jQuery(document).on('click', '.navigation a.page-numbers', function(event) {
+ jQuery(document).on('click', '.pagination a.page-numbers', function(event) {
+  event.preventDefault(); // Prevent default link behavior
+  var page = jQuery(this).text(); // Get the page number from the clicked pagination link
+  vw_cricket_pro_filters(page); // Trigger the AJAX request with the page number
+ });
+ 
+ 
+ function vw_cricket_pro_filters(page){
+ 
+   var data_obj = {};
+ 
+   data_obj['values'] = jQuery('#product-price-slider').slider( "values" );
+ 
+
+
+   jQuery('.shop-page-filters [type="checkbox"]:checked').each(function(index, element) {
+     if (!Array.isArray(data_obj[jQuery(element).attr('name')])) {
+         data_obj[jQuery(element).attr('name')] = [];
+     }
+     data_obj[jQuery(element).attr('name')].push(jQuery(element).val());
+ });
+
+ 
+ 
+      // Add the page number to the data object if provided
+ if (page) {
+ data_obj['paged'] = page;
+
+ }
+ 
+ setQueryParams(data_obj);
+ 
+ data_obj.base_url = window.location.href;
+ 
+ //data_obj['shop_template'] = shop_template;
+ 
+ jQuery.post(vw_cricket_pro_customscripts_obj.ajaxurl, {
+ 'action': 'get_shop_page_filter',
+ 'data': data_obj,
+ 
+ },
+ function(response) {
+ jQuery('.fsp-products-wrapper').html(response.html);
+ console.log('response.pagination', response.pagination);
+ // jQuery('.navigation text-center mt-5 mb-5 pt-4 pb-4').html(response.pagination); // Update pagination
+ 
+ jQuery('.pagination').html(response.pagination); // Update pagination
+ });
+ 
+  
+ }
+ 
+ 
+ function setQueryParams(data_obj) {
+   console.log('data_obj', data_obj)
+   let url = new URL(window.location.href)
+   let params = new URLSearchParams(url.search)
+ 
+   const data_obj_keys = Object.keys(data_obj)
+ 
+   console.log('data_obj_keys', data_obj_keys)
+ 
+   for (let index = 0; index < data_obj_keys.length; index++) {
+     const element = data_obj_keys[index]
+ 
+     console.log('element', element)
+ 
+     if (
+       (element != 'base_url')
+     ) {
+       params.set(element, data_obj[element])
+     }
+   }
+ 
+   console.log('params.toString()', params.toString())
+ 
+   const querySting = params.toString()
+ 
+   window.history.replaceState(null, null, `?${querySting}`)
+ 
+   console.log('url', url)
+ 
+   
+ 
+ }
+  
+ });
+ if (window.innerWidth > 991) {
+  // Find the footer element
+  var footer = jQuery("footer");
+  var shopMain = jQuery('#maincontent');
+  var otherPage = jQuery('#full-width-blog');
+  var pageClass = jQuery('.footer-bottom');
+  var footer = jQuery('.outer_dpage');
+  var innerPage = jQuery('.outer_dpage');
+  // Find the section before the footer
+  var sectionBeforeFooter = footer.prev("section");
+
+  // Check if a section exists before the footer
+  if (sectionBeforeFooter.length > 0) {
+
+    // Calculate the height of the footer
+    var footerHeight = footer.outerHeight();
+    // Apply margin-bottom to the section before the footer
+    sectionBeforeFooter.css("margin-bottom", footerHeight + "px");
+    shopMain.css("margin-bottom", footerHeight + "px");
+  }
+  var footerHeight = footer.outerHeight();
+  shopMain.css("margin-bottom", footerHeight + "px");
+  otherPage.css("margin-bottom", footerHeight + "px");
+  pageClass.css("margin-bottom", footerHeight + "px");
+  innerPage.css("margin-bottom", footerHeight + "px");
+}

@@ -1031,7 +1031,7 @@ input.wpcf7-form-control.wpcf7-submit.has-spinner {
   display: initial;
 }
 
-.submit-wrapper {
+/* .submit-wrapper {
   width: 30px;
   height: 30px;
   opacity: 1;
@@ -1040,7 +1040,7 @@ input.wpcf7-form-control.wpcf7-submit.has-spinner {
   top: 10px;
   opacity: 0;
   overflow: hidden;
-}
+} */
 
 .newsletter-wrapper {
   position: relative;

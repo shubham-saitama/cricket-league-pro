@@ -19,12 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 } ?>
 <div class="single-brand-name">
-	<?php
-	$events_category_var = array();
-	foreach ( $terms as $term ) {
-	$events_category_var[] = $term->name;
-	}
-	$events_category_name = join( ", ", $events_category_var );
-	echo $events_category_name; ?></a>
+	
 </div>
 <?php the_title( '<h2 class="product_title entry-title">', '</h2>' );

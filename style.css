@@ -26,10 +26,12 @@ Cricket League Pro WordPress Theme is released under the terms of GNU GPL
   font-stretch: normal;
   font-display: swap;
 }
+
 :root {
   --primary-color: #F36C03;
   --secondary-color: #fff;
 }
+
 :root {
   --common-font-w: "Work Sans";
   --common-font-wm: "Work Sans Medium";
@@ -42,10 +44,13 @@ Cricket League Pro WordPress Theme is released under the terms of GNU GPL
   --common-font-mb: "Montserrat Bold";
   --common-font-l: "Libre Baskerville";
 }
+
 /* Define scrollbar width and color */
 :root {
-  --scrollbar-width: 8px; /* Change scrollbar width as needed */
-  --scrollbar-color: #A7A7A7; /* Change scrollbar color as needed */
+  --scrollbar-width: 8px;
+  /* Change scrollbar width as needed */
+  --scrollbar-color: #A7A7A7;
+  /* Change scrollbar color as needed */
 }
 
 /* Style the scrollbar track */
@@ -56,17 +61,20 @@ Cricket League Pro WordPress Theme is released under the terms of GNU GPL
 /* Style the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-color);
-  border-radius: 4px; /* Adjust border-radius as needed */
+  border-radius: 4px;
+  /* Adjust border-radius as needed */
 }
 
 /* Style the scrollbar track when hovering over it */
 ::-webkit-scrollbar-track:hover {
-  background-color: rgba(0, 0, 0, 0.1); /* Change track color on hover as needed */
+  background-color: rgba(0, 0, 0, 0.1);
+  /* Change track color on hover as needed */
 }
 
 /* Style the scrollbar thumb when hovering over it */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--scrollbar-color); /* Change thumb color on hover as needed */
+  background-color: var(--scrollbar-color);
+  /* Change thumb color on hover as needed */
 }
 
 html #wpadminbar {
@@ -203,6 +211,7 @@ textarea {
   text-align: left;
   display: inline-block;
 }
+
 a.theme-btn {
   font: normal normal normal 16px / 20px Inter Tight;
   letter-spacing: 0px;
@@ -243,9 +252,22 @@ a#return-to-top {
 }
 
 @keyframes bounce2 {
-	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-	40% {transform: translateY(-30px);}
-	60% {transform: translateY(-15px);}
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-30px);
+  }
+
+  60% {
+    transform: translateY(-15px);
+  }
 }
 
 
@@ -259,9 +281,10 @@ a#return-to-top {
   z-index: -9999;
 }
 
-section:not(#slider,section#copyright){
+section:not(#slider, section#copyright) {
   background: #fff;
 }
+
 section#slider::after {
   content: "";
   width: 100%;
@@ -272,6 +295,7 @@ section#slider::after {
   position: absolute;
   z-index: -999;
 }
+
 .white-back {
   background-color: #fff;
   padding: 14px 20px 14px 40px;
@@ -289,25 +313,30 @@ section#slider::after {
   align-items: center;
   gap: 10px;
 }
+
 .pagination-link.next-prev {
   padding: 5px 12px;
   border: 1px solid #CCCCCC;
   border-radius: 6px;
   display: inline-block;
 }
+
 .pagination-link {
   padding: 5px 12px;
   border: 1px solid #CCCCCC;
   border-radius: 6px;
 }
+
 .pagination-link.current {
   background: var(--primary-color);
   color: #fff;
 }
+
 .pagination-link:focus {
   background: var(--primary-color);
   color: #fff;
 }
+
 main#maincontent {
   background: #fff;
 }
@@ -323,9 +352,10 @@ main#maincontent {
   border: 1px solid #000;
   border-radius: 50%;
 }
+
 .custom-social-icons::after {
   content: "";
-  width: calc(100% - 100px);
+  width: calc(100%);
   height: 1px;
   background: #000;
   position: absolute;
@@ -334,6 +364,7 @@ main#maincontent {
   margin: auto;
   left: 5px;
 }
+
 .custom-social-icons {
   display: flex;
   flex-wrap: wrap;
@@ -342,6 +373,7 @@ main#maincontent {
   /* max-width: 100%; */
   gap: 10px 0px;
 }
+
 .social_widget a {
   color: var(--white);
   padding: 7px 7px;
@@ -351,33 +383,40 @@ main#maincontent {
   border-radius: 50%;
   margin: 0px;
 }
-a[class ^= "custom_"] {
+
+a[class ^="custom_"] {
   display: flex !important;
   align-items: center;
   gap: 10px;
   width: calc(100% / 2 - 10px);
 }
-a[class ^= "custom_"]:hover ::before {
+
+a[class ^="custom_"]:hover ::before {
   color: var(--primary-color);
 
 }
-a[class ^= "custom_"]:hover i.fab{
+
+a[class ^="custom_"]:hover i.fab {
   border: 1px solid var(--primary-color);
 }
-a[class ^= "custom_"]:hover span{
+
+a[class ^="custom_"]:hover span {
   color: var(--primary-color);
 }
+
 .tagcloud a {
   font-size: 18px !important;
   /* margin-left: 40px !important; */
   /* display: flex; */
   font: normal normal normal 18px / 21px Inter Tight;
 }
+
 .tagcloud {
   display: flex;
   gap: 30px 40px;
   flex-wrap: wrap;
 }
+
 .eco-box {
   width: 100%;
   height: 100vh;
@@ -388,11 +427,57 @@ a[class ^= "custom_"]:hover span{
   display: flex;
   justify-content: center;
   align-items: center;
+
   z-index: 9999999999999;
 }
-.woocommerce .loader::before{
+
+.woocommerce .loader::before {
   display: none !important;
 }
 
 
 
+.woocommerce .star-rating {
+  float: none !important;
+}
+
+@media(min-width:991px) {
+  section#blog-news,main#maincontent,.shop div#container,section.booking-from{
+    margin-bottom: 650px;
+  }
+
+}
+.fsp-shop-wrapper .item-product {
+  height: auto;
+}
+.widget_recent_entries {
+  background: #F1F1F1;
+}
+span.page-numbers.current {
+ 
+  background: var(--primary-color);
+  color: #fff !important;
+
+}
+span.page-numbers{
+  border-radius: 6px;
+  padding: 10px !important;
+  width: 30px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type=number] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1 !important;
+
+}

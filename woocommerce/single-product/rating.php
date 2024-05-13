@@ -25,6 +25,7 @@ if (!wc_review_ratings_enabled()) {
 	return;
 }
 
+
 $rating_count = $product->get_rating_count();
 $review_count = $product->get_review_count();
 $average = $product->get_average_rating();
@@ -38,10 +39,7 @@ if ($rating_count > 0): ?>
 			<?php echo $product->get_price_html(); ?>
 		</div>
 		<div class="rating align-self-center pe-2">
-			<i class="fa fa-star" aria-hidden="true"></i>
-			<span>
-				<?php echo get_star_rating(); ?>
-			</span>
+		<?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
 		</div>
 
 	</div>

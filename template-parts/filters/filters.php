@@ -38,8 +38,6 @@ if ($max_price) {
             'hide_empty' => true
           )
         );
-
-
         $cat_arr = [];
         $checked_cat = '';
         if (isset($_GET['product_category']) && $_GET['product_category']) {
@@ -75,22 +73,16 @@ if ($max_price) {
       </div>
     </div>
   </div>
-  <div class="flower-shop-filter">
-    <div class="flower-price fsp-filter-box">
-      <h2><?php echo esc_html('Price', 'flower-shop-pro'); ?></h2>
-      <div class="flower-shop-filter">
-        <div>
-          <label for="product-amount" class="d-flex justify-content-between pb-3 fsp-product-amount">
-            <span id="product-amount-start" class="fsp-slider-amount">$0</span>
-            <input type="range" id="product-price-slider" min="<?php echo $min_price; ?>"
-              max="<?php echo $max_price; ?>" value="<?php echo $max_price; ?>">
-            <span id="product-amount-end" class="fsp-slider-amount">$<?php echo $max_price; ?></span>
-          </label>
-          <input type="text" id="product-price-input" readonly style="border:0; color:#f6931f; font-weight:bold;">
-        </div>
+ <div id="collapseTwo1" class="accordion-collapse collapse show drone-elementor-filter" aria-labelledby="headingTwo1" data-bs-parent="#accordionExample1">
+      <div class="accordion-body">
+        <label for="#product-amount" class="d-flex justify-content-between pb-3">
+          <span id="product-amount-start" class="product-amount-start">$0</span>
+          <span id="product-amount-end" class="product-amount-end">$<?php echo $max_price; ?></span>
+        </label>
+          <div id="product-price-slider" class="product-price-slider"></div>   
       </div>
     </div>
-  </div>
+
   <div class="rating fsp-filter-box">
     <h2>
       <?php echo esc_html('Rating', 'flower-shop-pro'); ?>
@@ -100,7 +92,7 @@ if ($max_price) {
         <ul class="shop-page-produts-category">
           <li>
             <label>
-              <input class="category-filter-checkbox" type="checkbox" name="flower_rating" value="5" />
+              <input class="category-filter-checkbox" type="checkbox" name="rating" value="5" />
               <span><span class="fa fa-star"></span><span class="fa fa-star"></span><span
                   class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span>
               (5)
@@ -108,7 +100,7 @@ if ($max_price) {
           </li>
           <li>
             <label>
-              <input class="category-filter-checkbox" type="checkbox" name="flower_rating" value="4" />
+              <input class="category-filter-checkbox" type="checkbox" name="rating" value="4" />
               <span><span class="fa fa-star"></span><span class="fa fa-star"></span><span
                   class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star o"></span></span>
               (4)
@@ -116,7 +108,7 @@ if ($max_price) {
           </li>
           <li>
             <label>
-              <input class="category-filter-checkbox" type="checkbox" name="flower_rating" value="3" />
+              <input class="category-filter-checkbox" type="checkbox" name="rating" value="3" />
               <span><span class="fa fa-star"></span><span class="fa fa-star"></span><span
                   class="fa fa-star"></span><span class="fa fa-star o"></span><span
                   class="fa fa-star o"></span></span>(3)
@@ -124,7 +116,7 @@ if ($max_price) {
           </li>
           <li>
             <label>
-              <input class="category-filter-checkbox" type="checkbox" name="flower_rating" value="2" />
+              <input class="category-filter-checkbox" type="checkbox" name="rating" value="2" />
               <span><span class="fa fa-star"></span><span class="fa fa-star"></span><span
                   class="fa fa-star o"></span><span class="fa fa-star o"></span><span
                   class="fa fa-star o"></span></span>(2)
@@ -132,7 +124,7 @@ if ($max_price) {
           </li>
           <li>
             <label>
-              <input class="category-filter-checkbox" type="checkbox" name="flower_rating" value="2" />
+              <input class="category-filter-checkbox" type="checkbox" name="rating" value="1" />
               <span><span class="fa fa-star"></span><span class="fa fa-star o"></span><span
                   class="fa fa-star o"></span><span class="fa fa-star o"></span><span
                   class="fa fa-star o"></span></span>(1)

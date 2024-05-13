@@ -745,7 +745,7 @@ class ThemeWhizzie
 				array(
 					'menu-item-title' => __('Matches', 'cricket-league-pro'),
 					'menu-item-classes' => 'service',
-					'menu-item-url' => get_permalink(get_page_by_title('Service')),
+					'menu-item-url' => get_permalink(get_page_by_title('Matches')),
 					'menu-item-status' => 'publish',
 				)
 			);
@@ -1074,18 +1074,301 @@ class ThemeWhizzie
 	 */
 	public function setup_widgets()
 	{
+		$sp_outcomes_arr = array(
+			array(
+				"title" => "Win",
+				"sp_abbreviation" => "",
+				"sp_condition" => ">"
+			),
+			array(
+				"title" => "Loss",
+				"sp_abbreviation" => "",
+				"sp_condition" => "<"
+			),
+			array(
+				"title" => "Draw",
+				"sp_abbreviation" => "",
+				"sp_condition" => ""
+			),
+			array(
+				"title" => "Tie",
+				"sp_abbreviation" => "",
+				"sp_condition" => "="
+			),
+			array(
+				"title" => "No Result",
+				"sp_abbreviation" => "",
+				"sp_condition" => ""
+			)
+		);
+
+		foreach ( $sp_outcomes_arr as $sp_outcome ) {
+			
+			$sp_outcome_args = array(
+				'post_type' => 'sp_outcome',
+				'post_title' => $sp_outcome['title'],
+				'post_status' => 'publish'
+			);
+
+			$sp_outcome_id = wp_insert_post($sp_outcome_args);
+
+			update_post_meta( $sp_outcome_id, '_sp_preset', 1 );
+			update_post_meta( $sp_outcome_id, 'sp_condition', $sp_outcome['sp_condition'] );
+			update_post_meta( $sp_outcome_id, 'sp_abbreviation', $sp_outcome['sp_abbreviation'] );
+		}
+
+		$sp_results_arr = array(
+			array(
+				"title" => "Runs",
+				"excerpt" => "Runs",
+				"equation" => "$runs"
+			),
+			array(
+				"title" => "Wickets Lost",
+				"excerpt" => "Wickets Lost",
+				"equation" => ""
+			),
+			array(
+				"title" => "Overs",
+				"excerpt" => "Overs",
+				"equation" => "$o"
+			),
+			array(
+				"title" => "BP",
+				"excerpt" => "Bonus points",
+				"equation" => ""
+			)
+		);
+
+		foreach ( $sp_results_arr as $sp_result ) {
+			
+			$sp_result_args = array(
+				'post_type' => 'sp_result',
+				'post_title' => $sp_result['title'],
+				'post_status' => 'publish',
+				'post_excerpt' => $sp_result['excerpt']
+			);
+
+			$sp_result_id = wp_insert_post($sp_result_args);
+
+			update_post_meta( $sp_result_id, '_sp_preset', 1 );
+			update_post_meta( $sp_result_id, 'sp_equation', $sp_result['equation'] );
+		}
+
+		// sp_performance
+
+		$sp_performances_arr = array(
+			array(
+				"title" => "&nbsp;",
+				"excerpt" => "Notes",
+				"post_name" => "notes",
+				"sp_format"	=> "text"
+			),
+			array(
+				"title" => "R",
+				"excerpt" => "Runs",
+				"post_name" => "runs",
+				"sp_format"	=> "number"
+			),
+			array(
+				"title" => "B",
+				"excerpt" => "Balls",
+				"post_name" => "b",
+				"sp_format"	=> "number",
+				"sp_section" => 0
+			),
+			array(
+				"title" => "4s",
+				"excerpt" => "Fours",
+				"post_name" => "fours",
+				"sp_format"	=> "number",
+				"sp_section" => 0
+			),
+			array(
+				"title" => "6s",
+				"excerpt" => "Sixes",
+				"post_name" => "sixs",
+				"sp_format"	=> "number",
+				"sp_section" => 0
+			),
+			array(
+				"title" => "O",
+				"excerpt" => "Overs bowled",
+				"post_name" => "o",
+				"sp_format"	=> "number",
+				"sp_section" => 1
+			),
+			array(
+				"title" => "M",
+				"excerpt" => "Maidens",
+				"post_name" => "m",
+				"sp_format"	=> "number",
+				"sp_section" => 1
+			),
+			array(
+				"title" => "R",
+				"excerpt" => "Runs",
+				"post_name" => "r",
+				"sp_format"	=> "number",
+				"sp_section" => 1
+			),
+			array(
+				"title" => "W",
+				"excerpt" => "Wickets taken",
+				"post_name" => "w",
+				"sp_format"	=> "number",
+				"sp_section" => 1
+			)
+		);
+
+		foreach ( $sp_performances_arr as $sp_performance ) {
+			
+			$sp_performance_args = array(
+				'post_type' => 'sp_performance',
+				'post_title' => $sp_performance['title'],
+				'post_status' => 'publish',
+				'post_excerpt' => $sp_performance['excerpt'],
+				'post_name' => $sp_performance['post_name']
+			);
+
+			$sp_performance_id = wp_insert_post($sp_performance_args);
+
+			update_post_meta( $sp_performance_id, '_sp_preset', 1 );
+			update_post_meta( $sp_performance_id, 'sp_section', $sp_performance['sp_section'] );
+			update_post_meta( $sp_performance_id, 'sp_format', $sp_performance['sp_format'] );
+		}
+
+		// sp_column
+
+		$sp_columns_arr = array(
+			array(
+				"title" => "P",
+				"excerpt" => "Matches played",
+				"sp_equation"	=> "$eventsplayed",
+				"sp_order"	=> "DESC",
+				"sp_precision" => 0,
+				"sp_priority" => ''
+			),
+			array(
+				"title" => "W",
+				"excerpt" => "Wins",
+				"sp_equation"	=> "$win",
+				"sp_order"	=> "DESC",
+				"sp_precision" => 0,
+				"sp_priority" => 2
+			),
+			array(
+				"title" => "L",
+				"excerpt" => "Losses",
+				"sp_equation"	=> "$loss",
+				"sp_order"	=> "DESC",
+				"sp_precision" => 0,
+				"sp_priority" => ''
+			),
+			array(
+				"title" => "D",
+				"excerpt" => "Draws",
+				"sp_equation"	=> "$draw",
+				"sp_order"	=> "DESC",
+				"sp_precision" => 0,
+				"sp_priority" => ''
+			),
+			array(
+				"title" => "T",
+				"excerpt" => "Ties",
+				"sp_equation"	=> "$tie",
+				"sp_order"	=> "DESC",
+				"sp_precision" => 0,
+				"sp_priority" => ''
+			),
+			array(
+				"title" => "NR",
+				"excerpt" => "No results",
+				"sp_equation"	=> "$noresult",
+				"sp_order"	=> "DESC",
+				"sp_precision" => 0,
+				"sp_priority" => ''
+			),
+			array(
+				"title" => "BP",
+				"excerpt" => "Bonus points",
+				"sp_equation"	=> "$bpfor",
+				"sp_order"	=> "DESC",
+				"sp_precision" => 0,
+				"sp_priority" => ''
+			),
+			array(
+				"title" => "Points",
+				"excerpt" => "Total points",
+				"sp_equation"	=> "$win * 2 + $draw",
+				"sp_order"	=> "DESC",
+				"sp_precision" => 0,
+				"sp_priority" => 1
+			),
+			array(
+				"title" => "NRR",
+				"excerpt" => "Net run rate",
+				"sp_equation"	=> "( $runsfor / $oversfor ) - ( $runsagainst / $oversagainst )",
+				"sp_order"	=> "DESC",
+				"sp_precision" => 3,
+				"sp_priority" => 3
+			)
+		);
+
+		foreach ( $sp_columns_arr as $sp_column ) {
+			
+			$sp_column_args = array(
+				'post_type' => 'sp_column',
+				'post_title' => $sp_column['title'],
+				'post_status' => 'publish',
+				'post_excerpt' => $sp_column['excerpt']
+			);
+
+			$sp_column_id = wp_insert_post($sp_column_args);
+
+			update_post_meta( $sp_column_id, '_sp_preset', 1 );
+			update_post_meta( $sp_column_id, 'sp_equation', $sp_column['sp_equation'] );
+			update_post_meta( $sp_column_id, 'sp_order', $sp_column['sp_order'] );
+			update_post_meta( $sp_column_id, 'sp_precision', $sp_column['sp_precision'] );
+			update_post_meta( $sp_column_id, 'sp_priority', $sp_column['sp_priority'] );
+		}
+
+		$sp_statistics_arr = array(
+			array(
+				"title" => "Mat",
+				"excerpt" => "Matches played",
+				"sp_equation"	=> "$eventsplayed",
+				"sp_precision" => 0,
+				"sp_type" => "total"
+			),
+			array(
+				"title" => "SR",
+				"excerpt" => "Strike Rate",
+				"sp_equation"	=> "( $runs / $b ) * 100",
+				"sp_precision" => 2,
+				"sp_type" => "average"
+			)
+		);
+
+		foreach ( $sp_statistics_arr as $sp_statistic ) {
+			
+			$sp_statistic_args = array(
+				'post_type' => 'sp_statistic',
+				'post_title' => $sp_statistic['title'],
+				'post_status' => 'publish',
+				'post_excerpt' => $sp_statistic['excerpt']
+			);
+
+			$sp_statistic_id = wp_insert_post($sp_statistic_args);
+
+			update_post_meta( $sp_column_id, '_sp_preset', 1 );
+			update_post_meta( $sp_column_id, 'sp_equation', $sp_column['sp_equation'] );
+			update_post_meta( $sp_column_id, 'sp_type', $sp_column['sp_type'] );
+		}
 
 		ini_set('upload_max_filesize', '300M');
 		ini_set('max_execution_time', '3000');
 
-		// Create a auto listing page and assigned the template start
-		$listing_title = 'Auto Listings';
-		$listing_page_array = array(
-			'post_type' => 'page',
-			'post_title' => $listing_title,
-			'post_status' => 'publish',
-			'post_author' => 1
-		);
 
 
 
@@ -1232,6 +1515,21 @@ class ThemeWhizzie
 		add_post_meta($blog_id, '_wp_page_template', 'page-template/blog-with-left-right-sidebar.php');
 		add_post_meta($blog_id, 'vw_title_banner_image_wp_custom_attachment', $attachment_url);
 
+		// bookign form page 
+		$booking_title = 'Booking Form';
+		$booking = array(
+			'post_type' => 'page',
+			'post_title' => $booking_title,
+			'post_status' => 'publish',
+			'post_author' => 1,
+			'post_slug' => 'blog-right-sidebar'
+		);
+		$booking_id = wp_insert_post($booking);
+
+		//Set the blog page template
+		add_post_meta($booking_id, '_wp_page_template', 'page-template/page-bookNow.php');
+		add_post_meta($booking_id, 'vw_title_banner_image_wp_custom_attachment', $attachment_url);
+	
 		// Create a Pages
 		if (get_page_by_title('Page') == NULL) {
 			$page_title = 'Page ';
@@ -3005,8 +3303,6 @@ class ThemeWhizzie
 
 
 
-
-
 		// sportspress work 
 
 
@@ -3038,6 +3334,8 @@ class ThemeWhizzie
 
 		// Loop through the teams array
 		$i = 1;
+
+		$team_ids = array();
 		foreach ($teams as $team) {
 			// Insert team post
 			$team_id = wp_insert_post(
@@ -3047,6 +3345,8 @@ class ThemeWhizzie
 					'post_status' => 'publish',
 				)
 			);
+
+			array_push($team_ids, $team_id);
 
 			// Add team sport
 			update_post_meta($team_id, 'team_sport', 'cricket');
@@ -3209,35 +3509,47 @@ class ThemeWhizzie
 		// Assuming $data is your provided array
 		$data = array(
 			$league_id => array(
-				0 => array(
-					'runs' => 121,
-					'b' => 4554,
-					'fours' => 5415,
-					'sixs' => 454,
-					'o' => 54545,
-					'm' => 454,
-					'r' => 54554,
-					'w' => 44,
-					'mat' => 5454,
-					'sr' => 5
+				array(
+					"mat" => 100,
+					"w" => 90,
+					"r" => 3500,
+					"m" => 10,
+					"o" => 381,
+					"sixs" => 160,
+					"fours" => 220,
+					"b" => 2800,
+					"runs" => 2600,
+					"sr" => 135
 				),
 				$season_id => array(
-					array(
-						'runs' => 1212,
-						'b' => 55,
-						'fours' => 55,
-						'sixs' => 4,
-						'o' => 25,
-						'm' => 3,
-						'r' => 5,
-						'w' => 33,
-						'mat' => 323,
-						'sr' => 3
-					)
+					"mat" => 100,
+					"w" => 90,
+					"r" => 3500,
+					"m" => 10,
+					"o" => 381,
+					"sixs" => 160,
+					"fours" => 220,
+					"b" => 2800,
+					"runs" => 2600,
+					"sr" => 135
 				)
 			)
 		);
+
+		$sp_metrics_data = array(
+			'post_title' => 'Height',
+			'post_type' => 'sp_metric',
+			'post_status' => 'publish'
+		);
+
+		// Insert player post
+		$sp_metrics_id = wp_insert_post($sp_metrics_data);
+		update_post_meta($sp_metrics_id, 'sp_visible', 1);
+
+		$heights = array("5ft 11in","5ft 9in","5ft 4in","5ft 5in","6ft");
 		$i = 1;
+
+		$player_ids = array();
 		foreach ($players_data as $player_data) {
 			// Check if the team exists
 			$team_post = get_page_by_title($player_data['team'], OBJECT, 'sp_team');
@@ -3254,11 +3566,21 @@ class ThemeWhizzie
 				// Insert player post
 				$player_post_id = wp_insert_post($player_post_data);
 
+				array_push($player_ids, $player_post_id);
+
 				// Set player meta data
 				update_post_meta($player_post_id, 'sp_number', $player_data['number']);
 				update_post_meta($player_post_id, 'sp_nationality', 'India');
-				update_post_meta($player_post_id, 'sp_position', $player_data['position']);
+				wp_set_object_terms($player_post_id, $player_data['position'], 'sp_position');
 				update_post_meta($player_post_id, 'sp_current_team', $team_post->ID);
+				
+				$random_height = array_rand($heights,1);
+
+				update_post_meta($player_post_id, 'sp_metrics', array(
+					'height' => $heights[$random_height]
+				));
+
+				update_post_meta($player_post_id, 'player_age', rand(25, 35));
 				// Assume $player_post_id is the ID of the player and $league_name is the name of the league
 				$league_term = get_term_by('name', 'Ipsum Premier League', 'sp_league');
 
@@ -3362,28 +3684,40 @@ class ThemeWhizzie
 
 		// Set match meta data
 		if (!is_wp_error($match_id)) {
-			// Set match date and time (replace with actual date and time)
-			update_post_meta($match_id, '_date', '2024-04-10');
-			update_post_meta($match_id, '_start_time', '10:00');
+			update_post_meta($match_id, 'sp_format', 'league');
+			update_post_meta($match_id, 'sp_mode', 'team');
 
-			// Set match venue (replace with actual venue)
-			update_post_meta($match_id, '_venue', 'Cricket Stadium');
+			$team_one = $team_ids[0];
+			$team_two = $team_ids[1];
 
-			// Set match status to scheduled
-			update_post_meta($match_id, '_status', 'scheduled');
+			add_post_meta($match_id, 'sp_team', $team_one);
+			add_post_meta($match_id, 'sp_team', $team_two);
 
-			// Set match type (replace with actual match type)
-			update_post_meta($match_id, '_event_type', 'T20');
+			foreach( $player_ids as $player_id ) {
+				add_post_meta($match_id, 'sp_player', $player_id);
+			}
 
-			// Set teams for the match (replace with actual team IDs)
-			update_post_meta($match_id, '_teams', array(123, 456));
+			foreach( $player_ids as $player_id ) {
+				add_post_meta($match_id, 'sp_player', $player_id);
+			}
 
-			// Set match result (replace with actual result if available)
-			update_post_meta($match_id, '_result', 'Match in progress');
-
-			// Set match scores (if available)
-			update_post_meta($match_id, '_score_home', 200);
-			update_post_meta($match_id, '_score_away', 180);
+			$sp_results = array(
+				$team_one => array(
+					"runs" => 165,
+					"wickets-lost" => 2,
+					"overs" => 20,
+					"bp" => 0,
+					"outcome" => array("loss")
+				),
+				$team_two => array(
+					"runs" => 166,
+					"wickets-lost" => 1,
+					"overs" => 18,
+					"bp" => 2,
+					"outcome" => array("win")
+				)
+			);
+			update_post_meta($match_id, 'sp_results', $sp_results);
 		}
 
 

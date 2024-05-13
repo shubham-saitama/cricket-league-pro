@@ -701,6 +701,7 @@ span.feedback i.yith-wcwl-icon {
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
 }
 
 .yith-wcwl-wishlistaddedbrowse a {
@@ -1625,3 +1626,7 @@ section#leagueTable .button-holder {
   }
 }
 
+
+.summary.entry-summary .yith-wcwl-wishlistaddedbrowse {
+  position: unset;
+}

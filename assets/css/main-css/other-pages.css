@@ -182,9 +182,7 @@ p.stars {
 
 
 @media(max-width:520px) {
-  .container.single-post {
-    margin-top: 0px !important;
-  }
+ 
 
   /* .comment-meta.commentmetadata+p {
     max-width: 100%;
@@ -1350,9 +1348,6 @@ a.button.yith-wcqv-button {
   margin: 0px 25px 0 15px;
 }
 
-.woocommerce .yith-wcwl-add-button {
-  position: relative;
-}
 
 .shop.shop-product a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart,
 .shop.shop-product .star-rating {
@@ -1685,10 +1680,10 @@ div#service_single p span {
 }
 
 .entry-author a {
-  font: normal normal bold 23px/97px Inter Tight;
   letter-spacing: 0px;
   margin-left: 30px;
   color: #000;
+  font: normal normal 600 24px / 26px Inter Tight;
 }
 
 
@@ -1754,11 +1749,13 @@ li.list-item {
 }
 
 .single-post h2 {
-  font: normal normal bold 38px/60px Inter Tight;
   letter-spacing: 0px;
   color: #000000;
+  font: normal normal bold 36px / 40px Inter Tight;
 }
-
+h6 {
+  font: normal normal 600 22px / 26px Inter Tight;
+}
 .blog-que {
   font: normal normal 600 30px/50px Open Sans;
   letter-spacing: 0px;
@@ -1776,14 +1773,7 @@ li.list-item {
   justify-content: space-between;
 }
 
-.container.single-post {
-  padding: 30px;
-  background: var(--secondary-color);
-  margin-top: -100px;
-  position: relative;
-  z-index: 1;
-  padding: 30px;
-}
+
 
 .single-post-comment {
   border-top: 1px solid #878787;
@@ -1795,12 +1785,14 @@ ul.d-flex.text-lg-start {
   align-items: center;
 }
 
-.entry-date,
-.entry-comments,
-.entry-comments a {
-  font: normal normal normal 23px Inter Tight;
-  color: #000;
+.entry-date, .entry-comments, .entry-comments a, li.categories a, li.categories  {
+    font: 18px / 28px Inter Tight;
+    letter-spacing: 0px;
+    color: #FF6F00;
+    opacity: 1;
+    font-weight: 500;
 }
+
 
 .entry-comments {
   margin-left: 20px;
@@ -1870,13 +1862,6 @@ p.logged-in-as {
 p.comment-notes {
   display: none;
 }
-
-li.entry-date,
-li.entry-comments {
-  opacity: 0.5;
-  font-weight: 500;
-}
-
 @media(max-width:991px) {
   ul.d-flex.text-lg-start {
     gap: 0px;
@@ -3046,11 +3031,14 @@ ul.half-width li {
 }
 
 .widget_custom_categories_widget,
-.widget_recent_entries {
+.widget_recent_entries{
   box-shadow: 0px 3px 10px #00000029;
   padding: 18px;
-  margin: 20px 0px;
+  margin-bottom: 20px;
   border-radius: 6px;
+}
+.tagcloud {
+  margin-bottom: 20px;
 }
 
 @media(max-width:991px) {
@@ -3115,11 +3103,11 @@ li.category-list {
   padding: 15px;
 }
 
-#maincontent a.add_to_wishlist.single_add_to_wishlist {
+/* #maincontent a.add_to_wishlist.single_add_to_wishlist {
   position: absolute;
   left: 0px;
   top: 0px;
-}
+} */
 
 main#maincontent a.button {
   font: normal normal normal 14px / 17px Inter Tight;
@@ -3888,7 +3876,6 @@ div#tab-description {
 .rating span,
 .rating-points .woocommerce-review-link,
 .total_sale span {
-  font: 500 16px / 22px Inter Tight !important;
   color: #000;
 }
 
@@ -3967,6 +3954,7 @@ div#reviews {
   display: flex;
   justify-content: space-between;
   gap: 50px;
+  align-items: flex-start;
 }
 
 div#review_form_wrapper {
@@ -4150,9 +4138,9 @@ button#buy_now_button::after {
   width: 100px;
   text-align: center;
 }
-.shop .yith-wcwl-add-button {
+/* .shop .yith-wcwl-add-button {
   display: none;
-}
+} */
 .shop .single-pro-btn .yith-wcwl-add-button {
   display: block;
 }
@@ -4291,4 +4279,119 @@ h2.desc-head::after {
 }
 h2.desc-head.pb-lg-2 {
   position: relative;
+}
+.woocommerce-wishlist .woocommerce table.shop_table td{
+  border: none !important;
+}
+.woocommerce-wishlist .woocommerce table.shop_table{
+ border: none !important;
+}
+section#related a.add_to_wishlist.single_add_to_wishlist {
+  position: absolute;
+  left: 35px;
+  top: 15px;
+}
+.rating.align-self-center.pe-2 {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+
+/* blog page  */
+.blog-single {
+  background: #fff;
+}
+
+
+.book-from-wrapper {
+  max-width: 1066px;
+  margin: 0px auto;
+  /* text-align: center; */
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 20px;
+  padding: 0px;
+  overflow: hidden;
+}
+.book-from-wrapper {
+  max-width: 1066px;
+  margin: 0px auto;
+  /* text-align: center; */
+}
+.book-headin-wrapper {
+  text-align: center;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.from-inner-wrap {
+  padding: 60px 120px;
+}
+
+.book-headin-wrapper h2 {
+  padding: 30px 0px;
+}
+
+form.wpcf7-form{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+.input-wrapper.email {
+  width: 100%;
+}
+.input-wrapper.half {
+  width: 48%;
+}
+.book-from-wrapper h6 {
+  width: 100%;
+  font: normal normal 600 18px / 24px Inter Tight;
+}
+input.wpcf7-form-control.wpcf7-text {
+  border: 1px solid #707070;
+}
+
+select.wpcf7-form-control.wpcf7-select {
+  border: 1px solid #707070;
+  border-radius: 6px;
+  background: #fff;
+  padding: 10px 20px;
+  color: #000 !important;
+  width: 100%;
+}
+.input-wrapper {
+  width: 100%;
+}
+span.wpcf7-list-item-label {
+  font: normal normal 600 18px / 24px Inter Tight;
+  margin-left: 20px;
+  padding: 0px;
+}
+span.wpcf7-list-item.first.last {
+  margin: 0px;
+}
+.input-wrapper.quantity p {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+span[data-name="quantity"] {
+  width: 65px !important;
+  overflow: hidden;
+}
+input.wpcf7-form-control.wpcf7-number {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid;
+}
+.submit-wrapper input#submit {
+  font-size: 15px;
+  font-weight: 500;
+}
+.book-from-wrapper label {
+  font: normal normal 600 18px / 24px Inter Tight;
+  text-transform: capitalize;
 }

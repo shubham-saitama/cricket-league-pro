@@ -68,13 +68,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 */
 	do_action( 'woocommerce_after_shop_loop_item' );
 	?>
-	<?php /*if ( class_exists( 'YITH_WCWL' ) ) {  ?>
-			<div class="wishlist_text">
-				<?php echo do_shortcode(get_theme_mod('cricket-league-pro_recommended_add_to_wishlist', '[yith_wcwl_add_to_wishlist]')); ?>
-			</div>
-		<?php } else {
-			echo "Please install and activate YITH WooCommerce Wishlist to add product wishlist";
-		} */?>
 
 
 </li>

@@ -42,7 +42,7 @@
                                 </div>
                                 <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                 <?php
-                                echo get_star_rating();
+                                echo get_star_rating_custom();
                                 ?>
                                 <div class="price-wrapper">
                                     <p class="regular-price"><?php echo $current_currency;
