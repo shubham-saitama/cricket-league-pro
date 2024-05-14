@@ -16,14 +16,14 @@ get_template_part('template-parts/banner'); ?>
             // Custom WP Query to retrieve all events (matches) in SportPress plugin
             $args = array(
                 'post_type' => 'sp_event', // The custom post type for events in SportPress
-                'posts_per_page' => -1, // Retrieve all events, you can adjust this number as needed
+                'posts_per_page' => 9, // Retrieve all events, you can adjust this number as needed
                 'orderby' => 'date', // Order by date
                 'order' => 'DESC', // Descending order
             );
 
             // Perform the query
             $events_query = new WP_Query($args); ?>
-            <div class="matches-slider-wrapper">
+            <div class="matches-slider-wrapper row">
                 <?php
                 // Check if there are any events
                 if ($events_query->have_posts()) {
@@ -31,7 +31,7 @@ get_template_part('template-parts/banner'); ?>
                     while ($events_query->have_posts()) {
                         $events_query->the_post();
 
-                        echo "<div class='col-lg-2 col-md-2 col-12 mb-5'>";
+                        echo "<div class='col-lg-6 col-md-6 col-12 mb-5'>";
                         // Output event details
                         echo '<div class="slide-wrap">';
 
@@ -94,7 +94,7 @@ get_template_part('template-parts/banner'); ?>
                         echo "</div>";
                     }
                     // pagination query 
-                    custom_pagination($query);
+                    custom_pagination($events_query);
                     wp_reset_postdata();
                 } else {
                     // If no events found

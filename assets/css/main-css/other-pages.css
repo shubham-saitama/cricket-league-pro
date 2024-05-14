@@ -4395,3 +4395,9 @@ input.wpcf7-form-control.wpcf7-number {
   font: normal normal 600 18px / 24px Inter Tight;
   text-transform: capitalize;
 }
+
+.matches-slider-wrapper h3{
+  font: normal normal normal 40px / 42px Great Sejagad;
+  letter-spacing: 0px;
+  color: #FF6F00;
+}

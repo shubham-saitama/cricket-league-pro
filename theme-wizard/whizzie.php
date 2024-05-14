@@ -531,7 +531,7 @@ class ThemeWhizzie
 		</div>
 		<?php // The detail element is initially hidden from the user
 				$content['detail'] = '<span class="wizard-plugin-count">' . count($plugins['all']) . '</span><ul class="whizzie-do-plugins">';
-				$plugins['all'] = $this->moveArrayPosition($plugins['all'], 5, 7);
+				$plugins['all'] = $this->moveArrayPosition($plugins['all'], 5, 8);
 				// Add each plugin into a list
 				foreach ($plugins['all'] as $slug => $plugin) {
 					$content['detail'] .= '<li data-slug="' . esc_attr($slug) . '">' . esc_html($plugin['name']) . '<div class="wizard-plugin-title">';
@@ -744,7 +744,7 @@ class ThemeWhizzie
 				0,
 				array(
 					'menu-item-title' => __('Matches', 'cricket-league-pro'),
-					'menu-item-classes' => 'service',
+					'menu-item-classes' => 'matches',
 					'menu-item-url' => get_permalink(get_page_by_title('Matches')),
 					'menu-item-status' => 'publish',
 				)
@@ -1102,8 +1102,8 @@ class ThemeWhizzie
 			)
 		);
 
-		foreach ( $sp_outcomes_arr as $sp_outcome ) {
-			
+		foreach ($sp_outcomes_arr as $sp_outcome) {
+
 			$sp_outcome_args = array(
 				'post_type' => 'sp_outcome',
 				'post_title' => $sp_outcome['title'],
@@ -1112,16 +1112,16 @@ class ThemeWhizzie
 
 			$sp_outcome_id = wp_insert_post($sp_outcome_args);
 
-			update_post_meta( $sp_outcome_id, '_sp_preset', 1 );
-			update_post_meta( $sp_outcome_id, 'sp_condition', $sp_outcome['sp_condition'] );
-			update_post_meta( $sp_outcome_id, 'sp_abbreviation', $sp_outcome['sp_abbreviation'] );
+			update_post_meta($sp_outcome_id, '_sp_preset', 1);
+			update_post_meta($sp_outcome_id, 'sp_condition', $sp_outcome['sp_condition']);
+			update_post_meta($sp_outcome_id, 'sp_abbreviation', $sp_outcome['sp_abbreviation']);
 		}
 
 		$sp_results_arr = array(
 			array(
 				"title" => "Runs",
 				"excerpt" => "Runs",
-				"equation" => "$runs"
+				"equation" => "$runs",
 			),
 			array(
 				"title" => "Wickets Lost",
@@ -1140,8 +1140,8 @@ class ThemeWhizzie
 			)
 		);
 
-		foreach ( $sp_results_arr as $sp_result ) {
-			
+		foreach ($sp_results_arr as $sp_result) {
+
 			$sp_result_args = array(
 				'post_type' => 'sp_result',
 				'post_title' => $sp_result['title'],
@@ -1151,8 +1151,8 @@ class ThemeWhizzie
 
 			$sp_result_id = wp_insert_post($sp_result_args);
 
-			update_post_meta( $sp_result_id, '_sp_preset', 1 );
-			update_post_meta( $sp_result_id, 'sp_equation', $sp_result['equation'] );
+			update_post_meta($sp_result_id, '_sp_preset', 1);
+			update_post_meta($sp_result_id, 'sp_equation', $sp_result['equation']);
 		}
 
 		// sp_performance
@@ -1162,67 +1162,67 @@ class ThemeWhizzie
 				"title" => "&nbsp;",
 				"excerpt" => "Notes",
 				"post_name" => "notes",
-				"sp_format"	=> "text"
+				"sp_format" => "text"
 			),
 			array(
 				"title" => "R",
 				"excerpt" => "Runs",
 				"post_name" => "runs",
-				"sp_format"	=> "number"
+				"sp_format" => "number"
 			),
 			array(
 				"title" => "B",
 				"excerpt" => "Balls",
 				"post_name" => "b",
-				"sp_format"	=> "number",
+				"sp_format" => "number",
 				"sp_section" => 0
 			),
 			array(
 				"title" => "4s",
 				"excerpt" => "Fours",
 				"post_name" => "fours",
-				"sp_format"	=> "number",
+				"sp_format" => "number",
 				"sp_section" => 0
 			),
 			array(
 				"title" => "6s",
 				"excerpt" => "Sixes",
 				"post_name" => "sixs",
-				"sp_format"	=> "number",
+				"sp_format" => "number",
 				"sp_section" => 0
 			),
 			array(
 				"title" => "O",
 				"excerpt" => "Overs bowled",
 				"post_name" => "o",
-				"sp_format"	=> "number",
+				"sp_format" => "number",
 				"sp_section" => 1
 			),
 			array(
 				"title" => "M",
 				"excerpt" => "Maidens",
 				"post_name" => "m",
-				"sp_format"	=> "number",
+				"sp_format" => "number",
 				"sp_section" => 1
 			),
 			array(
 				"title" => "R",
 				"excerpt" => "Runs",
 				"post_name" => "r",
-				"sp_format"	=> "number",
+				"sp_format" => "number",
 				"sp_section" => 1
 			),
 			array(
 				"title" => "W",
 				"excerpt" => "Wickets taken",
 				"post_name" => "w",
-				"sp_format"	=> "number",
+				"sp_format" => "number",
 				"sp_section" => 1
 			)
 		);
 
-		foreach ( $sp_performances_arr as $sp_performance ) {
-			
+		foreach ($sp_performances_arr as $sp_performance) {
+
 			$sp_performance_args = array(
 				'post_type' => 'sp_performance',
 				'post_title' => $sp_performance['title'],
@@ -1233,9 +1233,9 @@ class ThemeWhizzie
 
 			$sp_performance_id = wp_insert_post($sp_performance_args);
 
-			update_post_meta( $sp_performance_id, '_sp_preset', 1 );
-			update_post_meta( $sp_performance_id, 'sp_section', $sp_performance['sp_section'] );
-			update_post_meta( $sp_performance_id, 'sp_format', $sp_performance['sp_format'] );
+			update_post_meta($sp_performance_id, '_sp_preset', 1);
+			update_post_meta($sp_performance_id, 'sp_section', $sp_performance['sp_section']);
+			update_post_meta($sp_performance_id, 'sp_format', $sp_performance['sp_format']);
 		}
 
 		// sp_column
@@ -1244,79 +1244,79 @@ class ThemeWhizzie
 			array(
 				"title" => "P",
 				"excerpt" => "Matches played",
-				"sp_equation"	=> "$eventsplayed",
-				"sp_order"	=> "DESC",
+				"sp_equation" => "$eventsplayed",
+				"sp_order" => "DESC",
 				"sp_precision" => 0,
 				"sp_priority" => ''
 			),
 			array(
 				"title" => "W",
 				"excerpt" => "Wins",
-				"sp_equation"	=> "$win",
-				"sp_order"	=> "DESC",
+				"sp_equation" => "$win",
+				"sp_order" => "DESC",
 				"sp_precision" => 0,
 				"sp_priority" => 2
 			),
 			array(
 				"title" => "L",
 				"excerpt" => "Losses",
-				"sp_equation"	=> "$loss",
-				"sp_order"	=> "DESC",
+				"sp_equation" => "$loss",
+				"sp_order" => "DESC",
 				"sp_precision" => 0,
 				"sp_priority" => ''
 			),
 			array(
 				"title" => "D",
 				"excerpt" => "Draws",
-				"sp_equation"	=> "$draw",
-				"sp_order"	=> "DESC",
+				"sp_equation" => "$draw",
+				"sp_order" => "DESC",
 				"sp_precision" => 0,
 				"sp_priority" => ''
 			),
 			array(
 				"title" => "T",
 				"excerpt" => "Ties",
-				"sp_equation"	=> "$tie",
-				"sp_order"	=> "DESC",
+				"sp_equation" => "$tie",
+				"sp_order" => "DESC",
 				"sp_precision" => 0,
 				"sp_priority" => ''
 			),
 			array(
 				"title" => "NR",
 				"excerpt" => "No results",
-				"sp_equation"	=> "$noresult",
-				"sp_order"	=> "DESC",
+				"sp_equation" => "$noresult",
+				"sp_order" => "DESC",
 				"sp_precision" => 0,
 				"sp_priority" => ''
 			),
 			array(
 				"title" => "BP",
 				"excerpt" => "Bonus points",
-				"sp_equation"	=> "$bpfor",
-				"sp_order"	=> "DESC",
+				"sp_equation" => "$bpfor",
+				"sp_order" => "DESC",
 				"sp_precision" => 0,
 				"sp_priority" => ''
 			),
 			array(
 				"title" => "Points",
 				"excerpt" => "Total points",
-				"sp_equation"	=> "$win * 2 + $draw",
-				"sp_order"	=> "DESC",
+				"sp_equation" => "$win * 2 + $draw",
+				"sp_order" => "DESC",
 				"sp_precision" => 0,
 				"sp_priority" => 1
 			),
 			array(
 				"title" => "NRR",
 				"excerpt" => "Net run rate",
-				"sp_equation"	=> "( $runsfor / $oversfor ) - ( $runsagainst / $oversagainst )",
-				"sp_order"	=> "DESC",
+				"sp_equation" => "( $runsfor / $oversfor ) - ( $runsagainst / $oversagainst )",
+				"sp_order" => "DESC",
 				"sp_precision" => 3,
 				"sp_priority" => 3
 			)
 		);
 
-		foreach ( $sp_columns_arr as $sp_column ) {
-			
+		foreach ($sp_columns_arr as $sp_column) {
+
 			$sp_column_args = array(
 				'post_type' => 'sp_column',
 				'post_title' => $sp_column['title'],
@@ -1326,32 +1326,32 @@ class ThemeWhizzie
 
 			$sp_column_id = wp_insert_post($sp_column_args);
 
-			update_post_meta( $sp_column_id, '_sp_preset', 1 );
-			update_post_meta( $sp_column_id, 'sp_equation', $sp_column['sp_equation'] );
-			update_post_meta( $sp_column_id, 'sp_order', $sp_column['sp_order'] );
-			update_post_meta( $sp_column_id, 'sp_precision', $sp_column['sp_precision'] );
-			update_post_meta( $sp_column_id, 'sp_priority', $sp_column['sp_priority'] );
+			update_post_meta($sp_column_id, '_sp_preset', 1);
+			update_post_meta($sp_column_id, 'sp_equation', $sp_column['sp_equation']);
+			update_post_meta($sp_column_id, 'sp_order', $sp_column['sp_order']);
+			update_post_meta($sp_column_id, 'sp_precision', $sp_column['sp_precision']);
+			update_post_meta($sp_column_id, 'sp_priority', $sp_column['sp_priority']);
 		}
 
 		$sp_statistics_arr = array(
 			array(
 				"title" => "Mat",
 				"excerpt" => "Matches played",
-				"sp_equation"	=> "$eventsplayed",
+				"sp_equation" => "$eventsplayed",
 				"sp_precision" => 0,
 				"sp_type" => "total"
 			),
 			array(
 				"title" => "SR",
 				"excerpt" => "Strike Rate",
-				"sp_equation"	=> "( $runs / $b ) * 100",
+				"sp_equation" => "( $runs / $b ) * 100",
 				"sp_precision" => 2,
 				"sp_type" => "average"
 			)
 		);
 
-		foreach ( $sp_statistics_arr as $sp_statistic ) {
-			
+		foreach ($sp_statistics_arr as $sp_statistic) {
+
 			$sp_statistic_args = array(
 				'post_type' => 'sp_statistic',
 				'post_title' => $sp_statistic['title'],
@@ -1361,9 +1361,9 @@ class ThemeWhizzie
 
 			$sp_statistic_id = wp_insert_post($sp_statistic_args);
 
-			update_post_meta( $sp_column_id, '_sp_preset', 1 );
-			update_post_meta( $sp_column_id, 'sp_equation', $sp_column['sp_equation'] );
-			update_post_meta( $sp_column_id, 'sp_type', $sp_column['sp_type'] );
+			update_post_meta($sp_column_id, '_sp_preset', 1);
+			update_post_meta($sp_column_id, 'sp_equation', $sp_column['sp_equation']);
+			update_post_meta($sp_column_id, 'sp_type', $sp_column['sp_type']);
 		}
 
 		ini_set('upload_max_filesize', '300M');
@@ -1452,7 +1452,7 @@ class ThemeWhizzie
 
 
 		$match_title = 'Matches';
-		$match_check = get_page_by_title($match_title);
+		// $match_check = get_page_by_title($match_title);
 		$match = array(
 			'post_type' => 'page',
 			'post_title' => $match_title,
@@ -1529,7 +1529,7 @@ class ThemeWhizzie
 		//Set the blog page template
 		add_post_meta($booking_id, '_wp_page_template', 'page-template/page-bookNow.php');
 		add_post_meta($booking_id, 'vw_title_banner_image_wp_custom_attachment', $attachment_url);
-	
+
 		// Create a Pages
 		if (get_page_by_title('Page') == NULL) {
 			$page_title = 'Page ';
@@ -2039,8 +2039,8 @@ class ThemeWhizzie
 				'regular_price' => '45',
 				'sale_price' => '40',
 				'categories' => array('Accessories', 'Apparel'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product01.png' ,     // Image URL for Product 2
-				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 1
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product01.png',     // Image URL for Product 2
+				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 1
 			),
 			array(
 				'title' => 'Stumps',
@@ -2055,7 +2055,7 @@ class ThemeWhizzie
 				'sale_price' => '45',
 				'categories' => array('Balls', 'Footwear'),
 				'image_url' => get_template_directory_uri() . '/assets/images/product/product02.png',     // Image URL for Product 2
-				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
+				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
 			),
 			array(
 				'title' => 'Bat',
@@ -2069,8 +2069,8 @@ class ThemeWhizzie
 				'regular_price' => '50',
 				'sale_price' => '45',
 				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product03.png' ,     // Image URL for Product 2
-				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 2
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product03.png',     // Image URL for Product 2
+				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 2
 			),
 			array(
 				'title' => 'Helmet',
@@ -2085,7 +2085,7 @@ class ThemeWhizzie
 				'sale_price' => '450',
 				'categories' => array('Balls', 'Footwear'),
 				'image_url' => get_template_directory_uri() . '/assets/images/product/product04.png',     // Image URL for Product 2
-				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
+				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
 			),
 			array(
 				'title' => 'Bat and Ball Combo Pack',
@@ -2100,7 +2100,7 @@ class ThemeWhizzie
 				'sale_price' => '1000',
 				'categories' => array('Balls', 'Footwear'),
 				'image_url' => get_template_directory_uri() . '/assets/images/product/product05.png',     // Image URL for Product 2
-				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 2
+				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 2
 			),
 			array(
 				'title' => 'Balls And Bells Combo Pack',
@@ -2115,7 +2115,7 @@ class ThemeWhizzie
 				'sale_price' => '300',
 				'categories' => array('Balls', 'Footwear'),
 				'image_url' => get_template_directory_uri() . '/assets/images/product/product06.png',     // Image URL for Product 2
-				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
+				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
 			),
 			array(
 				'title' => 'Gloves',
@@ -2130,7 +2130,7 @@ class ThemeWhizzie
 				'sale_price' => '125',
 				'categories' => array('Balls', 'Footwear'),
 				'image_url' => get_template_directory_uri() . '/assets/images/product/product07.png',     // Image URL for Product 2
-				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',    // Image URL for Product 2
+				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',    // Image URL for Product 2
 			),
 			array(
 				'title' => 'Helmet Green',
@@ -2145,7 +2145,7 @@ class ThemeWhizzie
 				'sale_price' => '500',
 				'categories' => array('Balls', 'Footwear'),
 				'image_url' => get_template_directory_uri() . '/assets/images/product/product08.png',     // Image URL for Product 2
-				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
+				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
 			),
 			array(
 				'title' => 'Bells',
@@ -2160,7 +2160,7 @@ class ThemeWhizzie
 				'sale_price' => '100',
 				'categories' => array('Balls', 'Footwear'),
 				'image_url' => get_template_directory_uri() . '/assets/images/product/product09.png',     // Image URL for Product 2
-				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 2
+				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 2
 			),
 			array(
 				'title' => 'Batting Pads',
@@ -2175,7 +2175,7 @@ class ThemeWhizzie
 				'sale_price' => '40',
 				'categories' => array('Accessories', 'Apparel'),
 				'image_url' => get_template_directory_uri() . '/assets/images/product/product01.png',     // Image URL for Product 2
-				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 1
+				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 1
 			),
 			array(
 				'title' => 'Stumps',
@@ -2191,7 +2191,7 @@ class ThemeWhizzie
 				'sale_price' => '45',
 				'categories' => array('Balls', 'Footwear'),
 				'image_url' => get_template_directory_uri() . '/assets/images/product/product02.png',     // Image URL for Product 2
-				'post_excerpt'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',
+				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',
 			),
 			array(
 				'title' => 'Bat',
@@ -2211,6 +2211,8 @@ class ThemeWhizzie
 
 		);
 
+		$_product_image_gallery = array();
+		$_product_ids = array();
 		// Loop through the product data array
 		foreach ($product_data as $data) {
 			// Create the product
@@ -2262,7 +2264,36 @@ class ThemeWhizzie
 			update_post_meta($product_id, 'shipping-img2', get_template_directory_uri() . '/assets/images/product/img2.png');
 			update_post_meta($product_id, 'shipping-img3', get_template_directory_uri() . '/assets/images/product/img3.png');
 			update_post_meta($product_id, 'shipping-img4', get_template_directory_uri() . '/assets/images/product/img4.png');
+			// reviews in products 
+			$author_name = array('Almas Curtis', 'John Cena', 'The Rock');
+			$review_text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.';
+			for ($c = 0; $c <= 2; $c++) {
+				$comment_id = wp_insert_comment(
+					array(
+						'comment_post_ID' => $post_id,
+						'comment_author' => get_the_author_meta($author_name[$c - 1]),
+						'comment_author_email' => get_the_author_meta('user_email'),
+						'comment_content' => $review_text,
+						'comment_parent' => 0,
+						'user_id' => get_current_user_id(), // <== Important
+						'comment_date' => date('Y-m-d H:i:s'),
+						'comment_approved' => 1,
+					)
+				);
+				update_comment_meta($comment_id, 'rating', 4);
+			}
+			// Add Gallery in first simple product and second variable product START
+			$_product_image_gallery = implode(',', $_product_image_gallery);
+			foreach ($_product_ids as $_product_id) {
+				update_post_meta($_product_id, '_product_image_gallery', $_product_image_gallery);
+			}
 
+			update_post_meta($post_id, 'product-rating', '5');
+			array_push($_product_ids, $post_id);
+			update_post_meta($post_id, '_stock', '10');
+			update_post_meta($post_id, '_price', '199.00');
+			update_post_meta($post_id, '_regular_price', '199.00');
+			update_post_meta($post_id, '_sale_price', '69.00');
 			// Enable the product for sale
 			update_post_meta($product_id, '_manage_stock', 'yes');
 
@@ -3197,22 +3228,50 @@ class ThemeWhizzie
 		// Set Form Background Image URL
 		set_theme_mod('cricket_league_pro_getaquote_from_bgImage', get_template_directory_uri() . '/assets/new-images/GetInTouch/bg.png');
 
-		$cf7title = "Get A Quote";
+		$cf7title = "Booking Form";
 		$cf7content = '
-		<div class="row">
-		<div class="input-wrap col-lg-6 col-md-12 col-12">[text* clientname class:name Placeholder "Name"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[tel* phone class:phone Placeholder "Phone"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[text* city class:cityOne Placeholder "City Departure"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[text* DeliveryCity class:cityTwo Placeholder "City Delivery"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[select* Categories class:categories "Categories" "Air Fright" "Sea Fright" "Road Fright" "Rail Fright"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[text* Dimentions class:dimentions Placeholder "Dimentions (__X__ m)"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[email* Email class:emailid Placeholder "Email"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[text* Incoterms class:iIncoterms Placeholder "Incoterms"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[number* GrossWeight min:0 max:9999 class:grossWeight Placeholder "Total Gross Weight (kgs)"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[textarea* Message class:message Placeholder "Message"]</div>
-		</div>
-		[submit id:submit-button class:submit "Submit"]
-		</div>
+						
+				<div class="input-wrapper half">
+				<label for="FirsName">First Name</label>
+				[text* FirstName class:input-wrapper]
+				</div>
+
+				<div class="input-wrapper half">
+				<label for="LastName">Last Name</label>
+				[text* LastName class:input-wrapper]
+				</div>
+
+				<div class="input-wrapper email">
+				<label for="E-mail">E-Mail</label>
+				[email* E-mail class:form-input]
+				</div>
+
+				<div class="input-wrapper">
+				<label>How do you want to get your tickets?</label>
+				[select* dropdown include_blank "I will pick them up at anytown stadium." "I will pick them up when i arrive at event place." "Please mail them to my mail address."]
+				</div>
+				<h6>My Products</h6>
+
+				<div class="input-wrapper">
+				[checkbox* adult use_label_element "Adult Tickets"]
+				</div>
+
+				<div class="input-wrapper quantity">
+				[number quantity min:1]
+
+				</div>
+
+				<div class="input-wrapper">
+				[checkbox* students use_label_element "Students Tickets"]
+				</div>
+				<div class="input-wrapper quantity">
+				[number quantity min:1]
+
+				</div>
+
+				<div class="submit-wrapper">
+				[submit id:Submit-btn "Submit Now"]
+				</div>
 		--
 		This e-mail was sent from a contact form on [_site_title] ([_site_url])
 		[_site_admin_email]
@@ -3258,19 +3317,49 @@ class ThemeWhizzie
 		// Insert the post into the database
 		$cf7post_id = wp_insert_post($cf7_post);
 
-		add_post_meta($cf7post_id, "_form", '<div class="row">
-		<div class="input-wrap col-lg-6 col-md-12 col-12">[text* clientname class:name Placeholder "Name"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[tel* phone class:phone Placeholder "Phone"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[text* city class:cityOne Placeholder "City Departure"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[text* DeliveryCity class:cityTwo Placeholder "City Delivery"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[select* Categories class:categories "Categories" "Air Fright" "Sea Fright" "Road Fright" "Rail Fright"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[text* Dimentions class:dimentions Placeholder "Dimentions (__X__ m)"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[email* Email class:emailid Placeholder "Email"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[text* Incoterms class:iIncoterms Placeholder "Incoterms"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[number* GrossWeight min:0 max:9999 class:grossWeight Placeholder "Total Gross Weight (kgs)"]</div>
-				<div class="input-wrap col-lg-6 col-md-12 col-12">[textarea* Message class:message Placeholder "Message"]</div>
-		</div>
-		[submit id:submit-button class:submit "Submit"]');
+		add_post_meta($cf7post_id, "_form", '
+			<div class="input-wrapper half">
+			<label for="FirsName">First Name</label>
+			[text* FirstName class:input-wrapper]
+			</div>
+
+			<div class="input-wrapper half">
+			<label for="LastName">Last Name</label>
+			[text* LastName class:input-wrapper]
+			</div>
+
+			<div class="input-wrapper email">
+			<label for="E-mail">E-Mail</label>
+			[email* E-mail class:form-input]
+			</div>
+
+			<div class="input-wrapper">
+			<label>How do you want to get your tickets?</label>
+			[select* dropdown include_blank "I will pick them up at anytown stadium." "I will pick them up when i arrive at event place." "Please mail them to my mail address."]
+			</div>
+			<h6>My Products</h6>
+
+			<div class="input-wrapper">
+			[checkbox* adult use_label_element "Adult Tickets"]
+			</div>
+
+			<div class="input-wrapper quantity">
+			[number quantity min:1]
+
+			</div>
+
+			<div class="input-wrapper">
+			[checkbox* students use_label_element "Students Tickets"]
+			</div>
+			<div class="input-wrapper quantity">
+			[number quantity min:1]
+
+			</div>
+
+			<div class="submit-wrapper">
+			[submit id:Submit-btn "Submit Now"]
+			</div>
+		');
 
 		$cf7mail_data = array(
 			'subject' => '[_site_title] "[your-subject]"',
@@ -3299,7 +3388,7 @@ class ThemeWhizzie
 		$cf7shortcode = '[contact-form-7 id="' . $cf7post_id . '" title="' . $cf7title . '"]';
 
 		// Set Get A Quote Form Shortcode
-		set_theme_mod('cricket_league_pro_getaquote_from_shortcode', $cf7shortcode);
+		set_theme_mod('cricket_league_pro_book_now_from_shortcode', $cf7shortcode);
 
 
 
@@ -3546,7 +3635,7 @@ class ThemeWhizzie
 		$sp_metrics_id = wp_insert_post($sp_metrics_data);
 		update_post_meta($sp_metrics_id, 'sp_visible', 1);
 
-		$heights = array("5ft 11in","5ft 9in","5ft 4in","5ft 5in","6ft");
+		$heights = array("5ft 11in", "5ft 9in", "5ft 4in", "5ft 5in", "6ft");
 		$i = 1;
 
 		$player_ids = array();
@@ -3573,12 +3662,16 @@ class ThemeWhizzie
 				update_post_meta($player_post_id, 'sp_nationality', 'India');
 				wp_set_object_terms($player_post_id, $player_data['position'], 'sp_position');
 				update_post_meta($player_post_id, 'sp_current_team', $team_post->ID);
-				
-				$random_height = array_rand($heights,1);
 
-				update_post_meta($player_post_id, 'sp_metrics', array(
-					'height' => $heights[$random_height]
-				));
+				$random_height = array_rand($heights, 1);
+
+				update_post_meta(
+					$player_post_id,
+					'sp_metrics',
+					array(
+						'height' => $heights[$random_height]
+					)
+				);
 
 				update_post_meta($player_post_id, 'player_age', rand(25, 35));
 				// Assume $player_post_id is the ID of the player and $league_name is the name of the league
@@ -3677,6 +3770,7 @@ class ThemeWhizzie
 			'post_title' => 'Cricket Match', // Replace with match title
 			'post_type' => 'sp_event', // SportsPress event post type
 			'post_status' => 'publish', // Publish the event immediately
+			'post_content' => '20 overs match',
 		);
 
 		// Insert the match as a post of type 'sp_event'
@@ -3693,11 +3787,18 @@ class ThemeWhizzie
 			add_post_meta($match_id, 'sp_team', $team_one);
 			add_post_meta($match_id, 'sp_team', $team_two);
 
-			foreach( $player_ids as $player_id ) {
+			$league_term = get_term_by('name', 'Ipsum Premier League', 'sp_league');
+
+			if ($league_term) {
+				$league_id = $league_term->term_id;
+				update_post_meta($match_id, 'sp_league', $league_id);
+				wp_set_object_terms($match_id, $league_id, 'sp_league');
+			}
+			foreach ($player_ids as $player_id) {
 				add_post_meta($match_id, 'sp_player', $player_id);
 			}
 
-			foreach( $player_ids as $player_id ) {
+			foreach ($player_ids as $player_id) {
 				add_post_meta($match_id, 'sp_player', $player_id);
 			}
 
@@ -3721,6 +3822,58 @@ class ThemeWhizzie
 		}
 
 
+		// Define match data for second match
+		$match_data_2 = array(
+			'post_title' => 'Cricket Match 2',
+			'post_type' => 'sp_event',
+			'post_status' => 'publish',
+			'post_content' => '20 overs match',
+		);
+
+		// Insert the second match as a post of type 'sp_event'
+		$match_id_2 = wp_insert_post($match_data_2);
+
+		// Set match meta data for second match
+		if (!is_wp_error($match_id_2)) {
+			update_post_meta($match_id_2, 'sp_format', 'league');
+			update_post_meta($match_id_2, 'sp_mode', 'team');
+
+			$team_one_2 = $team_ids[2]; // Replace with appropriate team IDs
+			$team_two_2 = $team_ids[3];
+
+			add_post_meta($match_id_2, 'sp_team', $team_one_2);
+			add_post_meta($match_id_2, 'sp_team', $team_two_2);
+
+			$league_term = get_term_by('name', 'Ipsum Premier League', 'sp_league');
+
+			if ($league_term) {
+				$league_id = $league_term->term_id;
+				update_post_meta($match_id, 'sp_league', $league_id);
+				wp_set_object_terms($match_id, $league_id, 'sp_league');
+			}
+
+			foreach ($player_ids as $player_id) {
+				add_post_meta($match_id_2, 'sp_player', $player_id);
+			}
+
+			$random_score_2 = array(
+				$team_one_2 => array(
+					"runs" => rand(100, 250), // Randomize score
+					"wickets-lost" => rand(0, 10),
+					"overs" => 20,
+					"bp" => rand(0, 20),
+					"outcome" => array("loss")
+				),
+				$team_two_2 => array(
+					"runs" => rand(100, 250), // Randomize score
+					"wickets-lost" => rand(0, 10),
+					"overs" => 20,
+					"bp" => rand(0, 20),
+					"outcome" => array("win")
+				)
+			);
+			update_post_meta($match_id_2, 'sp_results', $random_score_2);
+		}
 		// sportspress work
 
 		// Support page 
@@ -4034,7 +4187,7 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_news_readmore', 'Learn More');
 
 		// To create categories for posts programmatically in WordPress, you can use the wp_insert_category() function. Here's how you can create categories based on the provided array of category names:
-// Array of category names to add
+		// Array of category names to add
 		$categories_to_add = array("Bating", "Training", "Infomative", "general", "Infomative", "Training", "Bowling");
 
 		// Iterate through the array of category names
@@ -4247,9 +4400,9 @@ class ThemeWhizzie
 		$cf7content = '
 		<div class="footer-form-wrapper">
 				[email* email-577 placeholder "Enter Email"]
-[submit "Subscribe Now"]
+				[submit "Subscribe Now"]
 			</div>
-	</div>
+		</div>
 
 			From: [your-name] <[your-email]>
 			Subject: New Newsletter Subscriber!
@@ -4366,18 +4519,6 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_404_page_content', 'It looks like nothing was found at this location. Click the button below to return home.');
 		set_theme_mod('cricket_league_pro_404_page_button_text', 'Back to Home Page');
 		set_theme_mod('cricket_league_pro_inner_page_banner_bgimage', get_template_directory_uri() . '/assets/images/Banner-Image.png');
-		// //about us page
-		// set_theme_mod( 'cricket_league_pro_about_page_sec_image',get_template_directory_uri().'/assets/images/about-page/about-page.png' );
-		// set_theme_mod('cricket_league_pro_about_page_heading','Lorem Ipsum Is Simple Dummy Text of The Printing and Typesetting Industry.');
-		// set_theme_mod('cricket_league_pro_about_page_para',"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
-
-
-		// set_theme_mod( 'cricket_league_pro_about_page_img_second',get_template_directory_uri().'/assets/images/about-page/about-page-two.png' );
-		// set_theme_mod('cricket_league_pro_about_video_url', 'https://www.youtube.com/embed/D0UnqGm_miA');
-		// set_theme_mod( 'cricket_league_pro_about_video_icon', 'fas fa-play' );
-		// set_theme_mod('cricket_league_pro_about_sec_two_heading','Lorem Ipsum Is Simple Dummy Text of The Printing and Typesetting Industry.');
-		// set_theme_mod('cricket_league_pro_about_sec_two_para',"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
-
 
 		$this->theme_create_customizer_nav_menu();
 		$this->theme_create_customizer_footer_services_menu();
@@ -4883,13 +5024,13 @@ class ThemeWhizzie
 						for (var i = 0; i < premium_data.length; i++) {
 							var premium_product = premium_data[i];
 							var card_content = `<div class="o-products-col" data-id="` + premium_product.id + `">
-																																																																																																	  <div class="o-products-image">
-																																																																																																		  <img src="`+ premium_product.image + `">
-																																																																																																	  </div>
-																																																																																																	  <h3>`+ premium_product.title + `</h3>
-																																																																																																	  <a href="`+ premium_product.permalink + `" target="_blank">Buy Now</a>
-																																																																																																	  <a href="`+ premium_product.demo_url + `" target="_blank">View Demo</a>
-																																																																																																  </div>`;
+										<div class="o-products-image">
+											<img src="`+ premium_product.image + `">
+										</div>
+										<h3>`+ premium_product.title + `</h3>
+										<a href="`+ premium_product.permalink + `" target="_blank">Buy Now</a>
+										<a href="`+ premium_product.demo_url + `" target="_blank">View Demo</a>
+										</div>`;
 							jQuery('.wz-spinner-wrap').css('display', 'none');
 							jQuery('#other-products .o-product-row').append(card_content);
 						}
@@ -4905,8 +5046,8 @@ class ThemeWhizzie
 							}
 							let premium_product = premium_category[i];
 							let card_content = `<li data-ids="` + premium_product.product_ids + `" onclick="other_products(this);" class="` + active_class + `">
-																																																																																																	  `+ premium_product.name + `<span class="badge badge-info">` + premium_product.product_ids.length + `</span>
-																																																																																																  </li>`;
+																																																																																																							  `+ premium_product.name + `<span class="badge badge-info">` + premium_product.product_ids.length + `</span>
+																																																																																																						  </li>`;
 							jQuery('.o-product-col-1 ul').append(card_content);
 						}
 					});

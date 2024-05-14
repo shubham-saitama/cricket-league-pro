@@ -1345,7 +1345,7 @@ input.ewd-otp-text-input {
 #header .current-menu-item a,
 .current-menu-ancestor>a {
   color: #000 !important;
-  font: normal normal 600 18px / 21px Inter Tight;
+  font: normal normal 600 16px / 21px Inter Tight;
 }
 
 .header-slider:has(+ #slider)+#slider .carousel,
