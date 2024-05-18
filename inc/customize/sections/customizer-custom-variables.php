@@ -136,44 +136,6 @@ $wp_customize->add_control(
 );
 
 
-$wp_customize->add_setting(
-  'cricket_league_pro_genral_heading_decoration_section',
-  array(
-    'default' => 0,
-    'transport' => 'refresh',
-    'sanitize_callback' => 'cricket_league_pro_switch_sanitization'
-  )
-);
-$wp_customize->add_control(
-  new cricket_league_pro_Toggle_Switch_Custom_control(
-    $wp_customize,
-    'cricket_league_pro_genral_heading_decoration_section',
-    array(
-      'label' => esc_html__('Heading Decoration Disable', 'cricket-league-pro'),
-      'section' => 'cricket_league_pro_color_pallette'
-    )
-  )
-);
-$wp_customize->add_setting(
-  'cricket_league_pro_image_below_heading',
-  array(
-    'default' => '',
-    'sanitize_callback' => 'esc_url_raw',
-  )
-);
-$wp_customize->add_control(
-  new WP_Customize_Image_Control(
-    $wp_customize,
-    'cricket_league_pro_image_below_heading',
-    array(
-      'label' => __('Heading Decoration Image', 'cricket-league-pro'),
-      'section' => 'cricket_league_pro_color_pallette',
-      'settings' => 'cricket_league_pro_image_below_heading'
-    )
-  )
-);
-
-
 
 
 //This is Button Text FontFamily picker setting
@@ -211,6 +173,7 @@ $wp_customize->add_control(
     'choices' => $font_array,
   )
 );
+
 $wp_customize->add_setting(
   'cricket_league_pro_body_font_size',
   array(

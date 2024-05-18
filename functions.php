@@ -361,34 +361,34 @@ function vw_cricket_pro_scripts()
 
 	wp_register_script('vw-cricket-pro-customscripts', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'));
 
-	 $vw_cricket_pro_customscripts_obj = array(
-	 	// 'is_home' =>  ( is_home() || is_front_page() ),
-	 	// 'home_url' =>  home_url(),
-	 	// 'is_rtl' => is_rtl(),
-	 	// 'product_max_price'  =>  $product_meta_price_max->product_max_price,
-	 	// 'listing_max_price'  => $listing_meta_price_max->listing_max_price,
-	 	// 'listing_currency_symbol' => $currency_symbol,	// $vw_cricket_pro_customscripts_obj = array(
-	 	// 'is_home' =>  ( is_home() || is_front_page() ),
-	 	// 'home_url' =>  home_url(),
-	 	// 'is_rtl' => is_rtl(),
-	 	// 'product_max_price'  =>  $product_meta_price_max->product_max_price,
-	 	// 'listing_max_price'  => $listing_meta_price_max->listing_max_price,
-	 	// 'listing_currency_symbol' => $currency_symbol,
-	 	// 'get_woocommerce_currency_symbol' => get_woocommerce_currency_symbol(),
-	 	// 'ajaxurl'				=>	admin_url('admin-ajax.php')
-		 'root'					=>	rest_url(),
-		 'ajaxurl'				=>	admin_url('admin-ajax.php'),
-		 'nonce'					=>	wp_create_nonce( 'wp_rest' ),
-		 'the_rest_url'	=>	get_rest_url(),
-		 'product_max_price'  =>  $product_meta_price_max->product_max_price
-	   );
-	   if( class_exists( 'WooCommerce' ) ) {
-		 $vw_cricket_pro_customscripts_obj['get_woocommerce_currency_symbol'] = get_woocommerce_currency_symbol();
-	   }
+	$vw_cricket_pro_customscripts_obj = array(
+		// 'is_home' =>  ( is_home() || is_front_page() ),
+		// 'home_url' =>  home_url(),
+		// 'is_rtl' => is_rtl(),
+		// 'product_max_price'  =>  $product_meta_price_max->product_max_price,
+		// 'listing_max_price'  => $listing_meta_price_max->listing_max_price,
+		// 'listing_currency_symbol' => $currency_symbol,	// $vw_cricket_pro_customscripts_obj = array(
+		// 'is_home' =>  ( is_home() || is_front_page() ),
+		// 'home_url' =>  home_url(),
+		// 'is_rtl' => is_rtl(),
+		// 'product_max_price'  =>  $product_meta_price_max->product_max_price,
+		// 'listing_max_price'  => $listing_meta_price_max->listing_max_price,
+		// 'listing_currency_symbol' => $currency_symbol,
+		// 'get_woocommerce_currency_symbol' => get_woocommerce_currency_symbol(),
+		// 'ajaxurl'				=>	admin_url('admin-ajax.php')
+		'root' => rest_url(),
+		'ajaxurl' => admin_url('admin-ajax.php'),
+		'nonce' => wp_create_nonce('wp_rest'),
+		'the_rest_url' => get_rest_url(),
+		'product_max_price' => $product_meta_price_max->product_max_price
+	);
+	if (class_exists('WooCommerce')) {
+		$vw_cricket_pro_customscripts_obj['get_woocommerce_currency_symbol'] = get_woocommerce_currency_symbol();
+	}
 
 
 
-	 wp_localize_script('vw-cricket-pro-customscripts', 'vw_cricket_pro_customscripts_obj' ,$vw_cricket_pro_customscripts_obj);
+	wp_localize_script('vw-cricket-pro-customscripts', 'vw_cricket_pro_customscripts_obj', $vw_cricket_pro_customscripts_obj);
 
 	// wp_enqueue_script('vw-cricket-pro-customscripts');
 	// // 	'get_woocommerce_currency_symbol' => get_woocommerce_currency_symbol(),
@@ -428,7 +428,7 @@ require get_parent_theme_file_path('inc/widget/socail-widget.php');
 
 
 
-require get_parent_theme_file_path('custom-filter.php' );
+require get_parent_theme_file_path('custom-filter.php');
 
 
 
@@ -2277,7 +2277,7 @@ function get_events_grouped_by_year()
 			}
 			$html .= '</div>';
 			$html .= '</div>';
-			
+
 		}
 	}
 
@@ -2446,92 +2446,98 @@ function get_events_grouped_today()
 }
 
 // Add meta boxes to your custom post type
-function custom_post_meta_boxes() {
-    add_meta_box(
-        'custom_meta_box1',
-        'Custom Meta Box 1',
-        'custom_meta_box1_callback',
-        'upcoming_events',
-        'normal',
-        'default'
-    );
+function custom_post_meta_boxes()
+{
+	add_meta_box(
+		'custom_meta_box1',
+		'Custom Meta Box 1',
+		'custom_meta_box1_callback',
+		'upcoming_events',
+		'normal',
+		'default'
+	);
 
-    add_meta_box(
-        'custom_meta_box2',
-        'Custom Meta Box 2',
-        'custom_meta_box2_callback',
-        'upcoming_events',
-        'normal',
-        'default'
-    );
+	add_meta_box(
+		'custom_meta_box2',
+		'Custom Meta Box 2',
+		'custom_meta_box2_callback',
+		'upcoming_events',
+		'normal',
+		'default'
+	);
 }
 add_action('add_meta_boxes', 'custom_post_meta_boxes');
 
 // Callback function for the first custom meta box
-function custom_meta_box1_callback($post) {
-    // Add nonce field for security
-    wp_nonce_field('custom_meta_box_nonce', 'custom_meta_box_nonce');
+function custom_meta_box1_callback($post)
+{
+	// Add nonce field for security
+	wp_nonce_field('custom_meta_box_nonce', 'custom_meta_box_nonce');
 
-    // Retrieve the current value of the meta field
-    $value = get_post_meta($post->ID, '_custom_meta_field1', true);
+	// Retrieve the current value of the meta field
+	$value = get_post_meta($post->ID, '_custom_meta_field1', true);
 
-    // Output an input field
-    echo '<label for="custom_meta_field1">Custom Field 1:</label>';
-    echo '<input type="text" id="custom_meta_field1" name="custom_meta_field1" value="' . esc_attr($value) . '" />';
+	// Output an input field
+	echo '<label for="custom_meta_field1">Custom Field 1:</label>';
+	echo '<input type="text" id="custom_meta_field1" name="custom_meta_field1" value="' . esc_attr($value) . '" />';
 }
 
 // Callback function for the second custom meta box
-function custom_meta_box2_callback($post) {
-    // Add nonce field for security
-    wp_nonce_field('custom_meta_box_nonce', 'custom_meta_box_nonce');
+function custom_meta_box2_callback($post)
+{
+	// Add nonce field for security
+	wp_nonce_field('custom_meta_box_nonce', 'custom_meta_box_nonce');
 
-    // Retrieve the current value of the meta field
-    $value = get_post_meta($post->ID, '_custom_meta_field2', true);
+	// Retrieve the current value of the meta field
+	$value = get_post_meta($post->ID, '_custom_meta_field2', true);
 
-    // Output an input field
-    echo '<label for="custom_meta_field2">Custom Field 2:</label>';
-    echo '<input type="text" id="custom_meta_field2" name="custom_meta_field2" value="' . esc_attr($value) . '" />';
+	// Output an input field
+	echo '<label for="custom_meta_field2">Custom Field 2:</label>';
+	echo '<input type="text" id="custom_meta_field2" name="custom_meta_field2" value="' . esc_attr($value) . '" />';
 }
 
 // Save meta box data
-function save_custom_meta_boxes_data($post_id) {
-    // Check if our nonce is set.
-    if (!isset($_POST['custom_meta_box_nonce'])) {
-        return;
-    }
+function save_custom_meta_boxes_data($post_id)
+{
+	// Check if our nonce is set.
+	if (!isset($_POST['custom_meta_box_nonce'])) {
+		return;
+	}
 
-    // Verify that the nonce is valid.
-    if (!wp_verify_nonce($_POST['custom_meta_box_nonce'], 'custom_meta_box_nonce')) {
-        return;
-    }
+	// Verify that the nonce is valid.
+	if (!wp_verify_nonce($_POST['custom_meta_box_nonce'], 'custom_meta_box_nonce')) {
+		return;
+	}
 
-    // If this is an autosave, our form has not been submitted, so we don't want to do anything.
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return;
-    }
+	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+		return;
+	}
 
-    // Check the user's permissions.
-    if (!current_user_can('edit_post', $post_id)) {
-        return;
-    }
+	// Check the user's permissions.
+	if (!current_user_can('edit_post', $post_id)) {
+		return;
+	}
 
-    // Update or save the meta fields
-    if (isset($_POST['custom_meta_field1'])) {
-        update_post_meta($post_id, '_custom_meta_field1', sanitize_text_field($_POST['custom_meta_field1']));
-    }
-    if (isset($_POST['custom_meta_field2'])) {
-        update_post_meta($post_id, '_custom_meta_field2', sanitize_text_field($_POST['custom_meta_field2']));
-    }
+	// Update or save the meta fields
+	if (isset($_POST['custom_meta_field1'])) {
+		update_post_meta($post_id, '_custom_meta_field1', sanitize_text_field($_POST['custom_meta_field1']));
+	}
+	if (isset($_POST['custom_meta_field2'])) {
+		update_post_meta($post_id, '_custom_meta_field2', sanitize_text_field($_POST['custom_meta_field2']));
+	}
 }
 add_action('save_post', 'save_custom_meta_boxes_data');
 
-function custom_comment_form_defaults( $defaults ) {
-    $defaults['title_reply'] = 'Leave a Comment';
+function custom_comment_form_defaults($defaults)
+{
+	$defaults['title_reply'] = 'Leave a Comment';
 	$defaults['label_submit'] = 'Leave a comment';
-    return $defaults;
+	return $defaults;
 }
-add_filter( 'comment_form_defaults', 'custom_comment_form_defaults' );
-function average_rating() {
+add_filter('comment_form_defaults', 'custom_comment_form_defaults');
+function average_rating()
+{
 	global $wpdb;
 	$post_id = get_the_ID();
 	$ratings = $wpdb->get_results("
@@ -2546,40 +2552,51 @@ function average_rating() {
 		");
 	$counter = 0;
 	$average_rating = 0;
-	  if ($ratings) {
-		  foreach ($ratings as $rating) {
-			  $average_rating = $average_rating + $rating->meta_value;
-			  $counter++;
-		  }
-		  //round the average to the nearast 1/2 point
-		  return (round(($average_rating/$counter)*2,0)/2);
-	  } else {
-		  //no ratings
-		  return '0';
-	  }
+	if ($ratings) {
+		foreach ($ratings as $rating) {
+			$average_rating = $average_rating + $rating->meta_value;
+			$counter++;
+		}
+		//round the average to the nearast 1/2 point
+		return (round(($average_rating / $counter) * 2, 0) / 2);
+	} else {
+		//no ratings
+		return '0';
+	}
+}
+
+// woo commerce function 
+
+function get_star_rating_custom()
+{
+	global $product;
+
+	$average = $product->get_average_rating();
+	$stars_html = '<div class="star-rating">';
+	$full_stars = ceil($average);
+
+	// Full stars
+	for ($i = 1; $i <= $full_stars; $i++) {
+		$stars_html .= '<span class="fa fa-star"></span>';
 	}
 
-	// woo commerce function 
-
-	function get_star_rating_custom()
-	{
-		global $product;
-
-		$average = $product->get_average_rating();
-		$stars_html = '<div class="star-rating">';
-		$full_stars = ceil($average);
-
-		// Full stars
-		for ($i = 1; $i <= $full_stars; $i++) {
-			$stars_html .= '<span class="fa fa-star"></span>';
-		}
-
-		// Empty stars
-		for ($i = $full_stars + 1; $i <= 5; $i++) {
-			$stars_html .= '<span class="fa fa-star-o"></span>';
-		}
-
-		$stars_html .= '</div>';
-
-		return $stars_html;
+	// Empty stars
+	for ($i = $full_stars + 1; $i <= 5; $i++) {
+		$stars_html .= '<span class="fa fa-star-o"></span>';
 	}
+
+	$stars_html .= '</div>';
+
+	return $stars_html;
+}
+
+function cricket_league_pro_sanitize_choices($input, $setting)
+{
+	global $wp_customize;
+	$control = $wp_customize->get_control($setting->id);
+	if (array_key_exists($input, $control->choices)) {
+		return $input;
+	} else {
+		return $setting->default;
+	}
+}

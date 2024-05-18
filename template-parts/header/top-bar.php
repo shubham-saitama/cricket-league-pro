@@ -6,11 +6,11 @@
  * @package cricket_league_pro
  */
 
-$about_section = get_theme_mod('cricket_league_pro_topbar_enable');
+$about_section = get_theme_mod('cricket_league_pro_topbar_enable_top');
 if ('Disable' == $about_section) {
   return;
 }
-/*About us*/
+
 
 if (get_theme_mod('cricket_league_pro_topbar_bgcolor', '')) {
   $background_setting = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_topbar_bgcolor', '')) . ';';

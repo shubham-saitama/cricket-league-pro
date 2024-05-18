@@ -1912,7 +1912,7 @@ class ThemeWhizzie
 
 		//Scroll Top
 		set_theme_mod('cricket_league_pro_genral_section_show_scroll_top_icon', 'fas fa-angle-double-up');
-		set_theme_mod('cricket_league_pro_hi_first_color', '#F36C03');
+		set_theme_mod('cricket_league_pro_hi_first_color', '#FF6F00');
 		set_theme_mod('cricket_league_pro_hi_scnd_color', '#ffffff');
 
 
@@ -2019,9 +2019,9 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_about_left_floating_icon1', get_template_directory_uri() . '/assets/new-images/AboutUs/delivery.png');
 		set_theme_mod('cricket_league_pro_about_left_floating_icon2', get_template_directory_uri() . '/assets/new-images/AboutUs/Cetificate.png');
 		set_theme_mod('cricket_league_pro_about_years_of_service', '08');
-
-
-
+		set_theme_mod('cricket_league_pro_cost_calcuator_shortcode', 'Last Highlight Match');
+		set_theme_mod('cricket_league_pro_cost_calcuator_shortcode_link', 'https://www.google.com/');
+		set_theme_mod('cricket_league_pro_latest_heading_heading', 'Latest Result');
 
 
 
@@ -2211,21 +2211,33 @@ class ThemeWhizzie
 
 		);
 
-		$_product_image_gallery = array();
+		$_product_image_gallery = array(); // Initialize $_product_image_gallery as an empty array
 		$_product_ids = array();
+		$p_content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					 <!-- wp:paragraph -->
+					<ul>
+					<li class='terms-conditions-para'>Lorem Ipsum is simply dummy text of the printing</li>
+					<li class='terms-conditions-para'>Lorem Ipsum is simply dummy text of the printing</li>
+					<li class='terms-conditions-para'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</li>
+					<li class='terms-conditions-para'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</li>
+					<li class='terms-conditions-para'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</li>
+					<li class='terms-conditions-para'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</li>
+					</ul>
+					<!-- /wp:paragraph -->";
+		$i = 1;
 		// Loop through the product data array
 		foreach ($product_data as $data) {
 			// Create the product
 			$product = array(
 				'post_title' => $data['title'],
-				'post_content' => $data['content'],
+				'post_content' => $p_content,
 				'post_status' => 'publish',
 				'post_type' => 'product',
 			);
 
 			// Insert the product into the database
 			$product_id = wp_insert_post($product);
-
+			array_push($_product_ids, $product_id);
 			// Set the pricing information for the product
 			update_post_meta($product_id, '_regular_price', $data['regular_price']);
 			update_post_meta($product_id, '_sale_price', $data['sale_price']);
@@ -2270,8 +2282,8 @@ class ThemeWhizzie
 			for ($c = 0; $c <= 2; $c++) {
 				$comment_id = wp_insert_comment(
 					array(
-						'comment_post_ID' => $post_id,
-						'comment_author' => get_the_author_meta($author_name[$c - 1]),
+						'comment_post_ID' => $product_id,
+						'comment_author' => get_the_author_meta($author_name[$c]),
 						'comment_author_email' => get_the_author_meta('user_email'),
 						'comment_content' => $review_text,
 						'comment_parent' => 0,
@@ -2282,18 +2294,66 @@ class ThemeWhizzie
 				);
 				update_comment_meta($comment_id, 'rating', 4);
 			}
-			// Add Gallery in first simple product and second variable product START
-			$_product_image_gallery = implode(',', $_product_image_gallery);
-			foreach ($_product_ids as $_product_id) {
-				update_post_meta($_product_id, '_product_image_gallery', $_product_image_gallery);
+			$image_url = get_template_directory_uri() . '/assets/images/product/product0' . $i - 1 . '.png';
+
+			$image_name = 'product-img' . $i . '.png';
+			$upload_dir = wp_upload_dir();
+			// Set upload folder
+			$image_data = file_get_contents($image_url);
+			// Get image data
+			$unique_file_name = wp_unique_filename($upload_dir['path'], $image_name);
+			// Generate unique name
+			$filename = basename($unique_file_name);
+			// Create image file name
+
+			// Check folder permission and define file location
+			if (wp_mkdir_p($upload_dir['path'])) {
+				$file = $upload_dir['path'] . '/' . $filename;
+			} else {
+				$file = $upload_dir['basedir'] . '/' . $filename;
 			}
 
-			update_post_meta($post_id, 'product-rating', '5');
-			array_push($_product_ids, $post_id);
-			update_post_meta($post_id, '_stock', '10');
-			update_post_meta($post_id, '_price', '199.00');
-			update_post_meta($post_id, '_regular_price', '199.00');
-			update_post_meta($post_id, '_sale_price', '69.00');
+			// Create the image  file on the server
+			file_put_contents($file, $image_data);
+
+			// Check image file type
+			$wp_filetype = wp_check_filetype($filename, null);
+
+			// Set attachment data
+			$attachment = array(
+				'post_mime_type' => $wp_filetype['type'],
+				'post_title' => sanitize_file_name($filename),
+				'post_content' => '',
+				'post_type' => 'product',
+				'post_status' => 'inherit'
+			);
+
+			// Create the attachment
+			$attach_id = wp_insert_attachment($attachment, $file, $post_id);
+
+			// Include image.php
+			require_once (ABSPATH . 'wp-admin/includes/image.php');
+
+			// Define attachment metadata
+			$attach_data = wp_generate_attachment_metadata($attach_id, $file);
+
+			// Assign metadata to attachment
+			wp_update_attachment_metadata($attach_id, $attach_data);
+			// if (count($_product_image_gallery) < 2) {
+
+			// 	array_push($_product_image_gallery, $attach_id);
+			// }	
+
+			// // And finally assign featured image to post
+			// set_post_thumbnail($post_id, $attach_id);
+
+			// // Add Gallery in first simple product and second variable product START
+			// $_product_image_gallery = implode(',', $_product_image_gallery);
+			// foreach ($_product_ids as $_product_id) {
+			// 	update_post_meta($_product_id, '_product_image_gallery', $_product_image_gallery);
+			// }
+
+			update_post_meta($product_id, 'product-rating', '5');
 			// Enable the product for sale
 			update_post_meta($product_id, '_manage_stock', 'yes');
 
@@ -2302,6 +2362,7 @@ class ThemeWhizzie
 
 			// Set the stock quantity
 			update_post_meta($product_id, '_stock', 100);
+			$i++;
 		}
 
 
@@ -3848,8 +3909,8 @@ class ThemeWhizzie
 
 			if ($league_term) {
 				$league_id = $league_term->term_id;
-				update_post_meta($match_id, 'sp_league', $league_id);
-				wp_set_object_terms($match_id, $league_id, 'sp_league');
+				update_post_meta($match_id_2, 'sp_league', $league_id);
+				wp_set_object_terms($match_id_2, $league_id, 'sp_league');
 			}
 
 			foreach ($player_ids as $player_id) {
@@ -4281,7 +4342,7 @@ class ThemeWhizzie
 			set_post_thumbnail($post_id, $attach_id);
 		}
 
-		set_theme_mod('cricket_league_pro_table_bgimage', get_template_directory_uri() . '/assets/images/Banner-Image.png');
+		set_theme_mod('cricket_league_pro_league_table_bgimage', get_template_directory_uri() . '/assets/images/Banner-Image.png');
 		$staff_array = array('Steve Evans', 'Robert Stark', 'Henry Kent', 'Christian Wane');
 		$content = '';
 		for ($i = 1; $i <= 4; $i++) {
@@ -4365,7 +4426,6 @@ class ThemeWhizzie
 
 
 
-		set_theme_mod('cricket_league_pro_header_bat_image', get_template_directory_uri() . '/assets/images/bats.png');
 		// /footer
 		// For 'cricket_league_pro_footer_enable'
 		set_theme_mod('cricket_league_pro_footer_enable', 'Enable'); // or 'Disable' based on your preference
@@ -4502,6 +4562,9 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_blog_author', 'far fa-user');
 		set_theme_mod('cricket_league_pro_blog_comment_icon', 'far fa-comments');
 		set_theme_mod('cricket_league_pro_blog_fright_icon', 'fas fa-tags');
+		set_theme_mod('cricket_league_pro_latest_see_all_btn_heading', 'See All');
+		set_theme_mod('cricket_league_pro_next_match_title_heading', 'Next Match:');
+
 
 		// empty cart page START
 
@@ -4510,7 +4573,9 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_empty_cart_page_description', 'You Don\'t Have Any Products In The Wishlist Right Now. You Will Find A Lot Of Interesting Products In Out Online Store.');
 		set_theme_mod('cricket_league_pro_empty_cart_page_btn_text', 'Continue Shopping');
 		set_theme_mod('cricket_league_pro_empty_cart_page_btn_link', get_permalink(get_page_by_title('Shop')));
-
+		set_theme_mod('cricket_league_pro_header_bat_image', get_template_directory_uri() . '/assets/images/bats.png');
+		set_theme_mod('cricket_league_pro_latest_location_text_heading', 'Lorem Ipsum is simply dummy text');
+		set_theme_mod('cricket_league_pro_latest_locationbtn_text_heading', 'Book Now');
 		// empty cart page EnD
 
 
@@ -4519,6 +4584,27 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_404_page_content', 'It looks like nothing was found at this location. Click the button below to return home.');
 		set_theme_mod('cricket_league_pro_404_page_button_text', 'Back to Home Page');
 		set_theme_mod('cricket_league_pro_inner_page_banner_bgimage', get_template_directory_uri() . '/assets/images/Banner-Image.png');
+
+		set_theme_mod('cricket_league_pro_aboutus_headertag_text_heading', 'About Us');
+		set_theme_mod('cricket_league_pro_aboutus_heading_text_heading', 'Life Is An Elaborate Metaphor For VW Cricket');
+		set_theme_mod('cricket_league_pro_aboutus_section_text_heading', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.');
+		set_theme_mod('cricket_league_pro_aboutus_chairman_dp_image', get_template_directory_uri() . '/assets/images/about/john.png');
+		set_theme_mod('cricket_league_pro_aboutus_chariman_name_heading', 'John Cena');
+		set_theme_mod('cricket_league_pro_designation_title_heading', 'Chairman');
+		set_theme_mod('cricket_league_pro_aboutus_button_heading', 'Read More');
+		set_theme_mod('cricket_league_pro_years_experience', '22');
+		set_theme_mod('cricket_league_pro_experience_text', 'Year`s Experience In It.');
+		set_theme_mod('cricket_league_pro_aboutus_main_image', get_template_directory_uri() . '/assets/images/about/aboutPrimary.png');
+		set_theme_mod('cricket_league_pro_aboutus_sec_image', get_template_directory_uri() . '/assets/images/about/aboutSecondary.png');
+		set_theme_mod('cricket_league_pro_aboutus_bat_image', get_template_directory_uri() . '/assets/images/about/bat.png');
+		set_theme_mod('cricket_league_pro_aboutus_ball_image', get_template_directory_uri() . '/assets/images/about/BALL.png');
+		set_theme_mod('cricket_league_pro_aboutus_helmet', get_template_directory_uri() . '/assets/images/about/helmet.png');
+
+
+		// League Table 
+
+		set_theme_mod('cricket_league_pro_league_table_section_headding', 'Table');
+		set_theme_mod('cricket_league_pro_league_table_heading', 'Premier League');
 
 		$this->theme_create_customizer_nav_menu();
 		$this->theme_create_customizer_footer_services_menu();
@@ -5024,13 +5110,13 @@ class ThemeWhizzie
 						for (var i = 0; i < premium_data.length; i++) {
 							var premium_product = premium_data[i];
 							var card_content = `<div class="o-products-col" data-id="` + premium_product.id + `">
-										<div class="o-products-image">
-											<img src="`+ premium_product.image + `">
-										</div>
-										<h3>`+ premium_product.title + `</h3>
-										<a href="`+ premium_product.permalink + `" target="_blank">Buy Now</a>
-										<a href="`+ premium_product.demo_url + `" target="_blank">View Demo</a>
-										</div>`;
+														<div class="o-products-image">
+															<img src="`+ premium_product.image + `">
+														</div>
+														<h3>`+ premium_product.title + `</h3>
+														<a href="`+ premium_product.permalink + `" target="_blank">Buy Now</a>
+														<a href="`+ premium_product.demo_url + `" target="_blank">View Demo</a>
+														</div>`;
 							jQuery('.wz-spinner-wrap').css('display', 'none');
 							jQuery('#other-products .o-product-row').append(card_content);
 						}
@@ -5046,8 +5132,8 @@ class ThemeWhizzie
 							}
 							let premium_product = premium_category[i];
 							let card_content = `<li data-ids="` + premium_product.product_ids + `" onclick="other_products(this);" class="` + active_class + `">
-																																																																																																							  `+ premium_product.name + `<span class="badge badge-info">` + premium_product.product_ids.length + `</span>
-																																																																																																						  </li>`;
+																																																																																																											  `+ premium_product.name + `<span class="badge badge-info">` + premium_product.product_ids.length + `</span>
+																																																																																																										  </li>`;
 							jQuery('.o-product-col-1 ul').append(card_content);
 						}
 					});
@@ -5119,5 +5205,4 @@ class ThemeWhizzie
 	}
 
 }
-
-
+set_theme_mod('cricket_league_pro_league_table_bgimage', get_template_directory_uri() . '/assets/images/Banner-Image.png');

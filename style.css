@@ -27,10 +27,7 @@ Cricket League Pro WordPress Theme is released under the terms of GNU GPL
   font-display: swap;
 }
 
-:root {
-  --primary-color: #F36C03;
-  --secondary-color: #fff;
-}
+
 
 :root {
   --common-font-w: "Work Sans";
@@ -199,7 +196,7 @@ textarea {
 .heading-tag {
   font: normal normal normal 24px/29px Great Sejagad;
   letter-spacing: 0px;
-  color: #F36C03;
+  color: #FF6F00;
 }
 
 .heading-wrap h2 {
@@ -243,7 +240,7 @@ a#return-to-top {
   justify-content: center;
   align-items: center;
   height: 50px;
-  background: var(--primary-color);
+  background: #FF6F00;
   border-radius: 5px;
   right: 1%;
   bottom: 1%;
@@ -328,12 +325,12 @@ section#slider::after {
 }
 
 .pagination-link.current {
-  background: var(--primary-color);
+  background: #FF6F00;
   color: #fff;
 }
 
 .pagination-link:focus {
-  background: var(--primary-color);
+  background: #FF6F00;
   color: #fff;
 }
 
@@ -392,16 +389,16 @@ a[class ^="custom_"] {
 }
 
 a[class ^="custom_"]:hover ::before {
-  color: var(--primary-color);
+  color: #FF6F00;
 
 }
 
 a[class ^="custom_"]:hover i.fab {
-  border: 1px solid var(--primary-color);
+  border: 1px solid #FF6F00;
 }
 
 a[class ^="custom_"]:hover span {
-  color: var(--primary-color);
+  color: #FF6F00;
 }
 
 .tagcloud a {
@@ -421,7 +418,7 @@ a[class ^="custom_"]:hover span {
   width: 100%;
   height: 100vh;
   position: fixed;
-  background: var(--primary-color);
+  background: #FF6F00;
   top: 0;
   left: 0;
   display: flex;
@@ -455,7 +452,7 @@ a[class ^="custom_"]:hover span {
 }
 span.page-numbers.current {
  
-  background: var(--primary-color);
+  background: #FF6F00;
   color: #fff !important;
 
 }

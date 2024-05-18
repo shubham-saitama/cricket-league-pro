@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #F36C03;
+  #FF6F00: #FF6F00;
   --secondary-color: #fff;
 }
 
@@ -499,7 +499,7 @@ i[class^="fa"] {
   }
 
   .socialbox a {
-    background-color: var(--primary-color);
+    background-color: #FF6F00;
   }
 
   p.clock-before {

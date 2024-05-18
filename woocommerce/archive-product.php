@@ -120,95 +120,98 @@ if ($img != '') { ?>
 							get_template_part('template-parts/filters/filters');
 							?>
 						</div>
+						<div class="col-lg-9">
+							<div class="fsp-products-wrapper row">
+								<div class="row">
+									<?php
+									// Define arguments for the WP_Query
+									$args = array(
+										'post_type' => 'product',
+										'posts_per_page' => 9, // Retrieve all products
+									);
 
-						<div class="fsp-products-wrapper row col-lg-9">
-							<div class="row">
-								<?php
-								// Define arguments for the WP_Query
-								$args = array(
-									'post_type' => 'product',
-									'posts_per_page' => 9, // Retrieve all products
-								);
+									// Instantiate the WP_Query
+									$loop = new WP_Query($args);
 
-								// Instantiate the WP_Query
-								$loop = new WP_Query($args);
-
-								// Check if there are any products
-								if ($loop->have_posts()) {
-									// Start the loop
-									while ($loop->have_posts()) {
-										$loop->the_post();
-										// Get product meta fields
-										$product_price = get_post_meta(get_the_ID(), '_price', true);
-										$sale_price = get_post_meta(get_the_ID(), '_sale_price', true);
-										// Get product image URL
-										$product_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
-										$current_currency = get_woocommerce_currency_symbol();
-										?>
-										<div class="item-product col-lg-4 col-md-6 col-12 mb-3">
-											<div class="product">
-												<?php if (class_exists('YITH_WCWL')): ?>
-													<div class="yith-wcwl-add-to-wishlist">
-														<?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>
-													</div>
-												<?php endif; ?>
-												<div class="product-image">
-													<img src="<?php echo $product_image_url; ?>" alt="<?php the_title(); ?>">
-												</div>
-												<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-												<?php
-												echo get_star_rating_custom();
-												?>
-												<div class="price-wrapper">
-													<p class="regular-price"><?php echo $current_currency;
-													echo $product_price; ?></p>
-													<?php if ($sale_price): ?>
-														<p class="sale-price"><?php echo $current_currency;
-														echo $sale_price; ?></p>
+									// Check if there are any products
+									if ($loop->have_posts()) {
+										// Start the loop
+										while ($loop->have_posts()) {
+											$loop->the_post();
+											// Get product meta fields
+											$product_price = get_post_meta(get_the_ID(), '_price', true);
+											$sale_price = get_post_meta(get_the_ID(), '_sale_price', true);
+											// Get product image URL
+											$product_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+											$current_currency = get_woocommerce_currency_symbol();
+											?>
+											<div class="item-product col-lg-4 col-md-6 col-12 mb-3">
+												<div class="product">
+													<?php if (class_exists('YITH_WCWL')): ?>
+														<div class="yith-wcwl-add-to-wishlist">
+															<?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>
+														</div>
 													<?php endif; ?>
+													<div class="product-image">
+														<img src="<?php echo $product_image_url; ?>"
+															alt="<?php the_title(); ?>">
+													</div>
+													<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+													<?php
+													echo get_star_rating_custom();
+													?>
+													<div class="price-wrapper">
+														<p class="regular-price"><?php echo $current_currency;
+														echo $product_price; ?></p>
+														<?php if ($sale_price): ?>
+															<p class="sale-price"><?php echo $current_currency;
+															echo $sale_price; ?></p>
+														<?php endif; ?>
+													</div>
+													<?php  // Get the product ID
+															$product_id = get_the_ID();
+															// Get the add to cart URL
+															$add_to_cart_url = esc_url(wc_get_product($product_id)->add_to_cart_url());
+															?>
+													<a href="<?php echo $add_to_cart_url; ?>" class="button">Add to Cart</a>
 												</div>
-												<?php  // Get the product ID
-														$product_id = get_the_ID();
-														// Get the add to cart URL
-														$add_to_cart_url = esc_url(wc_get_product($product_id)->add_to_cart_url());
-														?>
-												<a href="<?php echo $add_to_cart_url; ?>" class="button">Add to Cart</a>
 											</div>
-										</div>
-										<?php
+											<?php
+										}
+										wp_reset_postdata();
+
+									} else {
+										// If no products found
+										echo 'No products found.';
 									}
-									wp_reset_postdata();
-
-								} else {
-									// If no products found
-									echo 'No products found.';
-								}
-								?>
+									?>
+								</div>
 							</div>
+							<?php
+							global $wp_query;
+							$total_pages = $loop->max_num_pages;
+							if ($total_pages > 1) {
+								$current_page = max(1, get_query_var('paged'));
+								echo '<div class="pagination">';
+								echo paginate_links(
+									array(
+										'base' => get_pagenum_link(1) . '%_%',
+										'format' => '/page/%#%',
+										'current' => $current_page,
+										'total' => $total_pages,
+										'prev_text' => __(''),
+										'next_text' => __('Next »'),
+									)
+								);
+								echo '</div>';
+								// Reset post data
+								wp_reset_postdata();
+							}
+							?>
 						</div>
-					</div>
-					<?php
-					global $wp_query;
-					$total_pages = $loop->max_num_pages;
-					if ($total_pages > 1) {
-						$current_page = max(1, get_query_var('paged'));
-						echo '<div class="pagination">';
-						echo paginate_links(
-							array(
-								'base' => get_pagenum_link(1) . '%_%',
-								'format' => '/page/%#%',
-								'current' => $current_page,
-								'total' => $total_pages,
-								'prev_text' => __('« Prev'),
-								'next_text' => __('Next »'),
-							)
-						);
-						echo '</div>';
-						// Reset post data
-						wp_reset_postdata();
 
-					}
-					?>
+					</div>
+
 				</div>
 			</div>
 			<!-- <div class="col-lg-3 col-md-4 elemento-widget-sidebar" id="sidebar"> -->

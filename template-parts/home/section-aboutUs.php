@@ -22,53 +22,49 @@ if (get_theme_mod('cricket_league_pro_about_bgcolor', '')) {
       <div class="col-lg-6 col-md-12 mb-5 col-sm-12 about-left">
         <div class="primary-image">
           <div class="bat-image">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/about/bat.png' ?>" alt="The Bat">
+            <img src="<?php echo get_theme_mod('cricket_league_pro_aboutus_bat_image'); ?>" alt="The Bat">
           </div>
-          <img src="<?php echo get_template_directory_uri() . '/assets/images/about/aboutPrimary.png' ?>"
+          <img src="<?php echo get_theme_mod('cricket_league_pro_aboutus_main_image'); ?>"
             alt="About Us Main Image">
           <div class="seconday-image">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/about/aboutSecondary.png' ?>"
+            <img src="<?php echo get_theme_mod('cricket_league_pro_aboutus_sec_image'); ?>"
               alt="About us image" title="about us image">
           </div>
         </div>
         <div class="experience-wrap">
-          <span class="number">22</span>
+          <span class="number"><?php echo get_theme_mod('cricket_league_pro_years_experience'); ?></span>
           <div class="ex-text">
-            Year's Experience In It.
+            <?php echo get_theme_mod('cricket_league_pro_experience_text'); ?>
           </div>
           <div class="ex-ball-wrap">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/about/BALL.png' ?>" alt="Ball Image">
+            <img src="<?php echo get_theme_mod('cricket_league_pro_aboutus_ball_image');?>" alt="Ball Image">
           </div>
         </div>
         <div class="helmet-wrap">
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/about/helmet.png' ?>" alt="about us prop">
+        <img src="<?php echo get_theme_mod('cricket_league_pro_aboutus_helmet'); ?>" alt="about us prop">
         </div>
       </div>
       <div class="col-lg-6 col-md-12 mb-5 col-sm-12 about-right">
         <div class="heading-wrap">
           <div class="heading-tag">
-            About us
+            <?php echo get_theme_mod('cricket_league_pro_aboutus_headertag_text_heading'); ?>
           </div>
-          <h2>Life Is An Elaborate Metaphor For VW Cricket</h2>
+          <h2><?php echo get_theme_mod('cricket_league_pro_aboutus_heading_text_heading'); ?></h2>
         </div>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. when an unknown printer took a galley of type and scrambled it to
-          make a type specimen book. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
-          an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p><?php echo get_theme_mod('cricket_league_pro_aboutus_section_text_heading'); ?></p>
         <div class="about-us-inner mt-5">
-          <a href="#" class="theme-btn">Explore More</a>
+          <a href="#" class="theme-btn"><?php echo get_theme_mod('cricket_league_pro_aboutus_button_heading'); ?></a>
           <div class="chairman-wrap">
             <div class="image-wrap">
-              <img src="<?php echo get_template_directory_uri() . '/assets/images/about/john.png' ?>"
+              <img src="<?php echo get_theme_mod('cricket_league_pro_aboutus_chairman_dp_image'); ?>"
                 alt="chair-person">
             </div>
             <div class="wrap-inner">
               <div class="chairman-name">
-                john cena
+                <?php echo get_theme_mod('cricket_league_pro_aboutus_chariman_name_heading'); ?>
               </div>
               <span class="chairman-designation">
-                Chairman
+                <?php echo get_theme_mod('cricket_league_pro_designation_title_heading'); ?>
               </span>
             </div>
           </div>

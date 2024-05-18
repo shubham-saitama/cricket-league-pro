@@ -4,7 +4,7 @@
 }
 
 :root {
-  --primary-color: #F36C03;
+  #FF6F00: #FF6F00;
   --secondary-color: #fff;
 }
 
@@ -134,7 +134,7 @@ div#full-width-blog {
 }
 
 p.form-submit input:hover {
-  background-color: var(--primary-color) !important;
+  background-color: #FF6F00 !important;
 }
 
 /*.archive
@@ -2002,7 +2002,7 @@ h5.counter-title h5 {
 span.counter-number {
   font: normal normal 900 50px/28px Inter Tight;
   letter-spacing: -0.25px;
-  color: var(--primary-color);
+  color: #FF6F00;
   margin-bottom: 15px;
   display: inline-block;
 }
@@ -2085,7 +2085,7 @@ h5.counter-title {
 /* widget  */
 
 .calling-widget {
-  background: var(--primary-color);
+  background: #FF6F00;
   padding: 45px 40px;
   display: flex;
   flex-direction: column;
@@ -2135,7 +2135,7 @@ p.post-date {
 }
 
 p.post-date .fa-calendar:before {
-  color: var(--primary-color);
+  color: #FF6F00;
 }
 
 .calling-widget a {
@@ -2256,13 +2256,13 @@ ul.tab-links .active a {
   font: 18px / 24px Inter Tight;
   font-weight: 500;
   padding: 10px 15px;
-  background: var(--primary-color);
+  background: #FF6F00;
   color: #fff;
 }
 
 .pt-one::after {
   content: "";
-  background: var(--primary-color);
+  background: #FF6F00;
   width: 12px;
   height: 12px;
   position: absolute;
@@ -2273,7 +2273,7 @@ ul.tab-links .active a {
 
 .pt-one::after {
   content: "";
-  background: var(--primary-color);
+  background: #FF6F00;
   width: 12px;
   height: 12px;
   position: absolute;
@@ -2502,7 +2502,7 @@ p.text-normal {
 
 .tagline {
   font: normal normal bold 20px/30px Inter Tight;
-  color: var(--primary-color);
+  color: #FF6F00;
 }
 
 section.thebest h3.left {
@@ -2629,7 +2629,7 @@ section.distribution-overview {
   margin-bottom: 10px !important;
   font: normal normal 900 50px/30px Inter Tight;
   letter-spacing: 0px;
-  color: var(--primary-color);
+  color: #FF6F00;
   line-height: 41px;
   display: inherit;
 }
@@ -2798,7 +2798,7 @@ input#submit-button {
 
 input#submit:hover,
 input#submit-button:hover {
-  background-color: var(--primary-color);
+  background-color: #FF6F00;
 }
 
 span[data-name="Message"] span.wpcf7-not-valid-tip {
@@ -3234,12 +3234,18 @@ ul.shop-page-produts-category li {
   font-weight: 500;
 }
 
-.fsp-filter-box {
+/* .fsp-filter-box {
   margin-bottom: 30px;
+} */
+
+button.accordion-button {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #CCCCCC;
+  padding: 20px;
 }
-
-
-
+.flower-shop-filter {
+  padding: 20px;
+}
 /* search event page  */
 
 section.eventssearch thead tr th {
@@ -3263,7 +3269,7 @@ section.eventssearch td {
 }
 
 section.eventssearch thead tr {
-  background: var(--primary-color);
+  background: #FF6F00;
   color: #fff;
 }
 
@@ -3306,7 +3312,7 @@ p.clock-before {
 p.clock-before::after {
   content: "\f017";
   font-family: 'FontAwesome';
-  color: var(--primary-color);
+  color: #FF6F00;
   font-size: 16px;
   position: absolute;
   top: 0;
@@ -3356,7 +3362,7 @@ a.calender-button::after {
 a.calender-button {
   display: inline-block;
   color: #fff;
-  background: var(--primary-color);
+  background: #FF6F00;
   border-radius: 6px;
   font-weight: 500;
   padding: 10px 40px 10px 20px;
@@ -3433,7 +3439,7 @@ img.errorimg {
 }
 
 h3.accordion-click.active {
-  background: var(--primary-color);
+  background: #FF6F00;
   color: var(--secondary-color);
   margin-bottom: 0px;
 }
@@ -3815,7 +3821,10 @@ section#related h2 {
   text-align: center;
   font: normal normal bold 36px / 75px Inter Tight;
 }
-
+section#related .yith-wcwl-wishlistaddedbrowse{
+  top: 15px;
+  left: 35px;
+}
 
 section#related .heading-tag {
   text-align: center;
@@ -3824,7 +3833,9 @@ section#related .heading-tag {
 .shop {
   background: #fff;
 }
-
+.woocommerce-tabs.wc-tabs-wrapper.container ul {
+  margin-left: 20px;
+}
 .single-product .yith-wcwl-wishlistexistsbrowse {
   width: 36px;
   height: 36px;
@@ -3834,7 +3845,12 @@ section#related .heading-tag {
   justify-content: center;
   position: unset;
 }
-
+::marker {
+  color: #FF6F00;
+}
+li.terms-conditions-para {
+  margin-bottom: 10px;
+}
 .single-product p.stars {
   position: unset;
 }
@@ -4321,7 +4337,7 @@ section#related a.add_to_wishlist.single_add_to_wishlist {
 }
 .book-headin-wrapper {
   text-align: center;
-  background-color: var(--primary-color);
+  background-color: #FF6F00;
   color: #fff;
 }
 

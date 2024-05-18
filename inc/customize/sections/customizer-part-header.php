@@ -11,14 +11,14 @@ $wp_customize->add_section(
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_topbar_enable',
+	'cricket_league_pro_topbar_enable_top',
 	array(
 		'default' => 'Enable',
 		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_topbar_enable',
+	'cricket_league_pro_topbar_enable_top',
 	array(
 		'type' => 'radio',
 		'label' => 'Do you want this section',
@@ -31,10 +31,10 @@ $wp_customize->add_control(
 );
 
 $wp_customize->selective_refresh->add_partial(
-	'cricket_league_pro_topbar_enable',
+	'cricket_league_pro_topbar_enable_top',
 	array(
 		'selector' => '#site_top .container',
-		'render_callback' => 'optical_lens_shop_customize_partial_cricket_league_pro_topbar_enable',
+		'render_callback' => 'optical_lens_shop_customize_partial_cricket_league_pro_topbar_enable_top',
 	)
 );
 
@@ -187,66 +187,6 @@ $wp_customize->add_control(
 		'type' => 'number'
 	)
 );
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_header_icon_pallete',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_header_icon_pallete',
-		array(
-			'label' => __('Icon Typography ', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_topbar_header'
-		)
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_topbar_icon_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_topbar_icon_color',
-		array(
-			'label' => __('Top Icon Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_topbar_header',
-			'settings' => 'cricket_league_pro_topbar_icon_color',
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_topbar_left_icon_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_topbar_left_icon_size',
-	array(
-		'label' => __('Topbar Icons Size', 'cricket-league-pro'),
-		'description' => __('Add icon size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_topbar_header',
-		'setting' => 'Advanced Button
-		icon_size',
-		'type' => 'number'
-	)
-);
-
 $wp_customize->add_setting(
 	'cricket_league_pro_topbar_bg_section_ct_pallete',
 	array(
@@ -267,61 +207,6 @@ $wp_customize->add_control(
 	)
 );
 
-for ($i = 1; $i <= 3; $i++) {
-	$wp_customize->add_setting(
-		'cricket_league_pro_topbar_left_icon_' . $i,
-		array(
-			'default' => '',
-			'sanitize_callback' => 'sanitize_text_field'
-		)
-	);
-
-	$wp_customize->add_control(
-		new cricket_league_pro_Fontawesome_Icon_Chooser(
-			$wp_customize,
-			'cricket_league_pro_topbar_left_icon_' . $i,
-			array(
-				'section' => 'cricket_league_pro_topbar_header',
-				'type' => 'icon',
-				'label' => esc_html__('Choose Field ' . $i . ' Icon', 'cricket-league-pro'),
-			)
-		)
-	);
-
-	$wp_customize->add_setting(
-		'cricket_league_pro_topbar_left_' . $i,
-		array(
-			'default' => '',
-			'sanitize_callback' => 'sanitize_text_field'
-		)
-	);
-
-	$wp_customize->add_control(
-		'cricket_league_pro_topbar_left_' . $i,
-		array(
-			'label' => __('Add Field ' . $i . ' Text', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_topbar_header',
-			'type' => 'text'
-		)
-	);
-
-	$wp_customize->add_setting(
-		'cricket_league_pro_topbar_left_link_' . $i,
-		array(
-			'default' => '',
-			'sanitize_callback' => 'sanitize_text_field'
-		)
-	);
-
-	$wp_customize->add_control(
-		'cricket_league_pro_topbar_left_link_' . $i,
-		array(
-			'label' => __('Add Link ' . $i, 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_topbar_header',
-			'type' => 'text'
-		)
-	);
-}
 
 
 
@@ -559,7 +444,7 @@ $wp_customize->add_control(
 	)
 );
 $wp_customize->add_setting(
-	'cricket_league_pro_headermenu_font_family',
+	'cricket_league_pro_headermenu_font_family_header',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -567,7 +452,7 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_headermenu_font_family',
+	'cricket_league_pro_headermenu_font_family_header',
 	array(
 		'section' => 'cricket_league_pro_header_header',
 		'label' => __('Menu Item Fonts', 'cricket-league-pro'),

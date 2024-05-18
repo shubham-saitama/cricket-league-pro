@@ -9,6 +9,7 @@ $about_section = get_theme_mod('cricket_league_pro_footer_enable');
 if ('Disable' == $about_section) {
 	return;
 }
+
 if (get_theme_mod('cricket_league_pro_footer_bgcolor')) {
 	$section_backg = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_footer_bgcolor')) . ';';
 } elseif (get_theme_mod('cricket_league_pro_footer_bg_image')) {

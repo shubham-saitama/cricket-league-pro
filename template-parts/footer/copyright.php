@@ -1,5 +1,5 @@
 
-<section id="copyright" class="<?php echo esc_attr($img_bg); ?>" style="<?php echo esc_attr($section_backg); ?>">
+<section id="copyright" class="" style="">
 	<div class="copyright-outer">
 		<div class="copyright">
 			<div class="container">

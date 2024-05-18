@@ -134,8 +134,3 @@ if ($wishlist_page->have_posts()) {
   </form>
 </div>
 
-
-
-<span class="d-none" id="menu-width">
-  <?php echo esc_html($menu_width); ?>
-</span>

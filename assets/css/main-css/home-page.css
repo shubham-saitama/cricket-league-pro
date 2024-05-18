@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #F36C03;
+  #FF6F00: #FF6F00;
   --secondary-color: #fff;
 }
 
@@ -55,7 +55,7 @@ div#site-sticky-menu1 {
 span.second-word {
   font: normal normal normal 65px / 75px Great Sejagad;
   letter-spacing: 0px;
-  color: #F36C03;
+  color: #FF6F00;
   margin: 0px 20px 10px 0px;
 }
 
@@ -86,14 +86,14 @@ section#slider {
   clip-path: polygon(100% 0, 100% 87.3%, 83.5% 75%, 0 100%, 0 0);
 }
 
-h1#dynamic-color {
+.banner-heading {
   font: normal normal bold 60px / 75px Inter Tight;
   letter-spacing: 0px;
   color: #FFFFFF;
 }
 
 a.theme-btn.orange {
-  background: var(--primary-color);
+  background: #FF6F00;
   color: #fff;
   font: 18px / 21px Inter Tight;
   font-weight: 500;
@@ -313,7 +313,7 @@ span.number {
 
 .experience-wrap {
   display: flex;
-  background: #F36C03;
+  background: #FF6F00;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -981,7 +981,7 @@ section.match {
 
 .card-bottom {
   display: flex;
-  background: #F36C03;
+  background: #FF6F00;
   padding: 10px 8px 10px 16px;
   justify-content: space-between;
   align-items: center;
@@ -1012,7 +1012,7 @@ section.match {
 .live {
   font: normal normal 600 16px / 20px Inter Tight;
   color: #fff;
-  background: #F36C03;
+  background: #FF6F00;
   padding: 3px 20px;
   border-radius: 4px;
 }
@@ -1092,7 +1092,7 @@ section#upcoming-evt {
   font: normal normal 600 16px / 25px Inter Tight;
   color: #fff;
   padding: 12px;
-  background: var(--primary-color);
+  background: #FF6F00;
   max-width: 100px;
   border-radius: 10px;
 }
@@ -1244,7 +1244,7 @@ section#blog-news {
 }
 
 .blog-card:hover .blog-card-content h5 {
-  color: var(--primary-color);
+  color: #FF6F00;
 }
 
 .blog-card {
@@ -1259,7 +1259,7 @@ section#blog-news {
 }
 
 .blog-card:hover .lower.bar {
-  background: var(--primary-color);
+  background: #FF6F00;
 }
 
 .blog-card:hover .lower.bar p,
@@ -1366,7 +1366,7 @@ section#blog-news a.button {
 }
 
 .team-tab-left.active-tab {
-  background: var(--primary-color);
+  background: #FF6F00;
   color: #fff !important;
 }
 
@@ -1500,7 +1500,7 @@ section#leagueTable .heading-wrap h2, section#leagueTable .heading-tag {
   padding: 7px 10px !important;
 }
 #leagueTable thead {
-  background-color: var(--primary-color) !important;
+  background-color: #FF6F00 !important;
  
 }
 section#leagueTable table {
@@ -1508,11 +1508,11 @@ section#leagueTable table {
   border: 1px solid #FFFFFF !important;
 }
 .col-lg-5.col-md-5.col-12.postion-right thead {
-  background: var(--primary-color) !important;
+  background: #FF6F00 !important;
   border-radius: 10px !important;
 }
 #leagueTable thead{
-  background-color: var(--primary-color) !important;
+  background-color: #FF6F00 !important;
 }
 section#leagueTable .heading-tag {
   font: normal normal normal 24px / 35px Great Sejagad;
@@ -1629,4 +1629,25 @@ section#leagueTable .button-holder {
 
 .summary.entry-summary .yith-wcwl-wishlistaddedbrowse {
   position: unset;
+}
+span.ui-slider-handle.ui-corner-all.ui-state-default {
+  width: 10px;
+  height: 21px !important;
+  background: #000 !important;
+  border-radius: 0px !important;
+}
+.ui-slider-range.ui-corner-all.ui-widget-header {
+  background: #000 !important;
+}
+.accordion-item {
+  border: 1px solid #CCCCCC;
+}
+button.accordion-button {
+  background: #F1F1F1;
+  border: 1px solid #CCCCCC;
+  padding: 12px 20px;
+}
+
+ul.shop-page-produts-category li {
+  margin-bottom: 4px;
 }

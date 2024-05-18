@@ -10,19 +10,19 @@ if ('Disable' == $section_hide) { ?>
   <?php
   return;
 }
-
+if (get_theme_mod('cricket_league_pro_slider_bgimage', '')) {
+  $slider_back_imge = get_theme_mod('cricket_league_pro_slider_bgimage');
+} 
 if (get_theme_mod('cricket_league_pro_slider_bgcolor', '')) {
   $slider_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_slider_bgcolor', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_slider_bgimage', '')) {
-  $slider_back = get_theme_mod('cricket_league_pro_slider_bgimage');
 } else {
   $slider_back = '';
 }
 $img_bg = get_theme_mod('cricket_league_pro_slider_bgimage_setting');
 ?>
-<section id="slider" class=" section-space">
+<section id="slider" class=" section-space" style="<?php echo $slider_back; ?>">
   <div class="banner-background">
-    <img src="<?php echo $slider_back ?>" alt="Banner Background">
+    <img src="<?php echo $slider_back_imge ?>" alt="Banner Background">
   </div>
   <div class="container">
     <div class="row align-items-center">
@@ -41,9 +41,9 @@ $img_bg = get_theme_mod('cricket_league_pro_slider_bgimage_setting');
             <?php echo get_theme_mod('cricket_league_pro_slider_btntext') ?>
           </a>
           <div class="banner-inner-wrap ">
-            <a href="#" class="play-btn-tag"><i class="fa fa-play" aria-hidden="true"></i></a>
+            <a href="<?php echo get_theme_mod('cricket_league_pro_cost_calcuator_shortcode_link'); ?>" class="play-btn-tag"><i class="fa fa-play" aria-hidden="true"></i></a>
             <span class="inner-text">
-              Last Highlight Match
+              <?php echo get_theme_mod('cricket_league_pro_cost_calcuator_shortcode');?>
             </span>
           </div>
         </div>

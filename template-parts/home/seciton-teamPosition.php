@@ -1,14 +1,14 @@
 <?php
 
-$section_hide = get_theme_mod('cricket_league_pro_table_enabledisable');
+$section_hide = get_theme_mod('cricket_league_pro_league_table_enable');
 if ('Disable' == $section_hide) { ?>
     <?php
     return;
 }
-if (get_theme_mod('cricket_league_pro_table_bgcolor')) {
-    $table_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_table_bgcolor', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_table_bgimage')) {
-    $table_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_table_bgimage')) . '\')';
+if (get_theme_mod('cricket_league_pro_league_table_bgcolor')) {
+    $table_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_league_table_bgcolor', '')) . ';';
+} elseif (get_theme_mod('cricket_league_pro_league_table_bgimage')) {
+    $table_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_league_table_bgimage')) . '\')';
 } else {
     $table_back = '';
 } ?>
@@ -19,9 +19,9 @@ if (get_theme_mod('cricket_league_pro_table_bgcolor')) {
             <div class="col-lg-7 col-md-7 col-12">
                 <div class="heading-wrap">
                     <div class="heading-tag">
-                        Table
+                    <?php echo get_theme_mod('cricket_league_pro_league_table_section_headding'); ?>
                     </div>
-                    <h2>Premier League</h2>
+                    <h2><?php echo get_theme_mod('cricket_league_pro_league_table_heading'); ?></h2>
                 </div>
                 <?php echo do_shortcode('[team_standings 156]'); ?>
             </div>
@@ -31,7 +31,7 @@ if (get_theme_mod('cricket_league_pro_table_bgcolor')) {
                         <div class="heading-tag">
                             Matchs
                         </div>
-                        <h2>Upcoming Matches</h2>
+                        <h2><?php echo get_theme_mod('cricket_league_pro_league_table_heading_right'); ?></h2>
                     </div>
                     <a href="<?php echo get_permalink(get_page_by_title('Events')) ?>" class="theme-btn black">
                         View All

@@ -1,15 +1,16 @@
 <?php
 
- // Define the post ID you want to fetch
- $next_match_id = get_theme_mod('cricket_league_pro_next_match_id'); // Replace 123 with the actual post ID you want to fetch
+// Define the post ID you want to fetch
+$next_match_id = get_theme_mod('cricket_league_pro_next_match_id'); // Replace 123 with the actual post ID you want to fetch
 ?>
-<section class="match">
+<section class="match" id="banner-below">
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-12 col-12">
                 <div class="timer-wrapper d-flex justify-content-between align-items-center">
-                    <h2>Latest Result</h2>
-                    <a href="<?php echo get_permalink(get_page_by_title('Matches')) ?>" class="theme-btn">See More</a>
+                    <h2><?php echo get_theme_mod('cricket_league_pro_latest_heading_heading'); ?></h2>
+                    <a href="<?php echo get_permalink(get_page_by_title('Matches')) ?>"
+                        class="theme-btn"><?php echo get_theme_mod('cricket_league_pro_latest_see_all_btn_heading'); ?></a>
                 </div>
                 <?php
                 // Custom WP Query to retrieve all events (matches) in SportPress plugin
@@ -104,8 +105,8 @@
             </div>
             <div class="col-lg-5 col-md-12 col-12 next-match-wrapper">
                 <div class="timer-wrapper d-flex justify-content-between">
-                    <h2>Next Match: </h2>
-                    <?php echo do_shortcode('[countdown id="'.$next_match_id.'"]'); ?>
+                    <h2><?php echo get_theme_mod('cricket_league_pro_next_match_title_heading'); ?></h2>
+                    <?php echo do_shortcode('[countdown id="' . $next_match_id . '"]'); ?>
                 </div>
                 <div class="next-match-wrap">
                     <div class="card-top">
@@ -177,10 +178,10 @@
                         <div class="card-bottom">
                             <div class="loaction-wrapper">
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <p>Lorem Ipsum is simply dummy text</p>
+                                <p><?php echo get_theme_mod('cricket_league_pro_latest_location_text_heading'); ?></p>
                             </div>
                             <a href="#" class="theme-btn">
-                                Get A Ticket
+                                <?php echo get_theme_mod('cricket_league_pro_latest_locationbtn_text_heading'); ?>
                             </a>
                         </div>
                     </div>
