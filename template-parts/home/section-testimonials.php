@@ -80,12 +80,10 @@ if (get_theme_mod('cricket_league_pro_testimonial_bgcolor', '')) {
                         <div class="heading-tag">
                             <?php echo get_theme_mod('cricket_league_pro_testimonial_heading_tag_font_text'); ?>
                         </div>
-                        <h2 class="left"><?php echo get_theme_mod('cricket_league_pro_testimonial_heading_font_text'); ?>
+                        <h2 class="left">
+                            <?php echo get_theme_mod('cricket_league_pro_testimonial_heading_font_text'); ?>
                         </h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book.</p>
+                        <p><?php echo get_theme_mod('cricket_league_pro_testimonial_sec_text'); ?></p>
                         <div class="outer-thumbnai-wrapper">
                             <div class="thumbnail-slider">
                                 <?php if ($testimonials_query->have_posts()):
@@ -93,7 +91,6 @@ if (get_theme_mod('cricket_league_pro_testimonial_bgcolor', '')) {
                                         $testimonials_query->the_post(); ?>
                                         <div class="img-wrapper">
                                             <?php the_post_thumbnail('custom-thumbnail'); ?>
-
                                         </div>
                                     <?php endwhile; ?>
 
@@ -110,3 +107,4 @@ if (get_theme_mod('cricket_league_pro_testimonial_bgcolor', '')) {
         </div>
     </div>
 </section>
+

@@ -1,26 +1,26 @@
-<?php
-/**
- * Template part for displaying Why Choose Us
- *
- * @package cricket-league-pro
- */
+<?php /** * Template part for displaying Why Choose Us * 
+
+   * @package cricket-league-pro */
+
 
 $section_hide = get_theme_mod('cricket_league_pro_whychooseus_enabledisable');
 if ('Disable' == $section_hide) {
     return;
 }
 if (get_theme_mod('cricket_league_pro_whychooseus_bg_color', '')) {
-    $services_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_whychooseus_bg_color', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_whychooseus_bg_image', '')) {
-    $services_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_whychooseus_bg_image')) . '\')';
+    $services_back = 'background-color:' .
+        esc_attr(get_theme_mod('cricket_league_pro_whychooseus_bg_color', '')) . ';';
+} elseif
+(get_theme_mod('cricket_league_pro_whychooseus_bg_image', '')) {
+    $services_back = 'background-image:url(\'' . esc_url(get_theme_mod(' cricket_league_pro_whychooseus_bg_image')) . '\'
+    )';
 } else {
     $services_back = '';
 }
-$img_bg = get_theme_mod('cricket_league_pro_whychooseus_bg_image');
-
 ?>
+
 <section id="whyChooseUs" style="<?php echo esc_attr($services_back); ?>"
-    class="<?php echo esc_attr($img_bg); ?> section-space">
+    class="section-space">
     <div class="container">
         <div class="row justify-content-between">
             <div class="whyChooseUs-left col-lg-7 col-md-12 col-12">
@@ -62,29 +62,29 @@ $img_bg = get_theme_mod('cricket_league_pro_whychooseus_bg_image');
                     </p>
                     <div class="counter-wrapper">
                         <div class="whyChooseUs-counter">
-                            <p class="choose-counter-num counter"
+                            <span class="choose-counter-num counter"
                                 akhi="<?php echo get_theme_mod('cricket_league_pro_counter1_count'); ?>">
                                 <?php echo get_theme_mod('cricket_league_pro_counter1_count'); ?>
-                            </p>
+                            </span>
                             <span>
                                 <?php echo get_theme_mod('cricket_league_pro_counter1_title'); ?>
                             </span>
                         </div>
                         <div class="whyChooseUs-counter ">
-                            <p class="choose-counter-num counter"
+                            <span class="choose-counter-num counter"
                                 akhi="<?php echo get_theme_mod('cricket_league_pro_counter2_count'); ?>">
                                 <?php echo get_theme_mod('cricket_league_pro_counter2_count'); ?>
-                            </p>
+                            </span>
                             <span>
                                 <?php echo get_theme_mod('cricket_league_pro_counter2_title'); ?>
                             </span>
 
                         </div>
                         <div class="whyChooseUs-counter">
-                            <p class="choose-counter-num counter"
+                            <span class="choose-counter-num counter"
                                 akhi="<?php echo get_theme_mod('cricket_league_pro_counter3_count'); ?>">
                                 <?php echo get_theme_mod('cricket_league_pro_counter3_count'); ?>
-                            </p>
+                            </span>
                             <span>
                                 <?php echo get_theme_mod('cricket_league_pro_counter3_title'); ?>
                             </span>

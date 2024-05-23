@@ -936,7 +936,7 @@ $wp_customize->add_control(
 			'section' => 'cricket_league_pro_lastest_match_sec'
 		)
 	)
-); 
+);
 
 
 $wp_customize->add_setting(
@@ -1046,7 +1046,7 @@ $wp_customize->add_control(
 			'section' => 'cricket_league_pro_lastest_match_sec'
 		)
 	)
-); 
+);
 
 
 $wp_customize->add_setting(
@@ -1238,25 +1238,7 @@ $wp_customize->add_control(
 		)
 	)
 );
-$wp_customize->add_setting(
-	'cricket_league_pro_about_bgimage_setting',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_about_bgimage_setting',
-	array(
-		'type' => 'radio',
-		'label' => __('Choose image option', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_aboutUs_sec',
-		'choices' => array(
-			'fixed' => __('Fixed', 'cricket-league-pro'),
-			'scroll' => __('Scroll', 'cricket-league-pro'),
-		)
-	)
-);
+
 
 $wp_customize->add_setting(
 	'cricket_league_pro_aboutus_headertag_text_settings',
@@ -1275,7 +1257,7 @@ $wp_customize->add_control(
 			'section' => 'cricket_league_pro_aboutUs_sec'
 		)
 	)
-); 
+);
 
 
 $wp_customize->add_setting(
@@ -1383,7 +1365,7 @@ $wp_customize->add_control(
 			'section' => 'cricket_league_pro_aboutUs_sec'
 		)
 	)
-); 
+);
 
 
 $wp_customize->add_setting(
@@ -1491,7 +1473,7 @@ $wp_customize->add_control(
 			'section' => 'cricket_league_pro_aboutUs_sec'
 		)
 	)
-); 
+);
 
 
 $wp_customize->add_setting(
@@ -1599,7 +1581,7 @@ $wp_customize->add_control(
 			'section' => 'cricket_league_pro_aboutUs_sec'
 		)
 	)
-); 
+);
 
 
 $wp_customize->add_setting(
@@ -1726,7 +1708,7 @@ $wp_customize->add_control(
 			'section' => 'cricket_league_pro_aboutUs_sec'
 		)
 	)
-); 
+);
 
 
 $wp_customize->add_setting(
@@ -1834,7 +1816,7 @@ $wp_customize->add_control(
 			'section' => 'cricket_league_pro_aboutUs_sec'
 		)
 	)
-); 
+);
 
 
 $wp_customize->add_setting(
@@ -1943,7 +1925,7 @@ $wp_customize->add_control(
 			'section' => 'cricket_league_pro_aboutUs_sec'
 		)
 	)
-); 
+);
 
 
 $wp_customize->add_setting(
@@ -2052,7 +2034,7 @@ $wp_customize->add_control(
 			'section' => 'cricket_league_pro_aboutUs_sec'
 		)
 	)
-); 
+);
 
 
 $wp_customize->add_setting(
@@ -2161,7 +2143,7 @@ $wp_customize->add_control(
 			'section' => 'cricket_league_pro_aboutUs_sec'
 		)
 	)
-); 
+);
 
 $wp_customize->add_setting(
 	'cricket_league_pro_aboutus_main_image',
@@ -2293,7 +2275,8 @@ $wp_customize->add_control(
 $wp_customize->selective_refresh->add_partial('cricket_league_pro_our_client_slider_image_enable', array(
 	'selector' => 'section#partnerSlider .container',
 	'render_callback' => 'cricket_league_pro_pro_customize_partial_cricket_league_pro_our_client_slider_image_enable',
-));
+)
+);
 $wp_customize->add_setting(
 	'cricket_league_pro_our_client_slider_image_bgcolor',
 	array(
@@ -2335,25 +2318,6 @@ $wp_customize->add_control(
 
 
 
-// $wp_customize->add_setting(
-// 	'cricket_league_pro_our_client_slider_image_bgimage_setting',
-// 	array(
-// 		'default' => '',
-// 		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-// 	)
-// );
-// $wp_customize->add_control(
-// 	'cricket_league_pro_our_client_slider_image_bgimage_setting',
-// 	array(
-// 		'type' => 'radio',
-// 		'label' => __('Choose image option', 'vw-saas-services-pro'),
-// 		'section' => 'cricket_league_pro_client_slider_sec',
-// 		'choices' => array(
-// 			'fixed' => __('Fixed', 'vw-saas-services-pro'),
-// 			'scroll' => __('Scroll', 'vw-saas-services-pro'),
-// 		)
-// 	)
-// );
 
 $wp_customize->add_setting(
 	'cricket_league_pro_client_images_count',
@@ -2498,6 +2462,23 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
+	'cricket_league_pro_league_table_section_headding_tag',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_league_table_section_headding_tag',
+	array(
+		'label' => __('Section Heading Tag', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_league_table_sec',
+		'setting' => 'cricket_league_pro_league_table_section_headding_tag',
+		'type' => 'text'
+	)
+);
+
+$wp_customize->add_setting(
 	'cricket_league_pro_league_table_section_headding',
 	array(
 		'default' => '',
@@ -2516,6 +2497,7 @@ $wp_customize->add_control(
 
 
 
+
 $wp_customize->add_setting(
 	'cricket_league_pro_left_images_text_settings',
 	array(
@@ -2529,49 +2511,14 @@ $wp_customize->add_control(
 		$wp_customize,
 		'cricket_league_pro_left_images_text_settings',
 		array(
-			'label' => __('Leagur Table Heading Settings', 'cricket-league-pro'),
+			'label' => __('Points Table Header Settings', 'cricket-league-pro'),
 			'section' => 'cricket_league_pro_league_table_sec'
 		)
 	)
-); 
-
+);
 
 $wp_customize->add_setting(
-	'cricket_league_pro_league_table_heading',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	' ',
-	array(
-		'label' => __('Heading', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_league_table_sec',
-		'setting' => 'cricket_league_pro_league_table_heading',
-		'type' => 'text'
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_league_table_heading_right',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	' ',
-	array(
-		'label' => __('Upcoming Match Heading', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_league_table_sec',
-		'setting' => 'cricket_league_pro_league_table_heading_right',
-		'type' => 'text'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_league_table_heading_font_weight',
+	'cricket_league_pro_league_pointsTable_header_font_weight',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -2579,7 +2526,7 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_league_table_heading_font_weight',
+	'cricket_league_pro_league_pointsTable_header_font_weight',
 	array(
 		'section' => 'cricket_league_pro_league_table_sec',
 		'label' => __('Font Weight', 'cricket-league-pro'),
@@ -2589,7 +2536,7 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_league_table_heading_font_family',
+	'cricket_league_pro_league_pointsTable_header_font_family',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -2597,7 +2544,7 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_league_table_heading_font_family',
+	'cricket_league_pro_league_pointsTable_header_font_family',
 	array(
 		'section' => 'cricket_league_pro_league_table_sec',
 		'label' => __('Text Fonts', 'cricket-league-pro'),
@@ -2607,24 +2554,24 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_league_table_heading_font_size',
+	'cricket_league_pro_league_pointsTable_header_font_size',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_text_field'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_league_table_heading_font_size',
+	'cricket_league_pro_league_pointsTable_header_font_size',
 	array(
 		'label' => __('Font Size', 'cricket-league-pro'),
 		'description' => __('Add font size in px', 'cricket-league-pro'),
 		'section' => 'cricket_league_pro_league_table_sec',
-		'setting' => 'cricket_league_pro_league_table_heading_font_size',
+		'setting' => 'cricket_league_pro_league_pointsTable_header_font_size',
 		'type' => 'number'
 	)
 );
 $wp_customize->add_setting(
-	'cricket_league_pro_league_table_heading_color',
+	'cricket_league_pro_league_pointsTable_header_color',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_hex_color'
@@ -2633,31 +2580,18 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
 		$wp_customize,
-		'cricket_league_pro_league_table_heading_color',
+		'cricket_league_pro_league_pointsTable_header_color',
 		array(
 			'label' => __('Color', 'cricket-league-pro'),
 			'section' => 'cricket_league_pro_league_table_sec',
-			'settings' => 'cricket_league_pro_league_table_heading_color',
+			'settings' => 'cricket_league_pro_league_pointsTable_header_color',
 		)
 	)
 );
 
 
-
-// Steps to dilever 
-
-
-
-$wp_customize->add_section(
-	'cricket_league_pro_steps_sec',
-	array(
-		'title' => __('Steps Section', 'cricket-league-pro'),
-		'description' => __('Add steps setting here.', 'cricket-league-pro'),
-		'panel' => 'cricket_league_pro_panel_id',
-	)
-);
 $wp_customize->add_setting(
-	'cricket_league_pro_steps_heading_tagline_settings',
+	'cricket_league_pro_league_table_text_settings',
 	array(
 		'default' => '',
 		'transport' => 'postMessage',
@@ -2667,13 +2601,461 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new VW_Themes_Seperator_custom_Control(
 		$wp_customize,
-		'cricket_league_pro_steps_heading_tagline_settings',
+		'cricket_league_pro_league_table_text_settings',
 		array(
-			'label' => __('Steps to Dilever Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec'
+			'label' => __('League Table Text Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_league_table_sec'
 		)
 	)
 );
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_league_table_text',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	' ',
+	array(
+		'label' => __('Heading Tag', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_league_table_sec',
+		'setting' => 'cricket_league_pro_league_table_text',
+		'type' => 'text'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_league_table_text_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_league_table_text_font_weight',
+	array(
+		'section' => 'cricket_league_pro_league_table_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_league_table_text_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_league_table_text_font_family',
+	array(
+		'section' => 'cricket_league_pro_league_table_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_league_table_text_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_league_table_text_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_league_table_sec',
+		'setting' => 'cricket_league_pro_league_table_text_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_league_table_text_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_league_table_text_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_league_table_sec',
+			'settings' => 'cricket_league_pro_league_table_text_color',
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_table_heading_tag_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_table_heading_tag_settings',
+		array(
+			'label' => __('Upcoming Matches Heading Tag Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_league_table_sec'
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_table_heading_tag_one',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_table_heading_tag_one',
+	array(
+		'label' => __('Heading Tag', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_league_table_sec',
+		'setting' => 'cricket_league_pro_upcoming_table_heading_tag_one',
+		'type' => 'text'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_table_heading_tag_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_table_heading_tag_font_weight',
+	array(
+		'section' => 'cricket_league_pro_league_table_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_table_heading_tag_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_table_heading_tag_font_family',
+	array(
+		'section' => 'cricket_league_pro_league_table_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_table_heading_tag_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_table_heading_tag_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_league_table_sec',
+		'setting' => 'cricket_league_pro_upcoming_table_heading_tag_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_table_heading_tag_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_table_heading_tag_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_league_table_sec',
+			'settings' => 'cricket_league_pro_upcoming_table_heading_tag_color',
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_table_heading_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_table_heading_settings',
+		array(
+			'label' => __('Upcoming Matches Heading Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_league_table_sec'
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_table_heading_one',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_table_heading_one',
+	array(
+		'label' => __('Heading ', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_league_table_sec',
+		'setting' => 'cricket_league_pro_upcoming_table_heading_one',
+		'type' => 'text'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_table_heading_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_table_heading_font_weight',
+	array(
+		'section' => 'cricket_league_pro_league_table_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_table_heading_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_table_heading_font_family',
+	array(
+		'section' => 'cricket_league_pro_league_table_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_table_heading_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_table_heading_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_league_table_sec',
+		'setting' => 'cricket_league_pro_upcoming_table_heading_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_table_heading_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_table_heading_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_league_table_sec',
+			'settings' => 'cricket_league_pro_upcoming_table_heading_color',
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_view_all_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_view_all_settings',
+		array(
+			'label' => __('View ALl Button Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_league_table_sec'
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_view_all',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_view_all',
+	array(
+		'label' => __('Heading Tag', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_league_table_sec',
+		'setting' => 'cricket_league_pro_upcoming_view_all',
+		'type' => 'text'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_view_all_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_view_all_font_weight',
+	array(
+		'section' => 'cricket_league_pro_league_table_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_view_all_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_view_all_font_family',
+	array(
+		'section' => 'cricket_league_pro_league_table_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_view_all_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_view_all_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_league_table_sec',
+		'setting' => 'cricket_league_pro_upcoming_view_all_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_view_all_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_view_all_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_league_table_sec',
+			'settings' => 'cricket_league_pro_upcoming_view_all_color',
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_league_table_sec_id',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_league_table_sec_id',
+	array(
+		'label' => __('League Table ID', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_league_table_sec',
+		'setting' => 'cricket_league_pro_league_table_sec_id',
+		'type' => 'text'
+	)
+);
+
+
+// Player Tab settings 
+
+
+$wp_customize->add_section(
+	'cricket_league_pro_player_tab',
+	array(
+		'title' => __('Player Tab Section', 'cricket-league-pro'),
+		'description' => __('Add steps setting here.', 'cricket-league-pro'),
+		'panel' => 'cricket_league_pro_panel_id',
+	)
+);
+
+
 $wp_customize->add_setting(
 	'cricket_league_pro_steps_enable',
 	array(
@@ -2686,7 +3068,7 @@ $wp_customize->add_control(
 	array(
 		'type' => 'radio',
 		'label' => __('Do you want this section', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
+		'section' => 'cricket_league_pro_player_tab',
 		'choices' => array(
 			'Enable' => __('Enable', 'cricket-league-pro'),
 			'Disable' => __('Disable', 'cricket-league-pro')
@@ -2696,14 +3078,11 @@ $wp_customize->add_control(
 $wp_customize->selective_refresh->add_partial(
 	'cricket_league_pro_steps_bgcolor',
 	array(
-		'selector' => '#steps-us .container',
+		'selector' => 'section.playertab .container',
 		'render_callback' => 'twentyfifteen_customize_partial_cricket_league_pro_steps_bgcolor',
 	)
 );
-// 	$wp_customize->selective_refresh->add_partial( 'cricket_league_pro_steps_enable', array(
-// 		'selector' => '#steps-us .container',
-// 		'render_callback' => 'cricket_league_pro_steps_sec',
-// ));
+
 $wp_customize->add_setting(
 	'cricket_league_pro_steps_bgcolor',
 	array(
@@ -2718,7 +3097,7 @@ $wp_customize->add_control(
 		array(
 			'label' => __('Background Color', 'cricket-league-pro'),
 			'description' => __('Either add background color or background image, if you add both background color will be top most priority', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec',
+			'section' => 'cricket_league_pro_player_tab',
 			'settings' => 'cricket_league_pro_steps_bgcolor',
 		)
 	)
@@ -2736,32 +3115,15 @@ $wp_customize->add_control(
 		'cricket_league_pro_steps_bgimage',
 		array(
 			'label' => __('Background image ', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec',
+			'section' => 'cricket_league_pro_player_tab',
 			'settings' => 'cricket_league_pro_steps_bgimage'
 		)
 	)
 );
+
+
 $wp_customize->add_setting(
-	'cricket_league_pro_steps_bgimage_setting',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_steps_bgimage_setting',
-	array(
-		'type' => 'radio',
-		'label' => __('Choose image option', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
-		'choices' => array(
-			'fixed' => __('Fixed', 'cricket-league-pro'),
-			'scroll' => __('Scroll', 'cricket-league-pro'),
-		)
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_steps_heading_tagline_settings',
+	'cricket_league_pro_playerTab_tag_settings',
 	array(
 		'default' => '',
 		'transport' => 'postMessage',
@@ -2771,33 +3133,33 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new VW_Themes_Seperator_custom_Control(
 		$wp_customize,
-		'cricket_league_pro_steps_heading_tagline_settings',
+		'cricket_league_pro_playerTab_tag_settings',
 		array(
-			'label' => __('Heading Tagline Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec'
+			'label' => __('Player Tab Heading Tag Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab'
 		)
 	)
 );
 
+
 $wp_customize->add_setting(
-	'cricket_league_pro_steps_heading_tag',
+	'cricket_league_pro_playerTab_tag',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_text_field'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_steps_heading_tag',
+	'cricket_league_pro_playerTab_tag',
 	array(
-		'label' => __('Section Heading Tagline', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
-		'setting' => 'cricket_league_pro_steps_heading_tag',
+		'label' => __('Heading Tag', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_player_tab',
+		'setting' => 'cricket_league_pro_playerTab_tag',
 		'type' => 'text'
 	)
 );
-
 $wp_customize->add_setting(
-	'cricket_league_pro_steps_section_heading_tagline_font_weight',
+	'cricket_league_pro_playerTab_tag_font_weight',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -2805,9 +3167,9 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_steps_section_heading_tagline_font_weight',
+	'cricket_league_pro_playerTab_tag_font_weight',
 	array(
-		'section' => 'cricket_league_pro_steps_sec',
+		'section' => 'cricket_league_pro_player_tab',
 		'label' => __('Font Weight', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_weight_array,
@@ -2815,7 +3177,7 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_steps_section_heading_tagline_font_family',
+	'cricket_league_pro_playerTab_tag_font_family',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -2823,34 +3185,34 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_steps_section_heading_tagline_font_family',
+	'cricket_league_pro_playerTab_tag_font_family',
 	array(
-		'section' => 'cricket_league_pro_steps_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_array,
 	)
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_steps_section_heading_tagline_font_size',
+	'cricket_league_pro_playerTab_tag_font_size',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_text_field'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_steps_section_heading_tagline_font_size',
+	'cricket_league_pro_playerTab_tag_font_size',
 	array(
 		'label' => __('Font Size', 'cricket-league-pro'),
 		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
-		'setting' => 'cricket_league_pro_steps_section_heading_tagline_font_size',
+		'section' => 'cricket_league_pro_player_tab',
+		'setting' => 'cricket_league_pro_playerTab_tag_font_size',
 		'type' => 'number'
 	)
 );
 $wp_customize->add_setting(
-	'cricket_league_pro_steps_section_heading_tagline_color',
+	'cricket_league_pro_playerTab_tag_color',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_hex_color'
@@ -2859,17 +3221,17 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
 		$wp_customize,
-		'cricket_league_pro_steps_section_heading_tagline_color',
+		'cricket_league_pro_playerTab_tag_color',
 		array(
 			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec',
-			'settings' => 'cricket_league_pro_steps_section_heading_tagline_color',
+			'section' => 'cricket_league_pro_player_tab',
+			'settings' => 'cricket_league_pro_playerTab_tag_color',
 		)
 	)
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_steps_heading_settings',
+	'cricket_league_pro_playerTab_heading_settings',
 	array(
 		'default' => '',
 		'transport' => 'postMessage',
@@ -2879,35 +3241,33 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new VW_Themes_Seperator_custom_Control(
 		$wp_customize,
-		'cricket_league_pro_steps_heading_settings',
+		'cricket_league_pro_playerTab_heading_settings',
 		array(
-			'label' => __('Heading Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec'
+			'label' => __('Player Tab Heading Tag Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab'
 		)
 	)
 );
 
 
 $wp_customize->add_setting(
-	'cricket_league_pro_steps_heading',
+	'cricket_league_pro_playerTab_heading',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_text_field'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_steps_heading',
+	'cricket_league_pro_playerTab_heading',
 	array(
-		'label' => __('Section Heading ', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
-		'setting' => 'cricket_league_pro_steps_heading',
+		'label' => __('Heading', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_player_tab',
+		'setting' => 'cricket_league_pro_playerTab_heading',
 		'type' => 'text'
 	)
 );
-
-
 $wp_customize->add_setting(
-	'cricket_league_pro_steps_section_heading_font_weight',
+	'cricket_league_pro_playerTab_heading_font_weight',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -2915,9 +3275,9 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_steps_section_heading_font_weight',
+	'cricket_league_pro_playerTab_heading_font_weight',
 	array(
-		'section' => 'cricket_league_pro_steps_sec',
+		'section' => 'cricket_league_pro_player_tab',
 		'label' => __('Font Weight', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_weight_array,
@@ -2925,7 +3285,7 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_steps_section_heading_font_family',
+	'cricket_league_pro_playerTab_heading_font_family',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -2933,34 +3293,34 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_steps_section_heading_font_family',
+	'cricket_league_pro_playerTab_heading_font_family',
 	array(
-		'section' => 'cricket_league_pro_steps_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_array,
 	)
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_steps_section_heading_font_size',
+	'cricket_league_pro_playerTab_heading_font_size',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_text_field'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_steps_section_heading_font_size',
+	'cricket_league_pro_playerTab_heading_font_size',
 	array(
 		'label' => __('Font Size', 'cricket-league-pro'),
 		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
-		'setting' => 'cricket_league_pro_steps_section_heading_font_size',
+		'section' => 'cricket_league_pro_player_tab',
+		'setting' => 'cricket_league_pro_playerTab_heading_font_size',
 		'type' => 'number'
 	)
 );
 $wp_customize->add_setting(
-	'cricket_league_pro_steps_section_heading_color',
+	'cricket_league_pro_playerTab_heading_color',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_hex_color'
@@ -2969,18 +3329,17 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
 		$wp_customize,
-		'cricket_league_pro_steps_section_heading_color',
+		'cricket_league_pro_playerTab_heading_color',
 		array(
 			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec',
-			'settings' => 'cricket_league_pro_steps_section_heading_color',
+			'section' => 'cricket_league_pro_player_tab',
+			'settings' => 'cricket_league_pro_playerTab_heading_color',
 		)
 	)
 );
 
-
 $wp_customize->add_setting(
-	'cricket_league_pro_steps_title',
+	'cricket_league_pro_playerTab_list_teamName_settings',
 	array(
 		'default' => '',
 		'transport' => 'postMessage',
@@ -2990,252 +3349,16 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new VW_Themes_Seperator_custom_Control(
 		$wp_customize,
-		'cricket_league_pro_steps_title',
+		'cricket_league_pro_playerTab_list_teamName_settings',
 		array(
-			'label' => __('Steps Input Fileds', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec'
-		)
-	)
-);
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_step1_title',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_step1_image',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_step1_image',
-		array(
-			'label' => __('Step-1 Image', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec',
-			'settings' => 'cricket_league_pro_step1_image'
-		)
-	)
-);
-
-$wp_customize->add_control(
-	'cricket_league_pro_step1_title',
-	array(
-		'label' => __('Step-1 Title', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
-		'setting' => 'cricket_league_pro_step1_title',
-		'type' => 'text'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_step1_desc',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_step1_desc',
-	array(
-		'label' => __('Step-1 Desription', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
-		'setting' => 'cricket_league_pro_step1_desc',
-		'type' => 'text'
-	)
-);
-
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_step2_image',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_step2_image',
-		array(
-			'label' => __('Step-2 Image', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec',
-			'settings' => 'cricket_league_pro_step2_image'
+			'label' => __('Player List Team Name Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab'
 		)
 	)
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_step2_title',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_step2_title',
-	array(
-		'label' => __('Step-2 Title', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
-		'setting' => 'cricket_league_pro_step2_title',
-		'type' => 'text'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_step2_desc',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_step2_desc',
-	array(
-		'label' => __('Step-2 Desription', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
-		'setting' => 'cricket_league_pro_step1_desc',
-		'type' => 'text'
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_step3_image',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_step3_image',
-		array(
-			'label' => __('Step-3 Image', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec',
-			'settings' => 'cricket_league_pro_step3_image'
-		)
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_step3_title',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_step3_title',
-	array(
-		'label' => __('Step-3 Title', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
-		'setting' => 'cricket_league_pro_step3_title',
-		'type' => 'text'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_step3_desc',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_step3_desc',
-	array(
-		'label' => __('Step-3 Desription', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
-		'setting' => 'cricket_league_pro_step3_desc',
-		'type' => 'text'
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_step4_image',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_step4_image',
-		array(
-			'label' => __('Step-4 Image', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec',
-			'settings' => 'cricket_league_pro_step4_image'
-		)
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_step4_title',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_step4_title',
-	array(
-		'label' => __('Step-4 Title', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
-		'setting' => 'cricket_league_pro_ste4_title',
-		'type' => 'text'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_step4_desc',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_step4_desc',
-	array(
-		'label' => __('Step-4  Desription', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
-		'setting' => 'cricket_league_pro_step4_desc',
-		'type' => 'text'
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_step_title_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_step_title_settings',
-		array(
-			'label' => __('Steps Typography Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec'
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_step_title_heading_font_weight',
+	'cricket_league_pro_playerTab_list_teamName_font_weight',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -3243,382 +3366,9 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_step_title_heading_font_weight',
+	'cricket_league_pro_playerTab_list_teamName_font_weight',
 	array(
-		'section' => 'cricket_league_pro_steps_sec',
-		'label' => __('Title Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_step_title_heading_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_step_title_heading_font_family',
-	array(
-		'section' => 'cricket_league_pro_steps_sec',
-		'label' => __('Title Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_step_title_heading_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_step_title_heading_font_size',
-	array(
-		'label' => __('Title Font Size', 'cricket-league-pro'),
-		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
-		'setting' => 'cricket_league_pro_step_title_heading_font_size',
-		'type' => 'number'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_step_title_heading_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_step_title_heading_color',
-		array(
-			'label' => __('Title Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec',
-			'settings' => 'cricket_league_pro_step_title_heading_color',
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_step_desc_heading_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_step_desc_heading_font_weight',
-	array(
-		'section' => 'cricket_league_pro_steps_sec',
-		'label' => __('Step Description Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_step_desc_heading_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_step_desc_heading_font_family',
-	array(
-		'section' => 'cricket_league_pro_steps_sec',
-		'label' => __('Step Description Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_step_desc_heading_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_step_desc_heading_font_size',
-	array(
-		'label' => __('Step Description Font Size', 'cricket-league-pro'),
-		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_steps_sec',
-		'setting' => 'cricket_league_pro_step_desc_heading_font_size',
-		'type' => 'number'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_step_desc_heading_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_step_desc_heading_color',
-		array(
-			'label' => __('Step Description Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec',
-			'settings' => 'cricket_league_pro_step_desc_heading_color',
-		)
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_steps_section_decoration',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_steps_section_decoration',
-		array(
-			'label' => __('Steps Decoration Image', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_steps_sec',
-			'settings' => 'cricket_league_pro_steps_section_decoration'
-		)
-	)
-);
-
-// pricing section 
-
-$wp_customize->add_section(
-	'cricket_league_pro_pricing_sec',
-	array(
-		'title' => __('Pricing Section', 'cricket-league-pro'),
-		'description' => __('Add pricing detials here.', 'cricket-league-pro'),
-		'panel' => 'cricket_league_pro_panel_id',
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_enabledisable',
-	array(
-		'default' => 'Enable',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_enabledisable',
-	array(
-		'type' => 'radio',
-		'label' => __('Do you want this section', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'choices' => array(
-			'Enable' => __('Enable', 'cricket-league-pro'),
-			'Disable' => __('Disable', 'cricket-league-pro')
-		),
-	)
-);
-
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_degree_sec_bg_color',
-		array(
-			'label' => __('Background Color', 'cricket-league-pro'),
-			'description' => __('Either add background color or background image, if you add both background color will be top most priority', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'settings' => 'cricket_league_pro_degree_sec_bg_color',
-		)
-	)
-);
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_degree_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_degree_settings',
-		array(
-			'label' => __('Heading & Content Setting', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec'
-		)
-	)
-);
-
-
-$wp_customize->add_section(
-	'cricket_league_pro_pricing_sec',
-	array(
-		'title' => __('Pricing Section', 'cricket-league-pro'),
-		'description' => __('Add pricing detials here.', 'cricket-league-pro'),
-		'panel' => 'cricket_league_pro_panel_id',
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_enabledisable',
-	array(
-		'default' => 'Enable',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_enabledisable',
-	array(
-		'type' => 'radio',
-		'label' => __('Do you want this section', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'choices' => array(
-			'Enable' => __('Enable', 'cricket-league-pro'),
-			'Disable' => __('Disable', 'cricket-league-pro')
-		),
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_bg_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_pricing_bg_color',
-		array(
-			'label' => __('Background Color', 'cricket-league-pro'),
-			'description' => __('Either add background color or background image, if you add both background color will be top most priority', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'settings' => 'cricket_league_pro_pricing_bg_color',
-		)
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_bg_image',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_pricing_bg_image',
-		array(
-			'label' => __('Background image ', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'settings' => 'cricket_league_pro_pricing_bg_image'
-		)
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_bg_image_attachment',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_bg_image_attachment',
-	array(
-		'type' => 'radio',
-		'label' => __('Choose image option', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'choices' => array(
-			'fixed' => __('Fixed', 'cricket-league-pro'),
-			'scroll' => __('Scroll', 'cricket-league-pro'),
-		)
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_degree_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_degree_settings',
-		array(
-			'label' => __('Heading & Content Setting', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec'
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_heading_tag_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_form_counter_sub_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_pricing_heading_tag_settings',
-		array(
-			'label' => __('Section heading_tag Tag Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec'
-		)
-	)
-);
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_heading_tag',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_section_heading_tag',
-	array(
-		'label' => __('Section heading_tag Tag', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_section_heading_tag',
-		'type' => 'text'
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_heading_tag_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_section_heading_tag_font_weight',
-	array(
-		'section' => 'cricket_league_pro_pricing_sec',
+		'section' => 'cricket_league_pro_player_tab',
 		'label' => __('Font Weight', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_weight_array,
@@ -3626,7 +3376,7 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_heading_tag_font_family',
+	'cricket_league_pro_playerTab_list_teamName_font_family',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -3634,34 +3384,34 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_pricing_section_heading_tag_font_family',
+	'cricket_league_pro_playerTab_list_teamName_font_family',
 	array(
-		'section' => 'cricket_league_pro_pricing_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_array,
 	)
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_heading_tag_font_size',
+	'cricket_league_pro_playerTab_list_teamName_font_size',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_text_field'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_pricing_section_heading_tag_font_size',
+	'cricket_league_pro_playerTab_list_teamName_font_size',
 	array(
 		'label' => __('Font Size', 'cricket-league-pro'),
 		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_section_heading_tag_font_size',
+		'section' => 'cricket_league_pro_player_tab',
+		'setting' => 'cricket_league_pro_playerTab_list_teamName_font_size',
 		'type' => 'number'
 	)
 );
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_heading_tag_color',
+	'cricket_league_pro_playerTab_list_teamName_color',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_hex_color'
@@ -3670,221 +3420,17 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
 		$wp_customize,
-		'cricket_league_pro_pricing_section_heading_tag_color',
+		'cricket_league_pro_playerTab_list_teamName_color',
 		array(
 			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'settings' => 'cricket_league_pro_pricing_section_heading_tag_color',
-		)
-	)
-);
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_heading',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_section_heading',
-	array(
-		'label' => __('Section Heading', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_section_heading',
-		'type' => 'text'
-	)
-);
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_heading_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_section_heading_font_weight',
-	array(
-		'section' => 'cricket_league_pro_pricing_sec',
-		'label' => __('Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_heading_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_section_heading_font_family',
-	array(
-		'section' => 'cricket_league_pro_pricing_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_heading_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_section_heading_font_size',
-	array(
-		'label' => __('Font Size', 'cricket-league-pro'),
-		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_section_heading_font_size',
-		'type' => 'number'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_heading_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_pricing_section_heading_color',
-		array(
-			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'settings' => 'cricket_league_pro_pricing_section_heading_color',
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_paragraph_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_form_counter_sub_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_pricing_section_paragraph_settings',
-		array(
-			'label' => __('Section Paragraph Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec'
+			'section' => 'cricket_league_pro_player_tab',
+			'settings' => 'cricket_league_pro_playerTab_list_teamName_color',
 		)
 	)
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_paragraph',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_section_paragraph',
-	array(
-		'label' => __('Section Paragraph', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_section_paragraph',
-		'type' => 'text'
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_section_paragraph_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_section_section_paragraph_font_weight',
-	array(
-		'section' => 'cricket_league_pro_pricing_sec',
-		'label' => __('Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_section_paragraph_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_section_section_paragraph_font_family',
-	array(
-		'section' => 'cricket_league_pro_pricing_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_section_paragraph_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_section_section_paragraph_font_size',
-	array(
-		'label' => __('Font Size', 'cricket-league-pro'),
-		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_section_section_paragraph_font_size',
-		'type' => 'number'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_section_paragraph_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_pricing_section_section_paragraph_color',
-		array(
-			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'settings' => 'cricket_league_pro_pricing_section_section_paragraph_color',
-		)
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_points',
+	'cricket_league_pro_playerTab_list_playerName_settings',
 	array(
 		'default' => '',
 		'transport' => 'postMessage',
@@ -3894,450 +3440,16 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new VW_Themes_Seperator_custom_Control(
 		$wp_customize,
-		'cricket_league_pro_pricing_section_points',
+		'cricket_league_pro_playerTab_list_playerName_settings',
 		array(
-			'label' => __('Pricing Points', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec'
-		)
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_points_icon',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	new cricket_league_pro_Fontawesome_Icon_Chooser(
-		$wp_customize,
-		'cricket_league_pro_pricing_section_points_icon',
-		array(
-			'settings' => 'cricket_league_pro_pricing_section_points_icon',
-			'section' => 'cricket_league_pro_pricing_sec',
-			'type' => 'icon',
-			'label' => esc_html__('Choose Pricing Points Icon', 'cricket-league-pro'),
+			'label' => __('Player List Player Name Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab'
 		)
 	)
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_points1',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_section_points1',
-	array(
-		'label' => __('Pricing point 1', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_section_points1',
-		'type' => 'text'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_points2',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_section_points2',
-	array(
-		'label' => __('Pricing point 2', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_section_points2',
-		'type' => 'text'
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_package_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_package_settings',
-		array(
-			'label' => __('Package Card Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec'
-		)
-	)
-);
-
-
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_package_settings1',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_package_settings1',
-		array(
-			'label' => __('Package Card 1', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec'
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_pack_name1',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_pack_name1',
-	array(
-		'label' => __('Package Name', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_pack_name1',
-		'type' => 'text'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_pack_price1',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_pack_price1',
-	array(
-		'label' => __('Package Price', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_pack_price1',
-		'type' => 'text'
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_pack_icon1',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_pricing_pack_icon1',
-		array(
-			'label' => __('Regular Pack Icon Image', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'settings' => 'cricket_league_pro_pricing_pack_icon1'
-		)
-	)
-);
-
-// Regular package feature loop 
-
-$wp_customize->add_setting(
-	'cricket_league_pro_package_features1',
-	array(
-		'default' => '5',
-		'sanitize_callback' => 'sanitize_text_field',
-	)
-);
-
-$wp_customize->add_control(
-	'cricket_league_pro_package_features1',
-	array(
-		'label' => __('Number of features to include', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'type' => 'number'
-	)
-);
-
-$count = get_theme_mod('cricket_league_pro_package_features1');
-
-for ($i = 1, $j = 1; $i <= $count; $i++, $j++) {
-	$wp_customize->add_setting(
-		'cricket_league_pro_feature' . $i,
-		array(
-			'default' => '',
-			'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-
-	$wp_customize->add_control(
-		'cricket_league_pro_feature' . $i,
-		array(
-			'label' => __('Feature ' . $i, 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'setting' => 'cricket_league_pro_feature' . $i,
-			'type' => 'text'
-		)
-	);
-	$wp_customize->add_setting(
-		'cricket_league_pro_pricing_Feature1_' . $i,
-		array(
-			'default' => '',
-			'sanitize_callback' => 'sanitize_text_field'
-		)
-	);
-	$wp_customize->add_control(
-		new cricket_league_pro_Fontawesome_Icon_Chooser(
-			$wp_customize,
-			'cricket_league_pro_pricing_Feature1_' . $i,
-			array(
-				'settings' => 'cricket_league_pro_pricing_Feature1_' . $i,
-				'section' => 'cricket_league_pro_pricing_sec',
-				'type' => 'icon',
-				'label' => esc_html__('Feature ' . $i . ' Icon', 'cricket-league-pro'),
-			)
-		)
-	);
-
-}
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_card_btn1_text',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_card_btn1_text',
-	array(
-		'label' => __('Button Text', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_card_btn1_text',
-		'type' => 'text'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_card_btn1_link',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_card_btn1_link',
-	array(
-		'label' => __('Button Link', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_card_btn1_link',
-		'type' => 'text'
-	)
-);
-
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_package_settings2',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_package_settings2',
-		array(
-			'label' => __('Package Card 2', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec'
-		)
-	)
-);
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_pack_name2',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_pack_name2',
-	array(
-		'label' => __('Package Name', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_pack_name2',
-		'type' => 'text'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_pack_price2',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_pack_price2',
-	array(
-		'label' => __('Package Price', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_pack_price2',
-		'type' => 'text'
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_pack_icon2',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_pricing_pack_icon2',
-		array(
-			'label' => __('Premium Pack Icon Image', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'settings' => 'cricket_league_pro_pricing_pack_icon2'
-		)
-	)
-);
-
-// Premium package feature loop 
-
-$wp_customize->add_setting(
-	'cricket_league_pro_package_features2',
-	array(
-		'default' => '5',
-		'sanitize_callback' => 'sanitize_text_field',
-	)
-);
-
-$wp_customize->add_control(
-	'cricket_league_pro_package_features2',
-	array(
-		'label' => __('Number of features to include', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'type' => 'number'
-	)
-);
-
-$count2 = get_theme_mod('cricket_league_pro_package_features2');
-
-for ($i = 1, $j = 1; $i <= $count2; $i++, $j++) {
-	$wp_customize->add_setting(
-		'cricket_league_pro_feature_premium' . $i,
-		array(
-			'default' => '',
-			'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-
-	$wp_customize->add_control(
-		'cricket_league_pro_feature_premium' . $i,
-		array(
-			'label' => __('Feature ' . $i, 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'setting' => 'cricket_league_pro_feature_premium' . $i,
-			'type' => 'text'
-		)
-	);
-	$wp_customize->add_setting(
-		'cricket_league_pro_pricing_feature_icon' . $i,
-		array(
-			'default' => '',
-			'sanitize_callback' => 'sanitize_text_field'
-		)
-	);
-	$wp_customize->add_control(
-		new cricket_league_pro_Fontawesome_Icon_Chooser(
-			$wp_customize,
-			'cricket_league_pro_pricing_feature_icon' . $i,
-			array(
-				'settings' => 'cricket_league_pro_pricing_feature_icon' . $i,
-				'section' => 'cricket_league_pro_pricing_sec',
-				'type' => 'icon',
-				'label' => esc_html__('Feature ' . $i . ' Icon', 'cricket-league-pro'),
-			)
-		)
-	);
-}
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_card_btn2_text',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_card_btn2_text',
-	array(
-		'label' => __('Button Text', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_card_btn2_text',
-		'type' => 'text'
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_card_btn2_link',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_card_btn2_link',
-	array(
-		'label' => __('Button Link', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_card_btn2_link',
-		'type' => 'text'
-	)
-);
-
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_card_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_form_counter_sub_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_pricing_card_settings',
-		array(
-			'label' => __('Card Features Typography Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec'
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_points_font_weight',
+	'cricket_league_pro_playerTab_list_playerName_font_weight',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -4345,9 +3457,9 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_pricing_section_points_font_weight',
+	'cricket_league_pro_playerTab_list_playerName_font_weight',
 	array(
-		'section' => 'cricket_league_pro_pricing_sec',
+		'section' => 'cricket_league_pro_player_tab',
 		'label' => __('Font Weight', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_weight_array,
@@ -4355,7 +3467,7 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_points_font_family',
+	'cricket_league_pro_playerTab_list_playerName_font_family',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -4363,34 +3475,34 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_pricing_section_points_font_family',
+	'cricket_league_pro_playerTab_list_playerName_font_family',
 	array(
-		'section' => 'cricket_league_pro_pricing_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_array,
 	)
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_points_font_size',
+	'cricket_league_pro_playerTab_list_playerName_font_size',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_text_field'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_pricing_section_points_font_size',
+	'cricket_league_pro_playerTab_list_playerName_font_size',
 	array(
 		'label' => __('Font Size', 'cricket-league-pro'),
 		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_section_points_font_size',
+		'section' => 'cricket_league_pro_player_tab',
+		'setting' => 'cricket_league_pro_playerTab_list_playerName_font_size',
 		'type' => 'number'
 	)
 );
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_points_color',
+	'cricket_league_pro_playerTab_list_playerName_color',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_hex_color'
@@ -4399,41 +3511,37 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
 		$wp_customize,
-		'cricket_league_pro_pricing_section_points_color',
+		'cricket_league_pro_playerTab_list_playerName_color',
 		array(
 			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'settings' => 'cricket_league_pro_pricing_section_points_color',
+			'section' => 'cricket_league_pro_player_tab',
+			'settings' => 'cricket_league_pro_playerTab_list_playerName_color',
 		)
 	)
 );
 
 
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_card_title_settings',
+	'cricket_league_pro_playerTab_list_position_settings',
 	array(
 		'default' => '',
 		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_form_counter_sub_text_sanitization'
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
 	)
 );
 $wp_customize->add_control(
 	new VW_Themes_Seperator_custom_Control(
 		$wp_customize,
-		'cricket_league_pro_pricing_card_title_settings',
+		'cricket_league_pro_playerTab_list_position_settings',
 		array(
-			'label' => __('Card Title Typography Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec'
+			'label' => __('Player List Position Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab'
 		)
 	)
 );
 
-
-
-
-
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_package_name_font_weight',
+	'cricket_league_pro_playerTab_list_position_font_weight',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -4441,9 +3549,9 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_pricing_section_package_name_font_weight',
+	'cricket_league_pro_playerTab_list_position_font_weight',
 	array(
-		'section' => 'cricket_league_pro_pricing_sec',
+		'section' => 'cricket_league_pro_player_tab',
 		'label' => __('Font Weight', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_weight_array,
@@ -4451,7 +3559,7 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_package_name_font_family',
+	'cricket_league_pro_playerTab_list_position_font_family',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -4459,102 +3567,34 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_pricing_section_package_name_font_family',
+	'cricket_league_pro_playerTab_list_position_font_family',
 	array(
-		'section' => 'cricket_league_pro_pricing_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_array,
 	)
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_package_name_font_size',
+	'cricket_league_pro_playerTab_list_position_font_size',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_text_field'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_pricing_section_package_name_font_size',
+	'cricket_league_pro_playerTab_list_position_font_size',
 	array(
 		'label' => __('Font Size', 'cricket-league-pro'),
 		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_section_package_name_font_size',
-		'type' => 'number'
-	)
-);
-
-
-
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_pricing_button_text_settings',
-		array(
-			'label' => __('Button Text Typography Setting', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec'
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_button_text_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_section_button_text_font_weight',
-	array(
-		'section' => 'cricket_league_pro_pricing_sec',
-		'label' => __('Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_button_text_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_section_button_text_font_family',
-	array(
-		'section' => 'cricket_league_pro_pricing_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_button_text_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_pricing_section_button_text_font_size',
-	array(
-		'label' => __('Font Size', 'cricket-league-pro'),
-		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_pricing_sec',
-		'setting' => 'cricket_league_pro_pricing_section_button_text_font_size',
+		'section' => 'cricket_league_pro_player_tab',
+		'setting' => 'cricket_league_pro_playerTab_list_position_font_size',
 		'type' => 'number'
 	)
 );
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_button_text_color',
+	'cricket_league_pro_playerTab_list_position_color',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_hex_color'
@@ -4562,37 +3602,91 @@ $wp_customize->add_setting(
 );
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
-
 		$wp_customize,
-		'cricket_league_pro_pricing_section_button_text_color',
+		'cricket_league_pro_playerTab_list_position_color',
 		array(
 			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'settings' => 'cricket_league_pro_pricing_section_button_text_color',
+			'section' => 'cricket_league_pro_player_tab',
+			'settings' => 'cricket_league_pro_playerTab_list_position_color',
 		)
 	)
 );
 
+
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_background_settings',
+	'cricket_league_pro_playerTab_player_teamName_settings',
 	array(
 		'default' => '',
 		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_form_counter_sub_text_sanitization'
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
 	)
 );
 $wp_customize->add_control(
 	new VW_Themes_Seperator_custom_Control(
 		$wp_customize,
-		'cricket_league_pro_pricing_background_settings',
+		'cricket_league_pro_playerTab_player_teamName_settings',
 		array(
-			'label' => __('Pricing Card Background Setting', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec'
+			'label' => __('Player Team Name Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab'
 		)
 	)
 );
+
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_pointtion_bgimage_regular',
+	'cricket_league_pro_playerTab_player_teamName_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_teamName_font_weight',
+	array(
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_teamName_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_teamName_font_family',
+	array(
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_teamName_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_teamName_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_player_tab',
+		'setting' => 'cricket_league_pro_playerTab_player_teamName_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_teamName_color',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_hex_color'
@@ -4601,85 +3695,181 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
 		$wp_customize,
-		'cricket_league_pro_pricing_pointtion_bgimage_regular',
+		'cricket_league_pro_playerTab_player_teamName_color',
 		array(
-			'label' => __('Regular Pack BG Color', 'cricket-league-pro'),
-			'description' => __('Add an image atleast 1920x768 px'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'settings' => 'cricket_league_pro_pricing_pointtion_bgimage_regular',
-		)
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_pricing_pointtion_bgimage',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_pricing_pointtion_bgimage',
-		array(
-			'label' => __('Premium Pack BG Color', 'cricket-league-pro'),
-			'description' => __('Add an image atleast 1920x768 px'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'settings' => 'cricket_league_pro_pricing_pointtion_bgimage',
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab',
+			'settings' => 'cricket_league_pro_playerTab_player_teamName_color',
 		)
 	)
 );
 
 
-
-
-
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_card_text_settings',
+	'cricket_league_pro_playerTab_player_playerName_settings',
 	array(
 		'default' => '',
 		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_form_counter_sub_text_sanitization'
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
 	)
 );
 $wp_customize->add_control(
 	new VW_Themes_Seperator_custom_Control(
 		$wp_customize,
-		'cricket_league_pro_pricing_card_text_settings',
+		'cricket_league_pro_playerTab_player_playerName_settings',
 		array(
-			'label' => __('Card Text Color Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec'
+			'label' => __('Player Name Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab'
 		)
 	)
 );
 
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_playerName_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_playerName_font_weight',
+	array(
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
 
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_playerName_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_playerName_font_family',
+	array(
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
 
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_playerName_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_playerName_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_player_tab',
+		'setting' => 'cricket_league_pro_playerTab_player_playerName_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_playerName_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
 		$wp_customize,
-		'cricket_league_pro_pricing_section_regular_package_name_color',
+		'cricket_league_pro_playerTab_player_playerName_color',
 		array(
-			'label' => __('Regular Pack Text Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'settings' => 'cricket_league_pro_pricing_section_regular_package_name_color',
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab',
+			'settings' => 'cricket_league_pro_playerTab_player_playerName_color',
 		)
 	)
 );
 
-
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_button_text_settings',
+	'cricket_league_pro_playerTab_player_attr_settings',
 	array(
 		'default' => '',
 		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_form_counter_sub_text_sanitization'
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_playerTab_player_attr_settings',
+		array(
+			'label' => __('Player Attribute Name Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab'
+		)
 	)
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_package_text_color',
+	'cricket_league_pro_playerTab_player_attr_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_attr_font_weight',
+	array(
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_attr_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_attr_font_family',
+	array(
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_attr_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_attr_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_player_tab',
+		'setting' => 'cricket_league_pro_playerTab_player_attr_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_attr_color',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_hex_color'
@@ -4688,11 +3878,283 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
 		$wp_customize,
-		'cricket_league_pro_pricing_section_package_text_color',
+		'cricket_league_pro_playerTab_player_attr_color',
 		array(
-			'label' => __('Premium Pack Text Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_pricing_sec',
-			'settings' => 'cricket_league_pro_pricing_section_package_text_color',
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab',
+			'settings' => 'cricket_league_pro_playerTab_player_attr_color',
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_attr_value_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_playerTab_player_attr_value_settings',
+		array(
+			'label' => __('Player Attribute Value Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab'
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_attr_value_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_attr_value_font_weight',
+	array(
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_attr_value_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_attr_value_font_family',
+	array(
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_attr_value_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_attr_value_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_player_tab',
+		'setting' => 'cricket_league_pro_playerTab_player_attr_value_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_attr_value_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_playerTab_player_attr_value_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab',
+			'settings' => 'cricket_league_pro_playerTab_player_attr_value_color',
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_season_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_playerTab_player_season_settings',
+		array(
+			'label' => __('Season Name Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab'
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_season_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_season_font_weight',
+	array(
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_season_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_season_font_family',
+	array(
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_season_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_season_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_player_tab',
+		'setting' => 'cricket_league_pro_playerTab_player_season_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_season_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_playerTab_player_season_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab',
+			'settings' => 'cricket_league_pro_playerTab_player_season_color',
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_scoreNum_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_playerTab_player_scoreNum_settings',
+		array(
+			'label' => __('PLayer Score Number Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab'
+		)
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_scoreNum_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_scoreNum_font_weight',
+	array(
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_scoreNum_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_scoreNum_font_family',
+	array(
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_scoreNum_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_scoreNum_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_player_tab',
+		'setting' => 'cricket_league_pro_playerTab_player_scoreNum_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_scoreNum_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_playerTab_player_scoreNum_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab',
+			'settings' => 'cricket_league_pro_playerTab_player_scoreNum_color',
 		)
 	)
 );
@@ -4700,13 +4162,95 @@ $wp_customize->add_control(
 
 
 $wp_customize->add_setting(
-	'cricket_league_pro_pricing_section_regular_package_name_color',
+	'cricket_league_pro_playerTab_player_score_name_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_playerTab_player_score_name_settings',
+		array(
+			'label' => __('PLayer Score Title Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab'
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_score_name_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_score_name_font_weight',
+	array(
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_score_name_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_score_name_font_family',
+	array(
+		'section' => 'cricket_league_pro_player_tab',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_score_name_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_playerTab_player_score_name_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_player_tab',
+		'setting' => 'cricket_league_pro_playerTab_player_score_name_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_playerTab_player_score_name_color',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_hex_color'
 	)
 );
-// pricing section ends 
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_playerTab_player_score_name_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_player_tab',
+			'settings' => 'cricket_league_pro_playerTab_player_score_name_color',
+		)
+	)
+);
 
 
 // why Choose Us Section 
@@ -4779,26 +4323,6 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_whychooseus_bg_image_attachment',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_whychooseus_bg_image_attachment',
-	array(
-		'type' => 'radio',
-		'label' => __('Choose image option', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_whychooseus_sec',
-		'choices' => array(
-			'fixed' => __('Fixed', 'cricket-league-pro'),
-			'scroll' => __('Scroll', 'cricket-league-pro'),
-		)
-	)
-);
-
-$wp_customize->add_setting(
 	'cricket_league_pro_whychooseus_heading_tag_settings',
 	array(
 		'default' => '',
@@ -4816,7 +4340,6 @@ $wp_customize->add_control(
 		)
 	)
 );
-
 
 $wp_customize->add_setting(
 	'cricket_league_pro_about_whychooseus_heading_tag',
@@ -4930,6 +4453,7 @@ $wp_customize->add_control(
 );
 
 
+
 $wp_customize->add_setting(
 	'cricket_league_pro_about_whychooseus_heading',
 	array(
@@ -5021,27 +4545,6 @@ $wp_customize->add_control(
 	)
 );
 
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_whychooseus_main_image',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_whychooseus_main_image',
-		array(
-			'label' => __('Why Choose Us Image', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_whychooseus_sec',
-			'settings' => 'cricket_league_pro_whychooseus_main_image'
-		)
-	)
-);
-
 $wp_customize->add_setting(
 	'cricket_league_pro_text_para_settings',
 	array(
@@ -5062,17 +4565,21 @@ $wp_customize->add_control(
 );
 
 
-$wp_customize->add_setting('cricket_league_pro_text_field1', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
+$wp_customize->add_setting(
+	'cricket_league_pro_text_field1',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
 );
-$wp_customize->add_control('cricket_league_pro_text_field1', array(
-	'label' => __('Paragraph Text', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_whychooseus_sec',
-	'setting' => 'cricket_league_pro_text_field1',
-	'type' => 'text'
-)
+$wp_customize->add_control(
+	'cricket_league_pro_text_field1',
+	array(
+		'label' => __('Paragraph Text', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_whychooseus_sec',
+		'setting' => 'cricket_league_pro_text_field1',
+		'type' => 'text'
+	)
 );
 
 
@@ -5188,85 +4695,109 @@ $wp_customize->add_control(
 
 
 
-$wp_customize->add_setting('cricket_league_pro_counter1_title', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
+$wp_customize->add_setting(
+	'cricket_league_pro_counter1_title',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
 );
-$wp_customize->add_control('cricket_league_pro_counter1_title', array(
-	'label' => __('Counter 1 Title', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_whychooseus_sec',
-	'setting' => 'cricket_league_pro_counter1_title',
-	'type' => 'text'
-)
-);
-
-$wp_customize->add_setting('cricket_league_pro_counter1_count', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_counter1_count', array(
-	'label' => __('Counter Number', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_whychooseus_sec',
-	'setting' => 'cricket_league_pro_counter1_count',
-	'type' => 'text'
-)
+$wp_customize->add_control(
+	'cricket_league_pro_counter1_title',
+	array(
+		'label' => __('Counter 1 Title', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_whychooseus_sec',
+		'setting' => 'cricket_league_pro_counter1_title',
+		'type' => 'text'
+	)
 );
 
-
-
-$wp_customize->add_setting('cricket_league_pro_counter2_title', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
+$wp_customize->add_setting(
+	'cricket_league_pro_counter1_count',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
 );
-$wp_customize->add_control('cricket_league_pro_counter2_title', array(
-	'label' => __('Counter 2 Title', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_whychooseus_sec',
-	'setting' => 'cricket_league_pro_counter2_title',
-	'type' => 'text'
-)
-);
-
-$wp_customize->add_setting('cricket_league_pro_counter2_count', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_counter2_count', array(
-	'label' => __('Counter Number', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_whychooseus_sec',
-	'setting' => 'cricket_league_pro_counter2_count',
-	'type' => 'text'
-)
+$wp_customize->add_control(
+	'cricket_league_pro_counter1_count',
+	array(
+		'label' => __('Counter Number', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_whychooseus_sec',
+		'setting' => 'cricket_league_pro_counter1_count',
+		'type' => 'text'
+	)
 );
 
 
-$wp_customize->add_setting('cricket_league_pro_counter3_title', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
+
+$wp_customize->add_setting(
+	'cricket_league_pro_counter2_title',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
 );
-$wp_customize->add_control('cricket_league_pro_counter3_title', array(
-	'label' => __('Counter 3 Title', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_whychooseus_sec',
-	'setting' => 'cricket_league_pro_counter3_title',
-	'type' => 'text'
-)
+$wp_customize->add_control(
+	'cricket_league_pro_counter2_title',
+	array(
+		'label' => __('Counter 2 Title', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_whychooseus_sec',
+		'setting' => 'cricket_league_pro_counter2_title',
+		'type' => 'text'
+	)
 );
 
-$wp_customize->add_setting('cricket_league_pro_counter3_count', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
+$wp_customize->add_setting(
+	'cricket_league_pro_counter2_count',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
 );
-$wp_customize->add_control('cricket_league_pro_counter3_count', array(
-	'label' => __('Counter Number', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_whychooseus_sec',
-	'setting' => 'cricket_league_pro_counter3_count',
-	'type' => 'text'
-)
+$wp_customize->add_control(
+	'cricket_league_pro_counter2_count',
+	array(
+		'label' => __('Counter Number', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_whychooseus_sec',
+		'setting' => 'cricket_league_pro_counter2_count',
+		'type' => 'text'
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_counter3_title',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_counter3_title',
+	array(
+		'label' => __('Counter 3 Title', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_whychooseus_sec',
+		'setting' => 'cricket_league_pro_counter3_title',
+		'type' => 'text'
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_counter3_count',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_counter3_count',
+	array(
+		'label' => __('Counter Number', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_whychooseus_sec',
+		'setting' => 'cricket_league_pro_counter3_count',
+		'type' => 'text'
+	)
 );
 
 
@@ -5484,6 +5015,1527 @@ for ($i = 1; $i <= 4; $i++) {
 
 // why Choose Us Section end	
 
+//product slider 
+
+$wp_customize->add_section(
+	'cricket_league_pro_productSlider_sec',
+	array(
+		'title' => __('Product Slider Section', 'cricket-league-pro'),
+		'description' => __('Add productSlider detials here.', 'cricket-league-pro'),
+		'panel' => 'cricket_league_pro_panel_id',
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_productSlider_enabledisable',
+	array(
+		'default' => 'Enable',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_productSlider_enabledisable',
+	array(
+		'type' => 'radio',
+		'label' => __('Do you want this section', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'choices' => array(
+			'Enable' => __('Enable', 'cricket-league-pro'),
+			'Disable' => __('Disable', 'cricket-league-pro')
+		),
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_productSlider_bg_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_productSlider_bg_color',
+		array(
+			'label' => __('Background Color', 'cricket-league-pro'),
+			'description' => __('Either add background color or background image, if you add both background color will be top most priority', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_productSlider_sec',
+			'settings' => 'cricket_league_pro_productSlider_bg_color',
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_productSlider_bg_image',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'esc_url_raw',
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Image_Control(
+		$wp_customize,
+		'cricket_league_pro_productSlider_bg_image',
+		array(
+			'label' => __('Background image ', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_productSlider_sec',
+			'settings' => 'cricket_league_pro_productSlider_bg_image'
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_heading_tag_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_product_slider_heading_tag_settings',
+		array(
+			'label' => __('Section Heading Tag Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_productSlider_sec'
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_heading_tag',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_heading_tag',
+	array(
+		'label' => __('Heading', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'setting' => 'cricket_league_pro_product_slider_heading_tag',
+		'type' => 'text'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_heading_tag_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_heading_tag_font_weight',
+	array(
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_heading_tag_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_heading_tag_font_family',
+	array(
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_heading_tag_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_heading_tag_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'setting' => 'cricket_league_pro_product_slider_heading_tag_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_heading_tag_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_product_slider_heading_tag_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_productSlider_sec',
+			'settings' => 'cricket_league_pro_product_slider_heading_tag_color',
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_heading_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_product_slider_heading_settings',
+		array(
+			'label' => __('Section Heading Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_productSlider_sec'
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_heading',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_heading',
+	array(
+		'label' => __('Heading', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'setting' => 'cricket_league_pro_product_slider_heading',
+		'type' => 'text'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_heading_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_heading_font_weight',
+	array(
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_heading_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_heading_font_family',
+	array(
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_heading_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_heading_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'setting' => 'cricket_league_pro_product_slider_heading_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_heading_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_product_slider_heading_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_productSlider_sec',
+			'settings' => 'cricket_league_pro_product_slider_heading_color',
+		)
+	)
+);
+
+
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_product_name_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_product_slider_product_name_settings',
+		array(
+			'label' => __('Product Name Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_productSlider_sec'
+		)
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_product_name_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_product_name_font_weight',
+	array(
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_product_name_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_product_name_font_family',
+	array(
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_product_name_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_product_name_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'setting' => 'cricket_league_pro_product_slider_product_name_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_product_name_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_product_slider_product_name_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_productSlider_sec',
+			'settings' => 'cricket_league_pro_product_slider_product_name_color',
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_reg_price_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_product_slider_reg_price_settings',
+		array(
+			'label' => __('Regular Price Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_productSlider_sec'
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_reg_price_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_reg_price_font_weight',
+	array(
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_reg_price_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_reg_price_font_family',
+	array(
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_reg_price_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_reg_price_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'setting' => 'cricket_league_pro_product_slider_reg_price_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_reg_price_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_product_slider_reg_price_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_productSlider_sec',
+			'settings' => 'cricket_league_pro_product_slider_reg_price_color',
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_sale_price_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_product_slider_sale_price_settings',
+		array(
+			'label' => __('Sale Price Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_productSlider_sec'
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_sale_price_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_sale_price_font_weight',
+	array(
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_sale_price_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_sale_price_font_family',
+	array(
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'label' => __('Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_sale_price_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_sale_price_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'setting' => 'cricket_league_pro_product_slider_sale_price_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_sale_price_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_product_slider_sale_price_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_productSlider_sec',
+			'settings' => 'cricket_league_pro_product_slider_sale_price_color',
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_cart_button_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_product_slider_cart_button_settings',
+		array(
+			'label' => __('Cart Button Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_productSlider_sec'
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_cart_button',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_cart_button',
+	array(
+		'label' => __('Button Text', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'setting' => 'cricket_league_pro_product_slider_cart_button',
+		'type' => 'text'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_cart_button_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_cart_button_font_weight',
+	array(
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_cart_button_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_cart_button_font_family',
+	array(
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_cart_button_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_product_slider_cart_button_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_productSlider_sec',
+		'setting' => 'cricket_league_pro_product_slider_cart_button_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_product_slider_cart_button_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_product_slider_cart_button_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_productSlider_sec',
+			'settings' => 'cricket_league_pro_product_slider_cart_button_color',
+		)
+	)
+);
+
+// Upcoming event
+
+$wp_customize->add_section(
+	'cricket_league_pro_upcoming_evt_sec',
+	array(
+		'title' => __('Upcoming Event Section', 'cricket-league-pro'),
+		'description' => __('Add upcoming_evt detials here.', 'cricket-league-pro'),
+		'panel' => 'cricket_league_pro_panel_id',
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_enabledisable',
+	array(
+		'default' => 'Enable',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_enabledisable',
+	array(
+		'type' => 'radio',
+		'label' => __('Do you want this section', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'choices' => array(
+			'Enable' => __('Enable', 'cricket-league-pro'),
+			'Disable' => __('Disable', 'cricket-league-pro')
+		),
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_bg_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_bg_color',
+		array(
+			'label' => __('Background Color', 'cricket-league-pro'),
+			'description' => __('Either add background color or background image.', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec',
+			'settings' => 'cricket_league_pro_upcoming_evt_bg_color',
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_bg_image',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'esc_url_raw',
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Image_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_bg_image',
+		array(
+			'label' => __('Background image ', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec',
+			'settings' => 'cricket_league_pro_upcoming_evt_bg_image'
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_heading_tag_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_heading_tag_settings',
+		array(
+			'label' => __('Section Heading Tag Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec'
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_heading_tag',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_heading_tag',
+	array(
+		'label' => __('Heading Tag', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'setting' => 'cricket_league_pro_upcoming_evt_heading_tag',
+		'type' => 'text'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_heading_tag_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_heading_tag_font_weight',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_heading_tag_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_heading_tag_font_family',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_heading_tag_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_heading_tag_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'setting' => 'cricket_league_pro_upcoming_evt_heading_tag_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_heading_tag_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_heading_tag_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec',
+			'settings' => 'cricket_league_pro_upcoming_evt_heading_tag_color',
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_heading_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_heading_settings',
+		array(
+			'label' => __('Section Heading Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec'
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_heading',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_heading',
+	array(
+		'label' => __('Heading', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'setting' => 'cricket_league_pro_upcoming_evt_heading',
+		'type' => 'text'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_heading_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_heading_font_weight',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_heading_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_heading_font_family',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_heading_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_heading_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'setting' => 'cricket_league_pro_upcoming_evt_heading_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_heading_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_heading_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec',
+			'settings' => 'cricket_league_pro_upcoming_evt_heading_color',
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_schedle_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_schedle_settings',
+		array(
+			'label' => __('Card Date Typography Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec'
+		)
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_schedle_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_schedle_font_weight',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_schedle_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_schedle_font_family',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_schedle_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_schedle_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'setting' => 'cricket_league_pro_upcoming_evt_schedle_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_schedle_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_schedle_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec',
+			'settings' => 'cricket_league_pro_upcoming_evt_schedle_color',
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_title_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_title_settings',
+		array(
+			'label' => __('Event Title Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec'
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_title_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_title_font_weight',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_title_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_title_font_family',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_title_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_title_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'setting' => 'cricket_league_pro_upcoming_evt_title_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_title_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_title_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec',
+			'settings' => 'cricket_league_pro_upcoming_evt_title_color',
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_venue_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_venue_settings',
+		array(
+			'label' => __('Section Heading Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec'
+		)
+	)
+);
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_venue_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_venue_font_weight',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_venue_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_venue_font_family',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_venue_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_venue_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'setting' => 'cricket_league_pro_upcoming_evt_venue_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_venue_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_venue_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec',
+			'settings' => 'cricket_league_pro_upcoming_evt_venue_color',
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_text_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_text_settings',
+		array(
+			'label' => __('Event Description Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec'
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_text_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_text_font_weight',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_text_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_text_font_family',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_text_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_text_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'setting' => 'cricket_league_pro_upcoming_evt_text_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_text_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_text_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec',
+			'settings' => 'cricket_league_pro_upcoming_evt_text_color',
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_entry_fee_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_entry_fee_settings',
+		array(
+			'label' => __('Entry Fee Typography Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec'
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_entry_fee_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_entry_fee_font_weight',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_entry_fee_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_entry_fee_font_family',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_entry_fee_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_entry_fee_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'setting' => 'cricket_league_pro_upcoming_evt_entry_fee_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_entry_fee_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_entry_fee_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec',
+			'settings' => 'cricket_league_pro_upcoming_evt_entry_fee_color',
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_view_all_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_view_all_settings',
+		array(
+			'label' => __('View ALl Button Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec'
+		)
+	)
+); 
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_view_all',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_view_all',
+	array(
+		'label' => __('Button Text', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'setting' => 'cricket_league_pro_upcoming_evt_view_all',
+		'type' => 'text'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_view_all_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_view_all_font_weight',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_view_all_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_view_all_font_family',
+	array(
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_view_all_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_upcoming_evt_view_all_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_upcoming_evt_sec',
+		'setting' => 'cricket_league_pro_upcoming_evt_view_all_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_upcoming_evt_view_all_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_upcoming_evt_view_all_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_upcoming_evt_sec',
+			'settings' => 'cricket_league_pro_upcoming_evt_view_all_color',
+		)
+	)
+);
 
 // Testimonial Section 
 
@@ -5557,26 +6609,6 @@ $wp_customize->add_control(
 			'label' => __('Background image ', 'cricket-league-pro'),
 			'section' => 'cricket_league_pro_testimonial_sec',
 			'settings' => 'cricket_league_pro_testimonial_bgimage'
-		)
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_testimonial_bgimage_setting',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_testimonial_bgimage_setting',
-	array(
-		'type' => 'radio',
-		'label' => __('Choose image option', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_testimonial_sec',
-		'choices' => array(
-			'fixed' => __('Fixed', 'cricket-league-pro'),
-			'scroll' => __('Scroll', 'cricket-league-pro'),
 		)
 	)
 );
@@ -5692,10 +6724,6 @@ $wp_customize->add_control(
 	)
 );
 
-
-
-
-
 $wp_customize->add_setting(
 	'cricket_league_pro_testimonial_heading_settings',
 	array(
@@ -5801,6 +6829,114 @@ $wp_customize->add_control(
 			'label' => __('Color', 'cricket-league-pro'),
 			'section' => 'cricket_league_pro_testimonial_sec',
 			'settings' => 'cricket_league_pro_testimonial_heading_color',
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_testimonial_sec_text_settings',
+	array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
+	)
+);
+$wp_customize->add_control(
+	new VW_Themes_Seperator_custom_Control(
+		$wp_customize,
+		'cricket_league_pro_testimonial_sec_text_settings',
+		array(
+			'label' => __('Testimonial Text Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_testimonial_sec'
+		)
+	)
+); 
+
+
+$wp_customize->add_setting(
+	'cricket_league_pro_testimonial_sec_text',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_testimonial_sec_text',
+	array(
+		'label' => __('Testimonial Right Text', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_testimonial_sec',
+		'setting' => 'cricket_league_pro_testimonial_sec_text',
+		'type' => 'text'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_testimonial_sec_text_font_weight',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_testimonial_sec_text_font_weight',
+	array(
+		'section' => 'cricket_league_pro_testimonial_sec',
+		'label' => __('Font Weight', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_weight_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_testimonial_sec_text_font_family',
+	array(
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_testimonial_sec_text_font_family',
+	array(
+		'section' => 'cricket_league_pro_testimonial_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
+		'type' => 'select',
+		'choices' => $font_array,
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_testimonial_sec_text_font_size',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_testimonial_sec_text_font_size',
+	array(
+		'label' => __('Font Size', 'cricket-league-pro'),
+		'description' => __('Add font size in px', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_testimonial_sec',
+		'setting' => 'cricket_league_pro_testimonial_sec_text_font_size',
+		'type' => 'number'
+	)
+);
+$wp_customize->add_setting(
+	'cricket_league_pro_testimonial_sec_text_color',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color'
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+		$wp_customize,
+		'cricket_league_pro_testimonial_sec_text_color',
+		array(
+			'label' => __('Color', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_testimonial_sec',
+			'settings' => 'cricket_league_pro_testimonial_sec_text_color',
 		)
 	)
 );
@@ -6087,76 +7223,34 @@ $wp_customize->add_control(
 	)
 );
 
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_testimonial_floating_image',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_testimonial_floating_image',
-		array(
-			'label' => __('Decoration image', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_testimonial_sec',
-			'settings' => 'cricket_league_pro_testimonial_floating_image'
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_testimonial_floating_image2',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_testimonial_floating_image2',
-		array(
-			'label' => __('Decoration image 2', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_testimonial_sec',
-			'settings' => 'cricket_league_pro_testimonial_floating_image2'
-		)
-	)
-);
-
-
 // Testimonial End 
 
 
-// Our team 
+// Trophies Section 
 
 
 $wp_customize->add_section(
-	'cricket_league_pro_our_team_sec',
+	'cricket_league_pro_trophies_sec',
 	array(
-		'title' => __('Our Team Section', 'cricket-league-pro'),
+		'title' => __('Trophies Section', 'cricket-league-pro'),
 		'description' => __('Add Get In Touch setting here.', 'cricket-league-pro'),
 		'panel' => 'cricket_league_pro_panel_id',
 	)
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_enable',
+	'cricket_league_pro_trophies_enable',
 	array(
 		'default' => 'Enable',
 		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_our_team_enable',
+	'cricket_league_pro_trophies_enable',
 	array(
 		'type' => 'radio',
 		'label' => __('Do you want this section', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_our_team_sec',
+		'section' => 'cricket_league_pro_trophies_sec',
 		'choices' => array(
 			'Enable' => __('Enable', 'cricket-league-pro'),
 			'Disable' => __('Disable', 'cricket-league-pro')
@@ -6164,14 +7258,14 @@ $wp_customize->add_control(
 	)
 );
 $wp_customize->selective_refresh->add_partial(
-	'cricket_league_pro_our_team_enable',
+	'cricket_league_pro_trophies_enable',
 	array(
 		'selector' => '#blog-news .container',
-		'render_callback' => 'cricket_league_pro_our_team_sec',
+		'render_callback' => 'cricket_league_pro_trophies_sec',
 	)
 );
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_bgcolor',
+	'cricket_league_pro_trophies_bgcolor',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_hex_color'
@@ -6180,17 +7274,17 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
 		$wp_customize,
-		'cricket_league_pro_our_team_bgcolor',
+		'cricket_league_pro_trophies_bgcolor',
 		array(
 			'label' => __('Background Color', 'cricket-league-pro'),
 			'description' => __('Either add background color or background image, if you add both background color will be top most priority', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_our_team_sec',
-			'settings' => 'cricket_league_pro_our_team_bgcolor',
+			'section' => 'cricket_league_pro_trophies_sec',
+			'settings' => 'cricket_league_pro_trophies_bgcolor',
 		)
 	)
 );
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_bgimage',
+	'cricket_league_pro_trophies_bgimage',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'esc_url_raw',
@@ -6200,19 +7294,17 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Image_Control(
 		$wp_customize,
-		'cricket_league_pro_our_team_bgimage',
+		'cricket_league_pro_trophies_bgimage',
 		array(
 			'label' => __('Background image ', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_our_team_sec',
-			'settings' => 'cricket_league_pro_our_team_bgimage'
+			'section' => 'cricket_league_pro_trophies_sec',
+			'settings' => 'cricket_league_pro_trophies_bgimage'
 		)
 	)
 );
 
-
-
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_heading_tagline_settings',
+	'cricket_league_pro_trophies_heading_tag_settings',
 	array(
 		'default' => '',
 		'transport' => 'postMessage',
@@ -6222,53 +7314,33 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new VW_Themes_Seperator_custom_Control(
 		$wp_customize,
-		'cricket_league_pro_our_team_heading_tagline_settings',
+		'cricket_league_pro_trophies_heading_tag_settings',
 		array(
-			'label' => __('Our Team Heading Tagline Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_our_team_sec'
+			'label' => __('Trophies heading Tag Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_trophies_sec'
 		)
 	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_our_team_bgimage_setting',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_our_team_bgimage_setting',
-	array(
-		'type' => 'radio',
-		'label' => __('Choose image option', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_our_team_sec',
-		'choices' => array(
-			'fixed' => __('Fixed', 'cricket-league-pro'),
-			'scroll' => __('Scroll', 'cricket-league-pro'),
-		)
-	)
-);
+); 
 
 
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_heading_tag_font_text',
+	'cricket_league_pro_trophies_heading_tag',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_text_field'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_our_team_heading_tag_font_text',
+	'cricket_league_pro_trophies_heading_tag',
 	array(
-		'label' => __('Heading Tagline ', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_our_team_sec',
-		'setting' => 'cricket_league_pro_our_team_heading_tag_font_text',
+		'label' => __('Heading Tag', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_trophies_sec',
+		'setting' => 'cricket_league_pro_trophies_heading_tag',
 		'type' => 'text'
 	)
 );
-
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_heading_tag_font_weight',
+	'cricket_league_pro_trophies_heading_tag_font_weight',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -6276,9 +7348,9 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_our_team_heading_tag_font_weight',
+	'cricket_league_pro_trophies_heading_tag_font_weight',
 	array(
-		'section' => 'cricket_league_pro_our_team_sec',
+		'section' => 'cricket_league_pro_trophies_sec',
 		'label' => __('Font Weight', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_weight_array,
@@ -6286,7 +7358,7 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_heading_tag_font_family',
+	'cricket_league_pro_trophies_heading_tag_font_family',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -6294,34 +7366,34 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_our_team_heading_tag_font_family',
+	'cricket_league_pro_trophies_heading_tag_font_family',
 	array(
-		'section' => 'cricket_league_pro_our_team_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_trophies_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_array,
 	)
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_heading_tag_font_size',
+	'cricket_league_pro_trophies_heading_tag_font_size',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_text_field'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_our_team_heading_tag_font_size',
+	'cricket_league_pro_trophies_heading_tag_font_size',
 	array(
 		'label' => __('Font Size', 'cricket-league-pro'),
 		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_our_team_sec',
-		'setting' => 'cricket_league_pro_our_team_heading_tag_font_size',
+		'section' => 'cricket_league_pro_trophies_sec',
+		'setting' => 'cricket_league_pro_trophies_heading_tag_font_size',
 		'type' => 'number'
 	)
 );
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_heading_tag_color',
+	'cricket_league_pro_trophies_heading_tag_color',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_hex_color'
@@ -6330,18 +7402,17 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
 		$wp_customize,
-		'cricket_league_pro_our_team_heading_tag_color',
+		'cricket_league_pro_trophies_heading_tag_color',
 		array(
 			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_our_team_sec',
-			'settings' => 'cricket_league_pro_our_team_heading_tag_color',
+			'section' => 'cricket_league_pro_trophies_sec',
+			'settings' => 'cricket_league_pro_trophies_heading_tag_color',
 		)
 	)
 );
 
-
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_heading_settings',
+	'cricket_league_pro_trophies_heading_settings',
 	array(
 		'default' => '',
 		'transport' => 'postMessage',
@@ -6351,34 +7422,33 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new VW_Themes_Seperator_custom_Control(
 		$wp_customize,
-		'cricket_league_pro_our_team_heading_settings',
+		'cricket_league_pro_trophies_heading_settings',
 		array(
-			'label' => __('Our Team Heading Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_our_team_sec'
+			'label' => __('Trophies Heading Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_trophies_sec'
 		)
 	)
-);
+); 
 
 
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_heading_font_text',
+	'cricket_league_pro_trophies_heading',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_text_field'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_our_team_heading_font_text',
+	'cricket_league_pro_trophies_heading',
 	array(
-		'label' => __('Section Heading', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_our_team_sec',
-		'setting' => 'cricket_league_pro_our_team_heading_font_text',
+		'label' => __('Heading', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_trophies_sec',
+		'setting' => 'cricket_league_pro_trophies_heading',
 		'type' => 'text'
 	)
 );
-
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_heading_font_weight',
+	'cricket_league_pro_trophies_heading_font_weight',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -6386,9 +7456,9 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_our_team_heading_font_weight',
+	'cricket_league_pro_trophies_heading_font_weight',
 	array(
-		'section' => 'cricket_league_pro_our_team_sec',
+		'section' => 'cricket_league_pro_trophies_sec',
 		'label' => __('Font Weight', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_weight_array,
@@ -6396,7 +7466,7 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_heading_font_family',
+	'cricket_league_pro_trophies_heading_font_family',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -6404,34 +7474,34 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_our_team_heading_font_family',
+	'cricket_league_pro_trophies_heading_font_family',
 	array(
-		'section' => 'cricket_league_pro_our_team_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_trophies_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_array,
 	)
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_heading_font_size',
+	'cricket_league_pro_trophies_heading_font_size',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_text_field'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_our_team_heading_font_size',
+	'cricket_league_pro_trophies_heading_font_size',
 	array(
 		'label' => __('Font Size', 'cricket-league-pro'),
 		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_our_team_sec',
-		'setting' => 'cricket_league_pro_our_team_heading_font_size',
+		'section' => 'cricket_league_pro_trophies_sec',
+		'setting' => 'cricket_league_pro_trophies_heading_font_size',
 		'type' => 'number'
 	)
 );
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_heading_color',
+	'cricket_league_pro_trophies_heading_color',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_hex_color'
@@ -6440,17 +7510,18 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
 		$wp_customize,
-		'cricket_league_pro_our_team_heading_color',
+		'cricket_league_pro_trophies_heading_color',
 		array(
 			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_our_team_sec',
-			'settings' => 'cricket_league_pro_our_team_heading_color',
+			'section' => 'cricket_league_pro_trophies_sec',
+			'settings' => 'cricket_league_pro_trophies_heading_color',
 		)
 	)
 );
 
+
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_card_settings',
+	'cricket_league_pro_trophies_year_settings',
 	array(
 		'default' => '',
 		'transport' => 'postMessage',
@@ -6460,56 +7531,16 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new VW_Themes_Seperator_custom_Control(
 		$wp_customize,
-		'cricket_league_pro_our_team_card_settings',
+		'cricket_league_pro_trophies_year_settings',
 		array(
-			'label' => __('Team card Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_our_team_sec'
+			'label' => __('Trophies Year Typography Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_trophies_sec'
 		)
 	)
-);
+); 
 
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_card_bg_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_our_team_card_bg_color',
-		array(
-			'label' => __('Card Bg Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_our_team_sec',
-			'settings' => 'cricket_league_pro_our_team_card_bg_color',
-		)
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_our_team_member_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_our_team_member_settings',
-		array(
-			'label' => __('Member Name Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_our_team_sec'
-		)
-	)
-);
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_our_team_team_member_font_weight',
+	'cricket_league_pro_trophies_year_font_weight',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -6517,9 +7548,9 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_our_team_team_member_font_weight',
+	'cricket_league_pro_trophies_year_font_weight',
 	array(
-		'section' => 'cricket_league_pro_our_team_sec',
+		'section' => 'cricket_league_pro_trophies_sec',
 		'label' => __('Font Weight', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_weight_array,
@@ -6527,7 +7558,7 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_team_member_font_family',
+	'cricket_league_pro_trophies_year_font_family',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -6535,34 +7566,34 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_our_team_team_member_font_family',
+	'cricket_league_pro_trophies_year_font_family',
 	array(
-		'section' => 'cricket_league_pro_our_team_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_trophies_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_array,
 	)
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_team_member_font_size',
+	'cricket_league_pro_trophies_year_font_size',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_text_field'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_our_team_team_member_font_size',
+	'cricket_league_pro_trophies_year_font_size',
 	array(
 		'label' => __('Font Size', 'cricket-league-pro'),
 		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_our_team_sec',
-		'setting' => 'cricket_league_pro_our_team_team_member_font_size',
+		'section' => 'cricket_league_pro_trophies_sec',
+		'setting' => 'cricket_league_pro_trophies_year_font_size',
 		'type' => 'number'
 	)
 );
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_team_member_color',
+	'cricket_league_pro_trophies_year_color',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_hex_color'
@@ -6571,19 +7602,17 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
 		$wp_customize,
-		'cricket_league_pro_our_team_team_member_color',
+		'cricket_league_pro_trophies_year_color',
 		array(
 			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_our_team_sec',
-			'settings' => 'cricket_league_pro_our_team_team_member_color',
+			'section' => 'cricket_league_pro_trophies_sec',
+			'settings' => 'cricket_league_pro_trophies_year_color',
 		)
 	)
 );
 
-
-
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_designation_settings',
+	'cricket_league_pro_trophies_team_name_settings',
 	array(
 		'default' => '',
 		'transport' => 'postMessage',
@@ -6593,17 +7622,17 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new VW_Themes_Seperator_custom_Control(
 		$wp_customize,
-		'cricket_league_pro_our_team_designation_settings',
+		'cricket_league_pro_trophies_team_name_settings',
 		array(
-			'label' => __('Member Designation Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_our_team_sec'
+			'label' => __('Winner Team Typography Settings', 'cricket-league-pro'),
+			'section' => 'cricket_league_pro_trophies_sec'
 		)
 	)
-);
+); 
 
 
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_designation_font_weight',
+	'cricket_league_pro_trophies_team_name_font_weight',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -6611,9 +7640,9 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_our_team_designation_font_weight',
+	'cricket_league_pro_trophies_team_name_font_weight',
 	array(
-		'section' => 'cricket_league_pro_our_team_sec',
+		'section' => 'cricket_league_pro_trophies_sec',
 		'label' => __('Font Weight', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_weight_array,
@@ -6621,7 +7650,7 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_designation_font_family',
+	'cricket_league_pro_trophies_team_name_font_family',
 	array(
 		'default' => '',
 		'capability' => 'edit_theme_options',
@@ -6629,34 +7658,34 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_our_team_designation_font_family',
+	'cricket_league_pro_trophies_team_name_font_family',
 	array(
-		'section' => 'cricket_league_pro_our_team_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_trophies_sec',
+		'label' => __('Text Fonts', 'cricket-league-pro'),
 		'type' => 'select',
 		'choices' => $font_array,
 	)
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_designation_font_size',
+	'cricket_league_pro_trophies_team_name_font_size',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_text_field'
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_our_team_designation_font_size',
+	'cricket_league_pro_trophies_team_name_font_size',
 	array(
 		'label' => __('Font Size', 'cricket-league-pro'),
 		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_our_team_sec',
-		'setting' => 'cricket_league_pro_our_team_designation_font_size',
+		'section' => 'cricket_league_pro_trophies_sec',
+		'setting' => 'cricket_league_pro_trophies_team_name_font_size',
 		'type' => 'number'
 	)
 );
 $wp_customize->add_setting(
-	'cricket_league_pro_our_team_designation_color',
+	'cricket_league_pro_trophies_team_name_color',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'sanitize_hex_color'
@@ -6665,1094 +7694,16 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
 		$wp_customize,
-		'cricket_league_pro_our_team_designation_color',
+		'cricket_league_pro_trophies_team_name_color',
 		array(
 			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_our_team_sec',
-			'settings' => 'cricket_league_pro_our_team_designation_color',
+			'section' => 'cricket_league_pro_trophies_sec',
+			'settings' => 'cricket_league_pro_trophies_team_name_color',
 		)
 	)
 );
 
-
-$wp_customize->add_setting(
-	'cricket_league_pro_our_team_team_social_icon_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_our_team_team_social_icon_settings',
-		array(
-			'label' => __('Social Icons Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_our_team_sec'
-		)
-	)
-);
-
-for ($i = 1; $i <= 4; $i++) {
-	$wp_customize->add_setting(
-		'cricket_league_pro_social_icon' . $i,
-		array(
-			'default' => '',
-			'sanitize_callback' => 'sanitize_text_field'
-		)
-	);
-	$wp_customize->add_control(
-		new cricket_league_pro_Fontawesome_Icon_Chooser(
-			$wp_customize,
-			'cricket_league_pro_social_icon' . $i,
-			array(
-				'settings' => 'cricket_league_pro_social_icon' . $i,
-				'section' => 'cricket_league_pro_our_team_sec',
-				'type' => 'icon',
-				'label' => esc_html__('Team Social Icon ' . $i, 'cricket-league-pro'),
-			)
-		)
-	);
-}
-
-$wp_customize->add_setting(
-	'cricket_league_pro_our_team_team_social_icon_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_our_team_team_social_icon_color',
-		array(
-			'label' => __('Icon Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_our_team_sec',
-			'settings' => 'cricket_league_pro_our_team_team_social_icon_color',
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_our_team_team_social_icon_hover_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_our_team_team_social_icon_hover_color',
-		array(
-			'label' => __('Icon Hover Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_our_team_sec',
-			'settings' => 'cricket_league_pro_our_team_team_social_icon_hover_color',
-		)
-	)
-);
-
-// our team end 
-
-
-// section GetInTouch 
-
-
-$wp_customize->add_section(
-	'cricket_league_pro_GetInTouch_sec',
-	array(
-		'title' => __('Get In Touch', 'cricket-league-pro'),
-		'description' => __('Add Get In Touch setting here.', 'cricket-league-pro'),
-		'panel' => 'cricket_league_pro_panel_id',
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_enable',
-	array(
-		'default' => 'Enable',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_enable',
-	array(
-		'type' => 'radio',
-		'label' => __('Do you want this section', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'choices' => array(
-			'Enable' => __('Enable', 'cricket-league-pro'),
-			'Disable' => __('Disable', 'cricket-league-pro')
-		),
-	)
-);
-$wp_customize->selective_refresh->add_partial(
-	'cricket_league_pro_GetInTouch_enable',
-	array(
-		'selector' => '#blog-news .container',
-		'render_callback' => 'cricket_league_pro_GetInTouch_sec',
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_bgcolor',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_bgcolor',
-		array(
-			'label' => __('Background Color', 'cricket-league-pro'),
-			'description' => __('Either add background color or background image, if you add both background color will be top most priority', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec',
-			'settings' => 'cricket_league_pro_GetInTouch_bgcolor',
-		)
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_bgimage',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_bgimage',
-		array(
-			'label' => __('Background image', 'cricket-league-pro'),
-			'description' => __('Ideal image is 1920x529 px.', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec',
-			'settings' => 'cricket_league_pro_GetInTouch_bgimage'
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_bg_image_attachment',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_bg_image_attachment',
-	array(
-		'type' => 'radio',
-		'label' => __('Choose image option', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'choices' => array(
-			'fixed' => __('Fixed', 'cricket-league-pro'),
-			'scroll' => __('Scroll', 'cricket-league-pro'),
-		)
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_settings',
-		array(
-			'label' => __('Get In Touch Content Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec'
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_column_bgcolor',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_column_bgcolor',
-		array(
-			'label' => __('Get in touch Column BG', 'cricket-league-pro'),
-			'description' => __('Section column background color.', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec',
-			'settings' => 'cricket_league_pro_GetInTouch_column_bgcolor',
-		)
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_heading_tagline_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_heading_tagline_settings',
-		array(
-			'label' => __('Get In Touch Tagline Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec'
-		)
-	)
-);
-
-$wp_customize->add_setting('cricket_league_pro_GetInTouch_heading_tagline', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_GetInTouch_heading_tagline', array(
-	'label' => __('Heading Tagline', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_GetInTouch_sec',
-	'setting' => 'cricket_league_pro_GetInTouch_heading_tagline',
-	'type' => 'text'
-)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_heading_tagline_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_heading_tagline_font_weight',
-	array(
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'label' => __('Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_heading_tagline_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_heading_tagline_font_family',
-	array(
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_heading_tagline_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_heading_tagline_font_size',
-	array(
-		'label' => __('Font Size', 'cricket-league-pro'),
-		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'setting' => 'cricket_league_pro_GetInTouch_heading_tagline_font_size',
-		'type' => 'number'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_heading_tagline_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_heading_tagline_color',
-		array(
-			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec',
-			'settings' => 'cricket_league_pro_GetInTouch_heading_tagline_color',
-		)
-	)
-);
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_heading_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_heading_settings',
-		array(
-			'label' => __('Get In Touch Heading Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec'
-		)
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_heading_font_text',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_heading_font_text',
-	array(
-		'label' => __(' Section Heading', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'setting' => 'cricket_league_pro_GetInTouch_heading_font_text',
-		'type' => 'text'
-	)
-);
-
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_heading_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_heading_font_weight',
-	array(
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'label' => __('Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_heading_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_heading_font_family',
-	array(
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_heading_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_heading_font_size',
-	array(
-		'label' => __('Font Size', 'cricket-league-pro'),
-		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'setting' => 'cricket_league_pro_GetInTouch_heading_font_size',
-		'type' => 'number'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_heading_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_heading_color',
-		array(
-			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec',
-			'settings' => 'cricket_league_pro_GetInTouch_heading_color',
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_section_desc_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_section_desc_settings',
-		array(
-			'label' => __('Get In Touch Section Description', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec'
-		)
-	)
-);
-
-
-
-
-
-
-$wp_customize->add_setting('cricket_league_pro_GetInTouch_section_desc', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_GetInTouch_section_desc', array(
-	'label' => __('Section description', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_GetInTouch_sec',
-	'setting' => 'cricket_league_pro_GetInTouch_section_desc',
-	'type' => 'text'
-)
-);
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_section_desc_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_section_desc_font_weight',
-	array(
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'label' => __('Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_section_desc_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_section_desc_font_family',
-	array(
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_section_desc_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_section_desc_font_size',
-	array(
-		'label' => __('Font Size', 'cricket-league-pro'),
-		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'setting' => 'cricket_league_pro_GetInTouch_section_desc_font_size',
-		'type' => 'number'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_section_desc_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_section_desc_color',
-		array(
-			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec',
-			'settings' => 'cricket_league_pro_GetInTouch_section_desc_color',
-		)
-	)
-);
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_support_text_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_support_text_settings',
-		array(
-			'label' => __('Support Text Setting', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec'
-		)
-	)
-);
-
-
-
-$wp_customize->add_setting('cricket_league_pro_GetInTouch_support_text', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_GetInTouch_support_text', array(
-	'label' => __('Support text', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_GetInTouch_sec',
-	'setting' => 'cricket_league_pro_GetInTouch_support_text',
-	'type' => 'text'
-)
-);
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_support_text_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_support_text_font_weight',
-	array(
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'label' => __('Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_support_text_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_support_text_font_family',
-	array(
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_support_text_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_support_text_font_size',
-	array(
-		'label' => __('Font Size', 'cricket-league-pro'),
-		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'setting' => 'cricket_league_pro_GetInTouch_support_text_font_size',
-		'type' => 'number'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_support_text_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_support_text_color',
-		array(
-			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec',
-			'settings' => 'cricket_league_pro_GetInTouch_support_text_color',
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_support_contact_number_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_support_contact_number_settings',
-		array(
-			'label' => __('Phone Number Setting', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec'
-		)
-	)
-);
-
-
-
-$wp_customize->add_setting('cricket_league_pro_GetInTouch_support_contact_number', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_GetInTouch_support_contact_number', array(
-	'label' => __('Support contact number', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_GetInTouch_sec',
-	'setting' => 'cricket_league_pro_GetInTouch_support_contact_number',
-	'type' => 'text'
-)
-);
-
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_support_contact_number_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_support_contact_number_font_weight',
-	array(
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'label' => __('Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_support_contact_number_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_support_contact_number_font_family',
-	array(
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_support_contact_number_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_support_contact_number_font_size',
-	array(
-		'label' => __('Font Size', 'cricket-league-pro'),
-		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'setting' => 'cricket_league_pro_GetInTouch_support_contact_number_font_size',
-		'type' => 'number'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_support_contact_number_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_support_contact_number_color',
-		array(
-			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec',
-			'settings' => 'cricket_league_pro_GetInTouch_support_contact_number_color',
-		)
-	)
-);
-
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_support_icon',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_support_icon',
-		array(
-			'label' => __('Support Icon', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec',
-			'settings' => 'cricket_league_pro_GetInTouch_support_icon'
-		)
-	)
-);
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_latest_GetInTouch_settings_heading',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_latest_GetInTouch_settings_heading',
-		array(
-			'label' => __('Get In Touch Features', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec'
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_feature1_icon',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_feature1_icon',
-		array(
-			'label' => __('Support Icon', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec',
-			'settings' => 'cricket_league_pro_GetInTouch_feature1_icon'
-		)
-	)
-);
-
-
-$wp_customize->add_setting('cricket_league_pro_GetInTouch_feature1_title', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_GetInTouch_feature1_title', array(
-	'label' => __('Feature 1 Title', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_GetInTouch_sec',
-	'setting' => 'cricket_league_pro_GetInTouch_feature1_title',
-	'type' => 'text'
-)
-);
-
-$wp_customize->add_setting('cricket_league_pro_GetInTouch_feature1_desc', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_GetInTouch_feature1_desc', array(
-	'label' => __('Feature 1 Description', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_GetInTouch_sec',
-	'setting' => 'cricket_league_pro_GetInTouch_feature1_desc',
-	'type' => 'text'
-)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_feature2_icon',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_feature2_icon',
-		array(
-			'label' => __('Support Icon', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec',
-			'settings' => 'cricket_league_pro_GetInTouch_feature2_icon'
-		)
-	)
-);
-
-
-$wp_customize->add_setting('cricket_league_pro_GetInTouch_feature2_title', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_GetInTouch_feature2_title', array(
-	'label' => __('Feature 2 Title', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_GetInTouch_sec',
-	'setting' => 'cricket_league_pro_GetInTouch_feature2_title',
-	'type' => 'text'
-)
-);
-
-$wp_customize->add_setting('cricket_league_pro_GetInTouch_feature2_desc', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_GetInTouch_feature2_desc', array(
-	'label' => __('Feature 2 Description', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_GetInTouch_sec',
-	'setting' => 'cricket_league_pro_GetInTouch_feature2_desc',
-	'type' => 'text'
-)
-);
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_GetInTouch_feature_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_GetInTouch_feature_settings',
-		array(
-			'label' => __('Features Typography', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec'
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_GetInTouch_feature_title_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_GetInTouch_feature_title_font_weight',
-	array(
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'label' => __('Title Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_GetInTouch_feature_title_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_GetInTouch_feature_title_font_family',
-	array(
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'label' => __('Title Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_GetInTouch_feature_title_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_GetInTouch_feature_title_font_size',
-	array(
-		'label' => __('Title Font Size', 'cricket-league-pro'),
-		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'setting' => 'cricket_league_pro_GetInTouch_GetInTouch_feature_title_font_size',
-		'type' => 'number'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_GetInTouch_feature_title_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_GetInTouch_feature_title_color',
-		array(
-			'label' => __('Title Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec',
-			'settings' => 'cricket_league_pro_GetInTouch_GetInTouch_feature_title_color',
-		)
-	)
-);
-
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_GetInTouch_feature_description_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_GetInTouch_feature_description_font_weight',
-	array(
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'label' => __('Description Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_GetInTouch_feature_description_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_GetInTouch_feature_description_font_family',
-	array(
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'label' => __('Description Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_GetInTouch_feature_description_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_GetInTouch_GetInTouch_feature_description_font_size',
-	array(
-		'label' => __('Description Font Size', 'cricket-league-pro'),
-		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_GetInTouch_sec',
-		'setting' => 'cricket_league_pro_GetInTouch_GetInTouch_feature_description_font_size',
-		'type' => 'number'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_GetInTouch_GetInTouch_feature_description_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_GetInTouch_GetInTouch_feature_description_color',
-		array(
-			'label' => __('Description Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_GetInTouch_sec',
-			'settings' => 'cricket_league_pro_GetInTouch_GetInTouch_feature_description_color',
-		)
-	)
-);
-// get in touch end 
+// Trophies end 
 
 
 // FAQ section 
@@ -7763,613 +7714,12 @@ $wp_customize->add_control(
 $wp_customize->add_section(
 	'cricket_league_pro_faq_sec',
 	array(
-		'title' => __('FAQ Section', 'cricket-league-pro'),
+		'title' => __('FAQ Page', 'cricket-league-pro'),
 		'description' => __('Add faq setting here.', 'cricket-league-pro'),
 		'panel' => 'cricket_league_pro_panel_id',
 	)
 );
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_enable',
-	array(
-		'default' => 'Enable',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_faq_enable',
-	array(
-		'type' => 'radio',
-		'label' => __('Do you want this section', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_faq_sec',
-		'choices' => array(
-			'Enable' => __('Enable', 'cricket-league-pro'),
-			'Disable' => __('Disable', 'cricket-league-pro')
-		),
-	)
-);
-$wp_customize->selective_refresh->add_partial(
-	'cricket_league_pro_faq_bgcolor',
-	array(
-		'selector' => '#faq-us .container',
-		'render_callback' => 'twentyfifteen_customize_partial_cricket_league_pro_faq_bgcolor',
-	)
-);
-$wp_customize->selective_refresh->add_partial('cricket_league_pro_faq_enable', array(
-	'selector' => 'section#faq',
-	'render_callback' => 'cricket_league_pro_faq_sec',
-)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_bgcolor',
-	array(
-		'default' => '#fff',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_faq_bgcolor',
-		array(
-			'label' => __('Background Color', 'cricket-league-pro'),
-			'description' => __('Either add background color or background image, if you add both background color will be top most priority', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_faq_sec',
-			'settings' => 'cricket_league_pro_faq_bgcolor',
-		)
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_bgimage',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_faq_bgimage',
-		array(
-			'label' => __('Background image ', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_faq_sec',
-			'settings' => 'cricket_league_pro_faq_bgimage'
-		)
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_bgimage_setting',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_faq_bgimage_setting',
-	array(
-		'type' => 'radio',
-		'label' => __('Choose image option', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_faq_sec',
-		'choices' => array(
-			'fixed' => __('Fixed', 'cricket-league-pro'),
-			'scroll' => __('Scroll', 'cricket-league-pro'),
-		)
-	)
-);
 
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_heading_tagline_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_faq_heading_tagline_settings',
-		array(
-			'label' => __('FAQ Heading Tagline Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_faq_sec'
-		)
-	)
-);
-$wp_customize->add_setting('cricket_league_pro_faq_heading_tagline', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_faq_heading_tagline', array(
-	'label' => __('Heading Tag', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_faq_sec',
-	'setting' => 'cricket_league_pro_faq_heading_tagline',
-	'type' => 'text'
-)
-);
-
-
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_faq_feature_heading_tagline_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_faq_faq_feature_heading_tagline_font_weight',
-	array(
-		'section' => 'cricket_league_pro_faq_sec',
-		'label' => __('Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_faq_feature_heading_tagline_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_faq_faq_feature_heading_tagline_font_family',
-	array(
-		'section' => 'cricket_league_pro_faq_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_faq_feature_heading_tagline_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_faq_faq_feature_heading_tagline_font_size',
-	array(
-		'label' => __('Font Size', 'cricket-league-pro'),
-		'heading_tagline' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_faq_sec',
-		'setting' => 'cricket_league_pro_faq_faq_feature_heading_tagline_font_size',
-		'type' => 'number'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_faq_feature_heading_tagline_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_faq_faq_feature_heading_tagline_color',
-		array(
-			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_faq_sec',
-			'settings' => 'cricket_league_pro_faq_faq_feature_heading_tagline_color',
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_heading_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_faq_heading_settings',
-		array(
-			'label' => __('FAQ Heading Setting', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_faq_sec'
-		)
-	)
-);
-
-
-$wp_customize->add_setting('cricket_league_pro_faq_heading', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_faq_heading', array(
-	'label' => __('Section Heading', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_faq_sec',
-	'setting' => 'cricket_league_pro_faq_heading',
-	'type' => 'text'
-)
-);
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_heading_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_faq_heading_font_weight',
-	array(
-		'section' => 'cricket_league_pro_faq_sec',
-		'label' => __('Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_heading_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_faq_heading_font_family',
-	array(
-		'section' => 'cricket_league_pro_faq_sec',
-		'label' => __('Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_heading_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_faq_heading_font_size',
-	array(
-		'label' => __('Font Size', 'cricket-league-pro'),
-		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_faq_sec',
-		'setting' => 'cricket_league_pro_faq_heading_font_size',
-		'type' => 'number'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_heading_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_faq_heading_color',
-		array(
-			'label' => __('Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_faq_sec',
-			'settings' => 'cricket_league_pro_faq_heading_color',
-		)
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_image',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_faq_image',
-		array(
-			'label' => __('FAQ Section Image', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_faq_sec',
-			'settings' => 'cricket_league_pro_faq_image'
-		)
-	)
-);
-
-
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_attriute_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_faq_attriute_settings',
-		array(
-			'label' => __('Service Attributes', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_faq_sec'
-		)
-	)
-);
-
-
-$wp_customize->add_setting('cricket_league_pro_faq_service_attribute1_title', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_faq_service_attribute1_title', array(
-	'label' => __('Service Attribute 1', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_faq_sec',
-	'setting' => 'cricket_league_pro_faq_service_attribute1_title',
-	'type' => 'text'
-)
-);
-$wp_customize->add_setting('cricket_league_pro_faq_service_attribute1_desc', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_faq_service_attribute1_desc', array(
-	'label' => __('Service Attribute 1 Description', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_faq_sec',
-	'setting' => 'cricket_league_pro_faq_service_attribute1_desc',
-	'type' => 'text'
-)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_service_attribute1_icon',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_faq_service_attribute1_icon',
-		array(
-			'label' => __('Service Attribute 1 image', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_faq_sec',
-			'settings' => 'cricket_league_pro_faq_service_attribute1_icon'
-		)
-	)
-);
-
-
-
-$wp_customize->add_setting('cricket_league_pro_faq_service_attribute2_title', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_faq_service_attribute2_title', array(
-	'label' => __('Service Attribute 2', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_faq_sec',
-	'setting' => 'cricket_league_pro_faq_service_attribute2_title',
-	'type' => 'text'
-)
-);
-$wp_customize->add_setting('cricket_league_pro_faq_service_attribute2_desc', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
-);
-$wp_customize->add_control('cricket_league_pro_faq_service_attribute2_desc', array(
-	'label' => __('Service Attribute 2 Description', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_faq_sec',
-	'setting' => 'cricket_league_pro_faq_service_attribute2_desc',
-	'type' => 'text'
-)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_service_attribute2_icon',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'cricket_league_pro_faq_service_attribute2_icon',
-		array(
-			'label' => __('Service Attribute 2 image', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_faq_sec',
-			'settings' => 'cricket_league_pro_faq_service_attribute2_icon'
-		)
-	)
-);
-
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_attriute_typography_settings',
-	array(
-		'default' => '',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'cricket_league_pro_text_sanitization'
-	)
-);
-$wp_customize->add_control(
-	new VW_Themes_Seperator_custom_Control(
-		$wp_customize,
-		'cricket_league_pro_faq_attriute_typography_settings',
-		array(
-			'label' => __('Service Attributes Typography Settings', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_faq_sec'
-		)
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_service_attribute_title_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_faq_service_attribute_title_font_weight',
-	array(
-		'section' => 'cricket_league_pro_faq_sec',
-		'label' => __('Service Attribute Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_service_attribute_title_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_faq_service_attribute_title_font_family',
-	array(
-		'section' => 'cricket_league_pro_faq_sec',
-		'label' => __('Service Attribute Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_service_attribute_title_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_faq_service_attribute_title_font_size',
-	array(
-		'label' => __('Service Attribute Font Size', 'cricket-league-pro'),
-		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_faq_sec',
-		'setting' => 'cricket_league_pro_faq_service_attribute_title_font_size',
-		'type' => 'number'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_service_attribute_title_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_faq_service_attribute_title_color',
-		array(
-			'label' => __('Service Attribute Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_faq_sec',
-			'settings' => 'cricket_league_pro_faq_service_attribute_title_color',
-		)
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_service_attribute_description_font_weight',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_faq_service_attribute_description_font_weight',
-	array(
-		'section' => 'cricket_league_pro_faq_sec',
-		'label' => __('Attribute Description Font Weight', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_weight_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_service_attribute_description_font_family',
-	array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_faq_service_attribute_description_font_family',
-	array(
-		'section' => 'cricket_league_pro_faq_sec',
-		'label' => __('Attribute Description Font Family', 'cricket-league-pro'),
-		'type' => 'select',
-		'choices' => $font_array,
-	)
-);
-
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_service_attribute_description_font_size',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_faq_service_attribute_description_font_size',
-	array(
-		'label' => __('Attribute Description Font Size', 'cricket-league-pro'),
-		'description' => __('Add font size in px', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_faq_sec',
-		'setting' => 'cricket_league_pro_faq_service_attribute_description_font_size',
-		'type' => 'number'
-	)
-);
-$wp_customize->add_setting(
-	'cricket_league_pro_faq_service_attribute_description_color',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_hex_color'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-		$wp_customize,
-		'cricket_league_pro_faq_service_attribute_description_color',
-		array(
-			'label' => __('Attribute Description Color', 'cricket-league-pro'),
-			'section' => 'cricket_league_pro_faq_sec',
-			'settings' => 'cricket_league_pro_faq_service_attribute_description_color',
-		)
-	)
-);
 
 
 
@@ -8732,25 +8082,6 @@ $wp_customize->add_control(
 	)
 );
 
-$wp_customize->add_setting(
-	'cricket_league_pro_video_sec_bg_image_attachment',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_video_sec_bg_image_attachment',
-	array(
-		'type' => 'radio',
-		'label' => __('Choose image option', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_video_sec',
-		'choices' => array(
-			'fixed' => __('Fixed', 'cricket-league-pro'),
-			'scroll' => __('Scroll', 'cricket-league-pro'),
-		)
-	)
-);
 
 $wp_customize->add_setting(
 	'cricket_league_pro_video_sec_content_settings',
@@ -9177,26 +8508,6 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_latest_blog_and_news_bg_image_attachment',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_latest_blog_and_news_bg_image_attachment',
-	array(
-		'type' => 'radio',
-		'label' => __('Choose image option', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_blog_and_news_sec',
-		'choices' => array(
-			'fixed' => __('Fixed', 'cricket-league-pro'),
-			'scroll' => __('Scroll', 'cricket-league-pro'),
-		)
-	)
-);
-
-$wp_customize->add_setting(
 	'cricket_league_pro_latest_blog_and_news_settings',
 	array(
 		'default' => '',
@@ -9235,17 +8546,21 @@ $wp_customize->add_control(
 	)
 );
 
-$wp_customize->add_setting('cricket_league_pro_blog_heading_tagline', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
+$wp_customize->add_setting(
+	'cricket_league_pro_blog_heading_tagline',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
 );
-$wp_customize->add_control('cricket_league_pro_blog_heading_tagline', array(
-	'label' => __('Heading Tagline', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_blog_and_news_sec',
-	'setting' => 'cricket_league_pro_blog_heading_tagline',
-	'type' => 'text'
-)
+$wp_customize->add_control(
+	'cricket_league_pro_blog_heading_tagline',
+	array(
+		'label' => __('Heading Tagline', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_blog_and_news_sec',
+		'setting' => 'cricket_league_pro_blog_heading_tagline',
+		'type' => 'text'
+	)
 );
 
 
@@ -9343,17 +8658,21 @@ $wp_customize->add_control(
 
 
 
-$wp_customize->add_setting('cricket_league_pro_blog_heading', array(
-	'default' => '',
-	'sanitize_callback' => 'sanitize_text_field'
-)
+$wp_customize->add_setting(
+	'cricket_league_pro_blog_heading',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
 );
-$wp_customize->add_control('cricket_league_pro_blog_heading', array(
-	'label' => __('Heading Tagline', 'cricket-league-pro'),
-	'section' => 'cricket_league_pro_blog_and_news_sec',
-	'setting' => 'cricket_league_pro_blog_heading',
-	'type' => 'text'
-)
+$wp_customize->add_control(
+	'cricket_league_pro_blog_heading',
+	array(
+		'label' => __('Heading Tagline', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_blog_and_news_sec',
+		'setting' => 'cricket_league_pro_blog_heading',
+		'type' => 'text'
+	)
 );
 
 
@@ -9817,5 +9136,3 @@ $wp_customize->add_control(
 );
 
 
-
-?>

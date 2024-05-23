@@ -180,7 +180,7 @@ $next_match_id = get_theme_mod('cricket_league_pro_next_match_id'); // Replace 1
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                                 <p><?php echo get_theme_mod('cricket_league_pro_latest_location_text_heading'); ?></p>
                             </div>
-                            <a href="#" class="theme-btn">
+                            <a href="<?php echo get_permalink(get_page_by_title('Match Schedule')); ?>" class="theme-btn">
                                 <?php echo get_theme_mod('cricket_league_pro_latest_locationbtn_text_heading'); ?>
                             </a>
                         </div>

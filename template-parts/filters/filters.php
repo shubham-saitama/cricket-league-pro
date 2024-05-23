@@ -34,7 +34,8 @@ if ($max_price) {
         <div class="flower-shop-filter">
           <!-- Categories content -->
           <div>
-            <?php $terms = get_terms(
+            <?php 
+            $terms = get_terms(
               array(
                 'post_type' => 'product',
                 'taxonomy' => 'product_cat',
@@ -74,7 +75,7 @@ if ($max_price) {
       </div>
     </div>
 
-    <div class="">
+    <div class="flower-categories fsp-filter-box">
       <h2 class="accordion-header" id="headingTwo">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
           <?php echo esc_html('Price', 'flower-shop-pro'); ?>
@@ -92,7 +93,7 @@ if ($max_price) {
       </div>
     </div>
 
-    <div class="rating fsp-filter-box">
+    <div class="rating flower-categories fsp-filter-box">
       <h2 class="accordion-header" id="headingThree">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
           <?php echo esc_html('Rating', 'flower-shop-pro'); ?>

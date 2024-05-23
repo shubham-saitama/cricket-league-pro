@@ -61,7 +61,7 @@ $locationBG = get_theme_mod('cricket_league_pro_contactus_location_bg_image');
             </div>
               <div class="col-md-6">
         	   	<div class="contac_form">
-                <?php echo do_shortcode(get_theme_mod('cricket_league_pro_contact_us_section_shortcode')); ?>
+                <?php echo do_shortcode(get_theme_mod('cricket_league_pro_contactus_form')); ?>
       		      </div>
   	         </div>
       </div>

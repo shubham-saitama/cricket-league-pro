@@ -892,7 +892,7 @@ class ThemeWhizzie
 				array(
 					'menu-item-title' => __('Term & Condition', 'cricket-league-pro'),
 					'menu-item-classes' => 'page',
-					'menu-item-url' => get_permalink(get_page_by_title('Service')),
+					'menu-item-url' => get_permalink(get_page_by_title('Terms And Conditions')),
 					'menu-item-status' => 'publish'
 				)
 			);
@@ -902,7 +902,7 @@ class ThemeWhizzie
 				array(
 					'menu-item-title' => __('Privecy Policy', 'cricket-league-pro'),
 					'menu-item-classes' => 'page',
-					'menu-item-url' => get_permalink(get_page_by_title('Blog')),
+					'menu-item-url' => get_permalink(get_page_by_title('Privecy Policy')),
 					'menu-item-status' => 'publish'
 				)
 			);
@@ -910,9 +910,9 @@ class ThemeWhizzie
 				$menu_id,
 				0,
 				array(
-					'menu-item-title' => __('Contact US', 'cricket-league-pro'),
-					'menu-item-classes' => 'support-page',
-					'menu-item-url' => get_permalink(get_page_by_title('Events')),
+					'menu-item-title' => __('Contact Us', 'cricket-league-pro'),
+					'menu-item-classes' => 'contact-page',
+					'menu-item-url' => get_permalink(get_page_by_title('Contact')),
 					'menu-item-status' => 'publish'
 				)
 			);
@@ -1450,6 +1450,19 @@ class ThemeWhizzie
 		add_post_meta($blog_id, '_wp_page_template', 'page-template/blog-fullwidth-extend.php');
 		add_post_meta($blog_id, 'vw_title_banner_image_wp_custom_attachment', $attachment_url);
 
+		// Create a Schedule Page the template
+		$schedule_title = 'Match Schedule';
+		$schedule_check = get_page_by_title($schedule_title);
+		$schedule = array(
+			'post_type' => 'page',
+			'post_title' => $schedule_title,
+			'post_status' => 'publish',
+			'post_author' => 1,
+			'post_slug' => 'blog'
+		);
+		$schedule_id = wp_insert_post($schedule);
+		add_post_meta($schedule_id, '_wp_page_template', 'page-template/page-upcomingEvents.php');
+		add_post_meta($schedule_id, 'vw_title_banner_image_wp_custom_attachment', $attachment_url);
 
 		$match_title = 'Matches';
 		// $match_check = get_page_by_title($match_title);
@@ -1582,21 +1595,21 @@ class ThemeWhizzie
 			add_post_meta($page_id, '_wp_page_template', 'page-template/page-with-right-sidebar.php');
 			add_post_meta($page_id, 'vw_title_banner_image_wp_custom_attachment', $attachment_url);
 		}
-		// Create a contact page and assigned the template
-		$contact_title = 'Contact Us';
-		$contact_check = get_page_by_title($contact_title);
-		$contact = array(
-			'post_type' => 'page',
-			'post_title' => $contact_title,
-			'post_status' => 'publish',
-			'post_author' => 1,
-			'post_slug' => 'contact'
-		);
-		$contact_id = wp_insert_post($contact);
+		// // Create a contact page and assigned the template
+		// $contact_title = 'Contact Us';
+		// $contact_check = get_page_by_title($contact_title);
+		// $contact = array(
+		// 	'post_type' => 'page',
+		// 	'post_title' => $contact_title,
+		// 	'post_status' => 'publish',
+		// 	'post_author' => 1,
+		// 	'post_slug' => 'contact'
+		// );
+		// $contact_id = wp_insert_post($contact);
 
-		//Set the blog with right sidebar template
-		add_post_meta($contact_id, '_wp_page_template', 'page-template/contact.php');
-		add_post_meta($contact_id, 'vw_title_banner_image_wp_custom_attachment', $attachment_url);
+		// //Set the blog with right sidebar template
+		// add_post_meta($contact_id, '_wp_page_template', 'page-template/contact.php');
+		// add_post_meta($contact_id, 'vw_title_banner_image_wp_custom_attachment', $attachment_url);
 
 
 		$services_title = 'Service';
@@ -2889,7 +2902,10 @@ class ThemeWhizzie
 		}
 		set_theme_mod('cricket_league_pro_testimonial_heading_tag_font_text', 'Testimonial');
 		set_theme_mod('cricket_league_pro_testimonial_heading_font_text', "What's You Say Clients");
-
+		set_theme_mod('cricket_league_pro_testimonial_sec_text', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+		been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a
+		galley of type and scrambled it to make a type specimen book. when an unknown printer took a
+		galley of type and scrambled it to make a type specimen book.');
 
 		// ---------------our services---------------
 		set_theme_mod('cricket_league_pro_our_services_sub_heading', 'SERVICES');
@@ -2899,7 +2915,8 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_our_services_page_sub_heading', 'OUR SERVICES');
 		set_theme_mod('cricket_league_pro_our_services_page_heading', "Services That We Offer");
 		set_theme_mod('cricket_league_pro_our_services_page_paragraph', "Enhance your car's performance with our selection of high-quality car parts, designed for speed and power");
-
+		set_theme_mod('cricket_league_pro_trophies_heading', 'Winning Championship Cup');
+		set_theme_mod('cricket_league_pro_trophies_heading_tag', 'Winning Cups');
 		// team trophies section 
 
 		$trpohie_title = array('Final 2019', 'Final 2020', 'Final 2021', 'Final 2022', 'Final 2023', 'Final 2024');
@@ -3547,6 +3564,77 @@ class ThemeWhizzie
 			set_post_thumbnail($team_id, $attach_id);
 			$i++;
 		}
+
+
+		//abhay do3rd work
+
+		// Now, import the SportsPress table 
+		$table_data = [
+			'post_author' => 1,
+			'post_date' => current_time('mysql'),
+			'post_date_gmt' => current_time('mysql', 1),
+			'post_content' => 't1',
+			'post_title' => 't1',
+			'post_excerpt' => '',
+			'post_status' => 'publish', // Make sure the status is 'publish'
+			'comment_status' => 'closed',
+			'ping_status' => 'closed',
+			'post_name' => sanitize_title('t1'),
+			'post_modified' => current_time('mysql'),
+			'post_modified_gmt' => current_time('mysql', 1),
+			'post_parent' => 0,
+			'guid' => home_url('/?post_type=sp_table&p=') . rand(1, 1000),
+			'menu_order' => 0,
+			'post_type' => 'sp_table',
+		];
+
+		// Insert the post
+		$table_id = wp_insert_post($table_data);
+
+		if ($table_id) {
+			// Create the sp_adjustments and sp_teams arrays dynamically
+			$sp_adjustments = array_combine($team_ids, array_fill(0, count($team_ids), ['p' => '', 'w' => '', 'l' => '', 'd' => '', 't' => '', 'nr' => '', 'bp' => '', 'points' => '', 'nrr' => '']));
+			$sp_teams = array_combine($team_ids, array_map(function ($id) {
+				//return ['name' => '', 'p' => rand(10, 50), 'w' => rand(5, 25), 'l' => rand(5, 25), 'd' => '', 't' => '', 'nr' => '', 'bp' => '', 'points' => '', 'nrr' => ''];
+				return ['name' => '', 'p' => rand(10, 50), 'w' => rand(5, 25), 'l' => rand(5, 25), 'd' => '', 't' => '', 'nr' => '', 'bp' => '', 'points' => '', 'nrr' => rand(2, 12)];
+			}, $team_ids));
+
+			// Meta data
+			$meta_data = [
+				'_edit_last' => 1,
+				'_edit_lock' => time() . ':1',
+				'sp_mode' => 'team',
+				'sp_format' => 'standings',
+				'sp_caption' => '',
+				'sp_date' => 0,
+				'sp_date_from' => '2024-05-22',
+				'sp_date_to' => '2024-05-22',
+				'sp_date_past' => 7,
+				'sp_date_relative' => 0,
+				'sp_main_league' => '',
+				'sp_current_season' => '',
+				'sp_select' => 'auto',
+				'sp_orderby' => 'default',
+				'sp_order' => 'ASC',
+				'sp_event_status' => ['publish', 'future'],
+				'sp_highlight' => 0,
+				'sp_columns' => ['p', 'w', 'l', 'nrr'],
+				'sp_adjustments' => $sp_adjustments,
+				'sp_teams' => $sp_teams,
+				'sp_team' => 0,
+			];
+
+			// Update post meta
+			foreach ($meta_data as $key => $value) {
+				update_post_meta($table_id, $key, $value);
+			}
+			set_theme_mod('cricket_league_pro_league_table_sec_id',$table_id);
+		} 
+
+
+		//end
+
+
 		// Define an array of league names and their details
 		$leagues = array(
 			array(
@@ -4140,8 +4228,8 @@ class ThemeWhizzie
 			update_post_meta($post_id, '_phone_number', $phone_number_value);
 			update_post_meta($post_id, '_email', $email_value);
 			update_post_meta($post_id, '_organizer_website', $organizer_website_value);
-			update_post_meta($post_id, 'custom_meta_field1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.');
-			update_post_meta($post_id, 'custom_meta_field1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lore');
+			update_post_meta($post_id, '_custom_meta_field1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.');
+			update_post_meta($post_id, '_custom_meta_field1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lore');
 			$image_url = get_template_directory_uri() . '/assets/images/upcoming-evt/event0' . $i . '.png';
 
 			$image_name = 'event' . $i . '.png';
@@ -4238,7 +4326,7 @@ class ThemeWhizzie
 		update_post_meta($vw_gallery_id, 'vw_gallery_images_gal_id', $gallery_images);
 
 		// //Shortcode
-		set_theme_mod('cricket_league_pro_gallery_section_shortcode', '[vw-galleryshow vw_gallery="' . $vw_gallery_id . '" numberofitem="6"]');
+		set_theme_mod('cricket_league_pro_gallery_section_shortcode', '[vw-galleryshow vw_gallery="' . $vw_gallery_id . '" numberofitem="7"]');
 
 
 
@@ -4576,6 +4664,7 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_header_bat_image', get_template_directory_uri() . '/assets/images/bats.png');
 		set_theme_mod('cricket_league_pro_latest_location_text_heading', 'Lorem Ipsum is simply dummy text');
 		set_theme_mod('cricket_league_pro_latest_locationbtn_text_heading', 'Book Now');
+		set_theme_mod('cricket_league_pro_league_table_heading_right', 'Upcoming Matches');
 		// empty cart page EnD
 
 
@@ -4603,8 +4692,49 @@ class ThemeWhizzie
 
 		// League Table 
 
-		set_theme_mod('cricket_league_pro_league_table_section_headding', 'Table');
-		set_theme_mod('cricket_league_pro_league_table_heading', 'Premier League');
+		set_theme_mod('cricket_league_pro_league_table_section_headding_tag', 'Table');
+		set_theme_mod('cricket_league_pro_league_table_section_headding', 'Premier League');
+		set_theme_mod('cricket_league_pro_upcoming_table_heading_tag', 'Matches');
+		set_theme_mod('cricket_league_pro_upcoming_table_heading', 'Upcoming Matches');
+		set_theme_mod('cricket_league_pro_upcoming_view_all', 'View All');
+		set_theme_mod('cricket_league_pro_upcoming_evt_bg_image', get_template_directory_uri() . '/assets/images/upcoming-evt/evt-bg.png');
+		set_theme_mod('cricket_league_pro_upcoming_evt_view_all', 'View All');
+
+
+		// Player Tab settings 
+
+		set_theme_mod('cricket_league_pro_playerTab_tag', 'Explore Players');
+		set_theme_mod('cricket_league_pro_playerTab_heading', 'Popular Player Details');
+		set_theme_mod('cricket_league_pro_upcoming_table_heading_one', 'Upcoming Matches');
+		set_theme_mod('cricket_league_pro_upcoming_table_heading_tag_one', 'Matches');
+
+		// product slider
+		set_theme_mod('cricket_league_pro_product_slider_heading_tag', 'Product Shop');
+		set_theme_mod('cricket_league_pro_product_slider_heading', 'Exclusive Collection');
+		set_theme_mod('cricket_league_pro_product_slider_cart_button', 'Add To Cart');
+		set_theme_mod('cricket_league_pro_upcoming_evt_heading_tag', 'Explore Events');
+		set_theme_mod('cricket_league_pro_upcoming_evt_heading', 'Upcoming Events');
+		// single event page 
+		set_theme_mod('cricket_league_pro_single_evt_goto_location', 'Go To Location');
+		set_theme_mod('cricket_league_pro_single_evt_add_chalender', 'Go To Chalender');
+
+		set_theme_mod('product_helpline_fields', 'Need Help? Call Us +1 255 854 55 26');
+		set_theme_mod('product_helpline_timing', 'Monday - Friday 9:00 - 17:00');
+
+
+		// About us 
+		$titleArr = array('Mission', 'Our Mission', 'Our History');
+		$headingArr = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
+		$pt_text = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. when an unknown printer took a galley of type and scrambled it dummy text make a type specimen book. when an unknown printer took a galley of type and scrambled it to make a type specimen book. when an unknown printer took a galley of type and scrambled it to make a type specimen book.printer took galley of type and scrambled it to dummy text make a type specimen book. when an unknown printer took galley of type and scrambled it to make a type specimen book. when an unknown printer took a galley of type and scrambled it to make a type specimen book.';
+
+		for ($i = 1; $i <= 3; $i++) {
+			set_theme_mod('cricket_league_pro_aboutus_tab_ptsImage_' . $i, get_template_directory_uri() . '/assets/images/history.png');
+			set_theme_mod('cricket_league_pro_aboutus_tab_name_' . $i, $titleArr[$i - 1]);
+			set_theme_mod('cricket_league_pro_aboutus_tab_Heading_' . $i, $headingArr);
+			set_theme_mod('cricket_league_pro_aboutus_tab_text_pts_' . $i, $pt_text);
+		}
+		set_theme_mod('cricket_league_pro_about_us_listical_pts', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. when an unknown printer took a galley of type and scrambled it to dummy text make a type specimen book. when an unknown printer took a galley of type and scrambled it to make a type specimen book. when an unknown printer took a galley of type and scrambled it to make a type specimen book.');
+		set_theme_mod('cricket_league_pro_about_us_listical_pts_2', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. when an unknown printer took a galley of type and scrambled it to dummy text make a type specimen book. when an unknown printer took a galley of type and scrambled it to make a type specimen book. when an unknown printer took a galley of type and scrambled it to make a type specimen book.');
 
 		$this->theme_create_customizer_nav_menu();
 		$this->theme_create_customizer_footer_services_menu();
@@ -4766,19 +4896,18 @@ class ThemeWhizzie
 			$page_id = wp_insert_post($vw_page);
 		}
 
-		// Create a contact page and assigned the template
-		$contact_title = 'Contact Us';
-		$contact = array(
-			'post_type' => 'page',
-			'post_title' => $contact_title,
-			'post_status' => 'publish',
-			'post_author' => 1,
-			'post_slug' => 'contact'
-		);
-		$contact_id = wp_insert_post($contact);
+		// // Create a contact page and assigned the template
+		// $contact_title = 'Contact Us';
+		// $contact = array(
+		// 	'post_type' => 'page',
+		// 	'post_title' => $contact_title,
+		// 	'post_status' => 'publish',
+		// 	'post_author' => 1,
+		// 	'post_slug' => 'contact'
+		// );
+		// $contact_id = wp_insert_post($contact);
 
-		//Set the blog with right sidebar template
-		add_post_meta($contact_id, '_wp_page_template', 'page-template/contact.php');
+		//Set the blog with right sidebar templateadd_post_meta($contact_id, '_wp_page_template', 'page-template/contact.php');
 		if (isset($home_b->ID)) {
 			echo json_encode(['home_page_id' => $home_b->ID, 'home_page_url' => get_edit_post_link($home_b->ID, '')]);
 		}
@@ -5110,13 +5239,13 @@ class ThemeWhizzie
 						for (var i = 0; i < premium_data.length; i++) {
 							var premium_product = premium_data[i];
 							var card_content = `<div class="o-products-col" data-id="` + premium_product.id + `">
-														<div class="o-products-image">
-															<img src="`+ premium_product.image + `">
-														</div>
-														<h3>`+ premium_product.title + `</h3>
-														<a href="`+ premium_product.permalink + `" target="_blank">Buy Now</a>
-														<a href="`+ premium_product.demo_url + `" target="_blank">View Demo</a>
-														</div>`;
+																						<div class="o-products-image">
+																							<img src="`+ premium_product.image + `">
+																						</div>
+																						<h3>`+ premium_product.title + `</h3>
+																						<a href="`+ premium_product.permalink + `" target="_blank">Buy Now</a>
+																						<a href="`+ premium_product.demo_url + `" target="_blank">View Demo</a>
+																						</div>`;
 							jQuery('.wz-spinner-wrap').css('display', 'none');
 							jQuery('#other-products .o-product-row').append(card_content);
 						}
@@ -5132,8 +5261,8 @@ class ThemeWhizzie
 							}
 							let premium_product = premium_category[i];
 							let card_content = `<li data-ids="` + premium_product.product_ids + `" onclick="other_products(this);" class="` + active_class + `">
-																																																																																																											  `+ premium_product.name + `<span class="badge badge-info">` + premium_product.product_ids.length + `</span>
-																																																																																																										  </li>`;
+																																																																																																																			  `+ premium_product.name + `<span class="badge badge-info">` + premium_product.product_ids.length + `</span>
+																																																																																																																		  </li>`;
 							jQuery('.o-product-col-1 ul').append(card_content);
 						}
 					});
@@ -5205,4 +5334,3 @@ class ThemeWhizzie
 	}
 
 }
-set_theme_mod('cricket_league_pro_league_table_bgimage', get_template_directory_uri() . '/assets/images/Banner-Image.png');

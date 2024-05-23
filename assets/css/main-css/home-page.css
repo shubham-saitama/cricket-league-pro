@@ -1,5 +1,5 @@
 :root {
-  #FF6F00: #FF6F00;
+  --primary-color: #FF6F00;
   --secondary-color: #fff;
 }
 
@@ -146,7 +146,7 @@ a.play-btn-tag {
   margin: 0px;
 }
 
-p.choose-counter-num.counter {
+.choose-counter-num.counter {
   text-align: center;
   font: normal normal 800 34px / 41px Inter Tight;
 }
@@ -1105,10 +1105,15 @@ section#upcoming-evt {
   gap: 40px;
 }
 
-.evt-right h3 {
+.evt-right h3,.heading-wrap-evt a {
   font: normal normal bold 28px / 34px Inter Tight;
   text-align: left;
+  color: #fff;
 }
+.heading-wrap-evt a:hover {
+  color: var(--primary-color);
+}
+
 
 .address {
   font: normal normal medium 16px/52px Inter Tight;
@@ -1644,10 +1649,12 @@ span.ui-slider-handle.ui-corner-all.ui-state-default {
 }
 button.accordion-button {
   background: #F1F1F1;
-  border: 1px solid #CCCCCC;
   padding: 12px 20px;
 }
 
 ul.shop-page-produts-category li {
   margin-bottom: 4px;
+}
+section.products .heading-tag,section.products .heading-wrap h2,section#trophies .heading-tag,section#trophies h2{
+  text-align: center;
 }

@@ -25,9 +25,7 @@ if (get_theme_mod('cricket_league_pro_header_section_sticky', true) == "1") {
 </head>
 
 <body <?php body_class(); ?>>
-
   <?php wp_body_open(); ?>
-
   <header id="masthead" class="site-header">
     <!-- before header hook -->
     <?php do_action('cricket_league_pro_before_topbar'); ?>
@@ -61,12 +59,8 @@ if (get_theme_mod('cricket_league_pro_header_section_sticky', true) == "1") {
       style="<?php echo esc_attr($background_setting); ?>">
       <?php
       do_action('cricket_league_pro_before_header');
-      //get_template_part('template-parts/header/middle-header');
       get_template_part('template-parts/header/content-header');
       ?>
     </div>
-    <!-- <span id="sticky-onoff" style="font-size: 0;"><? php// echo esc_html($sticky_header); ?></span> -->
-
     <div class="clearfix"></div>
-
   </header>

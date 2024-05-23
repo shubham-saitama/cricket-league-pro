@@ -3,6 +3,7 @@ if (!is_singular()) {
 	return;
 }
 global $post;
+
 $img = get_theme_mod('cricket_league_pro_inner_page_banner_bgimage');
 $display = '';
 $display_title_bbanner = '';

@@ -106,7 +106,9 @@ if ($img != '') { ?>
                         <div class="venue">
                             <?php echo $location; ?>
                         </div>
-                        <?php the_content(); ?>
+                        <div class="evt-descreption">
+                            <?php the_content(); ?>
+                        </div>
                         <span class="price">$ <?php echo $entry_fees; ?></span>
                         <div class="button-wrapper">
                             <?php
@@ -118,14 +120,13 @@ if ($img != '') { ?>
                             $google_calendar_link = "https://www.google.com/calendar/render?action=TEMPLATE&text=$event_title&dates=$start_datetime/$end_datetime&location=$location";
                             $location_link = 'https://www.google.com/maps/search/?api=1&query=' . urlencode($location);
                             ?>
-                            <a class="normal-btn black" href="<?php $location_link; ?>" target="_blank">Go To Location</a>
+                            <a class="normal-btn black" href="<?php $location_link; ?>" target="_blank"><?php echo get_theme_mod('cricket_league_pro_single_evt_goto_location'); ?></a>
 
-                            <a class="calender-button" href="<?php echo $google_calendar_link; ?>" target="_blank">Add To
-                                Calendar</a>
+                            <a class="calender-button" href="<?php echo $google_calendar_link; ?>" target="_blank"><?php echo get_theme_mod('cricket_league_pro_single_evt_add_chalender'); ?></a>
                         </div>
                     </div>
-                    <p class="my-4"><?php echo get_post_meta(get_the_ID(),'_custom_meta_field1', 'true'); ?></p>
-                    <p class="my-3"><?php echo get_post_meta(get_the_ID(),'_custom_meta_field2', 'true'); ?></p>
+                    <p class="my-4"><?php echo get_post_meta(get_the_ID(), '_custom_meta_field1', 'true'); ?></p>
+                    <p class="my-3"><?php echo get_post_meta(get_the_ID(), '_custom_meta_field2', 'true'); ?></p>
 
                     <div class="row">
                         <div class="col-lg-3 col-md-6 col-12">

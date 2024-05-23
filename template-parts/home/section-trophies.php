@@ -5,30 +5,28 @@
  * @package cricket-league-pro
  */
 
-$section_hide = get_theme_mod('cricket_league_pro_trophies_enable_disable');
+$section_hide = get_theme_mod('cricket_league_pro_trophies_enable');
 if ('Disable' == $section_hide) {
     return;
 }
-if (get_theme_mod('cricket_league_pro_trophies_bg_color', '')) {
-    $services_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_trophies_bg_color', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_trophies_bg_image', '')) {
-    $services_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_trophies_bg_image')) . '\')';
+if (get_theme_mod('cricket_league_pro_trophies_bgcolor', '')) {
+    $services_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_trophies_bgcolor', '')) . ';';
+} elseif (get_theme_mod('cricket_league_pro_trophies_bgimage', '')) {
+    $services_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_trophies_bgimage')) . '\')';
 } else {
     $services_back = '';
 }
-$img_bg = get_theme_mod('cricket_league_pro_trophies_bg_image');
-
 ?>
 <section id="trophies" style="<?php echo esc_attr($services_back); ?>"
-    class="<?php echo esc_attr($img_bg); ?> section-space">
+    class="section-space">
     <div class="container">
         <div class="row justify-content-between">
             <div class="heading-wrap">
                 <div class="heading-tag">
-                    Winning Cups
+                    <?php echo get_theme_mod('cricket_league_pro_trophies_heading_tag'); ?>
                 </div>
                 <h2>
-                    Winning Championship Cup
+                    <?php echo get_theme_mod('cricket_league_pro_trophies_heading'); ?>
                 </h2>
             </div>
             <?php

@@ -1,21 +1,16 @@
 <?php
-set_theme_mod('cricket_league_pro_upcoming_evt_tag', 'Explore Events');
-set_theme_mod('cricket_league_pro_upcoming_evt_heading', 'Upcoming Events');
+
 
 $section_hide = get_theme_mod('cricket_league_pro_upcoming_evt_enabledisable');
 if ('Disable' == $section_hide) { ?>
     <?php
     return;
 }
-set_theme_mod('cricket_league_pro_upcoming_evt_bgimage', get_template_directory_uri() . '/assets/images/upcoming-evt/evt-bg.png');
 
-
-set_theme_mod('cricket_league_pro_upcoming_evt_bgcolor','');
-
-if (get_theme_mod('cricket_league_pro_upcoming_evt_bgcolor')) {
-    $upcoming_evt_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_upcoming_evt_bgcolor', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_upcoming_evt_bgimage')) {
-    $upcoming_evt_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_upcoming_evt_bgimage')) . '\')';
+if (get_theme_mod('cricket_league_pro_upcoming_evt_bg_color')) {
+    $upcoming_evt_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_upcoming_evt_bg_color', '')) . ';';
+} elseif (get_theme_mod('cricket_league_pro_upcoming_evt_bg_image')) {
+    $upcoming_evt_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_upcoming_evt_bg_image')) . '\')';
 } else {
     $upcoming_evt_back = '';
 } ?>
@@ -26,12 +21,12 @@ if (get_theme_mod('cricket_league_pro_upcoming_evt_bgcolor')) {
             <div class="button-holder">
                 <div class="heading-wrap">
                     <div class="heading-tag">
-                        <?php echo get_theme_mod('cricket_league_pro_upcoming_evt_tag'); ?>
+                        <?php echo get_theme_mod('cricket_league_pro_upcoming_evt_heading_tag'); ?>
                     </div>
                     <h2 class="left"><?php echo get_theme_mod('cricket_league_pro_upcoming_evt_heading'); ?></h2>
                 </div>
                 <a href="<?php echo get_permalink(get_page_by_title('Events'))?>" class="theme-btn black">
-                    View All
+                   <?php echo get_theme_mod('cricket_league_pro_upcoming_evt_view_all'); ?>
                 </a>
             </div>
         </div>
@@ -74,11 +69,11 @@ if (get_theme_mod('cricket_league_pro_upcoming_evt_bgcolor')) {
                             <?php echo $day; ?>
                         </div>
                         <div class="evt-right">
-                            <p><?php echo $event_date_formatted; ?> - <?php echo esc_html($start_time_am_pm); ?> To
+                            <p class="schedule"><?php echo $event_date_formatted; ?> - <?php echo esc_html($start_time_am_pm); ?> To
                                 <?php echo $event_date_formatted; ?> - <?php echo esc_html($end_time_am_pm); ?>
-                            </p>
+                            </pc>
                             <div class="heading-wrap-evt">
-                                <h3><?php the_title(); ?></h3>
+                                <h3><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>
                             </div>
                             <p class="address"><?php echo esc_html($location); ?></p>
                             <div class="event-content">

@@ -2260,9 +2260,9 @@ function get_events_grouped_by_year()
 			$html .= '<span class="date">' . $date . '</span>' . $day;
 			$html .= '</div>';
 			$html .= '<div class="evt-right">';
-			$html .= '<p>' . $event_date_formatted . ' - ' . esc_html($start_time_am_pm) . ' To ' . $event_date_formatted . ' - ' . esc_html($end_time_am_pm) . '</p>';
+			$html .= '<p class="schedule-inner">' . $event_date_formatted . ' - ' . esc_html($start_time_am_pm) . ' To ' . $event_date_formatted . ' - ' . esc_html($end_time_am_pm) . '</p>';
 			$html .= '<div class="heading-wrap-evt">';
-			$html .= '<h3>' . esc_html($event->post_title) . '</h3>';
+			$html .= '<h3><a href="'.esc_html(get_the_permalink()).'">' . esc_html($event->post_title) . '</a></h3>';
 			$html .= '</div>';
 			$html .= '<p class="address">' . esc_html($location) . '</p>';
 			$html .= '<div class="event-content">' . wpautop($event->post_content) . '</div>';
@@ -2341,9 +2341,9 @@ function get_events_grouped_by_month()
 				$html .= '<span class="date">' . $date . '</span>' . $day;
 				$html .= '</div>';
 				$html .= '<div class="evt-right">';
-				$html .= '<p>' . $event_date_formatted . ' - ' . esc_html($start_time_am_pm) . ' To ' . $event_date_formatted . ' - ' . esc_html($end_time_am_pm) . '</p>';
+				$html .= '<p class="schedule-inner">' . $event_date_formatted . ' - ' . esc_html($start_time_am_pm) . ' To ' . $event_date_formatted . ' - ' . esc_html($end_time_am_pm) . '</p>';
 				$html .= '<div class="heading-wrap-evt">';
-				$html .= '<h3>' . esc_html($event->post_title) . '</h3>';
+				$html .= '<h3><a href="'.esc_html(get_the_permalink()).'">' . esc_html($event->post_title) . '</a></h3>';
 				$html .= '</div>';
 				$html .= '<p class="address">' . esc_html($location) . '</p>';
 				$html .= '<div class="event-content">' . wpautop($event->post_content) . '</div>';
@@ -2417,9 +2417,9 @@ function get_events_grouped_today()
 			$html .= date('l', strtotime($event_date));
 			$html .= '</div>';
 			$html .= '<div class="evt-right">';
-			$html .= '<p>' . $event_date_formatted . ' - ' . esc_html($start_time_am_pm) . ' To ' . $event_date_formatted . ' - ' . esc_html($end_time_am_pm) . '</p>';
+			$html .= '<p class="schedule-inner">' . $event_date_formatted . ' - ' . esc_html($start_time_am_pm) . ' To ' . $event_date_formatted . ' - ' . esc_html($end_time_am_pm) . '</p>';
 			$html .= '<div class="heading-wrap-evt">';
-			$html .= '<h3>' . esc_html(get_the_title()) . '</h3>';
+			$html .= '<h3><a href="'.esc_html(get_the_permalink()).'">' . esc_html(get_the_title()) . '</a></h3>';
 			$html .= '</div>';
 			$html .= '<p class="address">' . esc_html($location) . '</p>';
 			$html .= '<div class="event-content">' . wpautop(get_the_content()) . '</div>';

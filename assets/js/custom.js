@@ -707,7 +707,7 @@ jQuery(document).ready(function () {
 
   // Define an array of objects containing class names and excerpt lengths
   var config = [
-    { className: 'heading-wrap-evt', excerptLength: 70, tagname: 'h3' },
+    // { className: 'heading-wrap-evt', excerptLength: 70, tagname: 'h3' },
     { className: 'excrept-anchor', excerptLength: 75, tagname: 'h5' },
     { className: 'event-content', excerptLength: 350, tagname: 'p' }
   ];
@@ -982,8 +982,6 @@ jQuery(document).ready(function ($) {
   });
   // Run the code when the DOM is fully loaded
 
-  // Check if viewport width is greater than 991px
- 
 
 
   jQuery(window).scroll(function () {
@@ -1054,11 +1052,6 @@ jQuery(document).ready(function ($) {
     }
   });
 });
-
-
-
-
-// filter js 
 
 
 //shop page work 
@@ -1204,26 +1197,21 @@ jQuery(document).ready(function(){
  if (window.innerWidth > 991) {
   // Find the footer element
   var footer = jQuery("footer");
-  var shopMain = jQuery('#maincontent');
-  var otherPage = jQuery('#full-width-blog');
-  var pageClass = jQuery('.footer-bottom');
-  var footer = jQuery('.outer_dpage');
-  var innerPage = jQuery('.outer_dpage');
-  // Find the section before the footer
+
+  // Find the section or div before the footer
   var sectionBeforeFooter = footer.prev("section");
+  var divBeforeFooter = footer.prev("div");
 
-  // Check if a section exists before the footer
-  if (sectionBeforeFooter.length > 0) {
-
-    // Calculate the height of the footer
-    var footerHeight = footer.outerHeight();
-    // Apply margin-bottom to the section before the footer
-    sectionBeforeFooter.css("margin-bottom", footerHeight + "px");
-    shopMain.css("margin-bottom", footerHeight + "px");
-  }
+  // Calculate the height of the footer
   var footerHeight = footer.outerHeight();
-  shopMain.css("margin-bottom", footerHeight + "px");
-  otherPage.css("margin-bottom", footerHeight + "px");
-  pageClass.css("margin-bottom", footerHeight + "px");
-  innerPage.css("margin-bottom", footerHeight + "px");
+
+  // Apply margin-bottom to the section if it exists
+  if (sectionBeforeFooter.length > 0) {
+    sectionBeforeFooter.css("margin-bottom", footerHeight + "px");
+  }
+
+  // Apply margin-bottom to the div if it exists and if there was no section
+  if (divBeforeFooter.length > 0 && sectionBeforeFooter.length === 0) {
+    divBeforeFooter.css("margin-bottom", footerHeight + "px");
+  }
 }

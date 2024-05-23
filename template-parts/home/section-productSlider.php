@@ -1,10 +1,28 @@
-<section class="products section-space">
+<?php
+/**
+ * Template to show Products Slider
+ *
+ * @package cricket_league_pro
+ */
+$section_hide = get_theme_mod('cricket_league_pro_productSlider_enabledisable');
+if ('Disable' == $section_hide) {
+  return;
+}
+if (get_theme_mod('cricket_league_pro_productSlider_bg_color', '')) {
+  $per_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_productSlider_bg_color', '')) . ';';
+} elseif (get_theme_mod('cricket_league_pro_productSlider_bg_image', '')) {
+  $per_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_productSlider_bg_image')) . '\')';
+} else {
+  $per_back = '';
+}
+?>
+<section class="products section-space" style="<?php echo esc_attr($per_back); ?>">
     <div class="container">
         <div class="heading-wrap">
             <div class="heading-tag">
-            Product Shop
+                <?php echo get_theme_mod('cricket_league_pro_upcoming_evt_heading_tag'); ?>
             </div>
-            <h2>Exclusive Collection</h2>
+            <h2><?php echo get_theme_mod('cricket_league_pro_product_slider_heading'); ?></h2>
         </div>
         <div class="row">
             <div class="owl-carousel">
@@ -57,7 +75,7 @@
                                         // Get the add to cart URL
                                         $add_to_cart_url = esc_url(wc_get_product($product_id)->add_to_cart_url());
                                         ?>
-                                <a href="<?php echo $add_to_cart_url; ?>" class="button">Add to Cart</a>
+                                <a href="<?php echo $add_to_cart_url; ?>" class="button"><?php echo get_theme_mod('cricket_league_pro_product_slider_cart_button'); ?></a>
                             </div>
                         </div>
                         <?php

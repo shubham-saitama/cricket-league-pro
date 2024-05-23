@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Upcoming Events
+ * Template Name: Matches Schedule
  */
 
 get_header();
@@ -79,7 +79,7 @@ get_template_part('template-parts/banner'); ?>
                         echo '<td>' . $match . '</td>';
                         echo '<td>' . $venue . '</td>';
                         echo '<td>' . $time . '</td>';
-                        echo '<td> <a href="#" class="theme-btn black">Book Now</a></td>';
+                        echo '<td> <a href="'.get_permalink(get_page_by_title('Booking Form')).'" class="theme-btn black">Book Now</a></td>';
                         echo '</tr>';
                     }
                     $i++;

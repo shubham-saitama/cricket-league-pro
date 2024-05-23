@@ -106,5 +106,7 @@ get_template_part('template-parts/banner'); ?>
         </div>
 
         <?php do_action('cricket_league_pro_after_blog'); ?>
+    </div>
+</div>
 
-        <?php get_footer(); ?>
+<?php get_footer(); ?>

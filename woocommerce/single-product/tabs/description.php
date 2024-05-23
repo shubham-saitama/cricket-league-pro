@@ -33,8 +33,7 @@ $ratings = $wpdb->get_results("
 
 $heading = apply_filters('woocommerce_product_description_heading', __('Description', 'woocommerce'));
 $review_count = $product->get_review_count();
-set_theme_mod('product_helpline_fields', 'Need Help? Call Us +1 255 854 55 26');
-set_theme_mod('product_helpline_timing', 'Monday - Friday 9:00 - 17:00');
+
 ?>
 
 <?php if ($heading): ?>

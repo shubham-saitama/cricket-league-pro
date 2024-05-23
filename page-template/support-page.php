@@ -1,12 +1,11 @@
 <?php
 /**
- * Template Name:Support Page Template
+ * Template Name:Contact us Template
  *
  *
  */
 
 get_header();
-// get_template_part('template-parts/banner');
 
 if (get_theme_mod('cricket_league_pro_contactus_page_bgcolor', '')) {
     $about_page_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_contactus_page_bgcolor', '')) . ';';
@@ -19,8 +18,6 @@ $supportContactForm = get_theme_mod('cricket_league_pro_contactus_form');
 if (get_theme_mod('cricket_league_pro_contactus_location_bg_image', '')) {
     $about_page_back_location = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_contactus_location_bg_image')) . '\')';
 } 
-
-$faqCount = get_theme_mod('cricket_league_pro_faq_count', 5); // Number of FAQ questions to display
 get_template_part('template-parts/banner'); 
 
 ?>
