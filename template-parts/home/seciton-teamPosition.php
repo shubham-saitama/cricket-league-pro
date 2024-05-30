@@ -11,22 +11,22 @@ if (get_theme_mod('cricket_league_pro_league_table_bgcolor')) {
     $table_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_league_table_bgimage')) . '\')';
 } else {
     $table_back = '';
-} 
+}
 $table_id = get_theme_mod('cricket_league_pro_league_table_sec_id');
 ?>
 <section id="leagueTable" style="<?php echo esc_attr($table_back); ?>">
     <div class="container">
         <div class="row">
-            <div class="col-lg-7 col-md-7 col-12">
+            <div class="col-lg-7 col-md-12 col-12">
                 <div class="heading-wrap">
                     <div class="heading-tag">
-                    <?php echo get_theme_mod('cricket_league_pro_league_table_section_headding_tag'); ?>
+                        <?php echo get_theme_mod('cricket_league_pro_league_table_section_headding_tag'); ?>
                     </div>
                     <h2><?php echo get_theme_mod('cricket_league_pro_league_table_section_headding'); ?></h2>
                 </div>
-                <?php echo do_shortcode('[team_standings '.$table_id.']'); ?>
+                <?php echo do_shortcode('[team_standings ' . $table_id . ']'); ?>
             </div>
-            <div class="col-lg-5 col-md-5 col-12 postion-right">
+            <div class="col-lg-5 col-md-12 col-12 postion-right">
                 <div class="button-holder">
                     <div class="heading-wrap">
                         <div class="heading-tag">
@@ -34,7 +34,7 @@ $table_id = get_theme_mod('cricket_league_pro_league_table_sec_id');
                         </div>
                         <h2><?php echo get_theme_mod('cricket_league_pro_upcoming_table_heading_one'); ?></h2>
                     </div>
-                    <a href="<?php echo get_permalink(get_page_by_title('Events')) ?>" class="theme-btn black">
+                    <a href="<?php echo get_permalink(get_page_by_title('Match Schedule')) ?>" class="theme-btn white">
                         <?php echo get_theme_mod('cricket_league_pro_upcoming_view_all'); ?>
                     </a>
                 </div>

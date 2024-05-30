@@ -44,8 +44,8 @@ class cricket_league_pro_Fontawesome_Icon_Chooser extends WP_Customize_Control{
 }
 
 function cricket_league_pro_customizer_script() {
-    // wp_enqueue_style( 'font-awesome-1', get_template_directory_uri(). '/inc/customize/controls/social-icons/css/font-awesome.css');
-    wp_enqueue_style('font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+    wp_enqueue_style( 'font-awesome-1', get_template_directory_uri(). '/inc/customize/controls/social-icons/css/font-awesome.css');
+    // wp_enqueue_style('font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
     wp_enqueue_style( 'total-customizer-style', get_template_directory_uri(). '/inc/customize/controls/social-icons/css/customizer-style.css');
     wp_enqueue_script( 'total-customizer-script', get_template_directory_uri(). '/inc/customize/controls/social-icons/js/customizer-scripts.js', array("jquery"),'', true  );
 

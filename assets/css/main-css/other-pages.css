@@ -3,11 +3,6 @@
   padding: 20px 0;
 }
 
-:root {
-  #FF6F00: #FF6F00;
-  --secondary-color: #fff;
-}
-
 
 /*---------------- Banner ----------------------*/
 .title-box img {
@@ -134,7 +129,7 @@ div#full-width-blog {
 }
 
 p.form-submit input:hover {
-  background-color: #FF6F00 !important;
+  background-color: var(--primary-color) !important;
 }
 
 /*.archive
@@ -241,19 +236,19 @@ aside#search-3 {
 .bradcrumbs {
   padding: 10px 0;
   text-align: center;
-  color: #fff;
+  color: var(--secondary-color);
 }
 
 .bradcrumbs a {
   font: normal normal normal 20px/24px Inter Tight;
   letter-spacing: 0.18px;
-  color: #fff;
+  color: var(--secondary-color);
 }
 
 .bradcrumbs span {
   font: normal normal normal 20px/24px Inter Tight;
   letter-spacing: 0.18px;
-  color: #fff;
+  color: var(--secondary-color);
 }
 
 /*------------------ Comments BOX ------------------*/
@@ -608,9 +603,9 @@ span.credit_link a {
 }
 
 .title-box h1 {
-  font: normal normal 900 34px / 32px Inter Tight;
+  font: normal normal 600 34px / 32px Inter Tight;
   letter-spacing: 0.34px;
-  color: #fff;
+  color: var(--secondary-color);
   position: relative;
   text-align: center;
   margin-bottom: 5px;
@@ -1788,7 +1783,7 @@ ul.d-flex.text-lg-start {
 .entry-date, .entry-comments, .entry-comments a, li.categories a, li.categories  {
     font: 18px / 28px Inter Tight;
     letter-spacing: 0px;
-    color: #FF6F00;
+    color: var(--primary-color);
     opacity: 1;
     font-weight: 500;
 }
@@ -2002,7 +1997,7 @@ h5.counter-title h5 {
 span.counter-number {
   font: normal normal 900 50px/28px Inter Tight;
   letter-spacing: -0.25px;
-  color: #FF6F00;
+  color: var(--primary-color);
   margin-bottom: 15px;
   display: inline-block;
 }
@@ -2085,7 +2080,7 @@ h5.counter-title {
 /* widget  */
 
 .calling-widget {
-  background: #FF6F00;
+  background: var(--primary-color);
   padding: 45px 40px;
   display: flex;
   flex-direction: column;
@@ -2135,7 +2130,7 @@ p.post-date {
 }
 
 p.post-date .fa-calendar:before {
-  color: #FF6F00;
+  color: var(--primary-color);
 }
 
 .calling-widget a {
@@ -2256,13 +2251,13 @@ ul.tab-links .active a {
   font: 18px / 24px Inter Tight;
   font-weight: 500;
   padding: 10px 15px;
-  background: #FF6F00;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .pt-one::after {
   content: "";
-  background: #FF6F00;
+  background: var(--primary-color);
   width: 12px;
   height: 12px;
   position: absolute;
@@ -2273,7 +2268,7 @@ ul.tab-links .active a {
 
 .pt-one::after {
   content: "";
-  background: #FF6F00;
+  background: var(--primary-color);
   width: 12px;
   height: 12px;
   position: absolute;
@@ -2347,7 +2342,9 @@ ul.tab-links .active a {
 p.text-normal {
   font: normal normal normal 18px/30px Inter Tight;
 }
-
+.staff-card:hover {
+  border: 1px solid var(--primary-color);
+}
 /* our staff  */
 .staff-img-wrap {
   border-radius: 15px;
@@ -2502,7 +2499,7 @@ p.text-normal {
 
 .tagline {
   font: normal normal bold 20px/30px Inter Tight;
-  color: #FF6F00;
+  color: var(--primary-color);
 }
 
 section.thebest h3.left {
@@ -2629,7 +2626,7 @@ section.distribution-overview {
   margin-bottom: 10px !important;
   font: normal normal 900 50px/30px Inter Tight;
   letter-spacing: 0px;
-  color: #FF6F00;
+  color: var(--primary-color);
   line-height: 41px;
   display: inherit;
 }
@@ -2798,7 +2795,7 @@ input#submit-button {
 
 input#submit:hover,
 input#submit-button:hover {
-  background-color: #FF6F00;
+  background-color: var(--primary-color);
 }
 
 span[data-name="Message"] span.wpcf7-not-valid-tip {
@@ -3075,7 +3072,7 @@ li.category-list {
 /* shop page  */
 
 .fsp-shop-page {
-  background-color: #fff;
+  background-color: var(--secondary-color);
 }
 
 /* .fsp-shop-wrapper {
@@ -3112,7 +3109,7 @@ li.category-list {
 main#maincontent a.button {
   font: normal normal normal 14px / 17px Inter Tight;
   letter-spacing: 0px;
-  color: #FFFFFF;
+  color: var(--secondary-color);
   background: #000;
   padding: 10px 40px 10px 20px;
   border-radius: 6px;
@@ -3146,7 +3143,7 @@ label.wp-block-search__label {
 
 button.wp-block-search__button.wp-element-button {
   font: 14px / 17px Figtree;
-  color: #fff;
+  color: var(--secondary-color);
   background: #000;
   border-radius: 4px;
   border: none;
@@ -3277,8 +3274,8 @@ section.eventssearch td {
 }
 
 section.eventssearch thead tr {
-  background: #FF6F00;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .input-wrapper-search {
@@ -3320,7 +3317,7 @@ p.clock-before {
 p.clock-before::after {
   content: "\f017";
   font-family: 'FontAwesome';
-  color: #FF6F00;
+  color: var(--primary-color);
   font-size: 16px;
   position: absolute;
   top: 0;
@@ -3349,7 +3346,7 @@ a.normal-btn {
   padding: 10px 20px;
   border-radius: 6px;
   background: #000;
-  color: #fff;
+  color: var(--secondary-color);
   display: inline-block;
   margin-top: 10px;
 }
@@ -3357,7 +3354,7 @@ a.normal-btn {
 a.calender-button::after {
   content: "\f073";
   font-family: 'FontAwesome';
-  color: #fff;
+  color: var(--secondary-color);
   font-size: 16px;
   position: absolute;
   right: 10px;
@@ -3369,8 +3366,8 @@ a.calender-button::after {
 
 a.calender-button {
   display: inline-block;
-  color: #fff;
-  background: #FF6F00;
+  color: var(--secondary-color);
+  background: var(--primary-color);
   border-radius: 6px;
   font-weight: 500;
   padding: 10px 40px 10px 20px;
@@ -3447,7 +3444,7 @@ img.errorimg {
 }
 
 h3.accordion-click.active {
-  background: #FF6F00;
+  background: var(--primary-color);
   color: var(--secondary-color);
   margin-bottom: 0px;
 }
@@ -3757,7 +3754,7 @@ td.product-remove {
   text-align: center;
   font: 14px / 17px Inter Tight;
   letter-spacing: 0px;
-  color: #FFFFFF;
+  color: var(--secondary-color);
   background: #000;
   padding: 10px 40px 10px 20px;
   border-radius: 6px;
@@ -3854,7 +3851,7 @@ section#related .heading-tag {
   position: unset;
 }
 ::marker {
-  color: #FF6F00;
+  color: var(--primary-color);
 }
 li.terms-conditions-para {
   margin-bottom: 10px;
@@ -4111,7 +4108,7 @@ tr.quantity-box {
 button#buy_now_button {
   font: normal normal normal 14px / 17px Inter Tight;
   letter-spacing: 0px;
-  color: #FFFFFF;
+  color: var(--secondary-color);
   background: #000;
   padding: 10px 40px 10px 20px;
   border-radius: 6px;
@@ -4134,14 +4131,14 @@ button#buy_now_button::after {
   margin: auto;
   height: 15px;
 }
-.yith-wcwl-wishlistexistsbrowse {
+/* .yith-wcwl-wishlistexistsbrowse {
   border: 2px solid #000 !important;
-}
+} */
 .shop .single-product .summary.entry-summary i.yith-wcwl-icon{
   color: #000 !important;
 }
 .shop .yith-wcwl-add-button .fa-heart-o:before {
-  color: #fff;
+  color: var(--secondary-color);
 }
 
 
@@ -4231,7 +4228,7 @@ div#tab-description {
 input#submit {
   background: #000000 0% 0% no-repeat padding-box !important;
   border-radius: 6px;
-  color: #fff !important;
+  color: var(--secondary-color)!important;
   padding: 13px 40px !important;
 }
 
@@ -4275,7 +4272,7 @@ input#submit {
 #Single-pro-page a.button {
   font: normal normal normal 14px / 17px Inter Tight;
   letter-spacing: 0px;
-  color: #FFFFFF;
+  color: var(--secondary-color);
   background: #000;
   padding: 10px 40px 10px 20px;
   border-radius: 6px;
@@ -4345,8 +4342,8 @@ section#related a.add_to_wishlist.single_add_to_wishlist {
 }
 .book-headin-wrapper {
   text-align: center;
-  background-color: #FF6F00;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .from-inner-wrap {
@@ -4423,7 +4420,7 @@ input.wpcf7-form-control.wpcf7-number {
 .matches-slider-wrapper h3{
   font: normal normal normal 40px / 42px Great Sejagad;
   letter-spacing: 0px;
-  color: #FF6F00;
+  color: var(--primary-color);
 }
 
 
@@ -4549,4 +4546,24 @@ section.support-page h4 {
   .support-form-wrapper .wpcf7 form.invalid .wpcf7-response-output {
     bottom: -30px;
   }
+}
+
+
+button.accordion-button.collapsed {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+main#maincontent .prev, main#maincontent .next {
+  position: unset;
+  width: unset;
+  height: unset;
+  margin: 0px;
+}
+.filter-events {
+  display: flex;
+  justify-content: space-between;
+}
+.searchbody {
+  background: #fff;
 }

@@ -4,8 +4,7 @@
 
 function get_shop_page_filter(){
 	$post_data = $_POST['data'];
-	error_log('Received AJAX request in get_shop_page_filter');
-	error_log(print_r($post_data, true));
+
 
 
 
@@ -141,7 +140,7 @@ $args['order'] = 'ASC';
                   </div>
                   <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                   <?php
-                 echo get_star_rating_custom();
+                  echo get_star_rating_custom();
                   ?>
                   <div class="price-wrapper">
                       <p class="regular-price"><?php echo $current_currency;
@@ -190,8 +189,8 @@ $args['order'] = 'ASC';
                 'format'    => '',
                 'current'   => max(1, $paged),
                 'total'     => $loop->max_num_pages,
-                'prev_text' => '&larr;',
-                'next_text' => '&rarr;',
+                'prev_text' => '<',
+                'next_text' => '>',
               //  'type'      => 'list',
                 'add_args'  => array(
                     'product_category' => isset($_POST['data']['product_category']) ? $_POST['data']['product_category'] : '',
@@ -201,9 +200,7 @@ $args['order'] = 'ASC';
         
         
           $response_data = array(
-            // 'next_offset'   =>  1,
-            // 'current_page'  =>  0,
-            // 'total_posts'   =>  0,
+           
             'html'          =>  $shop_page_loop_html,
             'pagination'    =>  $pages
           );

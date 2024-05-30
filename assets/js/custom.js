@@ -6,26 +6,26 @@
  * Distributed under the MIT license - http://opensource.org/licenses/MIT
  */
 
-var stickyon = jQuery('#sticky-onoff').text().trim();
-var a1 = stickyon.length;
-window.onscroll = function () {
-  if (a1 == 3) {
-    myScrollNav();
-  }
-}
+// var stickyon = jQuery('#sticky-onoff').text().trim();
+// var a1 = stickyon.length;
+// window.onscroll = function () {
+//   if (a1 == 3) {
+//     myScrollNav();
+//   }
+// }
 
-var navbar = document.getElementById("vw-sticky-menu");
-var sticky = navbar.offsetTop;
-function myScrollNav() {
-  if (window.pageYOffset > sticky) {
-    //alert(window.pageYOffset);
-    navbar.classList.add("sticky");
-    navbar.classList.add("stickynavbar");
-  } else {
-    navbar.classList.remove("sticky");
-    navbar.classList.remove("stickynavbar");
-  }
-}
+// var navbar = document.getElementById("vw-sticky-menu");
+// var sticky = navbar.offsetTop;
+// function myScrollNav() {
+//   if (window.pageYOffset > sticky) {
+//     //alert(window.pageYOffset);
+//     navbar.classList.add("sticky");
+//     navbar.classList.add("stickynavbar");
+//   } else {
+//     navbar.classList.remove("sticky");
+//     navbar.classList.remove("stickynavbar");
+//   }
+// }
 
 jQuery(document).ready(function () {
 
@@ -366,6 +366,7 @@ jQuery('document').ready(function () {
     margin: 10,
     nav: false,
     dots: true,
+    center: true,
     responsive: {
       0: {
         items: 1
@@ -1060,8 +1061,8 @@ jQuery(document).ready(function(){
 
 
   
-  const get_woocommerce_currency_symbol = vw_cricket_pro_customscripts_obj.get_woocommerce_currency_symbol;
-  const finalAmount = get_woocommerce_currency_symbol + parseInt(vw_cricket_pro_customscripts_obj.product_max_price);
+  const get_woocommerce_currency_symbol = cricket_league_pro_customscripts_obj.get_woocommerce_currency_symbol;
+  const finalAmount = get_woocommerce_currency_symbol + parseInt(cricket_league_pro_customscripts_obj.product_max_price);
   const StartAmountProduct = get_woocommerce_currency_symbol + 0;
  
 
@@ -1075,10 +1076,10 @@ jQuery(document).ready(function(){
      jQuery( "#product-price-slider" ).slider({
        range: true,
        min: 0,
-       max: parseInt(vw_cricket_pro_customscripts_obj.product_max_price),
-       values: [ 0, parseInt(vw_cricket_pro_customscripts_obj.product_max_price) ],
+       max: parseInt(cricket_league_pro_customscripts_obj.product_max_price),
+       values: [ 0, parseInt(cricket_league_pro_customscripts_obj.product_max_price) ],
        change: function( event, ui ) {
-        vw_cricket_pro_filters();
+        cricket_league_pro_filters();
        },
        slide: function( event, ui ) {
  
@@ -1093,14 +1094,14 @@ jQuery(document).ready(function(){
 
 
  
- console.log('load');
+//  console.log('load');
  // Event handler for category filter checkboxes using event delegation
  jQuery(document).on('change', '.shop-page-filters ', function(event) {
-   console.log('Checkbox changed!');
+  //  console.log('Checkbox changed!');
    // Get the name of the selected category checkbox
   
    
-   vw_cricket_pro_filters();
+   cricket_league_pro_filters();
  });
  
  
@@ -1110,11 +1111,11 @@ jQuery(document).ready(function(){
  jQuery(document).on('click', '.pagination a.page-numbers', function(event) {
   event.preventDefault(); // Prevent default link behavior
   var page = jQuery(this).text(); // Get the page number from the clicked pagination link
-  vw_cricket_pro_filters(page); // Trigger the AJAX request with the page number
+  cricket_league_pro_filters(page); // Trigger the AJAX request with the page number
  });
  
  
- function vw_cricket_pro_filters(page){
+ function cricket_league_pro_filters(page){
  
    var data_obj = {};
  
@@ -1143,36 +1144,35 @@ jQuery(document).ready(function(){
  
  //data_obj['shop_template'] = shop_template;
  
- jQuery.post(vw_cricket_pro_customscripts_obj.ajaxurl, {
+ jQuery.post(cricket_league_pro_customscripts_obj.ajaxurl, {
  'action': 'get_shop_page_filter',
  'data': data_obj,
  
  },
  function(response) {
  jQuery('.fsp-products-wrapper').html(response.html);
- console.log('response.pagination', response.pagination);
+//  console.log('response.pagination', response.pagination);
  // jQuery('.navigation text-center mt-5 mb-5 pt-4 pb-4').html(response.pagination); // Update pagination
  
  jQuery('.pagination').html(response.pagination); // Update pagination
  });
  
-  
  }
  
  
  function setQueryParams(data_obj) {
-   console.log('data_obj', data_obj)
+  //  console.log('data_obj', data_obj)
    let url = new URL(window.location.href)
    let params = new URLSearchParams(url.search)
  
    const data_obj_keys = Object.keys(data_obj)
  
-   console.log('data_obj_keys', data_obj_keys)
+  //  console.log('data_obj_keys', data_obj_keys)
  
    for (let index = 0; index < data_obj_keys.length; index++) {
      const element = data_obj_keys[index]
  
-     console.log('element', element)
+    //  console.log('element', element)
  
      if (
        (element != 'base_url')
@@ -1181,13 +1181,13 @@ jQuery(document).ready(function(){
      }
    }
  
-   console.log('params.toString()', params.toString())
+  //  console.log('params.toString()', params.toString())
  
    const querySting = params.toString()
  
    window.history.replaceState(null, null, `?${querySting}`)
  
-   console.log('url', url)
+  //  console.log('url', url)
  
    
  

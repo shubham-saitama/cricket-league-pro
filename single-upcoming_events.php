@@ -74,7 +74,7 @@ if ($img != '') { ?>
                 $event_date = get_post_meta(get_the_ID(), '_event_date', true);
                 // Convert event date to 'day-mon-year' format
             
-                $event_date_formatted = date('l-d-M-Y', strtotime($event_date));
+                $event_date_formatted = date('d-M-Y', strtotime($event_date));
                 $month = date('M', strtotime($event_date));
                 $event_date_formatted = str_replace($month, date('M', strtotime($event_date)), $event_date_formatted);
 
@@ -90,12 +90,12 @@ if ($img != '') { ?>
                 $map_y_coordinates = get_post_meta($post->ID, '_map_y_coordinates', true);
                 ?>
                 <?php if (has_post_thumbnail()) { ?>
-                    <div class="col-md-6 col-12 ">
+                    <div class="col-lg-6 col-md-5 col-12 ">
                         <div class="thumbnail">
                             <?php the_post_thumbnail('large', ['class' => 'img-responsive']); ?>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-5 col-12">
+                    <div class="col-lg-5 col-md-7 col-12">
                         <p class="clock-before"><?php echo $event_date_formatted; ?> -
                             <?php echo esc_html($start_time_am_pm); ?> To
                             <?php echo $event_date_formatted; ?> - <?php echo esc_html($end_time_am_pm); ?>
@@ -119,10 +119,14 @@ if ($img != '') { ?>
                             $location = urlencode($location);
                             $google_calendar_link = "https://www.google.com/calendar/render?action=TEMPLATE&text=$event_title&dates=$start_datetime/$end_datetime&location=$location";
                             $location_link = 'https://www.google.com/maps/search/?api=1&query=' . urlencode($location);
-                            ?>
-                            <a class="normal-btn black" href="<?php $location_link; ?>" target="_blank"><?php echo get_theme_mod('cricket_league_pro_single_evt_goto_location'); ?></a>
+                            $event_category = get_post_meta($post->ID, '_event_category', true);
 
-                            <a class="calender-button" href="<?php echo $google_calendar_link; ?>" target="_blank"><?php echo get_theme_mod('cricket_league_pro_single_evt_add_chalender'); ?></a>
+                            ?>
+                            <a class="normal-btn black" href="<?php $location_link; ?>"
+                                target="_blank"><?php echo get_theme_mod('cricket_league_pro_single_evt_goto_location'); ?></a>
+
+                            <a class="calender-button" href="<?php echo $google_calendar_link; ?>"
+                                target="_blank"><?php echo get_theme_mod('cricket_league_pro_single_evt_add_chalender'); ?></a>
                         </div>
                     </div>
                     <p class="my-4"><?php echo get_post_meta(get_the_ID(), '_custom_meta_field1', 'true'); ?></p>
@@ -133,18 +137,18 @@ if ($img != '') { ?>
                             <h5>Details</h5>
                             <div class="event-detail-wrap">
                                 <span class="event-detail-title"><b>Start</b></span>
-                                <span class="event-detail-value"><?php echo $start_time_am_pm; ?></span>
+                                <span class="event-detail-value"> <?php echo $event_date_formatted; ?> - <?php echo $start_time_am_pm; ?></span>
                             </div>
                             <div class="event-detail-wrap">
                                 <span class="event-detail-title"><b>End</b></span>
-                                <span class="event-detail-value"><?php echo $end_time_am_pm; ?></span>
+                                <span class="event-detail-value"><?php echo $event_date_formatted; ?> - <?php echo $end_time_am_pm; ?></span>
                             </div>
                             <div class="event-detail-wrap">
                                 <span class="event-detail-title"><b>Cost</b></span>
                                 <span class="event-detail-value">$ <?php echo $entry_fees; ?></span>
                             </div>
                             <div class="event-detail-wrap">
-                                <span class="event-detail-title">Event Category:</span>
+                                <span class="event-detail-title"><b>Event Category:</b></span>
                                 <span class="event-detail-value"><?php echo $event_category; ?></span>
                             </div>
                         </div>

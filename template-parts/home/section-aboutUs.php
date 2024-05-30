@@ -19,7 +19,7 @@ if (get_theme_mod('cricket_league_pro_about_bgcolor', '')) {
 <section id="about-us" class="section-space" style="<?php echo esc_attr($per_back); ?>">
   <div class="container">
     <div class="row align-item-center">
-      <div class="col-lg-6 col-md-12 mb-5 col-sm-12 about-left">
+      <div class="col-lg-6 col-md-12 my-5 col-sm-12 about-left">
         <div class="primary-image">
           <div class="bat-image">
             <img src="<?php echo get_theme_mod('cricket_league_pro_aboutus_bat_image'); ?>" alt="The Bat">
@@ -44,7 +44,7 @@ if (get_theme_mod('cricket_league_pro_about_bgcolor', '')) {
         <img src="<?php echo get_theme_mod('cricket_league_pro_aboutus_helmet'); ?>" alt="about us prop">
         </div>
       </div>
-      <div class="col-lg-6 col-md-12 mb-5 col-sm-12 about-right">
+      <div class="col-lg-6 col-md-12 my-5 col-sm-12 about-right">
         <div class="heading-wrap">
           <div class="heading-tag">
             <?php echo get_theme_mod('cricket_league_pro_aboutus_headertag_text_heading'); ?>

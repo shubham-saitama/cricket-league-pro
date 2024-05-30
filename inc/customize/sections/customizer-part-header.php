@@ -424,7 +424,6 @@ $wp_customize->add_control(
 		)
 	)
 );
-
 $wp_customize->add_setting(
 	'cricket_league_pro_headermenu_color',
 	array(
@@ -443,6 +442,7 @@ $wp_customize->add_control(
 		)
 	)
 );
+
 $wp_customize->add_setting(
 	'cricket_league_pro_headermenu_font_family_header',
 	array(

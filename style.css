@@ -187,7 +187,7 @@ textarea {
   resize: none !important;
 }
 
-@media(min-width:1400px) {
+@media(min-width:1500px) {
   .container {
     max-width: 1460px !important;
   }
@@ -196,7 +196,7 @@ textarea {
 .heading-tag {
   font: normal normal normal 24px/29px Great Sejagad;
   letter-spacing: 0px;
-  color: #FF6F00;
+  color: var(--primary-color);
 }
 
 .heading-wrap h2 {
@@ -212,12 +212,42 @@ textarea {
 a.theme-btn {
   font: normal normal normal 16px / 20px Inter Tight;
   letter-spacing: 0px;
-  color: #FFFFFF;
+  color: var(--secondary-color);
   background: #000;
   position: relative;
-  padding: 14px 50px 14px 30px;
+  padding: 11px 50px 11px 30px;
   border-radius: 6px;
   display: inline-block;
+}
+
+a.theme-btn.white {
+  background-color: var(--secondary-color);
+  color: #000;
+}
+
+a.theme-btn.white::before {
+  color: #000;
+  transition: 0.3s ease-in-outEvents;
+}
+
+a.theme-btn.white:hover {
+  color: var(--secondary-color);
+}
+
+a.theme-btn.white:hover::before {
+  color: var(--secondary-color);
+}
+
+a.theme-btn:hover {
+  background: var(--primary-color);
+}
+
+.card-bottom .theme-btn {
+  border: 1px solid #0000;
+}
+
+.card-bottom a.theme-btn:hover {
+  border: 1px solid #000;
 }
 
 a.theme-btn::before {
@@ -226,7 +256,7 @@ a.theme-btn::before {
   width: 15px;
   height: 17px;
   right: 20px;
-  color: #fff;
+  color: var(--secondary-color);
   font-family: 'FontAwesome';
   top: 0;
   bottom: 0;
@@ -240,7 +270,7 @@ a#return-to-top {
   justify-content: center;
   align-items: center;
   height: 50px;
-  background: #FF6F00;
+  background: var(--primary-color);
   border-radius: 5px;
   right: 1%;
   bottom: 1%;
@@ -294,7 +324,7 @@ section#slider::after {
 }
 
 .white-back {
-  background-color: #fff;
+  background-color: var(--secondary-color);
   padding: 14px 20px 14px 40px;
   border-radius: 12px;
 }
@@ -325,13 +355,13 @@ section#slider::after {
 }
 
 .pagination-link.current {
-  background: #FF6F00;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .pagination-link:focus {
-  background: #FF6F00;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 main#maincontent {
@@ -389,16 +419,16 @@ a[class ^="custom_"] {
 }
 
 a[class ^="custom_"]:hover ::before {
-  color: #FF6F00;
+  color: var(--primary-color);
 
 }
 
 a[class ^="custom_"]:hover i.fab {
-  border: 1px solid #FF6F00;
+  border: 1px solid var(--primary-color);
 }
 
 a[class ^="custom_"]:hover span {
-  color: #FF6F00;
+  color: var(--primary-color);
 }
 
 .tagcloud a {
@@ -418,7 +448,7 @@ a[class ^="custom_"]:hover span {
   width: 100%;
   height: 100vh;
   position: fixed;
-  background: #FF6F00;
+  background: var(--primary-color);
   top: 0;
   left: 0;
   display: flex;
@@ -439,24 +469,32 @@ a[class ^="custom_"]:hover span {
 }
 
 @media(min-width:991px) {
-  section#blog-news,main#maincontent,.shop div#container,section.booking-from{
+
+  section#blog-news,
+  main#maincontent,
+  .shop div#container,
+  section.booking-from {
     margin-bottom: 650px;
   }
 
 }
+
 .fsp-shop-wrapper .item-product {
   height: auto;
 }
+
 .widget_recent_entries {
   background: #F1F1F1;
 }
+
 span.page-numbers.current {
- 
-  background: #FF6F00;
-  color: #fff !important;
+
+  background: var(--primary-color);
+  color: var(--secondary-color)!important;
 
 }
-span.page-numbers{
+
+span.page-numbers {
   border-radius: 6px;
   padding: 10px !important;
   width: 30px;
@@ -467,20 +505,23 @@ span.page-numbers{
 }
 
 input[type=number] {
-    appearance: textfield;
-    -moz-appearance: textfield;
+  appearance: textfield;
+  -moz-appearance: textfield;
 }
 
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button {  
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
 
-   opacity: 1 !important;
+  opacity: 1 !important;
 
 }
-section.event-page .evt-right h3,section.event-page  .heading-wrap-evt a{
+
+section.event-page .evt-right h3,
+section.event-page .heading-wrap-evt a {
   color: #000;
 }
+
 .evt-left {
   display: flex;
   flex-direction: column;
@@ -501,7 +542,8 @@ section.event-page .evt-right h3,section.event-page  .heading-wrap-evt a{
   top: 12px;
   transform: none;
 }
-.accordion-button:not(.collapsed)::after{
+
+.accordion-button:not(.collapsed)::after {
   content: '-' !important;
   background: none !important;
   position: absolute;
@@ -510,30 +552,316 @@ section.event-page .evt-right h3,section.event-page  .heading-wrap-evt a{
   transform: none;
 }
 
-.accordion-button:not(.collapsed)::after{
+.accordion-button:not(.collapsed)::after {
   background: none !important;
 }
-.accordion-button::after{
+
+.accordion-button::after {
   background-image: none !important;
 }
+
 button.accordion-button {
   font: 18px / 25px Inter Tight;
   letter-spacing: 0px;
   color: #000000;
   font-weight: 500;
 }
+
 .flower-categories.fsp-filter-box {
   border-top-right-radius: 10px;
   overflow: hidden;
   border: 0px !important;
   border-top-left-radius: 10px;
 }
-div#collapseTwo,div#collapseThree{
+
+div#collapseTwo,
+div#collapseThree {
   border: 1px solid #ccc;
   border-top: 0px !important;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+
 input#Submit-btn {
   font-size: 16px;
+}
+
+.banner-button-wrap a.theme-btn:hover {
+  background: #000;
+}
+
+select {
+  background-color: var(--secondary-color);
+  /* Change the background color of the select box */
+  color: black;
+  /* Change the text color */
+}
+
+select option {
+  background-color: white;
+  /* Background color of options */
+  color: black;
+  /* Text color of options */
+}
+
+/* For changing the background of the selected option */
+select option:checked {
+  background-color: var(--primary-color);
+  /* Background color of the selected option */
+}
+
+#footer input.wpcf7-form-control.wpcf7-email::placeholder {
+  position: absolute;
+  left: 0;
+}
+
+
+
+
+
+
+/* ibtana block theme  */
+
+
+
+.ive-vw-cricket-heading-tag .container {
+  position: relative;
+}
+
+.ive-vw-cricket-banner {
+  padding: 240px 0px 260px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.ive-vw-cricket-banner h1 strong {
+  font-family: "Kaushan Script";
+  color: #FF6F00;
+}
+
+.wp-block-cover.ive-vw-cricket-banner img.wp-block-cover__image-background {
+  clip-path: polygon(100% 0, 100% 87.3%, 83.5% 75%, 0 100%, 0 0) !important;
+}
+
+.ive-vw-cricket-banner .ive-vw-cricket-theme-button {
+  font: normal normal normal 16px / 20px Inter Tight;
+  letter-spacing: 0px;
+  color: var(--secondary-color);
+  background: #000;
+  position: relative;
+  padding: 11px 50px 11px 30px;
+  border-radius: 6px;
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  font: 18px / 21px Inter Tight;
+  font-weight: 500;
+}
+
+.ive-vw-cricket-banner .ive-vw-cricket-theme-button ::before {
+  content: "\f25a";
+  position: absolute;
+  width: 15px;
+  height: 17px;
+  right: 20px;
+  color: var(--secondary-color);
+  font-family: 'FontAwesome';
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.ive-vw-cricket-banner .ive-cricket-theme-ball {
+  width: 80px;
+  height: 45px;
+  position: absolute;
+  bottom: 7%;
+}
+
+.ive-vw-cricket-banner .ive-cricket-theme-banner-player {
+  position: absolute;
+  width: 690px;
+  height: 850px;
+  /* top: 0; */
+  right: 0;
+  bottom: -5%;
+}
+
+.ive-vw-cricket-heading-tag-section {
+  font: normal normal normal 24px/29px Great Sejagad;
+  letter-spacing: 0px;
+  color: #FF6F00;
+}
+
+.ive-ve-cricket-seconary-button {
+  font: normal normal normal 16px / 20px Inter Tight;
+  letter-spacing: 0px;
+  color: var(--secondary-color);
+  background: #000;
+  position: relative;
+  padding: 11px 50px 11px 30px;
+  border-radius: 6px;
+  display: inline-block;
+  position: relative;
+}
+
+.ive-ve-cricket-seconary-button::after {
+  content: "\f25a";
+  position: absolute;
+  width: 15px;
+  height: 17px;
+  right: 20px;
+  color: var(--secondary-color);
+  font-family: 'FontAwesome';
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.ive-cricket-theme-aboutus,
+.ive-vw-cricket-banner {
+  background: #fff;
+}
+
+.theme-cricket-league-pro .ive-heading-parent {
+  margin-bottom: 0px !important;
+  display: inline-block;
+  width: 100%;
+}
+.ive-cricket-theme-section {
+  padding: 70px 0px;
+  background-color: var(--secondary-color)!important;
+}
+ .wp-block-ive-ibtana-visual-editorheading{
+  width: 100% !important;
+}
+.theme-cricket-league-pro .ive-cricket-theme-teamslider figure.wp-block-image {
+  width: 109px !important;
+  height: 110px !important;
+}
+.theme-cricket-league-pro .ive-cricket-theme-teamslider .ive-carousel-content-wrap{
+  border: 0px !important;
+}
+.wp-block-column.ive-cricket-theme-righbg{
+  background: #F1F1F1;
+  padding: 20px 50px;
+  border-radius: 20px;
+}
+.btn-white{
+  background-color: var(--secondary-color)!important;
+}
+.btn-white::after{
+  color: #000 !important;
+}
+.ive-cricket-theme-orangebg{
+  background: #FF6F00 !important;
+}
+.ive-cricket-theme-orangebg {
+  padding: 20px;
+  max-width: 160px;
+  border-radius: 10px;
+}
+.ive-cricket-theme-slide-wrap {
+  padding: 50px 30px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  background: #00000080;
+}
+.theme-cricket-league-pro .ive-cricket-theme-upcomingEvt .ive-carousel-content-wrap {
+  border: 0px !important;
+}
+.ive-cricket-theme-section.ive-cricket-theme-section .owl-dot.active .owl-dot span {
+  background-color: #FF6F00 !important;
+  border-radius: 50% !important;
+}
+.ive-cricket-theme-section.ive-cricket-theme-section .owl-dots .owl-dot span{
+  background-color: var(--secondary-color)!important;
+}
+
+.theme-cricket-league-pro .ive-cricket-theme-trophies .ive-carousel-content-wrap {
+  border: 0px !important;
+  border-width: 0px !important;
+}
+.ive-cricket-theme-trophies .ive-slide-inner-content{
+  position: relative;
+}
+.ive-cricket-theme-trophies .ive-cricket-theme-teamname {
+  position: absolute;
+  bottom: -20%;
+  background: #fff;
+}
+.ive-cricket-theme-trophies .ive-cricket-theme-trophie-wrap {
+  border: 1px solid #CCCCCC !important;
+  border-radius: 10px;
+  padding: 20px 20px 60px !important;
+  margin-bottom: 80px !important;
+}
+.ive-cricket-theme-productSlider .woo-prod-img img{
+  width: 400px;
+  height: auto !important;
+  border-radius: 25px;
+}
+.theme-cricket-league-pro .ive-cricket-theme-productSlider .button.product_type_simple.ive-pt-btn {
+  font: normal normal normal 14px / 17px Inter Tight;
+  letter-spacing: 0px;
+  color: #FFFFFF !important;
+  background: #000 !important;
+  padding: 10px 40px 10px 20px !important;
+  border-radius: 6px;
+  margin-top: 20px;
+  display: inline-block;
+  max-width: 150px;
+  margin: 10px auto 0px;
+  text-align: left;
+  position: relative;
+}
+a.product_type_simple.add_to_cart_button::after{
+  right :12px !important;
+}
+.ive-cricket-theme-productSlider button.owl-dot.active{
+  background-color: #fff!important;
+}
+.ive-cricket-theme-productSlider .owl-dots .owl-dot span{
+  border: 1px solid #707070 !important;
+}
+.ive-cricket-theme-section .post-image img {
+  margin: 0px !important;
+  width: 100% !important;
+  height: auto !important;
+}
+.ive-cricket-theme-blog h2.post-title{
+  margin-bottom: 0px !important;
+  border-radius: 15px !important;
+}
+
+@media(max-width:1400px) {
+  .ive-vw-cricket-banner .ive-cricket-theme-banner-player {
+    position: absolute;
+    width: 40%;
+    height: auto;
+    /* top: 0; */
+    right: 0;
+    bottom: -5%;
+  }
+}
+@media(max-width:991px){
+  .ive-vw-cricket-banner .ive-cricket-theme-banner-player,.ive-vw-cricket-banner .ive-cricket-theme-banner-player{
+    display: none;
+  }
+  .wp-block-cover.ive-vw-cricket-banner img.wp-block-cover__image-background{
+    clip-path: none !important;
+  }
+  .ive-vw-cricket-banner .ive-vw-cricket-theme-button{
+    margin: 0px auto !important;
+  }
+}
+@media(max-width:600px){
+  .ive-vw-cricket-banner {
+    padding: 290px 0px 160px;
+  }
+  .ive-cricket-theme-orangebg{
+    display: none !important;
+  }
 }

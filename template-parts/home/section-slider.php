@@ -37,7 +37,7 @@ $img_bg = get_theme_mod('cricket_league_pro_slider_bgimage_setting');
           <?php echo get_theme_mod('cricket_league_pro_slider_text'); ?>
         </p>
         <div class="banner-button-wrap mt-3">
-          <a href="<?php echo get_permalink(get_page_by_title('Service')); ?>" class="theme-btn orange">
+          <a href="<?php echo get_permalink(get_page_by_title('Blog')); ?>" class="theme-btn orange">
             <?php echo get_theme_mod('cricket_league_pro_slider_btntext') ?>
           </a>
           <div class="banner-inner-wrap ">

@@ -240,8 +240,11 @@ class ThemeWhizzie
 	 */
 	public function menu_page()
 	{
-		add_menu_page(esc_html($this->page_title), esc_html($this->page_title), 'manage_options', $this->page_slug, array($this, 'cricket_league_pro_mostrar_guide'), get_template_directory_uri() . '/theme-wizard/assets/images/admin-menu.svg', 40);
+		add_menu_page(esc_html($this->page_title), esc_html('Get Started'), 'manage_options', $this->page_slug, array($this, 'cricket_league_pro_mostrar_guide'), get_template_directory_uri() . '/theme-wizard/assets/images/admin-menu.svg', 40);
 	}
+	// public function menu_page() {
+	// 	add_theme_page( esc_html__( $this->page_title ), esc_html__( $this->page_title ), 'manage_options', $this->page_slug, array( $this, 'wizard_page' ) );
+	// }
 
 	public function activation_page()
 	{
@@ -1937,7 +1940,7 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_header_text_color', '#fff');
 
 		// For 'cricket_league_pro_header_text_font_family'
-		set_theme_mod('cricket_league_pro_header_text_font_family', 'Lato');
+		set_theme_mod('cricket_league_pro_header_text_font_family', '');
 
 		// For 'cricket_league_pro_header_text_font_size'
 		set_theme_mod('cricket_league_pro_header_text_font_size', '16');
@@ -2052,7 +2055,7 @@ class ThemeWhizzie
 				'regular_price' => '45',
 				'sale_price' => '40',
 				'categories' => array('Accessories', 'Apparel'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product01.png',     // Image URL for Product 2
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product02.png',     // Image URL for Product 2
 				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 1
 			),
 			array(
@@ -2067,7 +2070,7 @@ class ThemeWhizzie
 				'regular_price' => '50',
 				'sale_price' => '45',
 				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product02.png',     // Image URL for Product 2
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product01.png',     // Image URL for Product 2
 				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
 			),
 			array(
@@ -2175,52 +2178,6 @@ class ThemeWhizzie
 				'image_url' => get_template_directory_uri() . '/assets/images/product/product09.png',     // Image URL for Product 2
 				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 2
 			),
-			array(
-				'title' => 'Batting Pads',
-				'content' => '
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-					<ul>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-					</ul>
-						',
-				'regular_price' => '45',
-				'sale_price' => '40',
-				'categories' => array('Accessories', 'Apparel'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product01.png',     // Image URL for Product 2
-				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 1
-			),
-			array(
-				'title' => 'Stumps',
-				'content' => '
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<ul>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-				</ul>
-					',
-				'content' => 'Description for Product 2',
-				'regular_price' => '50',
-				'sale_price' => '45',
-				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product02.png',     // Image URL for Product 2
-				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',
-			),
-			array(
-				'title' => 'Bat',
-				'content' => '
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-					<ul>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-					</ul>
-						',
-				'regular_price' => '50',
-				'sale_price' => '45',
-				'categories' => array('Balls', 'Footwear'),
-				'image_url' => get_template_directory_uri() . '/assets/images/product/product03.png',     // Image URL for Product 2
-				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',
-			),
 
 		);
 
@@ -2246,6 +2203,7 @@ class ThemeWhizzie
 				'post_content' => $p_content,
 				'post_status' => 'publish',
 				'post_type' => 'product',
+				'post_excerpt'=> $data['post_excerpt'],
 			);
 
 			// Insert the product into the database
@@ -2307,7 +2265,7 @@ class ThemeWhizzie
 				);
 				update_comment_meta($comment_id, 'rating', 4);
 			}
-			$image_url = get_template_directory_uri() . '/assets/images/product/product0' . $i - 1 . '.png';
+			$image_url = get_template_directory_uri() . '/assets/images/product/product0' . $i. '.png';
 
 			$image_name = 'product-img' . $i . '.png';
 			$upload_dir = wp_upload_dir();
@@ -2352,19 +2310,15 @@ class ThemeWhizzie
 
 			// Assign metadata to attachment
 			wp_update_attachment_metadata($attach_id, $attach_data);
-			// if (count($_product_image_gallery) < 2) {
+			if (count($_product_image_gallery) < 3) {
 
-			// 	array_push($_product_image_gallery, $attach_id);
-			// }	
+				array_push($_product_image_gallery, $attach_id);
+			}	
 
-			// // And finally assign featured image to post
-			// set_post_thumbnail($post_id, $attach_id);
+			// And finally assign featured image to post
+			set_post_thumbnail($post_id, $attach_id);
 
-			// // Add Gallery in first simple product and second variable product START
-			// $_product_image_gallery = implode(',', $_product_image_gallery);
-			// foreach ($_product_ids as $_product_id) {
-			// 	update_post_meta($_product_id, '_product_image_gallery', $_product_image_gallery);
-			// }
+		
 
 			update_post_meta($product_id, 'product-rating', '5');
 			// Enable the product for sale
@@ -2379,7 +2333,11 @@ class ThemeWhizzie
 		}
 
 
-
+		// Add Gallery in first simple product and second variable product START
+		$_product_image_gallery = implode( ',', $_product_image_gallery );
+		foreach ( $_product_ids as $_product_id ) {
+		update_post_meta( $_product_id, '_product_image_gallery', $_product_image_gallery );
+		}
 
 
 		// setting loader color 
@@ -3628,8 +3586,8 @@ class ThemeWhizzie
 			foreach ($meta_data as $key => $value) {
 				update_post_meta($table_id, $key, $value);
 			}
-			set_theme_mod('cricket_league_pro_league_table_sec_id',$table_id);
-		} 
+			set_theme_mod('cricket_league_pro_league_table_sec_id', $table_id);
+		}
 
 
 		//end
@@ -3706,6 +3664,42 @@ class ThemeWhizzie
 			);
 		}
 
+		// Array of venues with their addresses
+		$venues = array(
+			array('name' => 'India', 'address' => '123 Main Street'),
+			array('name' => 'USA', 'address' => '456 Elm Street'),
+			array('name' => 'Dubai', 'address' => '789 Oak Avenue')
+		);
+
+		foreach ($venues as $venue) {
+			$venue_name = $venue['name'];
+			$venue_address = $venue['address'];
+
+			// Check if the venue already exists
+			if (!term_exists($venue_name, 'sp_venue')) {
+				// Create the venue term
+				$term = wp_insert_term($venue_name, 'sp_venue');
+
+				if (!is_wp_error($term)) {
+					// Get the term ID
+					$term_id = $term['term_id'];
+
+					// Update the term meta with the address
+					update_term_meta($term_id, 'venue_address', sanitize_text_field($venue_address));
+
+					echo 'Venue "' . $venue_name . '" added successfully with address "' . $venue_address . '".<br>';
+				} else {
+					echo 'Error adding venue: ' . $term->get_error_message() . '<br>';
+				}
+			} else {
+				echo 'Venue "' . $venue_name . '" already exists.<br>';
+			}
+		}
+
+		// Hook the function to run on WordPress init
+		add_action('init', 'add_sportspress_venues');
+
+
 		// Example data for players
 		$players_data = array(
 			array(
@@ -3738,6 +3732,7 @@ class ThemeWhizzie
 			),
 			// Add more player data as needed
 		);
+
 		// Step 1: Get the term ID of the "Season 2024" term
 		$season = get_term_by('name', 'Season 2024', 'sp_season');
 		$league = get_term_by('name', 'Ipsum Premier League', 'sp_league');
@@ -3937,11 +3932,19 @@ class ThemeWhizzie
 			add_post_meta($match_id, 'sp_team', $team_two);
 
 			$league_term = get_term_by('name', 'Ipsum Premier League', 'sp_league');
+			$venue_term = get_term_by('name', 'USA', 'sp_venue');
 
 			if ($league_term) {
 				$league_id = $league_term->term_id;
 				update_post_meta($match_id, 'sp_league', $league_id);
 				wp_set_object_terms($match_id, $league_id, 'sp_league');
+			}
+			if ($venue_term) {
+				$venue_id = $venue_term->term_id;
+				// Update the post meta with the venue ID
+				update_post_meta($match_id, 'sp_venue', $venue_id);
+				// Set the object terms for the post to associate it with the venue
+				wp_set_object_terms($match_id, $venue_id, 'sp_venue');
 			}
 			foreach ($player_ids as $player_id) {
 				add_post_meta($match_id, 'sp_player', $player_id);
@@ -3993,14 +3996,25 @@ class ThemeWhizzie
 			add_post_meta($match_id_2, 'sp_team', $team_one_2);
 			add_post_meta($match_id_2, 'sp_team', $team_two_2);
 
+			// Get the term objects for league and venue
+
 			$league_term = get_term_by('name', 'Ipsum Premier League', 'sp_league');
+			$venue_term = get_term_by('name', 'Dubai', 'sp_venue');
 
 			if ($league_term) {
 				$league_id = $league_term->term_id;
 				update_post_meta($match_id_2, 'sp_league', $league_id);
 				wp_set_object_terms($match_id_2, $league_id, 'sp_league');
-			}
 
+			}
+			// Check if the venue term exists and update the post accordingly
+			if ($venue_term) {
+				$venue_id = $venue_term->term_id;
+				// Update the post meta with the venue ID
+				update_post_meta($match_id_2, 'sp_venue', $venue_id);
+				// Set the object terms for the post to associate it with the venue
+				wp_set_object_terms($match_id_2, $venue_id, 'sp_venue');
+			}
 			foreach ($player_ids as $player_id) {
 				add_post_meta($match_id_2, 'sp_player', $player_id);
 			}
@@ -4229,7 +4243,7 @@ class ThemeWhizzie
 			update_post_meta($post_id, '_email', $email_value);
 			update_post_meta($post_id, '_organizer_website', $organizer_website_value);
 			update_post_meta($post_id, '_custom_meta_field1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.');
-			update_post_meta($post_id, '_custom_meta_field1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lore');
+			update_post_meta($post_id, '_custom_meta_field2', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lore');
 			$image_url = get_template_directory_uri() . '/assets/images/upcoming-evt/event0' . $i . '.png';
 
 			$image_name = 'event' . $i . '.png';
@@ -4385,7 +4399,7 @@ class ThemeWhizzie
 			update_post_meta($post_id, 'post_image_1', get_template_directory_uri() . '/assets/new-images/Blog/or.png');
 			update_post_meta($post_id, 'post_image_2', get_template_directory_uri() . '/assets/new-images/Blog/orr.png');
 
-			$image_url = get_template_directory_uri() . '/assets/images/blog/blog0' . $i . '.png';
+			$image_url = get_template_directory_uri() . '/assets/images/blog/blog0' . $i + 1 . '.png';
 
 			$image_name = 'blog' . $i . '.png';
 			$upload_dir = wp_upload_dir(); // Set upload folder
@@ -4524,7 +4538,7 @@ class ThemeWhizzie
 		// For 'cricket_league_pro_footer_bg_image'
 		set_theme_mod('cricket_league_pro_footer_bg_image', get_template_directory_uri() . '/assets/new-images/Footer-BG.png');
 
-		set_theme_mod('cricket_league_pro_footer_copyright_para', 'VW Transport WordPress Theme 2023. All Right Reserved');
+		set_theme_mod('cricket_league_pro_footer_copyright_para', 'VW Cricket Wordpress Theme 2024. All Right Reserved');
 		set_theme_mod('cricket_league_pro_footer_legal_info_text', 'Legal terms and information:');
 		set_theme_mod('cricket_league_pro_footer_legal_info_privacy_text', 'Privacy Policy');
 		set_theme_mod('cricket_league_pro_footer_legal_info_term_condition_text', 'Terms and Conditions');
@@ -4536,7 +4550,7 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_newsletter_heading', 'Sign Up To Our Newsletter');
 		set_theme_mod('cricket_league_pro_newsletter_paragraph', 'Stay up to date with the latest car trends, technologies, and news by signing up to our newsletter');
 		set_theme_mod('cricket_league_pro_newsletter_form_info_text', 'Your e-mail is safe with us and will not be shared with other third-party websites');
-
+		set_theme_mod('cricket_league_pro_footer_bgimage', get_template_directory_uri() . '/assets/images/Footer-Bg-image.png');
 
 		// Newsletter shortcode
 
@@ -5239,13 +5253,13 @@ class ThemeWhizzie
 						for (var i = 0; i < premium_data.length; i++) {
 							var premium_product = premium_data[i];
 							var card_content = `<div class="o-products-col" data-id="` + premium_product.id + `">
-																						<div class="o-products-image">
-																							<img src="`+ premium_product.image + `">
-																						</div>
-																						<h3>`+ premium_product.title + `</h3>
-																						<a href="`+ premium_product.permalink + `" target="_blank">Buy Now</a>
-																						<a href="`+ premium_product.demo_url + `" target="_blank">View Demo</a>
-																						</div>`;
+																										<div class="o-products-image">
+																											<img src="`+ premium_product.image + `">
+																										</div>
+																										<h3>`+ premium_product.title + `</h3>
+																										<a href="`+ premium_product.permalink + `" target="_blank">Buy Now</a>
+																										<a href="`+ premium_product.demo_url + `" target="_blank">View Demo</a>
+																										</div>`;
 							jQuery('.wz-spinner-wrap').css('display', 'none');
 							jQuery('#other-products .o-product-row').append(card_content);
 						}
@@ -5261,8 +5275,8 @@ class ThemeWhizzie
 							}
 							let premium_product = premium_category[i];
 							let card_content = `<li data-ids="` + premium_product.product_ids + `" onclick="other_products(this);" class="` + active_class + `">
-																																																																																																																			  `+ premium_product.name + `<span class="badge badge-info">` + premium_product.product_ids.length + `</span>
-																																																																																																																		  </li>`;
+																																																																																																																							  `+ premium_product.name + `<span class="badge badge-info">` + premium_product.product_ids.length + `</span>
+																																																																																																																						  </li>`;
 							jQuery('.o-product-col-1 ul').append(card_content);
 						}
 					});

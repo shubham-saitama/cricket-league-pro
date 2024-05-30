@@ -47,7 +47,7 @@ if (get_theme_mod('cricket_league_pro_whychooseus_bg_color', '')) {
                     </div>
                 </div>
             </div>
-            <div class="whyChooseUs-right col-lg-5 mol-md-6 col-12">
+            <div class="whyChooseUs-right col-lg-5 col-md-12 col-12">
                 <div class="services heading text-left">
                     <div class="heading-wrap">
                         <div class="heading-tag">

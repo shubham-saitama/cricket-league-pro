@@ -5,7 +5,7 @@
  * @package vw-cricket-pro
  */
 
-if (!function_exists('vw_cricket_pro_setup')):
+if (!function_exists('cricket_league_pro_setup')):
 	// echo "<pre>";
 // echo print_r($terms_content);
 // echo "</pre>";
@@ -16,9 +16,9 @@ if (!function_exists('vw_cricket_pro_setup')):
 	 * before the init hook. The init hook is too late for some features, such as indicating
 	 * support post thumbnails.
 	 */
-	function vw_cricket_pro_setup()
+	function cricket_league_pro_setup()
 	{
-		$GLOBALS['content_width'] = apply_filters('vw_cricket_pro_content_width', 640);
+		$GLOBALS['content_width'] = apply_filters('cricket_league_pro_content_width', 640);
 		if (!isset($content_width))
 			$content_width = 640;
 		load_theme_textdomain('vw-cricket-pro', get_template_directory() . '/languages');
@@ -57,10 +57,10 @@ if (!function_exists('vw_cricket_pro_setup')):
 		add_editor_style(array('assets/css/editor-style.css'));
 	}
 endif;
-add_action('after_setup_theme', 'vw_cricket_pro_setup');
+add_action('after_setup_theme', 'cricket_league_pro_setup');
 
 /* Theme Widgets Setup */
-function vw_cricket_pro_widgets_init()
+function cricket_league_pro_widgets_init()
 {
 	register_sidebar(
 		array(
@@ -129,10 +129,10 @@ function vw_cricket_pro_widgets_init()
 		)
 	);
 }
-add_action('widgets_init', 'vw_cricket_pro_widgets_init');
+add_action('widgets_init', 'cricket_league_pro_widgets_init');
 
 /* Theme Font URL */
-function vw_cricket_pro_font_url()
+function cricket_league_pro_font_url()
 {
 	$font_url = '';
 	$font_family = array();
@@ -245,10 +245,10 @@ add_image_size('custom-thumbnail', 240, 240, true);
 
 
 /* Theme enqueue scripts */
-function vw_cricket_pro_scripts()
+function cricket_league_pro_scripts()
 {
 	$custom_css = "";
-	wp_enqueue_style('vw-cricket-pro-font', vw_cricket_pro_font_url(), array());
+	wp_enqueue_style('vw-cricket-pro-font', cricket_league_pro_font_url(), array());
 	wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
 	wp_enqueue_style('vw-cricket-pro-basic-style', get_stylesheet_uri());
 	wp_style_add_data('vw-cricket-pro-style', 'rtl', 'replace');
@@ -304,6 +304,8 @@ function vw_cricket_pro_scripts()
 	wp_enqueue_script('bootstrap-notify-js', get_template_directory_uri() . '/assets/js/bootstrap-notify.min.js', array('bootstrap'));
 	wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.js', array('jquery'), '', true);
 	wp_enqueue_script('slick slider', get_template_directory_uri() . '/assets/js/slick.min.js', array('jquery'), '', true);
+	wp_enqueue_script('jquery ui touch punch', get_template_directory_uri() . '/assets/js/jquery.ui.touch-punch.min.js',array('jquery-ui-slider'), '0.2.3', true);
+	// wp_enqueue_script('jquery-ui-touch-punch', 'https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js', array('jquery-ui-slider'), '0.2.3', true);
 	wp_enqueue_script('jquery-ui-slider');
 
 	global $wpdb;
@@ -361,13 +363,13 @@ function vw_cricket_pro_scripts()
 
 	wp_register_script('vw-cricket-pro-customscripts', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'));
 
-	$vw_cricket_pro_customscripts_obj = array(
+	$cricket_league_pro_customscripts_obj = array(
 		// 'is_home' =>  ( is_home() || is_front_page() ),
 		// 'home_url' =>  home_url(),
 		// 'is_rtl' => is_rtl(),
 		// 'product_max_price'  =>  $product_meta_price_max->product_max_price,
 		// 'listing_max_price'  => $listing_meta_price_max->listing_max_price,
-		// 'listing_currency_symbol' => $currency_symbol,	// $vw_cricket_pro_customscripts_obj = array(
+		// 'listing_currency_symbol' => $currency_symbol,	// $cricket_league_pro_customscripts_obj = array(
 		// 'is_home' =>  ( is_home() || is_front_page() ),
 		// 'home_url' =>  home_url(),
 		// 'is_rtl' => is_rtl(),
@@ -383,19 +385,19 @@ function vw_cricket_pro_scripts()
 		'product_max_price' => $product_meta_price_max->product_max_price
 	);
 	if (class_exists('WooCommerce')) {
-		$vw_cricket_pro_customscripts_obj['get_woocommerce_currency_symbol'] = get_woocommerce_currency_symbol();
+		$cricket_league_pro_customscripts_obj['get_woocommerce_currency_symbol'] = get_woocommerce_currency_symbol();
 	}
 
 
 
-	wp_localize_script('vw-cricket-pro-customscripts', 'vw_cricket_pro_customscripts_obj', $vw_cricket_pro_customscripts_obj);
+	wp_localize_script('vw-cricket-pro-customscripts', 'cricket_league_pro_customscripts_obj', $cricket_league_pro_customscripts_obj);
 
 	// wp_enqueue_script('vw-cricket-pro-customscripts');
 	// // 	'get_woocommerce_currency_symbol' => get_woocommerce_currency_symbol(),
 	// // 	'ajaxurl'				=>	admin_url('admin-ajax.php')
 	// // );
 
-	// // wp_localize_script('vw-cricket-pro-customscripts', 'vw_cricket_pro_customscripts_obj' ,$vw_cricket_pro_customscripts_obj);
+	// // wp_localize_script('vw-cricket-pro-customscripts', 'cricket_league_pro_customscripts_obj' ,$cricket_league_pro_customscripts_obj);
 
 	wp_enqueue_script('vw-cricket-pro-customscripts');
 
@@ -408,7 +410,7 @@ function vw_cricket_pro_scripts()
 	wp_enqueue_style('vw-cricket-pro-ie', get_template_directory_uri() . '/assets/css/ie.css', array('vw-cricket-pro-basic-style'));
 	wp_style_add_data('vw-cricket-pro-ie', 'conditional', 'IE');
 }
-add_action('wp_enqueue_scripts', 'vw_cricket_pro_scripts');
+add_action('wp_enqueue_scripts', 'cricket_league_pro_scripts');
 
 /* Implement the Custom Header feature. */
 require get_parent_theme_file_path('/inc/custom-header.php');
@@ -443,14 +445,14 @@ require get_template_directory() . '/theme-wizard/config.php';
 require get_parent_theme_file_path('/theme-wizard/plugin-activation.php');
 // /* URL DEFINES */
 // require get_parent_theme_file_path('custom-filter.php');
-define('vw_cricket_pro_SITE_URL', 'https://www.vwthemes.com/');
+define('cricket_league_pro_SITE_URL', 'https://www.vwthemes.com/');
 /* Theme Credit link */
-function vw_cricket_pro_credit_link()
+function cricket_league_pro_credit_link()
 {
-	echo esc_html_e(' Design & Developed by', 'vw-cricket-pro') . "<a href=" . esc_url(vw_cricket_pro_SITE_URL) . " target='_blank'> VW Themes</a>";
+	echo esc_html_e(' Design & Developed by', 'vw-cricket-pro') . "<a href=" . esc_url(cricket_league_pro_SITE_URL) . " target='_blank'> VW Themes</a>";
 }
 /*Radio Button sanitization*/
-function vw_cricket_pro_sanitize_choices($input, $setting)
+function cricket_league_pro_sanitize_choices($input, $setting)
 {
 	global $wp_customize;
 	$control = $wp_customize->get_control($setting->id);
@@ -464,7 +466,7 @@ function vw_cricket_pro_sanitize_choices($input, $setting)
 
 
 /* Excerpt Read more overwrite */
-function vw_cricket_pro_excerpt_more($link)
+function cricket_league_pro_excerpt_more($link)
 {
 	if (is_admin()) {
 		return $link;
@@ -477,20 +479,20 @@ function vw_cricket_pro_excerpt_more($link)
 	);
 	return ' &hellip; ' . $link;
 }
-add_filter('excerpt_more', 'vw_cricket_pro_excerpt_more');
+add_filter('excerpt_more', 'cricket_league_pro_excerpt_more');
 
-define('vw_cricket_pro_THEME_DOC', 'https://www.vwthemesdemo.com/docs/vw-cricket-pro/');
-define('vw_cricket_pro_SUPPORT', 'https://www.vwthemes.com/support/vw-theme/');
-define('vw_cricket_pro_FAQ', 'https://www.vwthemes.com/faqs/');
-define('vw_cricket_pro_CONTACT', 'https://www.vwthemes.com/contact/');
-define('vw_cricket_pro_REVIEW', 'https://www.vwthemes.com/topic/reviews-and-testimonials/');
+define('cricket_league_pro_THEME_DOC', 'https://www.vwthemesdemo.com/docs/vw-cricket-pro/');
+define('cricket_league_pro_SUPPORT', 'https://www.vwthemes.com/support/vw-theme/');
+define('cricket_league_pro_FAQ', 'https://www.vwthemes.com/faqs/');
+define('cricket_league_pro_CONTACT', 'https://www.vwthemes.com/contact/');
+define('cricket_league_pro_REVIEW', 'https://www.vwthemes.com/topic/reviews-and-testimonials/');
 
-define('vw_cricket_pro_banner_link', 'https://www.vwthemes.com/premium-plugin/vw-title-banner-plugin/');
-define('vw_cricket_pro_social_media_plugin', 'https://www.vwthemes.com/free-plugin/vw-social-media/');
-define('vw_cricket_pro_preloader_plugin', 'https://www.vwthemes.com/free-plugin/vw-preloader/');
-define('vw_cricket_pro_accordion_plugin', 'https://www.vwthemes.com/free-plugin/vw-accordion/');
-define('vw_cricket_pro_gallery_link', 'https://www.vwthemes.com/premium-plugin/vw-gallery-plugin/');
-define('vw_cricket_pro_footer_link', 'https://www.youtube.com/watch?v=7BvTpLh-RB8');
+define('cricket_league_pro_banner_link', 'https://www.vwthemes.com/premium-plugin/vw-title-banner-plugin/');
+define('cricket_league_pro_social_media_plugin', 'https://www.vwthemes.com/free-plugin/vw-social-media/');
+define('cricket_league_pro_preloader_plugin', 'https://www.vwthemes.com/free-plugin/vw-preloader/');
+define('cricket_league_pro_accordion_plugin', 'https://www.vwthemes.com/free-plugin/vw-accordion/');
+define('cricket_league_pro_gallery_link', 'https://www.vwthemes.com/premium-plugin/vw-gallery-plugin/');
+define('cricket_league_pro_footer_link', 'https://www.youtube.com/watch?v=7BvTpLh-RB8');
 
 define('IBTANA_THEME_LICENCE_ENDPOINT', 'https://vwthemes.com/wp-json/ibtana-licence/v2/');
 
@@ -527,16 +529,16 @@ function vw_theme_bundle_admin_notice()
 	<?php
 }
 
-add_action('switch_theme', 'vw_cricket_pro_deactivate');
-function vw_cricket_pro_deactivate()
+add_action('switch_theme', 'cricket_league_pro_deactivate');
+function cricket_league_pro_deactivate()
 {
 	ThemeWhizzie::remove_the_theme_key();
 	ThemeWhizzie::set_the_validation_status('false');
 }
 
 define('CUSTOM_TEXT_DOMAIN', 'vw-cricket-pro');
-add_filter('woocommerce_add_to_cart_fragments', 'vw_cricket_pro_wc_refresh_mini_cart_count');
-function vw_cricket_pro_wc_refresh_mini_cart_count($fragments)
+add_filter('woocommerce_add_to_cart_fragments', 'cricket_league_pro_wc_refresh_mini_cart_count');
+function cricket_league_pro_wc_refresh_mini_cart_count($fragments)
 {
 	ob_start();
 	$items_count = WC()->cart->get_cart_contents_count();
@@ -657,14 +659,14 @@ function woocommerce_additional_information_callback()
 }
 
 if (is_admin()) {
-	add_action('admin_menu', 'vw_cricket_pro_bn_custom_meta_product');
+	add_action('admin_menu', 'cricket_league_pro_bn_custom_meta_product');
 }
-function vw_cricket_pro_bn_custom_meta_product()
+function cricket_league_pro_bn_custom_meta_product()
 {
-	add_meta_box('bn_meta', __('Information Meta', 'vw-cricket-pro'), 'vw_cricket_pro_bn_meta_callback_product', 'product', 'normal', 'high');
+	add_meta_box('bn_meta', __('Information Meta', 'vw-cricket-pro'), 'cricket_league_pro_bn_meta_callback_product', 'product', 'normal', 'high');
 	// add_post_meta(69, 'age', 25);
 }
-function vw_cricket_pro_bn_meta_callback_product($post)
+function cricket_league_pro_bn_meta_callback_product($post)
 {
 	wp_nonce_field(basename(__FILE__), 'bn_nonce');
 	$bn_stored_meta = get_post_meta($post->ID);
@@ -714,7 +716,7 @@ function vw_cricket_pro_bn_meta_callback_product($post)
 	</div>
 	<?php
 }
-function vw_cricket_pro_bn_meta_save_product($post_id)
+function cricket_league_pro_bn_meta_save_product($post_id)
 {
 	if (!isset($_POST['bn_nonce']) || !wp_verify_nonce($_POST['bn_nonce'], basename(__FILE__))) {
 		return;
@@ -743,7 +745,7 @@ function vw_cricket_pro_bn_meta_save_product($post_id)
 		update_post_meta($post_id, 'meta-url', esc_url_raw($_POST['meta-url']));
 	}
 }
-add_action('save_post', 'vw_cricket_pro_bn_meta_save_product');
+add_action('save_post', 'cricket_league_pro_bn_meta_save_product');
 
 function enqueue_custom_admin_scripts()
 {
@@ -1421,13 +1423,13 @@ add_action('wp_ajax_nopriv_get_variation_data', 'get_variation_data');
 
 // -*-*--*-*-*-*-*-*-*-*-* listing Start-*-*-*-*-*-*-*-*-*-*-*
 if (is_admin()) {
-	add_action('admin_menu', 'vw_cricket_pro_posttype_bn_custom_meta_listing');
+	add_action('admin_menu', 'cricket_league_pro_posttype_bn_custom_meta_listing');
 }
-function vw_cricket_pro_posttype_bn_custom_meta_listing()
+function cricket_league_pro_posttype_bn_custom_meta_listing()
 {
-	add_meta_box('bn_meta', __('Single Page Details', 'vw-cricket-pro-posttype'), 'vw_cricket_pro_posttype_bn_meta_callback_listing', 'auto-listing', 'normal', 'high');
+	add_meta_box('bn_meta', __('Single Page Details', 'vw-cricket-pro-posttype'), 'cricket_league_pro_posttype_bn_meta_callback_listing', 'auto-listing', 'normal', 'high');
 }
-function vw_cricket_pro_posttype_bn_meta_callback_listing($post)
+function cricket_league_pro_posttype_bn_meta_callback_listing($post)
 {
 	wp_nonce_field(basename(__FILE__), 'bn_nonce');
 	$bn_stored_meta = get_post_meta($post->ID);
@@ -1492,7 +1494,7 @@ function vw_cricket_pro_posttype_bn_meta_callback_listing($post)
 	</div>
 	<?php
 }
-function vw_cricket_pro_posttype_bn_meta_save_news($post_id)
+function cricket_league_pro_posttype_bn_meta_save_news($post_id)
 {
 	if (!isset($_POST['bn_nonce']) || !wp_verify_nonce($_POST['bn_nonce'], basename(__FILE__))) {
 		return;
@@ -1536,7 +1538,7 @@ function vw_cricket_pro_posttype_bn_meta_save_news($post_id)
 		update_post_meta($post_id, 'meta_list_para6', sanitize_text_field($_POST['meta_list_para6']));
 	}
 }
-add_action('save_post', 'vw_cricket_pro_posttype_bn_meta_save_news');
+add_action('save_post', 'cricket_league_pro_posttype_bn_meta_save_news');
 // -*-*--*-*-*-*-*-*-*-*-* listing End -*-*-*-*-*-*-*-*-*-*-*
 
 
@@ -1885,16 +1887,16 @@ add_action('save_post', 'save_player_age_meta');
 
 
 if (is_admin()) {
-	add_action('admin_menu', 'vw_cricket_pro_product_custom_meta');
+	add_action('admin_menu', 'cricket_league_pro_product_custom_meta');
 }
 
-function vw_cricket_pro_product_custom_meta()
+function cricket_league_pro_product_custom_meta()
 {
 
-	add_meta_box('bn_meta', __('Products Meta', 'clothing-store-pro'), 'vw_cricket_pro_posttype_bn_meta_callback_product', 'product', 'normal', 'high');
+	add_meta_box('bn_meta', __('Products Meta', 'clothing-store-pro'), 'cricket_league_pro_posttype_bn_meta_callback_product', 'product', 'normal', 'high');
 }
 
-function vw_cricket_pro_posttype_bn_meta_callback_product($post)
+function cricket_league_pro_posttype_bn_meta_callback_product($post)
 {
 	wp_nonce_field(basename(__FILE__), 'bn_nonce');
 	$bn_stored_meta = get_post_meta($post->ID);
@@ -2004,7 +2006,7 @@ function vw_cricket_pro_posttype_bn_meta_callback_product($post)
 	<?php
 }
 
-function vw_cricket_pro_meta_save_product($post_id)
+function cricket_league_pro_meta_save_product($post_id)
 {
 
 	if (!isset($_POST['bn_nonce']) || !wp_verify_nonce($_POST['bn_nonce'], basename(__FILE__))) {
@@ -2054,11 +2056,11 @@ function vw_cricket_pro_meta_save_product($post_id)
 	}
 
 }
-add_action('save_post', 'vw_cricket_pro_meta_save_product');
+add_action('save_post', 'cricket_league_pro_meta_save_product');
 
 /* product meta field end*/
 
-function custom_pagination($query = null, $range = 4)
+function custom_pagination($query, $range = 4)
 {
 	global $wp_query;
 
@@ -2174,7 +2176,6 @@ add_action('widgets_init', 'register_custom_categories_widget');
 
 // widget ends 
 
-
 // AJAX handler to fetch events based on selected filter
 add_action('wp_ajax_fetch_events', 'fetch_events_callback');
 add_action('wp_ajax_nopriv_fetch_events', 'fetch_events_callback');
@@ -2182,30 +2183,34 @@ add_action('wp_ajax_nopriv_fetch_events', 'fetch_events_callback');
 function fetch_events_callback()
 {
 	$filter = $_POST['filter'];
+	$paged = isset($_POST['paged']) ? intval($_POST['paged']) : 1;
 	$events_html = '';
 
 	// Check the selected filter and fetch events accordingly
 	if ($filter === 'year') {
-		// Fetch events grouped by year (similar logic as before)
-		get_events_grouped_by_year();
+		// Fetch events grouped by year with pagination
+		get_events_grouped_by_year($paged);
 	} elseif ($filter === 'month') {
-		// Fetch events grouped by month (similar logic as before)
+		// Fetch events grouped by month with pagination
 		// ...
-		get_events_grouped_by_month();
+		get_events_grouped_by_month($paged);
 	} elseif ($filter === 'today') {
-		// Fetch events for today (similar logic as before)
-		get_events_grouped_today();
+		// Fetch events for today
+		get_events_grouped_today($paged);
 	}
-
-	// Output the events HTML
-	echo $events_html;
 
 	// Always exit to avoid further execution
 	wp_die();
 }
-// Example function to retrieve events grouped by year
-function get_events_grouped_by_year()
+// Example function to retrieve events grouped by year with pagination
+function get_events_grouped_by_year($paged)
 {
+	// Number of years per page
+	$years_per_page = 1;
+
+	// Calculate offset based on pagination
+	$offset = ($paged - 1) * $years_per_page;
+
 	// Initialize an array to store events grouped by year
 	$events_by_year = array();
 
@@ -2234,16 +2239,28 @@ function get_events_grouped_by_year()
 		wp_reset_postdata();
 	}
 
+	// Pagination for years
+	$total_years = count($events_by_year);
+	$paged_years = array_chunk($events_by_year, $years_per_page, true);
+
+	// Check if the current page is within bounds
+	if ($paged > count($paged_years) || $paged <= 0) {
+		$paged = 1;
+	}
+
+	// Get the events for the current page
+	$events_for_page = $paged_years[$paged ];
+
 	// Generate HTML markup for each year and its events
 	$html = '';
-	foreach ($events_by_year as $year => $events) {
+	foreach ($events_for_page as $year => $events) {
 		$html .= '<h2>' . esc_html($year) . '</h2>';
 		foreach ($events as $event) {
 			$date = date('d'); // Current date in YYYY-MM-DD format
 			$day = date('l', strtotime($date)); // Full day name (e.g., "Monday")
 			$event_date = get_post_meta($event->ID, '_event_date', true);
 			// Convert event date to 'day-mon-year' format
-			$event_date_formatted = date('l-d-M-Y', strtotime($event_date));
+			$event_date_formatted = date('d-M-Y', strtotime($event_date));
 			$month = date('M', strtotime($event_date));
 			$event_date_formatted = str_replace($month, date('M', strtotime($event_date)), $event_date_formatted);
 			$start_time = get_post_meta($event->ID, '_start_time', true);
@@ -2254,22 +2271,22 @@ function get_events_grouped_by_year()
 			$location = get_post_meta($event->ID, '_venue_name', true);
 			$entry_fees = get_post_meta($event->ID, '_entry_fees', true);
 
-			$html .= '<div class="upcoming-item mb-5">';
-			$html .= '<div class="upcoming-inner col-lg-8 col-md-8 col-12">';
+			$html .= '<div class="upcoming-item mb-5 ">';
+			$html .= '<div class="upcoming-inner col-lg-8 col-md-12 col-12">';
 			$html .= '<div class="evt-left">';
 			$html .= '<span class="date">' . $date . '</span>' . $day;
 			$html .= '</div>';
 			$html .= '<div class="evt-right">';
 			$html .= '<p class="schedule-inner">' . $event_date_formatted . ' - ' . esc_html($start_time_am_pm) . ' To ' . $event_date_formatted . ' - ' . esc_html($end_time_am_pm) . '</p>';
 			$html .= '<div class="heading-wrap-evt">';
-			$html .= '<h3><a href="'.esc_html(get_the_permalink()).'">' . esc_html($event->post_title) . '</a></h3>';
+			$html .= '<h3><a href="' . esc_html(get_the_permalink()) . '">' . esc_html($event->post_title) . '</a></h3>';
 			$html .= '</div>';
 			$html .= '<p class="address">' . esc_html($location) . '</p>';
 			$html .= '<div class="event-content">' . wpautop($event->post_content) . '</div>';
 			$html .= '<p class="Price">$' . esc_html($entry_fees) . '</p>';
 			$html .= '</div>';
 			$html .= '</div>';
-			$html .= '<div class="featured-image col-lg-4 col-md-4 col-12">';
+			$html .= '<div class="featured-image col-lg-4 col-md-12 col-12">';
 			if (has_post_thumbnail($event->ID)) {
 				$html .= '<a href="' . esc_url(get_permalink($event->ID)) . '">';
 				$html .= get_the_post_thumbnail($event->ID, 'medium', array('class' => 'img-fluid'));
@@ -2277,12 +2294,23 @@ function get_events_grouped_by_year()
 			}
 			$html .= '</div>';
 			$html .= '</div>';
-
 		}
 	}
 
+	// Pagination links for years
+	$html .= '<div class="pagination">';
+	$html .= paginate_links(
+		array(
+			'total' => count($paged_years),
+			'current' => $paged,
+			'format' => '?action=fetch_events&paged=%#%', // Adjusted format for AJAX URL structure
+		)
+	);
+	$html .= '</div>';
+
 	echo $html;
 }
+
 
 function get_events_grouped_by_month()
 {
@@ -2324,7 +2352,7 @@ function get_events_grouped_by_month()
 				$day = date('l', strtotime($date)); // Full day name (e.g., "Monday")
 				$event_date = get_post_meta($event->ID, '_event_date', true);
 				// Convert event date to 'day-mon-year' format
-				$event_date_formatted = date('l-d-M-Y', strtotime($event_date));
+				$event_date_formatted = date('d-M-Y', strtotime($event_date));
 				$month = date('M', strtotime($event_date));
 				$event_date_formatted = str_replace($month, date('M', strtotime($event_date)), $event_date_formatted);
 				$start_time = get_post_meta($event->ID, '_start_time', true);
@@ -2336,21 +2364,21 @@ function get_events_grouped_by_month()
 				$entry_fees = get_post_meta($event->ID, '_entry_fees', true);
 
 				$html .= '<div class="upcoming-item mb-5">';
-				$html .= '<div class="upcoming-inner col-lg-8 col-md-8 col-12">';
+				$html .= '<div class="upcoming-inner col-lg-8 col-md-12 col-12">';
 				$html .= '<div class="evt-left">';
 				$html .= '<span class="date">' . $date . '</span>' . $day;
 				$html .= '</div>';
 				$html .= '<div class="evt-right">';
 				$html .= '<p class="schedule-inner">' . $event_date_formatted . ' - ' . esc_html($start_time_am_pm) . ' To ' . $event_date_formatted . ' - ' . esc_html($end_time_am_pm) . '</p>';
 				$html .= '<div class="heading-wrap-evt">';
-				$html .= '<h3><a href="'.esc_html(get_the_permalink()).'">' . esc_html($event->post_title) . '</a></h3>';
+				$html .= '<h3><a href="' . esc_html(get_the_permalink()) . '">' . esc_html($event->post_title) . '</a></h3>';
 				$html .= '</div>';
 				$html .= '<p class="address">' . esc_html($location) . '</p>';
 				$html .= '<div class="event-content">' . wpautop($event->post_content) . '</div>';
 				$html .= '<p class="Price">$' . esc_html($entry_fees) . '</p>';
 				$html .= '</div>';
 				$html .= '</div>';
-				$html .= '<div class="featured-image col-lg-4 col-md-4 col-12">';
+				$html .= '<div class="featured-image col-lg-4 col-md-12 col-12">';
 				if (has_post_thumbnail($event->ID)) {
 					$html .= '<a href="' . esc_url(get_permalink($event->ID)) . '">';
 					$html .= get_the_post_thumbnail($event->ID, 'medium', array('class' => 'img-fluid'));
@@ -2405,13 +2433,13 @@ function get_events_grouped_today()
 			$entry_fees = get_post_meta(get_the_ID(), '_entry_fees', true);
 
 			// Format date and time
-			$event_date_formatted = date('l-d-M-Y', strtotime($event_date));
+			$event_date_formatted = date('d-M-Y', strtotime($event_date));
 			$start_time_am_pm = date('h:i A', strtotime($start_time));
 			$end_time_am_pm = date('h:i A', strtotime($end_time));
 
 			// Build HTML for each event
 			$html .= '<div class="upcoming-item mb-5">';
-			$html .= '<div class="upcoming-inner col-lg-8 col-md-8 col-12">';
+			$html .= '<div class="upcoming-inner col-lg-8 col-md-12 col-12">';
 			$html .= '<div class="evt-left">';
 			$html .= '<span class="date">' . date('d', strtotime($event_date)) . '</span>';
 			$html .= date('l', strtotime($event_date));
@@ -2419,14 +2447,14 @@ function get_events_grouped_today()
 			$html .= '<div class="evt-right">';
 			$html .= '<p class="schedule-inner">' . $event_date_formatted . ' - ' . esc_html($start_time_am_pm) . ' To ' . $event_date_formatted . ' - ' . esc_html($end_time_am_pm) . '</p>';
 			$html .= '<div class="heading-wrap-evt">';
-			$html .= '<h3><a href="'.esc_html(get_the_permalink()).'">' . esc_html(get_the_title()) . '</a></h3>';
+			$html .= '<h3><a href="' . esc_html(get_the_permalink()) . '">' . esc_html(get_the_title()) . '</a></h3>';
 			$html .= '</div>';
 			$html .= '<p class="address">' . esc_html($location) . '</p>';
 			$html .= '<div class="event-content">' . wpautop(get_the_content()) . '</div>';
 			$html .= '<p class="Price">$ ' . esc_html($entry_fees) . '</p>';
 			$html .= '</div>';
 			$html .= '</div>';
-			$html .= '<div class="featured-image col-lg-4 col-md-4 col-12">';
+			$html .= '<div class="featured-image col-lg-4 col-md-12 col-12">';
 			if (has_post_thumbnail(get_the_ID())) {
 				$html .= '<a href="' . esc_url(get_permalink()) . '">' . get_the_post_thumbnail(get_the_ID(), 'medium', array('class' => 'img-fluid')) . '</a>';
 			}
@@ -2589,14 +2617,82 @@ function get_star_rating_custom()
 
 	return $stars_html;
 }
-
-function cricket_league_pro_sanitize_choices($input, $setting)
+function modify_search_query($query)
 {
-	global $wp_customize;
-	$control = $wp_customize->get_control($setting->id);
-	if (array_key_exists($input, $control->choices)) {
-		return $input;
-	} else {
-		return $setting->default;
+	if ($query->is_search() && !is_admin()) {
+		// Check if it's the search page for 'upcoming_events'
+		if (isset($_GET['post_type']) && $_GET['post_type'] == 'upcoming_events') {
+			$query->set('post_type', 'upcoming_events');
+		}
 	}
+	return $query;
 }
+add_action('pre_get_posts', 'modify_search_query');
+function load_custom_search_template($template)
+{
+	global $wp_query;
+	$post_type = get_query_var('post_type');
+
+	if ($wp_query->is_search && $post_type == 'upcoming_events') {
+		$new_template = locate_template('search-upcoming_events.php');
+		if ($new_template) {
+			return $new_template;
+		}
+	}
+	return $template;
+}
+add_filter('template_include', 'load_custom_search_template');
+
+function set_yith_wishlist_button_position() {
+    // The desired position value, e.g., 'before_add_to_cart_form'
+    $new_position = 'none'; // Change this to the desired position
+
+    // Update the YITH wishlist option
+    update_option('yith_wcwl_add_to_wishlist_position', $new_position);
+}
+
+// Hook into 'init' to ensure WordPress is fully loaded
+add_action('init', 'set_yith_wishlist_button_position');
+function customize_yith_wishlist_position( $positions ) {
+    // Set the desired position
+    $positions['product_page'] = 'none';
+    return $positions;
+}
+
+// Assume the plugin has a filter like this
+add_filter('yith_wcwl_positions', 'customize_yith_wishlist_position');
+
+
+function criket_leauge_pro_section_match_shortcode() {
+    ob_start();
+    get_template_part( 'template-parts/home/section-matches' );
+    $output = ob_get_clean();
+    return $output;
+}
+add_shortcode( 'space-latest-matach', 'criket_leauge_pro_section_match_shortcode' );
+// json shortcode end
+function criket_leauge_pro_section_table_shortcode() {
+    ob_start();
+    get_template_part( 'template-parts/home/seciton-teamPosition' );
+    $output = ob_get_clean();
+    return $output;
+}
+add_shortcode( 'space-league-table', 'criket_leauge_pro_section_table_shortcode' );
+// json shortcode end
+function criket_leauge_pro_sectio_playerTab_shortcode() {
+    ob_start();
+    get_template_part( 'template-parts/home/section-playerTab' );
+    $output = ob_get_clean();
+    return $output;
+}
+add_shortcode( 'space-playerTab', 'criket_leauge_pro_sectio_playerTab_shortcode' );
+
+
+function criket_leauge_pro_sectio_testimonial_shortcode() {
+    ob_start();
+    get_template_part( 'template-parts/home/section-testimonials' );
+    $output = ob_get_clean();
+    return $output;
+}
+add_shortcode( 'space-testimonial', 'criket_leauge_pro_sectio_testimonial_shortcode' );
+// json shortcode end

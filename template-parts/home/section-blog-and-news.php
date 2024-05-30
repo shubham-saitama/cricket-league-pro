@@ -84,7 +84,11 @@ $img_bg = get_theme_mod('cricket_league_pro_latest_blog_and_news_bgimage');
                     class="<?php echo get_theme_mod('cricket_league_pro_blog_comment_icon'); ?>"></i><?php comments_number(); ?>
                 </p>
                 <div class="date-box">
-                  <i class="fa-solid fa-calendar-days"></i><?php echo get_the_date('D,M,Y'); ?>
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <?php
+                  $date = get_the_date('d F Y'); // Format date as dd-month-yyyy (full month name)
+                  echo $date;
+                  ?>
                 </div>
               </div>
             </div>
