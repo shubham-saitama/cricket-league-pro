@@ -1,9 +1,21 @@
 <?php
+$section_hide = get_theme_mod('cricket_league_pro_our_services_enable');
+if ('Disable' == $section_hide) {
+    return;
+}
+if (get_theme_mod('cricket_league_pro_our_services_bgcolor', '')) {
+    $per_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_our_services_bgcolor', '')) . ';';
+} elseif (get_theme_mod('cricket_league_pro_our_services_bgimage', '')) {
+    $per_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_our_services_bgimage')) . '\')';
+} else {
+    $per_back = '';
+}
+$img_bg = get_theme_mod('cricket_league_pro_our_team_image');
 
 // Define the post ID you want to fetch
 $next_match_id = get_theme_mod('cricket_league_pro_next_match_id'); // Replace 123 with the actual post ID you want to fetch
 ?>
-<section class="match" id="banner-below">
+<section id="banner-below"  class="match section-space" style="<?php echo esc_attr($per_back); ?>"> 
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-12 col-12">

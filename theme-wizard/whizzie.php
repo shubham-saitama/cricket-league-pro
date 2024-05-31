@@ -1976,7 +1976,6 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_social_icons_link_2', 'https://twitter.com/login?lang=en');
 		set_theme_mod('cricket_league_pro_social_icons_link_3', 'https://www.instagram.com/');
 		set_theme_mod('cricket_league_pro_social_icons_link_4', 'https://web.whatsapp.com/');
-
 		set_theme_mod('cricket_league_pro_header_getQuote_button_text', 'Get A Quote');
 
 		// For 'cricket_league_pro_topbar_icon_size'
@@ -3108,6 +3107,7 @@ class ThemeWhizzie
 		// Set values for theme mods
 		set_theme_mod('cricket_league_pro_single_blog_heading_tag', 'Posts');
 		set_theme_mod('cricket_league_pro_single_blog_heading', 'Related Blog Posts');
+		set_theme_mod('cricket_league_pro_blog_view_all_settings','View All');
 
 		// Related Services 
 
@@ -4535,9 +4535,7 @@ class ThemeWhizzie
 		// For 'cricket_league_pro_footer_bgcolor'
 		set_theme_mod('cricket_league_pro_footer_bgcolor', '');
 
-		// For 'cricket_league_pro_footer_bg_image'
-		set_theme_mod('cricket_league_pro_footer_bg_image', get_template_directory_uri() . '/assets/new-images/Footer-BG.png');
-
+		
 		set_theme_mod('cricket_league_pro_footer_copyright_para', 'VW Cricket Wordpress Theme 2024. All Right Reserved');
 		set_theme_mod('cricket_league_pro_footer_legal_info_text', 'Legal terms and information:');
 		set_theme_mod('cricket_league_pro_footer_legal_info_privacy_text', 'Privacy Policy');
@@ -4658,7 +4656,9 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_address_longitude', '-105.9808615');
 		set_theme_mod('cricket_league_pro_contact_page_form_bg_image', get_template_directory_uri() . '/assets/images/contact/contact-bg.png');
 		// set_theme_mod( 'cricket_league_pro_contact_page_bg_image',get_template_directory_uri().'/assets/images/contact/contact-bg.png' );
-
+		set_theme_mod('cricket_league_pro_header_right_icons_heart','fa-solid fa-heart');
+		set_theme_mod('cricket_league_pro_header_right_icons_search','fa-solid fa-magnifying-glass');
+		set_theme_mod('cricket_league_pro_header_right_icons_cart','fa-solid fa-cart-shopping');
 
 		/*---------------Blog Page----------------------*/
 		set_theme_mod('cricket_league_pro_blog_author', 'far fa-user');
@@ -4730,11 +4730,11 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_upcoming_evt_heading', 'Upcoming Events');
 		// single event page 
 		set_theme_mod('cricket_league_pro_single_evt_goto_location', 'Go To Location');
-		set_theme_mod('cricket_league_pro_single_evt_add_chalender', 'Go To Chalender');
+		set_theme_mod('cricket_league_pro_single_evt_add_chalender', 'Go To Calender');
 
 		set_theme_mod('product_helpline_fields', 'Need Help? Call Us +1 255 854 55 26');
 		set_theme_mod('product_helpline_timing', 'Monday - Friday 9:00 - 17:00');
-
+		set_theme_mod('cricket_league_pro_banner_playbtn_icon','fa fa-play');
 
 		// About us 
 		$titleArr = array('Mission', 'Our Mission', 'Our History');
@@ -4910,18 +4910,7 @@ class ThemeWhizzie
 			$page_id = wp_insert_post($vw_page);
 		}
 
-		// // Create a contact page and assigned the template
-		// $contact_title = 'Contact Us';
-		// $contact = array(
-		// 	'post_type' => 'page',
-		// 	'post_title' => $contact_title,
-		// 	'post_status' => 'publish',
-		// 	'post_author' => 1,
-		// 	'post_slug' => 'contact'
-		// );
-		// $contact_id = wp_insert_post($contact);
-
-		//Set the blog with right sidebar templateadd_post_meta($contact_id, '_wp_page_template', 'page-template/contact.php');
+	
 		if (isset($home_b->ID)) {
 			echo json_encode(['home_page_id' => $home_b->ID, 'home_page_url' => get_edit_post_link($home_b->ID, '')]);
 		}

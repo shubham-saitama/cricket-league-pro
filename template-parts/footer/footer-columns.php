@@ -15,7 +15,7 @@ if( get_theme_mod('cricket_league_pro_section_footer_bgcolor','') ) {
 $img_bg =get_theme_mod('cricket_league_pro_section_footer_bg_attachment');
 ?>
 <?php if (get_theme_mod('cricket_league_pro_custom_footer_widget_section', 'true') !='') { ?>
-<div id="footer" style="<?php echo esc_attr( $footer_backg ); ?>" class="<?php echo esc_attr($img_bg); ?>">
+<div id="footer" style="">
 	<div id="footer_box" class="darkbox">
 		<div class="container footer-cols">
 			<?php

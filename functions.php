@@ -292,7 +292,6 @@ function cricket_league_pro_scripts()
 		wp_enqueue_style('animation-wow', get_template_directory_uri() . '/assets/css/animate.css');
 		wp_enqueue_style('owl-carousel-style', get_template_directory_uri() . '/assets/css/owl.carousel.css');
 	}
-
 	wp_enqueue_style('font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 	wp_enqueue_style('effect', get_template_directory_uri() . '/assets/css/effect.css');
 	wp_enqueue_style('jquery-ui.min.css', get_template_directory_uri() . '/assets/css/jquery-ui.min.css');
@@ -300,13 +299,12 @@ function cricket_league_pro_scripts()
 	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '', true);
 	wp_enqueue_script('waypoints', 'https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js', array('jquery'), '', true);
 	wp_enqueue_script('counterJs', get_template_directory_uri() . '/assets/js/jquery.counterup.min.js', array('jquery'), '', true);
-	wp_enqueue_script('lightbox', get_template_directory_uri() . '/assets/js/html5lightbox.js', array('jquery'), '', true);
 	wp_enqueue_script('bootstrap-notify-js', get_template_directory_uri() . '/assets/js/bootstrap-notify.min.js', array('bootstrap'));
 	wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.js', array('jquery'), '', true);
 	wp_enqueue_script('slick slider', get_template_directory_uri() . '/assets/js/slick.min.js', array('jquery'), '', true);
 	wp_enqueue_script('jquery ui touch punch', get_template_directory_uri() . '/assets/js/jquery.ui.touch-punch.min.js',array('jquery-ui-slider'), '0.2.3', true);
-	// wp_enqueue_script('jquery-ui-touch-punch', 'https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js', array('jquery-ui-slider'), '0.2.3', true);
 	wp_enqueue_script('jquery-ui-slider');
+	wp_enqueue_script('lightboxLight', get_template_directory_uri() . '/assets/js/html5lightbox.js', array('jquery'), '', true);
 
 	global $wpdb;
 	$product_price_max_query = "SELECT MAX( CAST( $wpdb->postmeta.meta_value AS SIGNED ) ) AS product_max_price FROM $wpdb->postmeta WHERE meta_key='%s'";

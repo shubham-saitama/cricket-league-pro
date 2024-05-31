@@ -1215,3 +1215,9 @@ jQuery(document).ready(function(){
     divBeforeFooter.css("margin-bottom", footerHeight + "px");
   }
 }
+
+jQuery(document).ready(function($) {
+  jQuery('.htmltlightbox').htmltlightbox({
+      type: 'iframe'
+  });
+});

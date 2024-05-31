@@ -93,11 +93,11 @@ if ($wishlist_page->have_posts()) {
           </div>
           <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12 text-center">
             <div class="header-right">
-              <a href="<?php echo $wishlist_page_url; ?>"><i class="fa-solid fa-heart"></i></a>
-              <div class="search-button"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <a href="<?php echo $wishlist_page_url; ?>"><i class="<?php echo get_theme_mod('cricket_league_pro_header_right_icons_heart'); ?>"></i></a>
+              <div class="search-button"><i class="<?php echo get_theme_mod('cricket_league_pro_header_right_icons_search'); ?>"></i></div>
 
               <?php
-              echo '<a href="' . esc_url($cart_url) . '"><i class="fa-solid fa-cart-shopping"></i>' . esc_html__('', 'cricket-league-pro') . ' (' . esc_html($cart_count) . ')</a>';
+              echo '<a href="' . esc_url($cart_url) . '"><i class="'.esc_html(get_theme_mod('cricket_league_pro_header_right_icons_cart')).'"></i>' . esc_html__('', 'cricket-league-pro') . ' (' . esc_html($cart_count) . ')</a>';
               ?>
               <div class="toggle-nav mobile-menu">
                 <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger" id="open_nav"><span

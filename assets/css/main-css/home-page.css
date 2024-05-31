@@ -1166,7 +1166,7 @@ section#upcoming-evt h2 {
 }
 
 section#upcoming-evt .heading-tag {
-  color: var(--secondary-color)!important;
+  color: var(--secondary-color);
 }
 
 section#upcoming-evt a.button {

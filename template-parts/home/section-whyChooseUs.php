@@ -12,9 +12,9 @@ if (get_theme_mod('cricket_league_pro_whychooseus_bg_color', '')) {
         esc_attr(get_theme_mod('cricket_league_pro_whychooseus_bg_color', '')) . ';';
 } elseif
 (get_theme_mod('cricket_league_pro_whychooseus_bg_image', '')) {
-    $services_back = 'background-image:url(\'' . esc_url(get_theme_mod(' cricket_league_pro_whychooseus_bg_image')) . '\'
-    )';
-} else {
+    $services_back = 'background-image:url(\''. esc_url(get_theme_mod('cricket_league_pro_whychooseus_bg_image')) . '\')';
+}
+ else {
     $services_back = '';
 }
 ?>
@@ -54,7 +54,7 @@ if (get_theme_mod('cricket_league_pro_whychooseus_bg_color', '')) {
                             <?php echo get_theme_mod('cricket_league_pro_about_whychooseus_heading_tag'); ?>
                         </div>
                         <h2 class="left">
-                            <?php echo get_theme_mod('cricket_league_pro_about_whychooseus_heading'); ?>
+                            <?php echo get_theme_mod('cricket_league_pro_product_slider_heading'); ?>
                         </h2>
                     </div>
                     <p>

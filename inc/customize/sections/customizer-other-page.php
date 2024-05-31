@@ -2715,7 +2715,7 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'cricket_league_pro_post_general_settings__font_size',
+	'cricket_league_pro_post_general_settings_page_text_font_size',
 	array(
 		'label' => __('Font Size', 'cricket-league-pro'),
 		'description' =>__('Add font size in px', 'cricket-league-pro'),
@@ -2734,7 +2734,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
 		$wp_customize,
-		'cricket_league_pro_post_general_settings_page_text_color',
+		'cricket_league_pro_post_general_settings__color',
 		array(
 			'label' => __('Color', 'cricket-league-pro'),
 			'section' => 'cricket_league_pro_post_general_settings',

@@ -639,3 +639,23 @@ $wp_customize->add_control(
 		)
 	)
 );
+
+$wp_customize->add_setting(
+	'cricket_league_pro_banner_playbtn_icon',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	new cricket_league_pro_Fontawesome_Icon_Chooser(
+		$wp_customize,
+		'cricket_league_pro_banner_playbtn_icon',
+		array(
+			'settings' => 'cricket_league_pro_banner_playbtn_icon',
+			'section' => 'cricket_league_pro_slider_sec',
+			'type' => 'icon',
+			'label' => esc_html__('Banner Play Button', 'cricket-league-pro'),
+		)
+	)
+);

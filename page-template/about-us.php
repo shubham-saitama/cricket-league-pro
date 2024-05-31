@@ -20,12 +20,16 @@ $gallery_shortcode = get_theme_mod('cricket_league_pro_gallery_section_shortcode
 <section class="about-two-pts section-space">
   <div class="container">
     <div class="row justify-content-between">
-      <div class="pt-one col-lg-6 col-md-6 col-12">
-        <p><?php echo get_theme_mod('cricket_league_pro_about_us_listical_pts'); ?></p>
-      </div>
-      <div class="pt-one col-lg-6 col-md-6 col-12">
-        <p><?php echo get_theme_mod('cricket_league_pro_about_us_listical_pts_2'); ?></p>
-      </div>
+      <?php if (!empty(get_theme_mod('cricket_league_pro_about_us_listical_pts'))) { ?>
+        <div class="pt-one col-lg-6 col-md-6 col-12">
+          <p><?php echo get_theme_mod('cricket_league_pro_about_us_listical_pts'); ?></p>
+        </div>
+      <?php } ?>
+      <?php if (!empty(get_theme_mod('cricket_league_pro_about_us_listical_pts_2'))) { ?>
+        <div class="pt-one col-lg-6 col-md-6 col-12">
+          <p><?php echo get_theme_mod('cricket_league_pro_about_us_listical_pts_2'); ?></p>
+        </div>
+      <?php } ?>
     </div>
   </div>
 </section>
@@ -36,7 +40,8 @@ $gallery_shortcode = get_theme_mod('cricket_league_pro_gallery_section_shortcode
       <div class="col-12">
         <div class="tabs">
           <ul class="tab-links">
-            <li class="active"><a href="#mission"><?php echo get_theme_mod('cricket_league_pro_aboutus_tab_name_1'); ?></a></li>
+            <li class="active"><a
+                href="#mission"><?php echo get_theme_mod('cricket_league_pro_aboutus_tab_name_1'); ?></a></li>
             <li><a href="#vision"><?php echo get_theme_mod('cricket_league_pro_aboutus_tab_name_2'); ?></a></a></li>
             <li><a href="#history"><?php echo get_theme_mod('cricket_league_pro_aboutus_tab_name_3'); ?></a></a></li>
           </ul>
@@ -60,7 +65,7 @@ $gallery_shortcode = get_theme_mod('cricket_league_pro_gallery_section_shortcode
             </div>
 
             <div id="vision" class="tab">
-            <div class="row">
+              <div class="row">
                 <div class="col-lg-5 col-md-12 col-12">
                   <div class="tab-img-wrapper">
                     <img src="<?php echo get_theme_mod('cricket_league_pro_aboutus_tab_ptsImage_2'); ?>"
@@ -77,7 +82,7 @@ $gallery_shortcode = get_theme_mod('cricket_league_pro_gallery_section_shortcode
             </div>
 
             <div id="history" class="tab">
-            <div class="row">
+              <div class="row">
                 <div class="col-lg-5 col-md-12 col-12">
                   <div class="tab-img-wrapper">
                     <img src="<?php echo get_theme_mod('cricket_league_pro_aboutus_tab_ptsImage_3'); ?>"

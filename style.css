@@ -865,3 +865,38 @@ a.product_type_simple.add_to_cart_button::after{
     display: none !important;
   }
 }
+
+.lightboxcontainer {
+  width:100%;
+  text-align:left;
+}
+.lightboxleft {
+  width: 40%;
+  float:left;
+}
+.lightboxright {
+  width: 60%;
+  float:left;
+}
+.lightboxright iframe {
+  min-height: 390px;
+}
+.divtext {
+  margin: 36px;
+}
+@media (max-width: 800px) {
+  .lightboxleft {
+    width: 100%;
+  }
+  .lightboxright {
+    width: 100%;
+  }
+  .divtext {
+    margin: 12px;
+  }
+}
+section,.content_page.error-page{
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center;
+}

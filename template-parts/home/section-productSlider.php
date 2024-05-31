@@ -20,7 +20,7 @@ if (get_theme_mod('cricket_league_pro_productSlider_bg_color', '')) {
     <div class="container">
         <div class="heading-wrap">
             <div class="heading-tag">
-                <?php echo get_theme_mod('cricket_league_pro_upcoming_evt_heading_tag'); ?>
+                <?php echo get_theme_mod('cricket_league_pro_product_slider_heading_tag'); ?>
             </div>
             <h2><?php echo get_theme_mod('cricket_league_pro_product_slider_heading'); ?></h2>
         </div>
