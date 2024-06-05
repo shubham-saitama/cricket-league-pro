@@ -362,20 +362,20 @@ function cricket_league_pro_scripts()
 	wp_register_script('vw-cricket-pro-customscripts', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'));
 
 	$cricket_league_pro_customscripts_obj = array(
-		// 'is_home' =>  ( is_home() || is_front_page() ),
-		// 'home_url' =>  home_url(),
-		// 'is_rtl' => is_rtl(),
-		// 'product_max_price'  =>  $product_meta_price_max->product_max_price,
-		// 'listing_max_price'  => $listing_meta_price_max->listing_max_price,
-		// 'listing_currency_symbol' => $currency_symbol,	// $cricket_league_pro_customscripts_obj = array(
-		// 'is_home' =>  ( is_home() || is_front_page() ),
-		// 'home_url' =>  home_url(),
-		// 'is_rtl' => is_rtl(),
-		// 'product_max_price'  =>  $product_meta_price_max->product_max_price,
-		// 'listing_max_price'  => $listing_meta_price_max->listing_max_price,
-		// 'listing_currency_symbol' => $currency_symbol,
-		// 'get_woocommerce_currency_symbol' => get_woocommerce_currency_symbol(),
-		// 'ajaxurl'				=>	admin_url('admin-ajax.php')
+		'is_home' =>  ( is_home() || is_front_page() ),
+		'home_url' =>  home_url(),
+		'is_rtl' => is_rtl(),
+		'product_max_price'  =>  $product_meta_price_max->product_max_price,
+		'listing_max_price'  => $listing_meta_price_max->listing_max_price,
+		'listing_currency_symbol' => $currency_symbol,	// $cricket_league_pro_customscripts_obj = array(
+		'is_home' =>  ( is_home() || is_front_page() ),
+		'home_url' =>  home_url(),
+		'is_rtl' => is_rtl(),
+		'product_max_price'  =>  $product_meta_price_max->product_max_price,
+		'listing_max_price'  => $listing_meta_price_max->listing_max_price,
+		'listing_currency_symbol' => $currency_symbol,
+		'get_woocommerce_currency_symbol' => get_woocommerce_currency_symbol(),
+		'ajaxurl'=>	admin_url('admin-ajax.php'),
 		'root' => rest_url(),
 		'ajaxurl' => admin_url('admin-ajax.php'),
 		'nonce' => wp_create_nonce('wp_rest'),
@@ -492,8 +492,8 @@ define('cricket_league_pro_accordion_plugin', 'https://www.vwthemes.com/free-plu
 define('cricket_league_pro_gallery_link', 'https://www.vwthemes.com/premium-plugin/vw-gallery-plugin/');
 define('cricket_league_pro_footer_link', 'https://www.youtube.com/watch?v=7BvTpLh-RB8');
 
-define('IBTANA_THEME_LICENCE_ENDPOINT', 'https://vwthemes.com/wp-json/ibtana-licence/v2/');
-
+define( 'IBTANA_THEME_LICENCE_ENDPOINT', 'https://preview.vwthemesdemo.com/old_website/wp-json/ibtana-licence/v2/' );
+define( 'SHOPIFY_THEME_LICENCE_ENDPOINT', 'https://license.vwthemes.com/api/public/' );
 //-------- Bundle Notice ---------
 add_action('admin_notices', 'vw_theme_bundle_admin_notice');
 function vw_theme_bundle_admin_notice()
@@ -1110,198 +1110,213 @@ function create_custom_post_type()
 	register_post_type('upcoming_events', $args);
 }
 add_action('init', 'create_custom_post_type');
-
 // Add meta box for event details
-function add_event_meta_box()
-{
-	add_meta_box('event_details_meta_box', 'Event Details', 'render_event_meta_box', 'upcoming_events', 'normal', 'high');
+function add_event_meta_box() {
+    add_meta_box('event_details_meta_box', 'Event Details', 'render_event_meta_box', 'upcoming_events', 'normal', 'high');
 }
 add_action('add_meta_boxes', 'add_event_meta_box');
 
-// Render meta box content
-function render_event_meta_box($post)
-{
-	// Retrieve existing meta values
-	$current_date = date('Y-m-d');
-	$event_date = get_post_meta($post->ID, '_event_date', true);
-	if (empty($event_date) || $event_date < $current_date) {
-		$event_date = $current_date;
-	}
-	$start_time = get_post_meta($post->ID, '_start_time', true);
-	$end_time = get_post_meta($post->ID, '_end_time', true);
-	$address = get_post_meta($post->ID, '_address', true);
-	$entry_fees = get_post_meta($post->ID, '_entry_fees', true);
-	$event_category = get_post_meta($post->ID, '_event_category', true);
+// Render meta box content for event details
+function render_event_meta_box($post) {
+    wp_nonce_field('save_event_meta_data', 'event_meta_box_nonce');
 
-	// Output fields
-	?>
-	<p>
-		<label for="event_date">Date:</label>
-		<input type="date" id="event_date" name="event_date" min="<?php echo $current_date; ?>"
-			value="<?php echo esc_attr($event_date); ?>">
-	</p>
-	<p>
-		<label for="start_time">Start Time:</label>
-		<input type="time" id="start_time" name="start_time" value="<?php echo esc_attr($start_time); ?>">
-	</p>
-	<p>
-		<label for="end_time">End Time:</label>
-		<input type="time" id="end_time" name="end_time" value="<?php echo esc_attr($end_time); ?>">
-	</p>
-	<p>
-		<label for="address">Address:</label>
-		<input type="text" id="address" name="address" value="<?php echo esc_attr($address); ?>">
-	</p>
-	<p>
-		<label for="entry_fees">Entry Fees:</label>
-		<input type="text" id="entry_fees" name="entry_fees" value="<?php echo esc_attr($entry_fees); ?>">
-	</p>
-	<p>
-		<label for="event_category">Category:</label>
-		<input type="text" id="event_category" name="event_category" value="<?php echo esc_attr($event_category); ?>">
-	</p>
-	<?php
+    $event_date = get_post_meta($post->ID, '_event_date', true);
+    $start_time = get_post_meta($post->ID, '_start_time', true);
+    $end_time = get_post_meta($post->ID, '_end_time', true);
+    $address = get_post_meta($post->ID, '_address', true);
+    $entry_fees = get_post_meta($post->ID, '_entry_fees', true);
+    $event_category = get_post_meta($post->ID, '_event_category', true);
+
+    // Output fields
+    ?>
+    <p>
+        <label for="event_date">Event Date:</label>
+        <input type="date" id="event_date" name="event_date" value="<?php echo esc_attr($event_date); ?>">
+    </p>
+    <p>
+        <label for="start_time">Start Time:</label>
+        <input type="time" id="start_time" name="start_time" value="<?php echo esc_attr($start_time); ?>">
+    </p>
+    <p>
+        <label for="end_time">End Time:</label>
+        <input type="time" id="end_time" name="end_time" value="<?php echo esc_attr($end_time); ?>">
+    </p>
+    <p>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" value="<?php echo esc_attr($address); ?>">
+    </p>
+    <p>
+        <label for="entry_fees">Entry Fees:</label>
+        <input type="text" id="entry_fees" name="entry_fees" value="<?php echo esc_attr($entry_fees); ?>">
+    </p>
+    <p>
+        <label for="event_category">Event Category:</label>
+        <input type="text" id="event_category" name="event_category" value="<?php echo esc_attr($event_category); ?>">
+    </p>
+    <?php
 }
 
-// Save meta box data
-function save_event_meta_data($post_id)
-{
-	if (array_key_exists('event_date', $_POST)) {
-		update_post_meta($post_id, '_event_date', sanitize_text_field($_POST['event_date']));
-	}
-	if (array_key_exists('start_time', $_POST)) {
-		update_post_meta($post_id, '_start_time', sanitize_text_field($_POST['start_time']));
-	}
-	if (array_key_exists('end_time', $_POST)) {
-		update_post_meta($post_id, '_end_time', sanitize_text_field($_POST['end_time']));
-	}
-	if (array_key_exists('address', $_POST)) {
-		update_post_meta($post_id, '_address', sanitize_text_field($_POST['address']));
-	}
-	if (array_key_exists('entry_fees', $_POST)) {
-		update_post_meta($post_id, '_entry_fees', sanitize_text_field($_POST['entry_fees']));
-	}
-	if (array_key_exists('event_category', $_POST)) {
-		update_post_meta($post_id, '_event_category', sanitize_text_field($_POST['event_category']));
-	}
+function save_event_meta_data($post_id) {
+    if (!isset($_POST['event_meta_box_nonce']) || !wp_verify_nonce($_POST['event_meta_box_nonce'], 'save_event_meta_data')) {
+        return;
+    }
 
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+
+    if (array_key_exists('event_date', $_POST)) {
+        update_post_meta($post_id, '_event_date', sanitize_text_field($_POST['event_date']));
+    }
+    if (array_key_exists('start_time', $_POST)) {
+        update_post_meta($post_id, '_start_time', sanitize_text_field($_POST['start_time']));
+    }
+    if (array_key_exists('end_time', $_POST)) {
+        update_post_meta($post_id, '_end_time', sanitize_text_field($_POST['end_time']));
+    }
+    if (array_key_exists('address', $_POST)) {
+        update_post_meta($post_id, '_address', sanitize_text_field($_POST['address']));
+    }
+    if (array_key_exists('entry_fees', $_POST)) {
+        update_post_meta($post_id, '_entry_fees', sanitize_text_field($_POST['entry_fees']));
+    }
+    if (array_key_exists('event_category', $_POST)) {
+        update_post_meta($post_id, '_event_category', sanitize_text_field($_POST['event_category']));
+    }
 }
 add_action('save_post', 'save_event_meta_data');
 
 // Add meta box for organizer details
-function add_organizer_meta_box()
-{
-	add_meta_box('organizer_details_meta_box', 'Organizer Details', 'render_organizer_meta_box', 'upcoming_events', 'normal', 'high');
+function add_organizer_meta_box() {
+    add_meta_box('organizer_details_meta_box', 'Organizer Details', 'render_organizer_meta_box', 'upcoming_events', 'normal', 'high');
 }
 add_action('add_meta_boxes', 'add_organizer_meta_box');
 
 // Render meta box content for organizer details
-function render_organizer_meta_box($post)
-{
-	// Retrieve existing meta values
-	$organizer_name = get_post_meta($post->ID, '_organizer_name', true);
-	$phone_number = get_post_meta($post->ID, '_phone_number', true);
-	$email = get_post_meta($post->ID, '_email', true);
-	$organizer_website = get_post_meta($post->ID, '_organizer_website', true);
+function render_organizer_meta_box($post) {
+    wp_nonce_field('save_organizer_meta_data', 'organizer_meta_box_nonce');
 
-	// Output fields
-	?>
-	<p>
-		<label for="organizer_name">Organizer Name:</label>
-		<input type="text" id="organizer_name" name="organizer_name" value="<?php echo esc_attr($organizer_name); ?>">
-	</p>
-	<p>
-		<label for="phone_number">Phone Number:</label>
-		<input type="tel" id="phone_number" name="phone_number" value="<?php echo esc_attr($phone_number); ?>">
-	</p>
-	<p>
-		<label for="email">Email:</label>
-		<input type="email" id="email" name="email" value="<?php echo esc_attr($email); ?>">
-	</p>
-	<p>
-		<label for="organizer_website">Organizer Website:</label>
-		<input type="url" id="organizer_website" name="organizer_website"
-			value="<?php echo esc_attr($organizer_website); ?>">
-	</p>
-	<?php
+    $organizer_name = get_post_meta($post->ID, '_organizer_name', true);
+    $phone_number = get_post_meta($post->ID, '_phone_number', true);
+    $email = get_post_meta($post->ID, '_email', true);
+    $organizer_website = get_post_meta($post->ID, '_organizer_website', true);
+
+    // Output fields
+    ?>
+    <p>
+        <label for="organizer_name">Organizer Name:</label>
+        <input type="text" id="organizer_name" name="organizer_name" value="<?php echo esc_attr($organizer_name); ?>">
+    </p>
+    <p>
+        <label for="phone_number">Phone Number:</label>
+        <input type="tel" id="phone_number" name="phone_number" value="<?php echo esc_attr($phone_number); ?>">
+    </p>
+    <p>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="<?php echo esc_attr($email); ?>">
+    </p>
+    <p>
+        <label for="organizer_website">Organizer Website:</label>
+        <input type="url" id="organizer_website" name="organizer_website" value="<?php echo esc_attr($organizer_website); ?>">
+    </p>
+    <?php
 }
 
-// Save meta box data for organizer details
-function save_organizer_meta_data($post_id)
-{
-	if (array_key_exists('organizer_name', $_POST)) {
-		update_post_meta($post_id, '_organizer_name', sanitize_text_field($_POST['organizer_name']));
-	}
-	if (array_key_exists('phone_number', $_POST)) {
-		update_post_meta($post_id, '_phone_number', sanitize_text_field($_POST['phone_number']));
-	}
-	if (array_key_exists('email', $_POST)) {
-		update_post_meta($post_id, '_email', sanitize_email($_POST['email']));
-	}
-	if (array_key_exists('organizer_website', $_POST)) {
-		update_post_meta($post_id, '_organizer_website', esc_url($_POST['organizer_website']));
-	}
+function save_organizer_meta_data($post_id) {
+    if (!isset($_POST['organizer_meta_box_nonce']) || !wp_verify_nonce($_POST['organizer_meta_box_nonce'], 'save_organizer_meta_data')) {
+        return;
+    }
+
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+
+    if (array_key_exists('organizer_name', $_POST)) {
+        update_post_meta($post_id, '_organizer_name', sanitize_text_field($_POST['organizer_name']));
+    }
+    if (array_key_exists('phone_number', $_POST)) {
+        update_post_meta($post_id, '_phone_number', sanitize_text_field($_POST['phone_number']));
+    }
+    if (array_key_exists('email', $_POST)) {
+        update_post_meta($post_id, '_email', sanitize_email($_POST['email']));
+    }
+    if (array_key_exists('organizer_website', $_POST)) {
+        update_post_meta($post_id, '_organizer_website', esc_url($_POST['organizer_website']));
+    }
 }
 add_action('save_post', 'save_organizer_meta_data');
 
 // Add meta box for venue details
-function add_venue_meta_box()
-{
-	add_meta_box('venue_details_meta_box', 'Venue Details', 'render_venue_meta_box', 'upcoming_events', 'normal', 'high');
+function add_venue_meta_box() {
+    add_meta_box('venue_details_meta_box', 'Venue Details', 'render_venue_meta_box', 'upcoming_events', 'normal', 'high');
 }
 add_action('add_meta_boxes', 'add_venue_meta_box');
 
 // Render meta box content for venue details
-function render_venue_meta_box($post)
-{
-	// Retrieve existing meta values
-	$venue_name = get_post_meta($post->ID, '_venue_name', true);
-	$phone_number = get_post_meta($post->ID, '_venue_phone_number', true);
-	$map_x_coordinates = get_post_meta($post->ID, '_map_x_coordinates', true);
-	$map_y_coordinates = get_post_meta($post->ID, '_map_y_coordinates', true);
+function render_venue_meta_box($post) {
+    wp_nonce_field('save_venue_meta_data', 'venue_meta_box_nonce');
 
-	// Output fields
-	?>
-	<p>
-		<label for="venue_name">Venue Name:</label>
-		<input type="text" id="venue_name" name="venue_name" value="<?php echo esc_attr($venue_name); ?>">
-	</p>
-	<p>
-		<label for="phone_number">Phone Number:</label>
-		<input type="tel" id="phone_number" name="phone_number" value="<?php echo esc_attr($phone_number); ?>">
-	</p>
-	<p>
-		<label for="map_x_coordinates">Map X Coordinates:</label>
-		<input type="text" id="map_x_coordinates" name="map_x_coordinates"
-			value="<?php echo esc_attr($map_x_coordinates); ?>">
-	</p>
-	<p>
-		<label for="map_y_coordinates">Map Y Coordinates:</label>
-		<input type="text" id="map_y_coordinates" name="map_y_coordinates"
-			value="<?php echo esc_attr($map_y_coordinates); ?>">
-	</p>
-	<?php
+    $venue_name = get_post_meta($post->ID, '_venue_name', true);
+    $phone_number = get_post_meta($post->ID, '_venue_phone_number', true);
+    $map_x_coordinates = get_post_meta($post->ID, '_map_x_coordinates', true);
+    $map_y_coordinates = get_post_meta($post->ID, '_map_y_coordinates', true);
+
+    // Output fields
+    ?>
+    <p>
+        <label for="venue_name">Venue Name:</label>
+        <input type="text" id="venue_name" name="venue_name" value="<?php echo esc_attr($venue_name); ?>">
+    </p>
+    <p>
+        <label for="phone_number">Phone Number:</label>
+        <input type="tel" id="phone_number" name="phone_number" value="<?php echo esc_attr($phone_number); ?>">
+    </p>
+    <p>
+        <label for="map_x_coordinates">Map X Coordinates:</label>
+        <input type="text" id="map_x_coordinates" name="map_x_coordinates" value="<?php echo esc_attr($map_x_coordinates); ?>">
+    </p>
+    <p>
+        <label for="map_y_coordinates">Map Y Coordinates:</label>
+        <input type="text" id="map_y_coordinates" name="map_y_coordinates" value="<?php echo esc_attr($map_y_coordinates); ?>">
+    </p>
+    <?php
 }
 
-// Save meta box data for venue details
-function save_venue_meta_data($post_id)
-{
-	if (array_key_exists('venue_name', $_POST)) {
-		update_post_meta($post_id, '_venue_name', sanitize_text_field($_POST['venue_name']));
-	}
-	if (array_key_exists('phone_number', $_POST)) {
-		update_post_meta($post_id, '_venue_phone_number', sanitize_text_field($_POST['phone_number']));
-	}
-	if (array_key_exists('map_x_coordinates', $_POST)) {
-		update_post_meta($post_id, '_map_x_coordinates', sanitize_text_field($_POST['map_x_coordinates']));
-	}
-	if (array_key_exists('map_y_coordinates', $_POST)) {
-		update_post_meta($post_id, '_map_y_coordinates', sanitize_text_field($_POST['map_y_coordinates']));
-	}
+function save_venue_meta_data($post_id) {
+    if (!isset($_POST['venue_meta_box_nonce']) || !wp_verify_nonce($_POST['venue_meta_box_nonce'], 'save_venue_meta_data')) {
+        return;
+    }
+
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+
+    if (array_key_exists('venue_name', $_POST)) {
+        update_post_meta($post_id, '_venue_name', sanitize_text_field($_POST['venue_name']));
+    }
+    if (array_key_exists('phone_number', $_POST)) {
+        update_post_meta($post_id, '_venue_phone_number', sanitize_text_field($_POST['phone_number']));
+    }
+    if (array_key_exists('map_x_coordinates', $_POST)) {
+        update_post_meta($post_id, '_map_x_coordinates', sanitize_text_field($_POST['map_x_coordinates']));
+    }
+    if (array_key_exists('map_y_coordinates', $_POST)) {
+        update_post_meta($post_id, '_map_y_coordinates', sanitize_text_field($_POST['map_y_coordinates']));
+    }
 }
 add_action('save_post', 'save_venue_meta_data');
-
-
 
 
 // Register Custom Post Type
@@ -1342,7 +1357,7 @@ function custom_post_type_our_staff()
 		'description' => __('Our Staff', 'text_domain'),
 		'labels' => $labels,
 		'supports' => array('title', 'editor', 'thumbnail'),
-		'taxonomies' => array('category', 'post_tag'),
+		'taxonomies' => array(),
 		'hierarchical' => false,
 		'public' => true,
 		'show_ui' => true,
@@ -2201,14 +2216,8 @@ function fetch_events_callback()
 	wp_die();
 }
 // Example function to retrieve events grouped by year with pagination
-function get_events_grouped_by_year($paged)
+function get_events_grouped_by_year()
 {
-	// Number of years per page
-	$years_per_page = 1;
-
-	// Calculate offset based on pagination
-	$offset = ($paged - 1) * $years_per_page;
-
 	// Initialize an array to store events grouped by year
 	$events_by_year = array();
 
@@ -2237,28 +2246,16 @@ function get_events_grouped_by_year($paged)
 		wp_reset_postdata();
 	}
 
-	// Pagination for years
-	$total_years = count($events_by_year);
-	$paged_years = array_chunk($events_by_year, $years_per_page, true);
-
-	// Check if the current page is within bounds
-	if ($paged > count($paged_years) || $paged <= 0) {
-		$paged = 1;
-	}
-
-	// Get the events for the current page
-	$events_for_page = $paged_years[$paged ];
-
 	// Generate HTML markup for each year and its events
 	$html = '';
-	foreach ($events_for_page as $year => $events) {
+	foreach ($events_by_year as $year => $events) {
 		$html .= '<h2>' . esc_html($year) . '</h2>';
 		foreach ($events as $event) {
 			$date = date('d'); // Current date in YYYY-MM-DD format
 			$day = date('l', strtotime($date)); // Full day name (e.g., "Monday")
 			$event_date = get_post_meta($event->ID, '_event_date', true);
 			// Convert event date to 'day-mon-year' format
-			$event_date_formatted = date('d-M-Y', strtotime($event_date));
+			$event_date_formatted = date('l d M Y', strtotime($event_date));
 			$month = date('M', strtotime($event_date));
 			$event_date_formatted = str_replace($month, date('M', strtotime($event_date)), $event_date_formatted);
 			$start_time = get_post_meta($event->ID, '_start_time', true);
@@ -2269,42 +2266,32 @@ function get_events_grouped_by_year($paged)
 			$location = get_post_meta($event->ID, '_venue_name', true);
 			$entry_fees = get_post_meta($event->ID, '_entry_fees', true);
 
-			$html .= '<div class="upcoming-item mb-5 ">';
-			$html .= '<div class="upcoming-inner col-lg-8 col-md-12 col-12">';
+			$html .= '<div class="upcoming-item mb-5">';
+			$html .= '<div class="upcoming-inner col-lg-8 col-md-8 col-12">';
 			$html .= '<div class="evt-left">';
 			$html .= '<span class="date">' . $date . '</span>' . $day;
 			$html .= '</div>';
 			$html .= '<div class="evt-right">';
-			$html .= '<p class="schedule-inner">' . $event_date_formatted . ' - ' . esc_html($start_time_am_pm) . ' To ' . $event_date_formatted . ' - ' . esc_html($end_time_am_pm) . '</p>';
+			$html .= '<p>' . $event_date_formatted . ' - ' . esc_html($start_time_am_pm) . ' To ' . $event_date_formatted . ' - ' . esc_html($end_time_am_pm) . '</p>';
 			$html .= '<div class="heading-wrap-evt">';
 			$html .= '<h3><a href="' . esc_html(get_the_permalink()) . '">' . esc_html($event->post_title) . '</a></h3>';
 			$html .= '</div>';
 			$html .= '<p class="address">' . esc_html($location) . '</p>';
 			$html .= '<div class="event-content">' . wpautop($event->post_content) . '</div>';
-			$html .= '<p class="Price">$' . esc_html($entry_fees) . '</p>';
+			$html .= '<p class="Price">' . esc_html($entry_fees) . '</p>';
 			$html .= '</div>';
 			$html .= '</div>';
-			$html .= '<div class="featured-image col-lg-4 col-md-12 col-12">';
+			$html .= '<div class="featured-image col-lg-4 col-md-4 col-12">';
 			if (has_post_thumbnail($event->ID)) {
 				$html .= '<a href="' . esc_url(get_permalink($event->ID)) . '">';
-				$html .= get_the_post_thumbnail($event->ID, 'medium', array('class' => 'img-fluid'));
+				$html .= get_the_post_thumbnail($event->ID, 'product-slider', array('class' => 'img-fluid'));
 				$html .= '</a>';
 			}
 			$html .= '</div>';
 			$html .= '</div>';
+			
 		}
 	}
-
-	// Pagination links for years
-	$html .= '<div class="pagination">';
-	$html .= paginate_links(
-		array(
-			'total' => count($paged_years),
-			'current' => $paged,
-			'format' => '?action=fetch_events&paged=%#%', // Adjusted format for AJAX URL structure
-		)
-	);
-	$html .= '</div>';
 
 	echo $html;
 }
@@ -2340,50 +2327,47 @@ function get_events_grouped_by_month()
 		wp_reset_postdata();
 	}
 	$html = '';
-
+	// var_dump(print_r( $events_by_month,true));
 	foreach ($events_by_month as $month => $events) {
 		// Loop through events for the current month
 		foreach ($events as $event) {
 			$html .= '<h2>' . esc_html($month) . '</h2>';
 			foreach ($events as $event) {
-				$date = date('d'); // Current date in YYYY-MM-DD format
-				$day = date('l', strtotime($date)); // Full day name (e.g., "Monday")
-				$event_date = get_post_meta($event->ID, '_event_date', true);
-				// Convert event date to 'day-mon-year' format
-				$event_date_formatted = date('d-M-Y', strtotime($event_date));
-				$month = date('M', strtotime($event_date));
-				$event_date_formatted = str_replace($month, date('M', strtotime($event_date)), $event_date_formatted);
-				$start_time = get_post_meta($event->ID, '_start_time', true);
-				// Convert start time to AM/PM format (assuming $start_time is in 'H:i' format)
-				$start_time_am_pm = date('h:i A', strtotime($start_time));
-				$end_time = get_post_meta($event->ID, '_end_time', true);
-				$end_time_am_pm = date('h:i A', strtotime($end_time));
-				$location = get_post_meta($event->ID, '_venue_name', true);
-				$entry_fees = get_post_meta($event->ID, '_entry_fees', true);
+				$events_query->the_post();
+			$event_date = get_post_meta(get_the_ID(), '_event_date', true);
+			$start_time = get_post_meta(get_the_ID(), '_start_time', true);
+			$end_time = get_post_meta(get_the_ID(), '_end_time', true);
+			$location = get_post_meta(get_the_ID(), '_venue_name', true);
+			$entry_fees = get_post_meta(get_the_ID(), '_entry_fees', true);
 
-				$html .= '<div class="upcoming-item mb-5">';
-				$html .= '<div class="upcoming-inner col-lg-8 col-md-12 col-12">';
-				$html .= '<div class="evt-left">';
-				$html .= '<span class="date">' . $date . '</span>' . $day;
-				$html .= '</div>';
-				$html .= '<div class="evt-right">';
-				$html .= '<p class="schedule-inner">' . $event_date_formatted . ' - ' . esc_html($start_time_am_pm) . ' To ' . $event_date_formatted . ' - ' . esc_html($end_time_am_pm) . '</p>';
-				$html .= '<div class="heading-wrap-evt">';
-				$html .= '<h3><a href="' . esc_html(get_the_permalink()) . '">' . esc_html($event->post_title) . '</a></h3>';
-				$html .= '</div>';
-				$html .= '<p class="address">' . esc_html($location) . '</p>';
-				$html .= '<div class="event-content">' . wpautop($event->post_content) . '</div>';
-				$html .= '<p class="Price">$' . esc_html($entry_fees) . '</p>';
-				$html .= '</div>';
-				$html .= '</div>';
-				$html .= '<div class="featured-image col-lg-4 col-md-12 col-12">';
-				if (has_post_thumbnail($event->ID)) {
-					$html .= '<a href="' . esc_url(get_permalink($event->ID)) . '">';
-					$html .= get_the_post_thumbnail($event->ID, 'medium', array('class' => 'img-fluid'));
-					$html .= '</a>';
-				}
-				$html .= '</div>';
-				$html .= '</div>';
+			// Format date and time
+			$event_date_formatted = date('d M Y', strtotime($event_date));
+			$start_time_am_pm = date('h:i A', strtotime($start_time));
+			$end_time_am_pm = date('h:i A', strtotime($end_time));
+
+			// Build HTML for each event
+			$html .= '<div class="upcoming-item mb-5">';
+			$html .= '<div class="upcoming-inner col-lg-8 col-md-12 col-12">';
+			$html .= '<div class="evt-left">';
+			$html .= '<span class="date">' . date('d', strtotime($event_date)) . '</span>';
+			$html .= date('l', strtotime($event_date));
+			$html .= '</div>';
+			$html .= '<div class="evt-right">';
+			$html .= '<p class="schedule-inner">' . $event_date_formatted . ' - ' . esc_html($start_time_am_pm) . ' To ' . $event_date_formatted . ' - ' . esc_html($end_time_am_pm) . '</p>';
+			$html .= '<div class="heading-wrap-evt">';
+			$html .= '<h3><a href="' . esc_html(get_the_permalink()) . '">' . esc_html(get_the_title()) . '</a></h3>';
+			$html .= '</div>';
+			$html .= '<p class="address">' . esc_html($location) . '</p>';
+			$html .= '<div class="event-content">' . wpautop(get_the_content()) . '</div>';
+			$html .= '<p class="Price">' . esc_html($entry_fees) . '</p>';
+			$html .= '</div>';
+			$html .= '</div>';
+			$html .= '<div class="featured-image col-lg-4 col-md-12 col-12">';
+			if (has_post_thumbnail(get_the_ID())) {
+				$html .= '<a href="' . esc_url(get_permalink()) . '">' . get_the_post_thumbnail(get_the_ID(), 'product-slider', array('class' => 'img-fluid')) . '</a>';
+			}
+			$html .= '</div>';
+			$html .= '</div>';
 			}
 		}
 	}
@@ -2431,7 +2415,7 @@ function get_events_grouped_today()
 			$entry_fees = get_post_meta(get_the_ID(), '_entry_fees', true);
 
 			// Format date and time
-			$event_date_formatted = date('d-M-Y', strtotime($event_date));
+			$event_date_formatted = date('d M Y', strtotime($event_date));
 			$start_time_am_pm = date('h:i A', strtotime($start_time));
 			$end_time_am_pm = date('h:i A', strtotime($end_time));
 
@@ -2449,12 +2433,12 @@ function get_events_grouped_today()
 			$html .= '</div>';
 			$html .= '<p class="address">' . esc_html($location) . '</p>';
 			$html .= '<div class="event-content">' . wpautop(get_the_content()) . '</div>';
-			$html .= '<p class="Price">$ ' . esc_html($entry_fees) . '</p>';
+			$html .= '<p class="Price">' . esc_html($entry_fees) . '</p>';
 			$html .= '</div>';
 			$html .= '</div>';
 			$html .= '<div class="featured-image col-lg-4 col-md-12 col-12">';
 			if (has_post_thumbnail(get_the_ID())) {
-				$html .= '<a href="' . esc_url(get_permalink()) . '">' . get_the_post_thumbnail(get_the_ID(), 'medium', array('class' => 'img-fluid')) . '</a>';
+				$html .= '<a href="' . esc_url(get_permalink()) . '">' . get_the_post_thumbnail(get_the_ID(), 'product-slider', array('class' => 'img-fluid')) . '</a>';
 			}
 			$html .= '</div>';
 			$html .= '</div>';
@@ -2694,3 +2678,110 @@ function criket_leauge_pro_sectio_testimonial_shortcode() {
 }
 add_shortcode( 'space-testimonial', 'criket_leauge_pro_sectio_testimonial_shortcode' );
 // json shortcode end
+
+
+
+
+
+add_action('wp_ajax_search_events', 'search_events');
+add_action('wp_ajax_nopriv_search_events', 'search_events');
+
+function search_events() {
+
+	 $keyword = $_POST['keyword'];
+
+     // Custom query to search for events based on venue taxonomy
+     $args = array(
+         'post_type' => 'sp_event',
+         'posts_per_page' => -1,
+         'orderby' => 'date',
+         'order' => 'ASC',
+         'post_status' => array('publish', 'future'),
+	 	//'s' => $keyword, // Include search keyword
+         'tax_query' => array(
+             array(
+                 'taxonomy' => 'sp_venue',
+                 'field' => 'name',
+                 'terms' => $keyword,
+                 'operator' => 'IN'
+             )
+         )
+     );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+		echo '<table id="events-table">'; // Add ID to the table
+		// echo '<thead><tr><th>Sr No</th><th>Date</th><th>Match</th><th>Venue</th><th>Time</th><th>Booking</th></tr></thead>';
+		echo '<tbody>';
+		$i = 1;
+		while ($query->have_posts()) {
+			$query->the_post();
+
+			// Retrieve team meta values
+			$teams = get_post_meta(get_the_ID(), 'sp_team');
+
+			// Ensure we have at least two teams to form a match
+			if (count($teams) >= 2) {
+				$team_names = array();
+
+				// Retrieve team names
+				foreach ($teams as $team_id) {
+					$team_name = get_the_title($team_id);
+					if ($team_name) {
+						$team_names[] = $team_name;
+					}
+				}
+
+				// Format and display the match
+				$match = implode(' vs ', $team_names);
+				$date = get_the_date('Y-m-d');
+				$time = get_the_date('h:i A', get_the_ID()); // Get time in AM/PM format
+	
+				// Retrieve the venue (location) terms associated with the event
+				$venues = get_the_terms(get_the_ID(), 'sp_venue');
+				$venue = '';
+
+				if ($venues && !is_wp_error($venues)) {
+					foreach ($venues as $v) {
+						$venue = $v->name;
+						break;
+					}
+				}
+
+				// Display the event information in table row
+				echo '<tr>';
+				echo '<td>0' . $i . '</td>';
+				echo '<td>' . $date . '</td>';
+				echo '<td>' . $match . '</td>';
+				echo '<td>' . $venue . '</td>';
+				echo '<td>' . $time . '</td>';
+				echo '<td> <a href="'.esc_url(get_permalink(get_page_by_title('Booking Form'))).'" class="theme-btn black">Book Now <i class="fa fa-hand-pointer-o"></i></a></td>';
+				echo '</tr>';
+			}
+			$i++;
+		}
+
+		echo '</tbody>';
+		echo '</table>'; // End the table
+	} else {
+		// No posts found
+		echo 'No events found.';
+	}
+
+
+    wp_reset_postdata();
+
+    die(); // Always end with die() to prevent extra output
+
+
+
+}
+
+
+// custom size for product image 
+// Add theme support for post thumbnails
+add_theme_support('post-thumbnails');
+
+// Define custom image sizes
+add_image_size('product-slider', 600, 400, true); // 600 pixels wide by 400 pixels tall, hard crop mode

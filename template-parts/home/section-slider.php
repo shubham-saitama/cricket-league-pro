@@ -38,15 +38,16 @@ $img_bg = get_theme_mod('cricket_league_pro_slider_bgimage_setting');
         <span class="banner-tag">
           <?php echo get_theme_mod('cricket_league_pro_banner_tag'); ?>
         </span>
-        <h1 class="banner-heading" id="dynamic-color">
+        <h1 class="banner-heading" id="dynamic-color" data-word="<?php echo get_theme_mod('cricket_league_pro_slider_heading_color_text'); ?>">
           <?php echo get_theme_mod('cricket_league_pro_slider_heading'); ?>
         </h1>
         <p class="slider-text">
           <?php echo get_theme_mod('cricket_league_pro_slider_text'); ?>
         </p>
         <div class="banner-button-wrap mt-3">
-          <a href="<?php echo get_permalink(get_page_by_title('Blog')); ?>" class="theme-btn orange">
+          <a href="<?php echo get_permalink(get_page_by_title('Matches')); ?>" class="theme-btn orange">
             <?php echo get_theme_mod('cricket_league_pro_slider_btntext') ?>
+            <i class="<?php echo get_theme_mod('cricket_league_pro_banner_button_icon'); ?>"></i>
           </a>
           <div class="banner-inner-wrap ">
             <a href="<?php echo get_theme_mod('cricket_league_pro_cost_calcuator_shortcode_link'); ?>"

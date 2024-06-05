@@ -31,7 +31,7 @@ get_template_part('template-parts/banner'); ?>
                     while ($events_query->have_posts()) {
                         $events_query->the_post();
 
-                        echo "<div class='col-lg-6 col-md-6 col-12 mb-5'>";
+                        echo "<div class='col-lg-6 col-md-12 col-12 mb-5'>";
                         // Output event details
                         echo '<div class="slide-wrap">';
 

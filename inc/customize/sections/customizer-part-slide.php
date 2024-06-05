@@ -257,6 +257,22 @@ $wp_customize->add_control(
 		'type' => 'text'
 	)
 );
+$wp_customize->add_setting(
+	'cricket_league_pro_slider_heading_color_text',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	'cricket_league_pro_slider_heading_color_text',
+	array(
+		'label' => __('Colored Word Number', 'cricket-league-pro'),
+		'section' => 'cricket_league_pro_slider_sec',
+		'setting' => 'cricket_league_pro_slider_heading_color_text',
+		'type' => 'number'
+	)
+);
 
 
 $wp_customize->add_setting(
@@ -525,9 +541,29 @@ $wp_customize->add_control(
 		'cricket_league_pro_slider_btn_bgcolor_one',
 		array(
 			'label' => __('Button Backgroudn Color', 'cricket-league-pro'),
-			'description' => __('Apply both color one and color two to see changes', 'cricket-league-pro'),
+			'description' => __('', 'cricket-league-pro'),
 			'section' => 'cricket_league_pro_slider_sec',
 			'settings' => 'cricket_league_pro_slider_btn_bgcolor_one',
+		)
+	)
+);
+
+$wp_customize->add_setting(
+	'cricket_league_pro_banner_button_icon',
+	array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	)
+);
+$wp_customize->add_control(
+	new cricket_league_pro_Fontawesome_Icon_Chooser(
+		$wp_customize,
+		'cricket_league_pro_banner_button_icon',
+		array(
+			'settings' => 'cricket_league_pro_banner_button_icon',
+			'section' => 'cricket_league_pro_slider_sec',
+			'type' => 'icon',
+			'label' => esc_html__('Banner Button Icon', 'cricket-league-pro'),
 		)
 	)
 );

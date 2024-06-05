@@ -1,4 +1,4 @@
-<?php
+<i?php
 /**
  * Template to show the use
  *
@@ -53,7 +53,7 @@ if (get_theme_mod('cricket_league_pro_about_bgcolor', '')) {
         </div>
         <p><?php echo get_theme_mod('cricket_league_pro_aboutus_section_text_heading'); ?></p>
         <div class="about-us-inner mt-5">
-          <a href="#" class="theme-btn"><?php echo get_theme_mod('cricket_league_pro_aboutus_button_heading'); ?></a>
+          <a href="<?php echo get_permalink(get_page_by_title('About Us')) ?>" class="theme-btn"><?php echo get_theme_mod('cricket_league_pro_aboutus_button_heading'); ?><i class="<?php echo get_theme_mod('cricket_league_pro_about_button_icon'); ?>"></i></a>
           <div class="chairman-wrap">
             <div class="image-wrap">
               <img src="<?php echo get_theme_mod('cricket_league_pro_aboutus_chairman_dp_image'); ?>"

@@ -205,7 +205,7 @@ ul.whizzie-nav .dashicons {
 	margin-left: 15px;
 }
 .theme-option-tab button{
-	background-color: var(--secondary-color)!important;
+	background-color: #ffffff !important;
 	border: none !important;
 	box-shadow: 0 0 14px #e2e2e2;
 }
@@ -683,7 +683,7 @@ ul.whizzie-do-plugins{
     letter-spacing: 1px;
     font-size: 18px;
     background: linear-gradient(#6ccef5,#016194) !important;
-    color: var(--secondary-color)!important;
+    color: #ffffff !important;
 }
 .next-button #start-now-next{
     margin-top: 4px;
@@ -731,7 +731,7 @@ li.step-intro .wizard-main-title{
     box-sizing: border-box !important;
     box-shadow: 0 0 12px #d2c3c3 !important;
     margin: 28px 15px 30px 15px !important;
-    background-color: var(--secondary-color)!important;
+    background-color: #ffffff !important;
     position: relative !important;
     padding-bottom: 0 !important;
     transition: 2s !important;
@@ -761,5 +761,5 @@ li.step-intro .wizard-main-title{
     font-size: 18px !important;
     background: linear-gradient(#6ccef5,#016194);
     border: none;
-    color: var(--secondary-color)!important;
+    color: #ffffff !important;
 } 

@@ -74,7 +74,7 @@ if ($img != '') { ?>
                 $event_date = get_post_meta(get_the_ID(), '_event_date', true);
                 // Convert event date to 'day-mon-year' format
             
-                $event_date_formatted = date('d-M-Y', strtotime($event_date));
+                $event_date_formatted = date('d M Y', strtotime($event_date));
                 $month = date('M', strtotime($event_date));
                 $event_date_formatted = str_replace($month, date('M', strtotime($event_date)), $event_date_formatted);
 
@@ -92,7 +92,7 @@ if ($img != '') { ?>
                 <?php if (has_post_thumbnail()) { ?>
                     <div class="col-lg-6 col-md-5 col-12 ">
                         <div class="thumbnail">
-                            <?php the_post_thumbnail('large', ['class' => 'img-responsive']); ?>
+                            <?php the_post_thumbnail('post-thumbnails', ['class' => 'img-responsive']); ?>
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-7 col-12">
@@ -109,7 +109,7 @@ if ($img != '') { ?>
                         <div class="evt-descreption">
                             <?php the_content(); ?>
                         </div>
-                        <span class="price">$ <?php echo $entry_fees; ?></span>
+                        <span class="price"><?php echo $entry_fees; ?></span>
                         <div class="button-wrapper">
                             <?php
                             // Construct Google Calendar link
@@ -122,11 +122,13 @@ if ($img != '') { ?>
                             $event_category = get_post_meta($post->ID, '_event_category', true);
 
                             ?>
-                            <a class="normal-btn black" href="<?php $location_link; ?>"
+                            <a class="normal-btn black" href="<?php echo $location_link; ?>"
                                 target="_blank"><?php echo get_theme_mod('cricket_league_pro_single_evt_goto_location'); ?></a>
 
                             <a class="calender-button" href="<?php echo $google_calendar_link; ?>"
-                                target="_blank"><?php echo get_theme_mod('cricket_league_pro_single_evt_add_chalender'); ?></a>
+                                target="_blank"><?php echo get_theme_mod('cricket_league_pro_single_evt_add_chalender'); ?><i
+                                    class="<?php echo get_theme_mod('cricket_league_pro_evt_add_calender_icon'); ?>"
+                                    aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <p class="my-4"><?php echo get_post_meta(get_the_ID(), '_custom_meta_field1', 'true'); ?></p>
@@ -134,80 +136,108 @@ if ($img != '') { ?>
 
                     <div class="row">
                         <div class="col-lg-3 col-md-6 col-12">
-                            <h5>Details</h5>
-                            <div class="event-detail-wrap">
-                                <span class="event-detail-title"><b>Start</b></span>
-                                <span class="event-detail-value"> <?php echo $event_date_formatted; ?> - <?php echo $start_time_am_pm; ?></span>
-                            </div>
-                            <div class="event-detail-wrap">
-                                <span class="event-detail-title"><b>End</b></span>
-                                <span class="event-detail-value"><?php echo $event_date_formatted; ?> - <?php echo $end_time_am_pm; ?></span>
-                            </div>
-                            <div class="event-detail-wrap">
-                                <span class="event-detail-title"><b>Cost</b></span>
-                                <span class="event-detail-value">$ <?php echo $entry_fees; ?></span>
-                            </div>
-                            <div class="event-detail-wrap">
-                                <span class="event-detail-title"><b>Event Category:</b></span>
-                                <span class="event-detail-value"><?php echo $event_category; ?></span>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-12">
-                            <h5>Organizer</h5>
-                            <div class="event-detail-wrap">
-                                <span
-                                    class="event-detail-value"><b><?php echo get_post_meta(get_the_ID(), '_organizer_name', true); ?></b></span>
-                            </div>
-                            <div class="event-detail-wrap">
-                                <span class="event-detail-title"><b>Phone</b></span>
-                                <span
-                                    class="event-detail-value"><?php echo get_post_meta(get_the_ID(), '_phone_number', true); ?></span>
-                            </div>
-                            <div class="event-detail-wrap">
-                                <span class="event-detail-title"><b>Mail</b></span>
-                                <span
-                                    class="event-detail-value"><?php echo get_post_meta(get_the_ID(), '_email', true); ?></span>
-                            </div>
-                            <div class="event-detail-wrap">
-                                <span class="event-detail-title"><b>Website</b></span>
-                                <span
-                                    class="event-detail-value"><?php echo get_post_meta(get_the_ID(), '_organizer_website', true); ?></span>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-12">
-                            <h5>Venue</h5>
-                            <div class="event-detail-wrap">
-                                <span
-                                    class="event-detail-value"><?php echo get_post_meta(get_the_ID(), '_venue_name', true); ?></span>
-                            </div>
-                            <div class="event-detail-wrap">
-                                <span class="event-detail-title"><b>Address:</b></span>
-                                <span
-                                    class="event-detail-value"><?php echo get_post_meta(get_the_ID(), '_address', true); ?></span>
-                            </div>
-                            <div class="event-detail-wrap">
-                                <span class="event-detail-title"><b>Phone No:</b></span>
-                                <span
-                                    class="event-detail-value"><?php echo get_post_meta(get_the_ID(), '_phone_number', true); ?></span>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-12">
-                            <?php
-                            // Check if both coordinates are available
-                            if ($map_x_coordinates && $map_y_coordinates) {
+                            <h5><?php echo get_theme_mod('cricket_league_pro_event_lable_heading_col1'); ?></h5>
+                            <?php if (!empty($event_date_formatted) && !empty($start_time_am_pm)) { ?>
+                                <div class="event-detail-wrap">
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_start_heading'); ?></b></span>
+                                    <span class="event-detail-value"><?php echo $event_date_formatted; ?> -
+                                        <?php echo $start_time_am_pm; ?></span>
+                                </div>
+                            <?php } ?>
 
-                                // Output the iframe HTML
-                                ?>
+                            <?php if (!empty($event_date_formatted) && !empty($end_time_am_pm)) { ?>
+                                <div class="event-detail-wrap">
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_end_heading'); ?></b></span>
+                                    <span class="event-detail-value"><?php echo $event_date_formatted; ?> -
+                                        <?php echo $end_time_am_pm; ?></span>
+                                </div>
+                            <?php } ?>
+
+                            <?php if (!empty($entry_fees)) { ?>
+                                <div class="event-detail-wrap">
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_cost_heading'); ?></b></span>
+                                    <span class="event-detail-value">$ <?php echo $entry_fees; ?></span>
+                                </div>
+                            <?php } ?>
+
+                            <?php if (!empty($event_category)) { ?>
+                                <div class="event-detail-wrap">
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_ccategory_heading'); ?></b></span>
+                                    <span class="event-detail-value"><?php echo $event_category; ?></span>
+                                </div>
+                            <?php } ?>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <h5><?php echo get_theme_mod('cricket_league_pro_event_lable_heading_col3'); ?></h5>
+                            <?php $organizer_name = get_post_meta(get_the_ID(), '_organizer_name', true); ?>
+                            <?php if (!empty($organizer_name)) { ?>
+                                <div class="event-detail-wrap">
+                                    <span class="event-detail-value"><b><?php echo $organizer_name; ?></b></span>
+                                </div>
+                            <?php } ?>
+
+                            <?php $phone_number = get_post_meta(get_the_ID(), '_phone_number', true); ?>
+                            <?php if (!empty($phone_number)) { ?>
+                                <div class="event-detail-wrap">
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_phone_heading'); ?></b></span>
+                                    <span class="event-detail-value"><?php echo $phone_number; ?></span>
+                                </div>
+                            <?php } ?>
+
+                            <?php $email = get_post_meta(get_the_ID(), '_email', true); ?>
+                            <?php if (!empty($email)) { ?>
+                                <div class="event-detail-wrap">
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_mail_heading'); ?></b></span>
+                                    <span class="event-detail-value"><?php echo $email; ?></span>
+                                </div>
+                            <?php } ?>
+
+                            <?php $website = get_post_meta(get_the_ID(), '_organizer_website', true); ?>
+                            <?php if (!empty($website)) { ?>
+                                <div class="event-detail-wrap">
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_website_heading'); ?></b></span>
+                                    <span class="event-detail-value"><?php echo $website; ?></span>
+                                </div>
+                            <?php } ?>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <h5><?php echo get_theme_mod('cricket_league_pro_event_lable_heading_col2'); ?></h5>
+                            <?php $venue_name = get_post_meta(get_the_ID(), '_venue_name', true); ?>
+                            <?php if (!empty($venue_name)) { ?>
+                                <div class="event-detail-wrap">
+                                    <span class="event-detail-value"><?php echo $venue_name; ?></span>
+                                </div>
+                            <?php } ?>
+
+                            <?php $address = get_post_meta(get_the_ID(), '_address', true); ?>
+                            <?php if (!empty($address)) { ?>
+                                <div class="event-detail-wrap">
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_address_heading'); ?></b></span>
+                                    <span class="event-detail-value"><?php echo $address; ?></span>
+                                </div>
+                            <?php } ?>
+
+                            <?php $venue_phone_number = get_post_meta(get_the_ID(), '_phone_number', true); ?>
+                            <?php if (!empty($venue_phone_number)) { ?>
+                                <div class="event-detail-wrap">
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_phone_venue_heading'); ?></b></span>
+                                    <span class="event-detail-value"><?php echo $venue_phone_number; ?></span>
+                                </div>
+                            <?php } ?>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <?php if (!empty($map_x_coordinates) && !empty($map_y_coordinates)) { ?>
                                 <iframe
                                     src="https://maps.google.com/maps?q=<?php echo $map_x_coordinates ?>,<?php echo $map_y_coordinates; ?>&hl=en&z=20&amp;output=embed"
                                     frameborder="0">
                                 </iframe>
-                                <?php
-                            } ?>
+                            <?php } ?>
                         </div>
                     </div>
                 <?php } ?>
-
                 <div class="clearfix"></div>
             <?php endwhile; // end of the loop. ?>
         </div>

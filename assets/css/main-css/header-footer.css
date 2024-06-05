@@ -1235,7 +1235,7 @@ input.ewd-otp-text-input {
 }
 
 .woocommerce a.remove {
-  background: #00A3FC;
+  background: var(--primary-color);
   color: white !important;
 }
 
@@ -1353,13 +1353,22 @@ input.ewd-otp-text-input {
 #header:has(.custom-sidebar) {
   height: unset;
 }
-
+section#upcoming-evt .heading-wrap-evt h3 a {
+  color: #fff;
+}
+section#upcoming-evt .heading-wrap-evt h3 a:hover{
+  color: var(--primary-color);
+}
 #header .current-menu-item a,
 .current-menu-ancestor>a {
   color: #000 !important;
   font: normal normal 600 16px / 21px Inter Tight;
 }
-
+#header .menu-item a:hover,
+.current-menu-ancestor>a:hover{
+  color: #fff !important;
+  font: normal normal 600 16px / 21px Inter Tight;
+}
 .header-slider:has(+ #slider)+#slider .carousel,
 .header-slider:has(+ .title-box)+.title-box {
   margin-top: 0;

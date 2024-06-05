@@ -1,4 +1,4 @@
-<?php
+<i?php
 /**
  * Template to show Products Slider
  *
@@ -45,7 +45,7 @@ if (get_theme_mod('cricket_league_pro_productSlider_bg_color', '')) {
                         $product_price = get_post_meta(get_the_ID(), '_price', true);
                         $sale_price = get_post_meta(get_the_ID(), '_sale_price', true);
                         // Get product image URL
-                        $product_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+                        $product_image_url = get_the_post_thumbnail_url(get_the_ID(), 'product-slider');
                         $current_currency = get_woocommerce_currency_symbol();
                         ?>
                         <div class="item-product">
@@ -75,7 +75,7 @@ if (get_theme_mod('cricket_league_pro_productSlider_bg_color', '')) {
                                         // Get the add to cart URL
                                         $add_to_cart_url = esc_url(wc_get_product($product_id)->add_to_cart_url());
                                         ?>
-                                <a href="<?php echo $add_to_cart_url; ?>" class="button"><?php echo get_theme_mod('cricket_league_pro_product_slider_cart_button'); ?></a>
+                                <a href="<?php echo $add_to_cart_url; ?>" class="button"><?php echo get_theme_mod('cricket_league_pro_product_slider_cart_button'); ?><i class="<?php echo get_theme_mod('cricket_league_pro_carrt_btn_icon'); ?>"></i></a>
                             </div>
                         </div>
                         <?php

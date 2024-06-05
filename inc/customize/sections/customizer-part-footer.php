@@ -9,25 +9,6 @@ $wp_customize->add_section(
     )
 );
 
-// $wp_customize->add_setting(
-//     'cricket_league_pro_footer_enable',
-//     array(
-//         'default' => 'Enable',
-//         'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
-//     )
-// );
-// $wp_customize->add_control(
-//     'cricket_league_pro_footer_enable',
-//     array(
-//         'type' => 'radio',
-//         'label' => __('Do you want this section', 'cricket-league-pro'),
-//         'section' => 'cricket_league_pro_footer_sec',
-//         'choices' => array(
-//             'Enable' => __('Enable', 'cricket-league-pro'),
-//             'Disable' => __('Disable', 'cricket-league-pro')
-//         ),
-//     )
-// );
 $wp_customize->selective_refresh->add_partial(
     'cricket_league_pro_footer_enable',
     array(
@@ -55,7 +36,7 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'cricket_league_pro_footer_bg_image',
+	'cricket_league_pro_footer_bg_image_one',
 	array(
 		'default' => '',
 		'sanitize_callback' => 'esc_url_raw',
@@ -64,17 +45,35 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Image_Control(
 		$wp_customize,
-		'cricket_league_pro_footer_bg_image',
+		'cricket_league_pro_footer_bg_image_one',
 		array(
 			'label' => __('Footer Background Image', 'cricket-league-pro'),
             'description' => __('Add an image atleast 1920x768 px'),
 			'section' => 'cricket_league_pro_footer_sec',
-			'settings' => 'cricket_league_pro_footer_bg_image'
+			'settings' => 'cricket_league_pro_footer_bg_image_one'
 		)
 		
 	)
 );
-
+$wp_customize->add_setting(
+	'cricket_league_pro_position_fixed',
+	array(
+	  'default' => 'fixed',
+	  'sanitize_callback' => 'cricket_league_pro_sanitize_choices'
+	)
+  );
+  $wp_customize->add_control(
+	'cricket_league_pro_position_fixed',
+	array(
+	  'type' => 'radio',
+	  'label' => __('Choose Footer Position', 'cricket-league-pro'),
+	  'section' => 'cricket_league_pro_footer_sec',
+	  'choices' => array(
+		'fixed' => __('Fixed', 'cricket-league-pro'),
+		'scroll' => __('Scroll', 'cricket-league-pro')
+	  ),
+	)
+  );
 
 
 $wp_customize->add_setting(
@@ -393,7 +392,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	'cricket_league_pro_footer_news_icon',
 	array(
-		'default' => 1,
+		'default' => 0,
 		'transport' => 'refresh',
 		'sanitize_callback' => 'cricket_league_pro_switch_sanitization'
 	)

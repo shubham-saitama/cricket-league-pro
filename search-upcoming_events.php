@@ -53,7 +53,7 @@ if ($img != '') { ?>
                                 $entry_fees = get_post_meta(get_the_ID(), '_entry_fees', true);
 
                                 // Format date and time
-                                $event_date_formatted = date('d-M-Y', strtotime($event_date));
+                                $event_date_formatted = date('d M Y', strtotime($event_date));
                                 $start_time_am_pm = date('h:i A', strtotime($start_time));
                                 $end_time_am_pm = date('h:i A', strtotime($end_time));
                                 ?>
@@ -72,7 +72,7 @@ if ($img != '') { ?>
                                             <div class="event-content">
                                                 <p><?php the_excerpt(); ?></p>
                                             </div>
-                                            <p class="Price">$ <?php echo $entry_fees; ?></p>
+                                            <p class="Price"><?php echo $entry_fees; ?></p>
                                         </div>
                                     </div>
                                     <div class="featured-image col-lg-3 col-md-4 col-12">

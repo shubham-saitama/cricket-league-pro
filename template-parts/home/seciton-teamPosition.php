@@ -35,7 +35,7 @@ $table_id = get_theme_mod('cricket_league_pro_league_table_sec_id');
                         <h2><?php echo get_theme_mod('cricket_league_pro_upcoming_table_heading_one'); ?></h2>
                     </div>
                     <a href="<?php echo get_permalink(get_page_by_title('Match Schedule')) ?>" class="theme-btn white">
-                        <?php echo get_theme_mod('cricket_league_pro_upcoming_view_all'); ?>
+                    <?php echo get_theme_mod('cricket_league_pro_upcoming_view_all'); ?><i class="<?php echo get_theme_mod('cricket_league_pro_league_table_icon') ?>"></i>
                     </a>
                 </div>
                 <?php

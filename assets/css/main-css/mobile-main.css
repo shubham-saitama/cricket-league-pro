@@ -3,6 +3,19 @@ i[class^="fa"] {
   font-style: normal;
 }
 
+section.event-page .upcoming-item {
+  padding: 0px;
+}
+
+@media(min-width:1400px) {
+  .outer-thumbnai-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0px auto;
+    max-width: 330px;
+  }
+}
+
 @media(max-width:1400px) {
   .outer-thumbnai-wrapper {
     position: relative;
@@ -58,6 +71,23 @@ i[class^="fa"] {
     right: 0;
     bottom: -5%;
   }
+
+  .main-tab-playimage {
+    display: none;
+  }
+
+  .helpline-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #000;
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  #Single-pro-page a.button {
+    font: normal normal normal 10px / 17px Inter Tight;
+  }
 }
 
 @media(max-width:1024px) {
@@ -88,8 +118,10 @@ i[class^="fa"] {
   }
 
   .helmet-wrap {
-    height: 20%;
+    height: 40%;
     bottom: unset;
+    right: 0;
+    left: unset;
   }
 }
 
@@ -126,9 +158,30 @@ i[class^="fa"] {
     bottom: 8px;
   }
 
+  .main-tab-playimage {
+    width: auto !important;
+  }
+
+  .main-tab-playimage {
+    display: none;
+  }
+
+
 }
 
 @media(max-width:991px) {
+  .table-container {
+    min-width: 620px;
+    overflow: scroll;
+  }
+
+  section.eventssearch a.theme-btn.black i.fa {
+    display: none;
+  }
+
+  section.eventssearch a.theme-btn.black {
+    padding: 5px;
+  }
 
   .upcoming-item.mb-5 {
     flex-direction: column;
@@ -152,27 +205,35 @@ i[class^="fa"] {
     flex-direction: column;
     gap: 10px;
     align-items: center !important;
-}
-.meta-field-call {
-  width: 100%;
-}
-div#review_form_wrapper{
-  margin-top: 0px ;
-}
-div#comments{
-  margin-top: 0px !important;
-}
-div#reviews {
-  flex-direction: column;
-  align-items: center;
-}
-div#reviews {
-  flex-direction: column;
-  align-items: center;
-}
-div#comments{
-  width: 100%;
-}
+  }
+
+  .meta-field-call {
+    width: 100%;
+  }
+
+  div#review_form_wrapper {
+    margin-top: 0px;
+    width: 100%;
+  }
+
+  div#comments {
+    margin-top: 0px !important;
+  }
+
+  div#reviews {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  div#reviews {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  div#comments {
+    width: 100%;
+  }
+
   ul.d-flex.text-lg-start {
     gap: 0px;
     flex-wrap: wrap !important;
@@ -197,6 +258,7 @@ div#comments{
 
   .player-tab-left-wrapper {
     margin-bottom: 50px;
+    max-height: 402px !important;
   }
 
   .heading-tag,
@@ -219,17 +281,20 @@ div#comments{
   }
 
   .stats-inner {
-    padding: 20px 20px 12px;
+    padding: 10px 10px 2px;
     margin: 0px auto;
-  }
-
-  .player-tab-left-wrapper {
-    max-height: 212px;
-    margin: 30px 0px;
   }
 
   .main-tab {
     padding: 25px 20px 30px;
+  }
+
+  .num {
+    font: normal normal 800 22px / 36px Inter Tight;
+  }
+
+  small.stat-name {
+    font: 16px / 18px Inter Tight;
   }
 
   .testimonial-left {
@@ -260,7 +325,7 @@ div#comments{
 
   .next-match-wrap a.theme-btn {
     font: normal normal normal 14px / 20px Inter Tight;
-    padding: 14px 10px 14px 10px;
+    padding: 10px 20px;
     min-width: 100px;
   }
 
@@ -282,8 +347,10 @@ div#comments{
     top: 0;
     width: 100%;
     right: 0;
-    z-index: 999;
+    z-index: 99999;
   }
+
+
 
   .team {
     margin: auto;
@@ -344,11 +411,6 @@ div#comments{
     text-align: center;
   }
 
-  .player-tab-left-wrapper {
-    max-width: 448px;
-    width: 100% !important;
-  }
-
   section#testimonials .row {
     display: flex;
     flex-direction: column-reverse;
@@ -381,16 +443,31 @@ div#comments{
     font: normal normal 600 16px / 20px Inter Tight;
   }
 
-  .next-match-wrap a.theme-btn {
+  section#leagueTable .next-match-wrap a.theme-btn {
     font: normal normal normal 14px / 20px Inter Tight;
-    padding: 14px 20px 14px 0px;
+    padding: 10px 20px;
     min-width: 140px;
+    justify-content: center;
+  }
+
+  .choose-counter-num.counter {
+    text-align: center;
+    font: normal normal 800 24px / 41px Inter Tight;
+  }
+
+  .whyChooseUs-counter span {
+    font: 16px / 24px Inter Tight;
   }
 
   .loaction-wrapper {
     gap: 10px;
   }
 
+  a.theme-btn {
+    font: normal normal normal 16px / 20px Inter Tight;
+    padding: 10px;
+    gap: 10px;
+  }
 
 }
 
@@ -415,6 +492,10 @@ div#comments{
 @media(max-width:991px) {
   .outer-thumbnai-wrapper {
     width: 49%;
+  }
+
+  .main-navigation li:hover {
+    background-color: #fff !important;
   }
 
   .banner-background {
@@ -506,13 +587,26 @@ div#comments{
     font: normal normal 900 25px/40px Inter Tight;
   }
 
-
 }
 
 @media(min-width:521px) and (max-width:767px) {
+
   /* .topbar-left {
     display: none;
   } */
+  .outer-thumbnai-wrapper {
+    width: 69%;
+  }
+
+  .team-main-tab {
+    padding: 0px;
+  }
+
+  .player-tab-left-wrapper {
+    margin-bottom: 50px;
+    max-height: 216px !important;
+    max-width: 100%;
+  }
 
   h1#dynamic-color {
     font: normal normal bold 50px / 60px Inter Tight;
@@ -597,16 +691,53 @@ div#comments{
 }
 
 @media(max-width:600px) {
+  .gallery-image-box {
+    width: 100%;
+    height: 100%;
+    max-height: 87px !important;
+    overflow: hidden;
+    display: inline-block
+  }
+
+  ul.vw_gallery_front {
+    grid-gap: 10px;
+  }
+
+  section.aboutus-gallery .heading-tag {
+    order: 0 !important;
+  }
+
+  .staff-card {
+    margin-right: 0px;
+  }
+
+  .product-cricket {
+    margin: 0px !important;
+  }
+
+  .player-tab-left-wrapper {
+    max-height: 216px !important;
+  }
+
+  section#upcoming-evt {
+    margin-top: 0px;
+  }
+
   .wrapper-inner {
     display: flex;
     flex-direction: column;
-}
+  }
+
   .input-wrapper P {
     text-align: left;
   }
-  .event-detail-wrap,.single-evt h5,.venue{
+
+  .event-detail-wrap,
+  .single-evt h5,
+  .venue {
     text-align: center;
-}
+  }
+
   .single-evt span.price {
     justify-content: center;
   }
@@ -624,6 +755,7 @@ div#comments{
   div#events-container h2::after {
     display: none;
   }
+
 
   .from-inner-wrap {
     padding: 30px 20px;
@@ -666,13 +798,24 @@ div#comments{
   .quote-heading h4,
   section#service-single h2 {
     text-align: center;
-    font-size: 20px;
-    line-height: 22px;
+    font-size: 25px;
+    line-height: 32px;
     font-weight: 600;
     max-width: 100% !important;
   }
 
+  div#events-container h2 {
+    margin: 10px auto;
+  }
 
+  .upcoming-inner .evt-right {
+    width: 100%;
+  }
+
+  .filter-events>div {
+    justify-content: center;
+    display: flex;
+  }
 
   .heading-tagline {
     font: normal normal bold 17pt/25pt Inter Tight;
@@ -841,11 +984,23 @@ div#comments{
     display: none;
   }
 
+  section#slider {
+    background: gray;
+  }
+
+  .widget {
+    margin-bottom: 20px !important;
+  }
+
   .above_title {
     padding: 300px 0 90px;
   }
 
   #single-post-page p {
+    justify-content: center;
+  }
+
+  .button-wrapper {
     justify-content: center;
   }
 
@@ -1133,10 +1288,10 @@ div#comments{
     box-shadow: 0px 0px 12px #00000029;
   }
 
-  .title-box .row .col-lg-4 {
+  /* .title-box .row .col-lg-4 {
     background: var(--secondary-color) 0% 0% no-repeat padding-box;
     box-shadow: none;
-  }
+  } */
 
 
   label.ewd-otp-field-label {
@@ -1229,8 +1384,16 @@ div#comments{
   }
 
   .team-name-score-latest {
-    gap: 15px;
+    gap: 0px;
     padding: 15px 10px;
+  }
+
+  .live {
+    font: normal normal 600 11px / 14px Inter Tight;
+    color: var(--secondary-color);
+    background: var(--primary-color);
+    padding: 3px 6px;
+    border-radius: 4px;
   }
 
   .team-name-score-latest {

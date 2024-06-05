@@ -19,14 +19,14 @@ if (get_theme_mod('cricket_league_pro_steps_bgcolor')) {
 
 <section class="playertab section-space" style="<?php echo esc_attr($player_tabback); ?>">
     <div class="container">
-        <div class="row align-items-center justify-content-center">
+        <div class="row align-items-start justify-content-center">
             <div class="heading-wrap">
                 <div class="heading-tag text-center">
                     <?php echo get_theme_mod('cricket_league_pro_playerTab_tag'); ?>
                 </div>
                 <h2 class="text-center"><?php echo get_theme_mod('cricket_league_pro_playerTab_heading'); ?></h2>
             </div>
-            <div class="col-lg-3 col-md-3 col-12 player-tab-left-wrapper">
+            <div class="col-lg-3 col-md-6 col-12 player-tab-left-wrapper">
                 <div class="width-helper">
                     <?php
                     $args = array(
@@ -70,7 +70,7 @@ if (get_theme_mod('cricket_league_pro_steps_bgcolor')) {
                     endif; ?>
                 </div>
             </div>
-            <div class="col-lg-8 col-md-8 col-12 team-main-tab">
+            <div class="col-lg-8 col-md-6 col-12 team-main-tab">
                 <?php
                 $args = array(
                     'post_type' => 'sp_player',

@@ -125,7 +125,7 @@ $args['order'] = 'ASC';
           $product_price = get_post_meta(get_the_ID(), '_price', true);
           $sale_price = get_post_meta(get_the_ID(), '_sale_price', true);
           // Get product image URL
-          $product_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+          $product_image_url = get_the_post_thumbnail_url(get_the_ID(), 'post-thumbnails');
           $current_currency = get_woocommerce_currency_symbol();
           ?>
           <div class="item-product col-lg-4 col-md-6 col-12 mb-3">
@@ -155,7 +155,7 @@ $args['order'] = 'ASC';
                           // Get the add to cart URL
                           $add_to_cart_url = esc_url(wc_get_product($product_id)->add_to_cart_url());
                           ?>
-                  <a href="<?php echo $add_to_cart_url; ?>" class="button">Add to Cart</a>
+                  <a href="<?php echo $add_to_cart_url; ?>" class="button"><?php echo get_theme_mod('cricket_league_pro_product_slider_cart_button'); ?><i class="<?php echo get_theme_mod('cricket_league_pro_carrt_btn_icon'); ?>"></i></a>
               </div>
           </div>
           <?php

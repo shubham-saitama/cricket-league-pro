@@ -32,7 +32,7 @@ $average = $product->get_average_rating();
 $price = $product->get_price();
 // Get the currency symbol
 $currency_symbol = get_woocommerce_currency_symbol();
-if ($rating_count > 0): ?>
+//if ($rating_count > 0): ?>
 
 	<div class="woocommerce-product-rating d-flex">
 		<div class="price">
@@ -43,4 +43,4 @@ if ($rating_count > 0): ?>
 		</div>
 
 	</div>
-<?php endif; ?>
+<?php// endif; ?>

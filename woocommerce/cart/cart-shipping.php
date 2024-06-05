@@ -12,9 +12,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see https://woo.com/document/template-structure/
+ * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 7.3.0
+ * @version 8.8.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -33,11 +33,11 @@ $calculator_text          = '';
 					<li>
 						<?php
 						if ( 1 < count( $available_methods ) ) {
-							printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ) ); // WPCS: XSS ok.
+							printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ) );
 						} else {
-							printf( '<input type="hidden" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ) ); // WPCS: XSS ok.
+							printf( '<input type="hidden" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ) );
 						}
-						printf( '<label for="shipping_method_%1$s_%2$s">%3$s</label>', $index, esc_attr( sanitize_title( $method->id ) ), wc_cart_totals_shipping_method_label( $method ) ); // WPCS: XSS ok.
+						printf( '<label for="shipping_method_%1$d_%2$s">%3$s</label>', $index, esc_attr( sanitize_title( $method->id ) ), wc_cart_totals_shipping_method_label( $method ) );
 						do_action( 'woocommerce_after_shipping_rate', $method, $index );
 						?>
 					</li>
@@ -67,14 +67,6 @@ $calculator_text          = '';
 			echo wp_kses_post( apply_filters( 'woocommerce_no_shipping_available_html', __( 'There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'woocommerce' ) ) );
 		else :
 			echo wp_kses_post(
-				/**
-				 * Provides a means of overriding the default 'no shipping available' HTML string.
-				 *
-				 * @since 3.0.0
-				 *
-				 * @param string $html                  HTML message.
-				 * @param string $formatted_destination The formatted shipping destination.
-				 */
 				apply_filters(
 					'woocommerce_cart_no_shipping_available_html',
 					// Translators: $s shipping destination.

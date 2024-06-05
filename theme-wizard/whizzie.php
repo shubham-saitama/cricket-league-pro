@@ -111,7 +111,7 @@ class ThemeWhizzie
 	 * @since 1.0.0
 	 * @param $cricket_league_pro_config	Our config parameters
 	 */
-	public function set_vars($class = "row align-items-center justify-content-between bat-background")
+	public function set_vars($class = "")
 	{
 
 		require_once trailingslashit(WHIZZIE_DIR) . 'tgm/tgm.php';
@@ -748,7 +748,7 @@ class ThemeWhizzie
 				array(
 					'menu-item-title' => __('Matches', 'cricket-league-pro'),
 					'menu-item-classes' => 'matches',
-					'menu-item-url' => get_permalink(get_page_by_title('Matches')),
+					'menu-item-url' => get_permalink(get_page_by_title('Match Schedule')),
 					'menu-item-status' => 'publish',
 				)
 			);
@@ -1461,7 +1461,7 @@ class ThemeWhizzie
 			'post_title' => $schedule_title,
 			'post_status' => 'publish',
 			'post_author' => 1,
-			'post_slug' => 'blog'
+			'post_slug' => 'match-schedule'
 		);
 		$schedule_id = wp_insert_post($schedule);
 		add_post_meta($schedule_id, '_wp_page_template', 'page-template/page-upcomingEvents.php');
@@ -2035,7 +2035,7 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_about_left_floating_icon2', get_template_directory_uri() . '/assets/new-images/AboutUs/Cetificate.png');
 		set_theme_mod('cricket_league_pro_about_years_of_service', '08');
 		set_theme_mod('cricket_league_pro_cost_calcuator_shortcode', 'Last Highlight Match');
-		set_theme_mod('cricket_league_pro_cost_calcuator_shortcode_link', 'https://www.google.com/');
+		set_theme_mod('cricket_league_pro_cost_calcuator_shortcode_link', 'https://www.youtube.com/embed/TGbUpEJ1z-k?si=sHmTkanYi2paOCnF');
 		set_theme_mod('cricket_league_pro_latest_heading_heading', 'Latest Result');
 
 
@@ -2202,7 +2202,7 @@ class ThemeWhizzie
 				'post_content' => $p_content,
 				'post_status' => 'publish',
 				'post_type' => 'product',
-				'post_excerpt'=> $data['post_excerpt'],
+				'post_excerpt' => $data['post_excerpt'],
 			);
 
 			// Insert the product into the database
@@ -2264,7 +2264,7 @@ class ThemeWhizzie
 				);
 				update_comment_meta($comment_id, 'rating', 4);
 			}
-			$image_url = get_template_directory_uri() . '/assets/images/product/product0' . $i. '.png';
+			$image_url = get_template_directory_uri() . '/assets/images/product/product0' . $i . '.png';
 
 			$image_name = 'product-img' . $i . '.png';
 			$upload_dir = wp_upload_dir();
@@ -2312,12 +2312,12 @@ class ThemeWhizzie
 			if (count($_product_image_gallery) < 3) {
 
 				array_push($_product_image_gallery, $attach_id);
-			}	
+			}
 
 			// And finally assign featured image to post
 			set_post_thumbnail($post_id, $attach_id);
 
-		
+
 
 			update_post_meta($product_id, 'product-rating', '5');
 			// Enable the product for sale
@@ -2333,9 +2333,9 @@ class ThemeWhizzie
 
 
 		// Add Gallery in first simple product and second variable product START
-		$_product_image_gallery = implode( ',', $_product_image_gallery );
-		foreach ( $_product_ids as $_product_id ) {
-		update_post_meta( $_product_id, '_product_image_gallery', $_product_image_gallery );
+		$_product_image_gallery = implode(',', $_product_image_gallery);
+		foreach ($_product_ids as $_product_id) {
+			update_post_meta($_product_id, '_product_image_gallery', $_product_image_gallery);
 		}
 
 
@@ -3107,7 +3107,7 @@ class ThemeWhizzie
 		// Set values for theme mods
 		set_theme_mod('cricket_league_pro_single_blog_heading_tag', 'Posts');
 		set_theme_mod('cricket_league_pro_single_blog_heading', 'Related Blog Posts');
-		set_theme_mod('cricket_league_pro_blog_view_all_settings','View All');
+		set_theme_mod('cricket_league_pro_blog_view_all_settings', 'View All');
 
 		// Related Services 
 
@@ -4037,6 +4037,187 @@ class ThemeWhizzie
 			);
 			update_post_meta($match_id_2, 'sp_results', $random_score_2);
 		}
+		// Define match data for second match
+		$match_data_3 = array(
+			'post_title' => 'Cricket Match 3',
+			'post_type' => 'sp_event',
+			'post_status' => 'publish',
+			'post_content' => '20 overs match',
+		);
+
+		// Insert the second match as a post of type 'sp_event'
+		$match_id_3 = wp_insert_post($match_data_3);
+
+		// Set match meta data for second match
+		if (!is_wp_error($match_id_3)) {
+			update_post_meta($match_id_3, 'sp_format', 'league');
+			update_post_meta($match_id_3, 'sp_mode', 'team');
+
+			$team_one_3 = $team_ids[1]; // Replace with appropriate team IDs
+			$team_two_3 = $team_ids[4];
+
+			add_post_meta($match_id_3, 'sp_team', $team_one_3);
+			add_post_meta($match_id_3, 'sp_team', $team_two_3);
+
+			// Get the term objects for league and venue
+
+			$league_term = get_term_by('name', 'Ipsum Premier League', 'sp_league');
+			$venue_term = get_term_by('name', 'India', 'sp_venue');
+
+			if ($league_term) {
+				$league_id = $league_term->term_id;
+				update_post_meta($match_id_3, 'sp_league', $league_id);
+				wp_set_object_terms($match_id_3, $league_id, 'sp_league');
+
+			}
+			// Check if the venue term exists and update the post accordingly
+			if ($venue_term) {
+				$venue_id = $venue_term->term_id;
+				// Update the post meta with the venue ID
+				update_post_meta($match_id_3, 'sp_venue', $venue_id);
+				// Set the object terms for the post to associate it with the venue
+				wp_set_object_terms($match_id_3, $venue_id, 'sp_venue');
+			}
+			foreach ($player_ids as $player_id) {
+				add_post_meta($match_id_3, 'sp_player', $player_id);
+			}
+
+			$random_score_3 = array(
+				$team_one_3 => array(
+					"runs" => rand(100, 250), // Randomize score
+					"wickets-lost" => rand(0, 10),
+					"overs" => 20,
+					"bp" => rand(0, 20),
+					"outcome" => array("loss")
+				),
+				$team_two_3 => array(
+					"runs" => rand(100, 250), // Randomize score
+					"wickets-lost" => rand(0, 10),
+					"overs" => 20,
+					"bp" => rand(0, 20),
+					"outcome" => array("win")
+				)
+			);
+			update_post_meta($match_id_3, 'sp_results', $random_score_3);
+		}
+		// Define match data for second match
+		$match_data_4 = array(
+			'post_title' => 'Cricket Match 4',
+			'post_type' => 'sp_event',
+			'post_status' => 'publish',
+			'post_content' => '20 overs match',
+		);
+
+		// Insert the second match as a post of type 'sp_event'
+		$match_id_4 = wp_insert_post($match_data_4);
+
+		// Set match meta data for second match
+		if (!is_wp_error($match_id_4)) {
+			update_post_meta($match_id_4, 'sp_format', 'league');
+			update_post_meta($match_id_4, 'sp_mode', 'team');
+
+			$team_one_4 = $team_ids[2]; // Replace with appropriate team IDs
+			$team_two_4 = $team_ids[3];
+
+			add_post_meta($match_id_4, 'sp_team', $team_one_4);
+			add_post_meta($match_id_4, 'sp_team', $team_two_4);
+
+			// Get the term objects for league and venue
+
+			$league_term = get_term_by('name', 'Ipsum Premier League', 'sp_league');
+			$venue_term = get_term_by('name', 'India', 'sp_venue');
+
+			if ($league_term) {
+				$league_id = $league_term->term_id;
+				update_post_meta($match_id_4, 'sp_league', $league_id);
+				wp_set_object_terms($match_id_4, $league_id, 'sp_league');
+
+			}
+			// Check if the venue term exists and update the post accordingly
+			if ($venue_term) {
+				$venue_id = $venue_term->term_id;
+				// Update the post meta with the venue ID
+				update_post_meta($match_id_4, 'sp_venue', $venue_id);
+				// Set the object terms for the post to associate it with the venue
+				wp_set_object_terms($match_id_4, $venue_id, 'sp_venue');
+			}
+			foreach ($player_ids as $player_id) {
+				add_post_meta($match_id_4, 'sp_player', $player_id);
+			}
+
+			$random_score_4 = array(
+				$team_one_4 => array(
+					"runs" => rand(100, 250), // Randomize score
+					"wickets-lost" => rand(0, 10),
+					"overs" => 20,
+					"bp" => rand(0, 20),
+					"outcome" => array("loss")
+				),
+				$team_two_4 => array(
+					"runs" => rand(100, 250), // Randomize score
+					"wickets-lost" => rand(0, 10),
+					"overs" => 20,
+					"bp" => rand(0, 20),
+					"outcome" => array("win")
+				)
+			);
+			update_post_meta($match_id_4, 'sp_results', $random_score_4);
+		}
+		// Insert the second match as a post of type 'sp_event'
+		$match_id_5 = wp_insert_post($match_data_5);
+
+		// Set match meta data for second match
+		if (!is_wp_error($match_id_5)) {
+			update_post_meta($match_id_5, 'sp_format', 'league');
+			update_post_meta($match_id_5, 'sp_mode', 'team');
+
+			$team_one_5 = $team_ids[1]; // Replace with appropriate team IDs
+			$team_two_5 = $team_ids[3];
+
+			add_post_meta($match_id_5, 'sp_team', $team_one_5);
+			add_post_meta($match_id_5, 'sp_team', $team_two_5);
+
+			// Get the term objects for league and venue
+
+			$league_term = get_term_by('name', 'Ipsum Premier League', 'sp_league');
+			$venue_term = get_term_by('name', 'India', 'sp_venue');
+
+			if ($league_term) {
+				$league_id = $league_term->term_id;
+				update_post_meta($match_id_5, 'sp_league', $league_id);
+				wp_set_object_terms($match_id_5, $league_id, 'sp_league');
+
+			}
+			// Check if the venue term exists and update the post accordingly
+			if ($venue_term) {
+				$venue_id = $venue_term->term_id;
+				// Update the post meta with the venue ID
+				update_post_meta($match_id_5, 'sp_venue', $venue_id);
+				// Set the object terms for the post to associate it with the venue
+				wp_set_object_terms($match_id_5, $venue_id, 'sp_venue');
+			}
+			foreach ($player_ids as $player_id) {
+				add_post_meta($match_id_5, 'sp_player', $player_id);
+			}
+
+			$random_score_5 = array(
+				$team_one_5 => array(
+					"runs" => rand(100, 250), // Randomize score
+					"wickets-lost" => rand(0, 10),
+					"overs" => 20,
+					"bp" => rand(0, 20),
+					"outcome" => array("loss")
+				),
+				$team_two_5 => array(
+					"runs" => rand(100, 250), // Randomize score
+					"wickets-lost" => rand(0, 10),
+					"overs" => 20,
+					"bp" => rand(0, 20),
+					"outcome" => array("win")
+				)
+			);
+			update_post_meta($match_id_5, 'sp_results', $random_score_5);
+		}
 		// sportspress work
 
 		// Support page 
@@ -4191,6 +4372,7 @@ class ThemeWhizzie
 		$evt_titles = array("The Winning Strategy Game.", "Cricket Fitness: Essential Exercises to Improve Speed, Agility, and Endurance", "Behind the Scenes: A Day in the Life of a Cricket Groundskeeper", "Fielding Fundamentals: Enhance Your Skills on the Cricket Field", "Strategic Match Analysis: Decoding Cricket Tactics for Competitive Edge", "Fitness and Agility for Cricketers: Training Workshop for Optimal Performance");
 		$content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 		$tags_to_addin = array("Bating", "Training", "Infomative", "Infomative", "Training", "Bowling");
+		$date_array = array('2024-12-10', '2025-03-25', '2024-06-15', date('Y-m-d'));
 		for ($i = 1; $i <= 4; $i++) {
 			$vw_title = $evt_titles[$i - 1];
 			// Create post object
@@ -4208,7 +4390,7 @@ class ThemeWhizzie
 			$start_time_value = '14:00'; // 2:00 PM
 			$end_time_value = '16:30'; // 4:30 PM
 			$address_value = 'ipsum lorem Main Street, City, Country';
-			$entry_fees_value = '20';
+			$entry_fees_value = '$ 20';
 			$event_category_value = 'Workshop';
 
 			// Update post meta
@@ -4217,9 +4399,9 @@ class ThemeWhizzie
 			update_post_meta($post_id, '_address', $address_value);
 			update_post_meta($post_id, '_entry_fees', $entry_fees_value);
 			update_post_meta($post_id, '_event_category', $event_category_value);
-
+			update_post_meta($post_id, '_event_date', $date_array[$i - 1]);
 			// Set the values
-			$venue_name_value = 'Cricket Stadium';
+			$venue_name_value = 'Vidarbha Cricket Association Stadium';
 			$phone_number_value = '123-456-7890';
 			$map_x_coordinates_value = '40.7128° N';
 			$map_y_coordinates_value = '74.0060° W';
@@ -4372,7 +4554,12 @@ class ThemeWhizzie
 		}
 
 		$blog_title = array("Unlocking the Secrets to Mastering Your Cricket Swing", "Top 10 Cricket Drills Every Aspiring Player Should Practice", "The Evolution of Cricket: From Its Origins to Modern-Day Matches", "Exploring the Mental Side of Cricket: Strategies for Keeping Your Head in the Game", "Cricket Fitness: Essential Exercises to Improve Speed, Agility, and Endurance", "Behind the Scenes: A Day in the Life of a Cricket Groundskeeper");
-		$content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+		$content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </li>
+ 		<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </li>
+ 		<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </li>  
+ 		<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</li>
+		';
 		for ($i = 0; $i <= 5; $i++) {
 			$vw_title = $blog_title[$i];
 			// Create post object
@@ -4535,7 +4722,7 @@ class ThemeWhizzie
 		// For 'cricket_league_pro_footer_bgcolor'
 		set_theme_mod('cricket_league_pro_footer_bgcolor', '');
 
-		
+
 		set_theme_mod('cricket_league_pro_footer_copyright_para', 'VW Cricket Wordpress Theme 2024. All Right Reserved');
 		set_theme_mod('cricket_league_pro_footer_legal_info_text', 'Legal terms and information:');
 		set_theme_mod('cricket_league_pro_footer_legal_info_privacy_text', 'Privacy Policy');
@@ -4656,9 +4843,9 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_address_longitude', '-105.9808615');
 		set_theme_mod('cricket_league_pro_contact_page_form_bg_image', get_template_directory_uri() . '/assets/images/contact/contact-bg.png');
 		// set_theme_mod( 'cricket_league_pro_contact_page_bg_image',get_template_directory_uri().'/assets/images/contact/contact-bg.png' );
-		set_theme_mod('cricket_league_pro_header_right_icons_heart','fa-solid fa-heart');
-		set_theme_mod('cricket_league_pro_header_right_icons_search','fa-solid fa-magnifying-glass');
-		set_theme_mod('cricket_league_pro_header_right_icons_cart','fa-solid fa-cart-shopping');
+		set_theme_mod('cricket_league_pro_header_right_icons_heart', 'fa-solid fa-heart');
+		set_theme_mod('cricket_league_pro_header_right_icons_search', 'fa-solid fa-magnifying-glass');
+		set_theme_mod('cricket_league_pro_header_right_icons_cart', 'fa-solid fa-cart-shopping');
 
 		/*---------------Blog Page----------------------*/
 		set_theme_mod('cricket_league_pro_blog_author', 'far fa-user');
@@ -4702,7 +4889,19 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_aboutus_bat_image', get_template_directory_uri() . '/assets/images/about/bat.png');
 		set_theme_mod('cricket_league_pro_aboutus_ball_image', get_template_directory_uri() . '/assets/images/about/BALL.png');
 		set_theme_mod('cricket_league_pro_aboutus_helmet', get_template_directory_uri() . '/assets/images/about/helmet.png');
+		set_theme_mod('cricket_league_pro_banner_button_icon', 'fa fa-hand-pointer-o');
+		set_theme_mod('cricket_league_pro_latest_button_icon', 'fa fa-hand-pointer-o');
+		set_theme_mod('cricket_league_pro_about_button_icon', 'fa fa-hand-pointer-o');
+		set_theme_mod('cricket_league_pro_book_now_button', 'fa fa-hand-pointer-o');
+		set_theme_mod('cricket_league_pro_league_table_icon', 'fa fa-hand-pointer-o');
+		set_theme_mod('cricket_league_pro_upcoming_evt_btn_icon', 'fa fa-hand-pointer-o');
+		set_theme_mod('cricket_league_pro_blog_button_icons', 'fa fa-hand-pointer-o');
+		set_theme_mod('cricket_league_pro_evt_add_calender_icon', 'fa fa-calendar');
+		set_theme_mod('cricket_league_pro_carrt_btn_icon', 'fa fa-shopping-cart');
 
+		set_theme_mod('cricket_league_pro_slider_heading_color_text', '2');
+		set_theme_mod('cricket_league_pro_footer_bg_image_one', get_template_directory_uri() . '/assets/images/Footer-Bg-image.png');
+		set_theme_mod('cricket_league_pro_footer_copyright_bg', '#000');
 
 		// League Table 
 
@@ -4721,7 +4920,7 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_playerTab_heading', 'Popular Player Details');
 		set_theme_mod('cricket_league_pro_upcoming_table_heading_one', 'Upcoming Matches');
 		set_theme_mod('cricket_league_pro_upcoming_table_heading_tag_one', 'Matches');
-
+		set_theme_mod('cricket_league_pro_slider_heading_color_text', '3');
 		// product slider
 		set_theme_mod('cricket_league_pro_product_slider_heading_tag', 'Product Shop');
 		set_theme_mod('cricket_league_pro_product_slider_heading', 'Exclusive Collection');
@@ -4734,7 +4933,30 @@ class ThemeWhizzie
 
 		set_theme_mod('product_helpline_fields', 'Need Help? Call Us +1 255 854 55 26');
 		set_theme_mod('product_helpline_timing', 'Monday - Friday 9:00 - 17:00');
-		set_theme_mod('cricket_league_pro_banner_playbtn_icon','fa fa-play');
+		set_theme_mod('cricket_league_pro_banner_playbtn_icon', 'fa fa-play');
+		set_theme_mod('cricket_league_pro_single_shop_helpline_icon', 'fa-solid fa-headset');
+
+		// single events fields 
+
+
+		set_theme_mod('cricket_league_pro_cost_calcuator_shortcode_link', 'https://www.youtube.com/embed/TGbUpEJ1z-k?si=sHmTkanYi2paOCnF');
+		set_theme_mod('cricket_league_pro_event_lable_heading_col3', 'Venue');
+		set_theme_mod('cricket_league_pro_event_lable_heading_col2', 'Organizer');
+		set_theme_mod('cricket_league_pro_event_lable_heading_col1', 'Details');
+
+
+		set_theme_mod('cricket_league_pro_event_lable_start_heading', 'Start');
+		set_theme_mod('cricket_league_pro_event_lable_end_heading', 'End');
+		set_theme_mod('cricket_league_pro_event_lable_cost_heading', 'cost');
+		set_theme_mod('cricket_league_pro_event_lable_ccategory_heading', 'Category');
+		set_theme_mod('cricket_league_pro_event_lable_phone_heading', 'Phone');
+		set_theme_mod('cricket_league_pro_event_lable_mail_heading', 'Mail');
+		set_theme_mod('cricket_league_pro_event_lable_website_heading', 'Website');
+		set_theme_mod('cricket_league_pro_event_lable_address_heading', 'Address');
+		set_theme_mod('cricket_league_pro_event_lable_phone_venue_heading', 'Phone');
+
+		set_theme_mod('cricket_league_pro_position_fixed','fixed');
+
 
 		// About us 
 		$titleArr = array('Mission', 'Our Mission', 'Our History');
@@ -4768,7 +4990,7 @@ class ThemeWhizzie
 	{
 		$cricket_league_pro_license_key = $_POST['cricket_league_pro_license_key'];
 
-		$endpoint = IBTANA_THEME_LICENCE_ENDPOINT . 'ibtana_client_activate_premium_theme';
+		$endpoint = SHOPIFY_THEME_LICENCE_ENDPOINT . 'verifyTheme';
 
 		$body = [
 			'theme_license_key' => $cricket_league_pro_license_key,
@@ -4910,7 +5132,7 @@ class ThemeWhizzie
 			$page_id = wp_insert_post($vw_page);
 		}
 
-	
+
 		if (isset($home_b->ID)) {
 			echo json_encode(['home_page_id' => $home_b->ID, 'home_page_url' => get_edit_post_link($home_b->ID, '')]);
 		}
@@ -4932,7 +5154,7 @@ class ThemeWhizzie
 
 		// Check the validation Start
 		$cricket_league_pro_license_key = ThemeWhizzie::get_the_theme_key();
-		$endpoint = IBTANA_THEME_LICENCE_ENDPOINT . 'ibtana_client_premium_theme_check_activation_status';
+		$endpoint = SHOPIFY_THEME_LICENCE_ENDPOINT . 'status';
 		$body = [
 			'theme_license_key' => $cricket_league_pro_license_key,
 			'site_url' => site_url(),
@@ -5242,13 +5464,13 @@ class ThemeWhizzie
 						for (var i = 0; i < premium_data.length; i++) {
 							var premium_product = premium_data[i];
 							var card_content = `<div class="o-products-col" data-id="` + premium_product.id + `">
-																										<div class="o-products-image">
-																											<img src="`+ premium_product.image + `">
-																										</div>
-																										<h3>`+ premium_product.title + `</h3>
-																										<a href="`+ premium_product.permalink + `" target="_blank">Buy Now</a>
-																										<a href="`+ premium_product.demo_url + `" target="_blank">View Demo</a>
-																										</div>`;
+																												<div class="o-products-image">
+																													<img src="`+ premium_product.image + `">
+																												</div>
+																												<h3>`+ premium_product.title + `</h3>
+																												<a href="`+ premium_product.permalink + `" target="_blank">Buy Now</a>
+																												<a href="`+ premium_product.demo_url + `" target="_blank">View Demo</a>
+																												</div>`;
 							jQuery('.wz-spinner-wrap').css('display', 'none');
 							jQuery('#other-products .o-product-row').append(card_content);
 						}
@@ -5264,8 +5486,8 @@ class ThemeWhizzie
 							}
 							let premium_product = premium_category[i];
 							let card_content = `<li data-ids="` + premium_product.product_ids + `" onclick="other_products(this);" class="` + active_class + `">
-																																																																																																																							  `+ premium_product.name + `<span class="badge badge-info">` + premium_product.product_ids.length + `</span>
-																																																																																																																						  </li>`;
+																																																																																																																									  `+ premium_product.name + `<span class="badge badge-info">` + premium_product.product_ids.length + `</span>
+																																																																																																																								  </li>`;
 							jQuery('.o-product-col-1 ul').append(card_content);
 						}
 					});
@@ -5337,3 +5559,4 @@ class ThemeWhizzie
 	}
 
 }
+

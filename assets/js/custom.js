@@ -438,6 +438,7 @@ jQuery('document').ready(function () {
     centerPadding: 100,
     margin: 15,
     infinite: true,
+    
   });
   jQuery('.next').click(function () {
     jQuery('.thumbnail-slider').slick('slickNext');
@@ -671,6 +672,7 @@ jQuery('document').ready(function () {
 
 
 /* Counter */
+
 jQuery(document).ready(function () {
 
   function addExcerpt(config) {
@@ -797,6 +799,32 @@ jQuery('body').on('added_to_cart', function (e, fragments, cart_hash, button) {
 });
 
 jQuery(document).ready(function () {
+  if (window.innerWidth > 991) {
+    var footer = jQuery("footer.outer-footer");
+    var footerPosition = footer.data('footer-position');
+    console.log('footer pos============>',footerPosition);
+    if (footerPosition === "fixed") {
+      // Set the footer to fixed position
+      footer.css('position', 'fixed');
+
+      // Find the section or div before the footer
+      var sectionBeforeFooter = footer.prev("section");
+      var divBeforeFooter = footer.prev("div");
+
+      // Calculate the height of the footer
+      var footerHeight = footer.outerHeight();
+
+      // Apply margin-bottom to the section if it exists
+      if (sectionBeforeFooter.length > 0) {
+        sectionBeforeFooter.css("margin-bottom", footerHeight + "px");
+      }
+
+      // Apply margin-bottom to the div if it exists and if there was no section
+      if (divBeforeFooter.length > 0 && sectionBeforeFooter.length === 0) {
+        divBeforeFooter.css("margin-bottom", footerHeight + "px");
+      }
+    }
+  }
   // Delete that line if you don't want the first Div to be displayed by default
   jQuery(".answer:first").css("display", "block");
   jQuery(".accordion-click:first").addClass('active');
@@ -810,7 +838,7 @@ jQuery(document).ready(function () {
 
   // Get the target element
   var targetElement = document.getElementById('dynamic-color');
-
+  let wordNumber = targetElement.getAttribute('data-word');
   // Get the text content of the element
   var textContent = targetElement.textContent.trim();
 
@@ -820,7 +848,7 @@ jQuery(document).ready(function () {
   // Check if there are at least two words
   if (words.length >= 2) {
     // Get the second word
-    var secondWord = words[1];
+    var secondWord = words[wordNumber - 1];
 
     // Create a new array to store modified words
     var newWords = [];
@@ -828,7 +856,7 @@ jQuery(document).ready(function () {
     // Loop through the words
     for (var i = 0; i < words.length; i++) {
       // If it's the second word, wrap it in a span element
-      if (i === 1) {
+      if (i === wordNumber - 1) {
         newWords.push('<span class="second-word">' + secondWord + '</span>');
       } else {
         newWords.push(words[i]);
@@ -859,7 +887,7 @@ jQuery(document).ready(function ($) {
 
     // Start the counter animation
     jQuery({ countNum: 0 }).animate({ countNum: countTo }, {
-      duration: 2000, // Adjust as needed
+      duration: 5000, // Adjust as needed
       easing: 'linear',
       step: function () {
         // Update the numeric part of the text
@@ -900,6 +928,14 @@ jQuery(document).ready(function () {
         loop: false
       },
       1024: {
+        items: 3,
+        loop: false
+      },
+      1200: {
+        items: 3,
+        loop: false
+      },
+      1300: {
         items: 4,
         loop: false
       }
@@ -1037,7 +1073,7 @@ jQuery(document).ready(function ($) {
     loop: true,
     margin: 10,
     nav: false,
-    dots: false,
+    dots: true,
     arrows: false,
     autoplay: false,
     responsive: {
@@ -1186,38 +1222,47 @@ jQuery(document).ready(function(){
    const querySting = params.toString()
  
    window.history.replaceState(null, null, `?${querySting}`)
- 
-  //  console.log('url', url)
- 
-   
- 
  }
   
  });
- if (window.innerWidth > 991) {
-  // Find the footer element
-  var footer = jQuery("footer");
+  
 
-  // Find the section or div before the footer
-  var sectionBeforeFooter = footer.prev("section");
-  var divBeforeFooter = footer.prev("div");
+// jQuery(document).ready(function($) {
+//   jQuery('.htmltlightbox').htmltlightbox({
+//       type: 'iframe'
+//   });
+// });
 
-  // Calculate the height of the footer
-  var footerHeight = footer.outerHeight();
 
-  // Apply margin-bottom to the section if it exists
-  if (sectionBeforeFooter.length > 0) {
-    sectionBeforeFooter.css("margin-bottom", footerHeight + "px");
-  }
-
-  // Apply margin-bottom to the div if it exists and if there was no section
-  if (divBeforeFooter.length > 0 && sectionBeforeFooter.length === 0) {
-    divBeforeFooter.css("margin-bottom", footerHeight + "px");
-  }
-}
 
 jQuery(document).ready(function($) {
-  jQuery('.htmltlightbox').htmltlightbox({
-      type: 'iframe'
+  // Trigger search when Enter key is pressed or search button is clicked
+  jQuery('#seachEvents').on('keyup', function(event) {
+      if (event.keyCode === 13) {
+          performSearch();
+      }
   });
+
+  jQuery('#searchButton').on('click', function() {
+      performSearch();
+  });
+
+  // Function to perform search
+  function performSearch() {
+      var keyword = jQuery('#seachEvents').val();
+      if(keyword.length == 0){
+        return;
+      }
+      jQuery.ajax({
+          url: cricket_league_pro_customscripts_obj.ajaxurl,
+          type: 'POST',
+          data: {
+              action: 'search_events',
+              keyword: keyword
+          },
+          success: function(response) {
+              jQuery('#events-table tbody').html(response);
+          }
+      });
+  }
 });

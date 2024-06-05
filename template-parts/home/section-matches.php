@@ -13,7 +13,7 @@ if (get_theme_mod('cricket_league_pro_our_services_bgcolor', '')) {
 $img_bg = get_theme_mod('cricket_league_pro_our_team_image');
 
 // Define the post ID you want to fetch
-$next_match_id = get_theme_mod('cricket_league_pro_next_match_id'); // Replace 123 with the actual post ID you want to fetch
+$next_match_id = get_theme_mod('cricket_league_pro_next_match_id_latest'); // Replace 123 with the actual post ID you want to fetch
 ?>
 <section id="banner-below"  class="match section-space" style="<?php echo esc_attr($per_back); ?>"> 
     <div class="container">
@@ -22,7 +22,7 @@ $next_match_id = get_theme_mod('cricket_league_pro_next_match_id'); // Replace 1
                 <div class="timer-wrapper d-flex justify-content-between align-items-center">
                     <h2><?php echo get_theme_mod('cricket_league_pro_latest_heading_heading'); ?></h2>
                     <a href="<?php echo get_permalink(get_page_by_title('Matches')) ?>"
-                        class="theme-btn"><?php echo get_theme_mod('cricket_league_pro_latest_see_all_btn_heading'); ?></a>
+                        class="theme-btn"><?php echo get_theme_mod('cricket_league_pro_latest_see_all_btn_heading'); ?> <i class="<?php echo get_theme_mod('cricket_league_pro_latest_button_icon'); ?>"></i></a>
                 </div>
                 <?php
                 // Custom WP Query to retrieve all events (matches) in SportPress plugin
@@ -129,10 +129,8 @@ $next_match_id = get_theme_mod('cricket_league_pro_next_match_id'); // Replace 1
                             'p' => $next_match_id, // Fetch by post ID
                             'posts_per_page' => '1'
                         );
-
                         // Create a new WP_Query instance
                         $specific_post_query = new WP_Query($args);
-
                         // Check if there are any events
                         if ($specific_post_query->have_posts()) {
                             // Start the loop
@@ -193,7 +191,7 @@ $next_match_id = get_theme_mod('cricket_league_pro_next_match_id'); // Replace 1
                                 <p><?php echo get_theme_mod('cricket_league_pro_latest_location_text_heading'); ?></p>
                             </div>
                             <a href="<?php echo get_permalink(get_page_by_title('Match Schedule')); ?>" class="theme-btn">
-                                <?php echo get_theme_mod('cricket_league_pro_latest_locationbtn_text_heading'); ?>
+                                <?php echo get_theme_mod('cricket_league_pro_latest_locationbtn_text_heading'); ?><i class="<?php echo get_theme_mod('cricket_league_pro_book_now_button'); ?>"></i>
                             </a>
                         </div>
                     </div>

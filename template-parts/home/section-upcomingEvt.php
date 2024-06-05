@@ -26,7 +26,7 @@ if (get_theme_mod('cricket_league_pro_upcoming_evt_bg_color')) {
                     <h2 class="left"><?php echo get_theme_mod('cricket_league_pro_upcoming_evt_heading'); ?></h2>
                 </div>
                 <a href="<?php echo get_permalink(get_page_by_title('Events'))?>" class="theme-btn white">
-                   <?php echo get_theme_mod('cricket_league_pro_upcoming_evt_view_all'); ?>
+                   <?php echo get_theme_mod('cricket_league_pro_upcoming_evt_view_all'); ?><i class="<?php echo get_theme_mod('cricket_league_pro_upcoming_evt_btn_icon') ?>"></i>
                 </a>
             </div>
         </div>
@@ -48,7 +48,7 @@ if (get_theme_mod('cricket_league_pro_upcoming_evt_bg_color')) {
                     $event_date = get_post_meta(get_the_ID(), '_event_date', true);
                     // Convert event date to 'day-mon-year' format
             
-                    $event_date_formatted = date('d-M-Y', strtotime($event_date));
+                    $event_date_formatted = date('d M Y', strtotime($event_date));
                     $month = date('M', strtotime($event_date));
                     $event_date_formatted = str_replace($month, date('M', strtotime($event_date)), $event_date_formatted);
 
@@ -79,7 +79,7 @@ if (get_theme_mod('cricket_league_pro_upcoming_evt_bg_color')) {
                             <div class="event-content">
                                 <?php the_content(); ?>
                             </div>
-                            <p class="Price">$ <?php echo esc_html($entry_fees); ?></p>
+                            <p class="Price"><?php echo esc_html($entry_fees); ?></p>
                         </div>
                     </div>
                     <?php

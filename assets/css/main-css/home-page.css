@@ -583,16 +583,19 @@ a.button {
   letter-spacing: 0px;
   color: var(--secondary-color);
   background: #000;
-  padding: 10px 40px 10px 20px;
+  padding: 10px 20px 10px 20px;
   border-radius: 6px;
   margin-top: 20px;
   display: inline-block;
-  max-width: 140px;
+  max-width: 160px;
   margin: 10px auto 0px;
   text-align: left;
   position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
-
+/* 
 a.button::after {
   content: "\f07a";
   font-size: 14px;
@@ -603,7 +606,7 @@ a.button::after {
   bottom: 0;
   margin: auto;
   height: 15px;
-}
+} */
 
 .product-cricket {
   text-align: center;
@@ -639,7 +642,7 @@ a.add_to_wishlist.single_add_to_wishlist {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 7px;
   background: #000;
   color: var(--secondary-color);
   border-radius: 3px;
@@ -666,8 +669,8 @@ a.add_to_wishlist.single_add_to_wishlist i {
   justify-content: center;
   align-items: center;
   margin: 0px;
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
 }
 
 span.feedback i {
@@ -688,8 +691,8 @@ span.feedback i.yith-wcwl-icon {
 }
 
 .yith-wcwl-wishlistexistsbrowse {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   background: var(--primary-color);
   display: flex;
   align-items: center;
@@ -714,13 +717,6 @@ span.feedback i.yith-wcwl-icon {
   position: relative;
 }
 
-.yith-wcwl-wishlistaddedbrowse a {
-  font-size: 0px;
-}
-
-.yith-wcwl-wishlistexistsbrowse a {
-  font-size: 0px !important;
-}
 
 /* Testimonail section  */
 
@@ -953,15 +949,23 @@ p.countdown.sp-countdown span {
 h3.event-name.sp-event-name {
   display: none !important;
 }
-
+.sp-countdown span{
+  padding: 0px 5px !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  
+}
 .sp-countdown time {
   border: 0px !important;
   width: max-content !important;
+  display: flex !important;
 }
-
-.sp-countdown span small {
+.next-match-wrapper .timer-wrapper {
+  margin-bottom: 26px;
+}
+/* .sp-countdown span small {
   display: none !important;
-}
+} */
 
 p.countdown.sp-countdown {
   margin: 0px !important;
@@ -1103,7 +1107,7 @@ section#upcoming-evt {
   color: var(--secondary-color);
   padding: 12px;
   background: var(--primary-color);
-  max-width: 100px;
+  max-width: 110px;
   border-radius: 10px;
 }
 
@@ -1116,7 +1120,7 @@ section#upcoming-evt {
 }
 .address {
     font: 16px / 52px Inter Tight;
-    font-weight: 500;
+    font-weight: 600;
 }
 .evt-right h3,.heading-wrap-evt a {
   font: normal normal bold 28px / 34px Inter Tight;
@@ -1129,7 +1133,7 @@ section#upcoming-evt {
 
 .address {
   font: 16px / 20px Inter Tight;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .Price {
@@ -1141,17 +1145,18 @@ section#upcoming-evt {
   border: 1px solid #0000;
   border-radius: 50%;
   width: 13px;
-  height: 13px;
+  /* height: 13px; */
   MARGIN: 0PX;
   PADDING: 0PX;
 }
 
 .owl-dots button {
-  width: 10px;
-  height: 12px;
-  border: none;
+  width: 10px !important;
+  height: 10px;
   background: #fff;
+  border: 1px solid;
   border-radius: 50%;
+  padding: 0px;
 }
 
 .owl-dots {
@@ -1189,7 +1194,7 @@ a.button.black {
 
 section.products .owl-dots button {
   width: 12px;
-  height: 12px;
+  height: 10px;
   border: none;
   background: #fff;
   border-radius: 50%;
@@ -1247,9 +1252,30 @@ section#blog-news {
 .wc-block-cart__submit-button.contained {
   border: 1px solid;
 }
+
 a.wc-block-components-totals-coupon-link {
   padding: 10px 20px;
+  border: 1px solid #000;
+  color: #fff;
+  border-radius: 6px;
+  background: #000;
+}
+a.components-button.wc-block-components-button.wp-element-button.wc-block-cart__submit-button {
+  background: #000;
+  color: #fff;
+  border-radius: 6px;
+}
+button.components-button.wc-block-components-button.wp-element-button.wc-block-components-totals-coupon__button {
+  background: #000;
   border: 1px solid;
+  color: #fff;
+  border-radius: 6px;
+}
+button.components-button.wc-block-components-button.wp-element-button.wc-block-components-checkout-place-order-button {
+  background: #000;
+  border: 1px solid;
+  color: #fff;
+  border-radius: 6px;
 }
 .wc-block-components-product-metadata__description p {
   font-size: 16px;
@@ -1390,7 +1416,7 @@ section#blog-news a.button {
   border-radius: 20px;
   padding: 0px;
   max-width: 465px;
-  width: 100% !important;
+  /* width: 100% !important; */
 }
 
 .team-main-tab {
@@ -1454,7 +1480,7 @@ section#blog-news a.button {
   display: flex;
   /* background: violet; */
   background: #F1F1F1 0% 0% no-repeat padding-box;
-  margin-bottom: 15px;
+  margin-bottom: 22px;
   align-items: center;
   gap: 35px;
 }
@@ -1510,13 +1536,15 @@ small.stat-name {
 .main-tab-inner {
   width: 50%;
 }
-
 .main-tab-playimage {
   width: 50%;
   margin-bottom: -40px;
   text-align: center;
+  vertical-align: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
-
 .team-tab-left {
   cursor: pointer;
 }
@@ -1530,7 +1558,8 @@ section#leagueTable h4.sp-table-caption {
 } */
 section#leagueTable .heading-wrap h2, section#leagueTable .heading-tag {
   color: var(--secondary-color);
-  font: normal normal 600 32px / 35px Inter Tight;
+  font: normal normal 600 25px / 35px Inter Tight;
+  text-align: left;
 }
 .postion-right th {
   padding: 7px 10px !important;
@@ -1684,11 +1713,18 @@ button.accordion-button {
 }
 
 ul.shop-page-produts-category li {
-  margin-bottom: 4px;
+  margin-bottom: 10px;
 }
 section.products .heading-tag,section.products .heading-wrap h2,section#trophies .heading-tag,section#trophies h2{
   text-align: center;
 }
 section.event-page .evt-right h3 a:hover {
   color: var(--primary-color) !important;
+}
+
+input.category-filter-checkbox {
+  width: 15px;
+}
+.woocommerce p.stars a{
+  color: gold !important;
 }

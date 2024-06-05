@@ -31,7 +31,7 @@ $img_bg = get_theme_mod('cricket_league_pro_latest_blog_and_news_bgimage');
           <h2><?php echo get_theme_mod('cricket_league_pro_blog_heading'); ?></h2>
         </div>
         <a href="<?php echo get_permalink(get_page_by_title('Blog')); ?>" class="theme-btn black">
-          <?php echo get_theme_mod('cricket_league_pro_blog_view_all_settings'); ?>
+          <?php echo get_theme_mod('cricket_league_pro_blog_view_all_settings'); ?><i class="<?php echo get_theme_mod('cricket_league_pro_blog_button_icons') ?>"></i>
         </a>
       </div>
       <div class="owl-carousel latest-bg">

@@ -35,29 +35,29 @@ get_template_part('template-parts/banner'); ?>
 <?php get_footer(); ?>
 
 <script>
-  // Function to fetch events based on selected filter and page
-function fetchEvents(filter, page) {
-    var data = {
-        action: 'fetch_events',
-        filter: filter,
-        paged: page // Include the page parameter
-    };
+    // Function to fetch events based on selected filter and page
+    function fetchEvents(filter, page) {
+        var data = {
+            action: 'fetch_events',
+            filter: filter,
+            paged: page // Include the page parameter
+        };
 
-    // AJAX request to fetch events
-    jQuery.post('<?php echo admin_url('admin-ajax.php'); ?>', data, function (response) {
-        jQuery('#events-container').html(response);
+        // AJAX request to fetch events
+        jQuery.post('<?php echo admin_url('admin-ajax.php'); ?>', data, function (response) {
+            jQuery('#events-container').html(response);
+        });
+    }
+
+    // Event listener for dropdown change
+    jQuery(document).ready(function ($) {
+        $('#filter-select').change(function () {
+            var selectedFilter = $(this).val();
+            fetchEvents(selectedFilter, 1); // Reset to page 1 when filter changes
+        });
+
+        // Fetch events for the default selected filter and page 1
+        fetchEvents($('#filter-select').val(), 1);
     });
-}
-
-// Event listener for dropdown change
-jQuery(document).ready(function ($) {
-    $('#filter-select').change(function () {
-        var selectedFilter = $(this).val();
-        fetchEvents(selectedFilter, 1); // Reset to page 1 when filter changes
-    });
-
-    // Fetch events for the default selected filter and page 1
-    fetchEvents($('#filter-select').val(), 1);
-});
 
 </script>
