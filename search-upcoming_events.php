@@ -46,12 +46,25 @@ if ($img != '') { ?>
                         <?php if (have_posts()): ?>
                             <?php while (have_posts()):
                                 the_post();
+                                $date = date('d'); // Current date in YYYY-MM-DD format
+                                $day = date('l', strtotime($date)); // Full day name (e.g., "Monday")
                                 $event_date = get_post_meta(get_the_ID(), '_event_date', true);
+                                $event_date_end = get_post_meta($post->ID, '_event_date_end', true);
+                                // Convert event date to 'day-mon-year' format
+                        
+                                $event_date_formatted = date('d M Y', strtotime($event_date));
+                                $event_date_end_formatted =  date('d M Y', strtotime($event_date_end));
+                                $month = date('M', strtotime($event_date));
+                                $end_date_month = date('M', strtotime($event_date_end));
+                                $event_date_formatted = str_replace($month, date('M', strtotime($event_date)), $event_date_formatted);
+                                $event_date_formatted_end = str_replace($end_date_month, date('M', strtotime($end_date_month)), $event_date_end_formatted);
                                 $start_time = get_post_meta(get_the_ID(), '_start_time', true);
+                                // Convert start time to AM/PM format (assuming $start_time is in 'H:i' format)
+                                $start_time_am_pm = date('h:i A', strtotime($start_time));
                                 $end_time = get_post_meta(get_the_ID(), '_end_time', true);
+                                $end_time_am_pm = date('h:i A', strtotime($end_time));
                                 $location = get_post_meta(get_the_ID(), '_venue_name', true);
                                 $entry_fees = get_post_meta(get_the_ID(), '_entry_fees', true);
-
                                 // Format date and time
                                 $event_date_formatted = date('d M Y', strtotime($event_date));
                                 $start_time_am_pm = date('h:i A', strtotime($start_time));

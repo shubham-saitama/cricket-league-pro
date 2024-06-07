@@ -22,7 +22,6 @@ $args = array(
   'posts_per_page' => 1,
   'title' => 'Wishlist',
 );
-
 $wishlist_page = new WP_Query($args);
 
 if ($wishlist_page->have_posts()) {
@@ -31,7 +30,10 @@ if ($wishlist_page->have_posts()) {
   wp_reset_postdata();
 
   // Now $wishlist_page_url contains the URL of the Wishlist page
-} ?>
+}
+$items_count = WC()->cart->get_cart_contents_count();
+
+ ?>
 <div id="vw-sticky-menu">
   <div class="container" style="<?php echo $background_setting ?>">
     <div class="row align-items-center justify-content-between bat-background">
@@ -93,12 +95,18 @@ if ($wishlist_page->have_posts()) {
           </div>
           <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12 text-center">
             <div class="header-right">
-              <a href="<?php echo $wishlist_page_url; ?>"><i class="<?php echo get_theme_mod('cricket_league_pro_header_right_icons_heart'); ?>"></i></a>
-              <div class="search-button"><i class="<?php echo get_theme_mod('cricket_league_pro_header_right_icons_search'); ?>"></i></div>
-
-              <?php
-              echo '<a href="' . esc_url($cart_url) . '"><i class="'.esc_html(get_theme_mod('cricket_league_pro_header_right_icons_cart')).'"></i>' . esc_html__('', 'cricket-league-pro') . ' (' . esc_html($cart_count) . ')</a>';
-              ?>
+              <a href="<?php echo $wishlist_page_url; ?>"><i
+                  class="<?php echo get_theme_mod('cricket_league_pro_header_right_icons_heart'); ?>"></i></a>
+              <div class="search-button"><i
+                  class="<?php echo get_theme_mod('cricket_league_pro_header_right_icons_search'); ?>"></i></div>
+              <a class="top-cart"  href="<?php echo wc_get_cart_url(); ?>" title="<?php _e('Cart View', 'pest-control-treatment-pro'); ?>">
+                          <?php $items_count = WC()->cart->get_cart_contents_count();  ?>
+                          <!-- <i class="<?php echo esc_html(get_theme_mod('pest_control_treatment_pro_header_cart_icon')); ?>"></i> -->
+                          <i class="<?php echo get_theme_mod('cricket_league_pro_header_right_icons_cart') ?>"></i>
+                            <span id="mini-cart-count" class="count cart-value">
+                            (<?php echo $items_count ? $items_count : '0'; ?>)
+                            </span>
+                          </a>
               <div class="toggle-nav mobile-menu">
                 <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger" id="open_nav"><span
                     class="screen-reader-text">
@@ -108,7 +116,6 @@ if ($wishlist_page->have_posts()) {
                     class="<?php echo esc_html(get_theme_mod('cricket_league_pro_res_open_menu_icon', 'fas fa-bars')); ?> menu-open"></i>
                   <i class="fa fa-times menu-close"></i>
                 </div>
-
               </div>
               <form role="search" method="get" class="search-form desktop"
                 action="<?php echo esc_url(home_url('/')); ?>">
@@ -133,4 +140,3 @@ if ($wishlist_page->have_posts()) {
     </label>
   </form>
 </div>
-

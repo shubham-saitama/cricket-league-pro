@@ -46,12 +46,15 @@ if (get_theme_mod('cricket_league_pro_upcoming_evt_bg_color')) {
                     $date = date('d'); // Current date in YYYY-MM-DD format
                     $day = date('l', strtotime($date)); // Full day name (e.g., "Monday")
                     $event_date = get_post_meta(get_the_ID(), '_event_date', true);
+                    $event_date_end = get_post_meta($post->ID, '_event_date_end', true);
                     // Convert event date to 'day-mon-year' format
             
                     $event_date_formatted = date('d M Y', strtotime($event_date));
+                    $event_date_end_formatted =  date('d M Y', strtotime($event_date_end));
                     $month = date('M', strtotime($event_date));
+                    $end_date_month = date('M', strtotime($event_date_end));
                     $event_date_formatted = str_replace($month, date('M', strtotime($event_date)), $event_date_formatted);
-
+                    $event_date_formatted_end = str_replace($month, date('M', strtotime($end_date_month)), $event_date_end_formatted);
                     $start_time = get_post_meta(get_the_ID(), '_start_time', true);
                     // Convert start time to AM/PM format (assuming $start_time is in 'H:i' format)
                     $start_time_am_pm = date('h:i A', strtotime($start_time));
@@ -70,7 +73,7 @@ if (get_theme_mod('cricket_league_pro_upcoming_evt_bg_color')) {
                         </div>
                         <div class="evt-right">
                             <p class="schedule clock-before"><?php echo $event_date_formatted; ?> - <?php echo esc_html($start_time_am_pm); ?> To
-                                <?php echo $event_date_formatted; ?> - <?php echo esc_html($end_time_am_pm); ?>
+                                <?php echo $event_date_formatted_end; ?> - <?php echo esc_html($end_time_am_pm); ?>
                             </pc>
                             <div class="heading-wrap-evt">
                                 <h3><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>

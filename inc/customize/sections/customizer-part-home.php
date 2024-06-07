@@ -2312,7 +2312,7 @@ $wp_customize->add_section(
 		'panel' => 'cricket_league_pro_panel_id',
 	)
 );
-$wp_customize->add_setting(
+$wp_customize->add_setting(	
 	'cricket_league_pro_our_client_slider_image_enable',
 	array(
 		'default' => 'Enable',

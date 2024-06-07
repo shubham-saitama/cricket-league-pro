@@ -367,15 +367,16 @@ jQuery('document').ready(function () {
     nav: false,
     dots: true,
     center: true,
+    stagePadding: 0,
     responsive: {
       0: {
         items: 1
       },
       600: {
-        items: 1
+        items: 1,
       },
       1000: {
-        items: 1
+        items: 1,
       }
     }
   });
@@ -768,12 +769,12 @@ jQuery('body').on('added_to_cart', function (e, fragments, cart_hash, button) {
   var url = '';
 
   if (cricket_league_pro_customscripts_obj.is_home == "1") {
-    var product = jQuery(button).closest('.product-content');
+    var product = jQuery(button).closest('.product-cricket');
     var img = product.find('img').attr('src');
     var title = product.find('.product_head').text();
     var url = product.find('.woocommerce-loop-product__link').attr('href');
   } else {
-    var product = jQuery(button).closest('.product');
+    var product = jQuery(button).closest('.product-cricket');
     var img = product.find('img').attr('src');
     var title = product.find('.woocommerce-loop-product__title').text();
     var url = product.find('.product_head').attr('href');
@@ -788,10 +789,10 @@ jQuery('body').on('added_to_cart', function (e, fragments, cart_hash, button) {
       type: 'minimalist',
       delay: "3000",
       icon_type: 'image',
-      template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+      template: '<div data-notify="container" class="notification-container d-flex col-xs-11 col-sm-10 col-6 alert alert-{0} align-items-center" role="alert">' +
         '<img data-notify="icon" class="img-circle pull-left">' +
         '<span class="prod-title" data-notify="title">{1}</span>' +
-        '<div class="prod-messg" data-notify="message">{2}</div>' +
+        '<div class="prod-messg " data-notify="message">{2}</div>' +
         '</div>'
     });
   }
@@ -1081,7 +1082,8 @@ jQuery(document).ready(function ($) {
         items: 1
       },
       768: {
-        items: 3
+        items: 3,
+        dots: true,
       },
       992: {
         items: 4
@@ -1144,7 +1146,7 @@ jQuery(document).ready(function(){
  
  // Update pagination links click handler
  //  jQuery(document).on('click', '.navigation a.page-numbers', function(event) {
- jQuery(document).on('click', '.pagination a.page-numbers', function(event) {
+ jQuery(document).on('click', '#contentwoocom .pagination a.page-numbers', function(event) {
   event.preventDefault(); // Prevent default link behavior
   var page = jQuery(this).text(); // Get the page number from the clicked pagination link
   cricket_league_pro_filters(page); // Trigger the AJAX request with the page number
@@ -1265,4 +1267,56 @@ jQuery(document).ready(function($) {
           }
       });
   }
+});
+
+
+   // Function to fetch events based on selected filter and page
+   function fetchEvents(filter, page) {
+    if (!filter || !page) {
+        // console.error('Invalid filter or page number:', filter, page);
+        return;
+    }
+
+    var data = {
+        action: 'fetch_events',
+        filter: filter,
+        paged: page // Include the page parameter
+    };
+
+    // Debugging output
+    // console.log('Fetching events with data:', data);
+
+    // AJAX request to fetch events
+    jQuery.post(cricket_league_pro_customscripts_obj.ajaxurl, data, function(response) {
+        jQuery('#events-container').html(response);
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+        console.error('AJAX request failed:', textStatus, errorThrown);
+    });
+}
+
+// Event listener for dropdown change and pagination click
+jQuery(document).ready(function($) {
+    jQuery('#filter-select').change(function() {
+        var selectedFilter = jQuery(this).val();
+        fetchEvents(selectedFilter, 1); // Reset to page 1 when filter changes
+    });
+
+    // Fetch events for the default selected filter and page 1
+    fetchEvents(jQuery('#filter-select').val(), 1);
+
+    // Event delegation to handle pagination clicks
+    jQuery(document).on('click', '.event-page .pagination ul.page-numbers a.page-numbers', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+
+        let page = jQuery(this).text(); // Get the page number from the clicked pagination link
+
+        // console.log('Pagination clicked, page:', page);
+
+        // Ensure page is a valid number
+        if (!isNaN(page)) {
+            fetchEvents(jQuery('#filter-select').val(), parseInt(page));
+        } else {
+            // console.error('Invalid page number:', page);
+        }
+    });
 });

@@ -12,7 +12,7 @@ get_template_part('template-parts/banner');
 		<div class="container">
 			<div class="content_page row py-5">
 				<div class="col-lg-4 col-md-12 col-12">
-					<?php dynamic_sidebar('Blog Sidebar'); ?>
+					<?php dynamic_sidebar('sidebar-1'); ?>
 				</div>
 				<div class="col-lg-8 col-md-12 col-12 ">
 					<div class="row">

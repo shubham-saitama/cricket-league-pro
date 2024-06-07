@@ -27,7 +27,7 @@
 
 /* --------- Social Icon Widget ------- */
 .social_widget a {
-  color: var(--white);
+  color: #000;
   padding: 7px 7px;
   margin-right: 7px;
   display: inline-block;
@@ -462,6 +462,7 @@ input#wp-comment-cookies-consent {
 
 div#comments {
   margin-top: 50px;
+
 }
 
 .comment-list li {
@@ -715,7 +716,6 @@ ul.post-categories a {
 }
 
 .share_icon i {
-  background-color: #277BF8;
   padding: 8px 9px;
   border-radius: 50%;
   color: var(--secondary-color)f;
@@ -726,6 +726,48 @@ ul.post-categories a {
   height: 35px;
 }
 
+
+.share_icon.row.p-0.m-0 {
+  position: absolute;
+}
+.share_icon i {
+  padding: 4px 0px;
+  border-radius: 50%;
+  color: var(--secondary-color) f;
+  font-size: 13px;
+  margin: 0 3px;
+  width: 20px;
+  text-align: center;
+  height: 20px;
+}
+.share:hover .share_icon p.socila_share {
+  display: flex !important;
+  justify-content: center;
+}
+
+.socila_share a i:hover {
+  color: var(--primary-color) !important;
+}
+.share b {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+#single-post-page p {
+  font: normal normal 300 12px / 15px Poppins;
+  letter-spacing: 0px;
+  color: #000;
+  margin-bottom: 0;
+ 
+}
+p.socila_share{
+  display: none;
+}
+.share {
+  position: relative;
+}
 li.cat-item {
   list-style: none;
 }
@@ -1757,7 +1799,7 @@ h6 {
 #single-post-page p {
   font: normal normal 300 14px/31px Poppins;
   letter-spacing: 0px;
-  color: #242424;
+  color: #000;
 }
 
 #single-post-page .navigation .nav-links {
@@ -1818,6 +1860,7 @@ h2.comments-title {
 div#comments {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 
@@ -2727,8 +2770,8 @@ p.contact-label {
   background-color: #3f3f3f;
 }
 
-.form-wrapper ::placeholder,
-select {
+.event-page .form-wrapper ::placeholder,
+.event-page select {
   font: normal normal normal 17px / 25px Inter Tight !important;
   letter-spacing: 0px !important;
   color: #A8A8A8 !important;
@@ -3161,7 +3204,7 @@ main#maincontent .star-rating {
 }
 
 label.wp-block-search__label {
-  font: 20px / 24px Figtree;
+  font: 20px / 24px Inter tight;
   font-weight: 500;
 }
 
@@ -3303,6 +3346,7 @@ section.eventssearch table {
 
 section.eventssearch tbody tr td {
   border: 1px solid #000;
+  text-align: center;
 }
 
 section.eventssearch td {
@@ -3907,15 +3951,18 @@ section#related .heading-tag {
 }
 
 .single-product .yith-wcwl-wishlistexistsbrowse {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   background: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
   position: unset;
 }
-
+.single-product a.add_to_wishlist.single_add_to_wishlist{
+  width: 30px;
+  height: 30px;
+}
 ::marker {
   color: var(--primary-color);
 }
@@ -3931,7 +3978,7 @@ section#related .heading-tag {
 .content_page li {
   margin-bottom: 10px;
   position: relative;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 
 .d-flex.text-lg-start li {
@@ -3944,13 +3991,13 @@ section#related .heading-tag {
 
 
 
-.content_page li::after {
+/* .content_page li::after {
   content: ">";
   left: -20px;
   position: absolute;
   font-size: 18px;
   font-weight: 500;
-}
+} */
 
 li.terms-conditions-para {
   margin-bottom: 10px;
@@ -4721,6 +4768,7 @@ main#maincontent .next {
 .filter-events {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .searchbody {
@@ -4841,4 +4889,32 @@ section#related .yith-wcwl-wishlistaddedbrowse{
 .woocommerce .woocommerce-product-rating .star-rating {
   margin: 0px !important;
   color: gold;
+}
+a.prev.page-numbers {
+  background: var(--primary-color);
+  border-radius: 6px;
+  color: #fff;
+  padding: 2px 3px;
+  line-height: 15px;
+}
+
+
+.prod-messg{
+  padding: 10px !important;
+}
+a.wc-block-components-totals-coupon-link:hover,.wc-block-cart__submit-button:hover,button.components-button.wc-block-components-button.wp-element-button.wc-block-components-totals-coupon__button.contained:hover{
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+a.product_type_simple.add_to_cart_button.add_to_cart.alt:hover {
+  background: var(--primary-color);
+}
+
+
+button.wp-block-search__button.wp-element-button {
+  font: 14px / 17px Inter Tight;
+  font-weight: 500;
+}
+button.wp-block-search__button.wp-element-button:hover{
+  background-color: var(--primary-color);
 }

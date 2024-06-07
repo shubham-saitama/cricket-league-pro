@@ -129,13 +129,14 @@ if ( !function_exists('cricket_league_pro_social_share') ) {
      */
     function cricket_league_pro_social_share(){
         ?>
+         
         <?php do_action('cricket_league_pro_before_blog_sharing'); ?>
+
+            <div class="share">
+            <b><i class="fa fa-share-alt" aria-hidden="true"></i><?php echo esc_html('Share','cricket-league-pro'); ?></b>
             <div class="share_icon row p-0 m-0">
                 <p class="socila_share col-md-12 p-0">
                     <?php if(get_theme_mod('cricket_league_pro_post_general_settings_post_share_facebook',true)==1 || get_theme_mod('cricket_league_pro_post_general_settings_post_share_linkedin',true)==1 || get_theme_mod('cricket_league_pro_post_general_settings_post_share_twitter',true)==1){ ?>
-
-                    <b><?php echo esc_html('Share: ','cricket-league-pro'); ?></b>
-
                     <?php }
 
                     if ( get_theme_mod('cricket_league_pro_post_general_settings_post_share_facebook',true) == "1" ) { ?>
@@ -150,6 +151,7 @@ if ( !function_exists('cricket_league_pro_social_share') ) {
                         <a href="https://twitter.com/share?url=<?php the_permalink(); ?>&amp;text=<?php echo the_title(); ?>" target="_blank"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php echo esc_html('twitter.com', 'cricket-league-pro' ) ; ?></span></a>
                     <?php } ?>
                 </p>
+            </div>
             </div>
         <?php
     }

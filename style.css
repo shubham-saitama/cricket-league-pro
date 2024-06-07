@@ -102,7 +102,7 @@ html body {
   background-color: white;
   font: normal normal normal 16px/25px Inter Tight;
   letter-spacing: 0px;
-  color: #242424;
+  color: #000;
 }
 
 label {
@@ -144,6 +144,7 @@ span.wpcf7-spinner {
   .section-space {
     padding: 20px 0px;
   }
+
 }
 
 body a {
@@ -380,7 +381,7 @@ main#maincontent {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #000;
+  border: 2px solid #000;
   border-radius: 50%;
 }
 
@@ -406,7 +407,7 @@ main#maincontent {
 }
 
 .social_widget a {
-  color: var(--white);
+  color: #000;
   padding: 7px 7px;
   margin-right: 7px;
   display: inline-block;
@@ -472,16 +473,7 @@ a[class ^="custom_"]:hover span {
   float: none !important;
 }
 
-@media(min-width:991px) {
 
-  section#blog-news,
-  main#maincontent,
-  .shop div#container,
-  section.booking-from {
-    margin-bottom: 650px;
-  }
-
-}
 
 .fsp-shop-wrapper .item-product {
   height: auto;
@@ -982,6 +974,9 @@ li[id ^= "yith-wcwl-row"] {
   font-size: 20px;
   text-align: center;
 }
+.wishlist_table.mobile li .item-wrapper{
+  width: 100%;
+}
 .wishlist_table.mobile li h3 {
   font-size: 25px;
   line-height: 30px;
@@ -1020,4 +1015,61 @@ a[data-title = "Browse wishlist"] {
 
 section.single-evt p{
   order: 0;
+}
+
+
+.pagination .prev, .pagination .next {
+  position: unset;
+}
+ul.page-numbers {
+  list-style: none;
+}
+ul.page-numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main#maincontent a.next.page-numbers {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-remove i.fa.fa-times {
+  padding: 4px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+td.product-price del span.woocommerce-Price-amount.amount,td.value del span.woocommerce-Price-amount.amount{
+  font: normal normal 600 14px / 17px Inter Tight;
+  color: #9A9A9A;
+  text-decoration: line-through;
+}
+td.product-price ins span.woocommerce-Price-amount.amount,td.value ins span.woocommerce-Price-amount.amount{
+  font: normal normal bold 20px/24px Inter Tight;
+letter-spacing: 0px;
+color: #000000;
+}
+p.link-more a {
+  max-width: 150px;
+  background: #000;
+  color: #fff;
+  border-radius: 6px;
+  display: inline-block;
+  padding: 10px;
+}
+p.link-more a:hover{
+  background-color: var(--primary-color);
+}
+
+select#filter-select option {
+  font-size: 20px;
 }

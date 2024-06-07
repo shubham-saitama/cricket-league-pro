@@ -21,7 +21,7 @@ get_template_part( 'template-parts/banner' ); ?>
        <?php endwhile; // end of the loop. ?>
     </div>
     <div class="col-lg-3 col-md-5">
-      <?php dynamic_sidebar('sidebar-2'); ?>
+      <?php dynamic_sidebar('sidebar-3'); ?>
     </div>
     <div class="clear"></div>
   </div>

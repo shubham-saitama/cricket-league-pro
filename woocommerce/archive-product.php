@@ -90,7 +90,7 @@ if ($img != '') { ?>
 		<div class="">
 			<div class="">
 				<header class="woocommerce-products-header">
-					<?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
+					<?php if (apply_filters('woocommerce_show_page_title', true)): ?>
 						<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
 					<?php endif; ?>
 
@@ -114,7 +114,7 @@ if ($img != '') { ?>
 							 *
 							 * @hooked woocommerce_get_sidebar - 10
 							 */
-							do_action('woocommerce_sidebar');
+							// do_action('woocommerce_sidebar');
 							?>
 							<?php get_template_part('template-parts/filters/filters'); ?>
 						</div>
@@ -125,9 +125,8 @@ if ($img != '') { ?>
 									// Define arguments for the WP_Query
 									$args = array(
 										'post_type' => 'product',
-										'posts_per_page' => 6, // Retrieve all products
+										'posts_per_page' => 9, // Retrieve all products
 									);
-
 									// Instantiate the WP_Query
 									$loop = new WP_Query($args);
 
@@ -140,34 +139,44 @@ if ($img != '') { ?>
 											$product_price = get_post_meta(get_the_ID(), '_price', true);
 											$sale_price = get_post_meta(get_the_ID(), '_sale_price', true);
 											// Get product image URL
-											$product_image_url = get_the_post_thumbnail_url(get_the_ID(), 'post-thumbnails');
+											$product_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
 											$current_currency = get_woocommerce_currency_symbol();
 											?>
 											<div class="item-product col-lg-4 col-md-6 col-12 mb-3">
-												<div class="product">
-													<?php if (class_exists('YITH_WCWL')) : ?>
+												<div class="product-cricket">
+													<?php if (class_exists('YITH_WCWL')): ?>
 														<div class="yith-wcwl-add-to-wishlist">
 															<?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>
 														</div>
 													<?php endif; ?>
 													<div class="product-image">
-														<img src="<?php echo esc_url($product_image_url); ?>" alt="<?php the_title(); ?>">
+														<img src="<?php echo $product_image_url; ?>"
+															alt="<?php the_title(); ?>">
 													</div>
 													<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-													<?php echo get_star_rating_custom(); ?>
+													<?php
+													echo get_star_rating_custom();
+													?>
 													<div class="price-wrapper">
-														<p class="regular-price"><?php echo esc_html($current_currency . $product_price); ?></p>
-														<?php if ($sale_price) : ?>
-															<p class="sale-price"><?php echo esc_html($current_currency . $sale_price); ?></p>
+														<p class="regular-price"><?php echo $current_currency;
+														echo $product_price; ?></p>
+														<?php if ($sale_price): ?>
+															<p class="sale-price"><?php echo $current_currency;
+															echo $sale_price; ?></p>
 														<?php endif; ?>
 													</div>
-													<?php
-													// Get the product ID
-													$product_id = get_the_ID();
-													// Get the add to cart URL
-													$add_to_cart_url = esc_url(wc_get_product($product_id)->add_to_cart_url());
-													?>
-													<a href="<?php echo esc_url($add_to_cart_url); ?>" class="button"><?php echo esc_html(get_theme_mod('cricket_league_pro_product_slider_cart_button')); ?><i class="<?php echo esc_attr(get_theme_mod('cricket_league_pro_carrt_btn_icon')); ?>"></i></a>
+													<?php  // Get the product ID
+															$product_id = get_the_ID();
+															// Get the add to cart URL
+															$add_to_cart_url = esc_url(wc_get_product($product_id)->add_to_cart_url());
+															?>
+													<div class="cat-btn-wrapper">
+														<?php if ($product->is_type('simple')) {
+															woocommerce_template_loop_add_to_cart($loop->post, $product);
+														} ?>
+														<i
+															class="<?php echo get_theme_mod('cricket_league_pro_carrt_btn_icon'); ?>"></i>
+													</div>
 												</div>
 											</div>
 											<?php
@@ -185,14 +194,16 @@ if ($img != '') { ?>
 							if ($total_pages > 1) {
 								$current_page = max(1, get_query_var('paged'));
 								echo '<div class="pagination">';
-								echo paginate_links(array(
-									'base' => get_pagenum_link(1) . '%_%',
-									'format' => 'page/%#%',
-									'current' => $current_page,
-									'total' => $total_pages,
-									'prev_text' => __('&laquo;', 'text-domain'),
-									'next_text' => __('&raquo;', 'text-domain'),
-								));
+								echo paginate_links(
+									array(
+										'base' => get_pagenum_link(1) . '%_%',
+										'format' => 'page/%#%',
+										'current' => $current_page,
+										'total' => $total_pages,
+										'prev_text' => __('<', 'text-domain'),
+										'next_text' => __('>', 'text-domain'),
+									)
+								);
 								echo '</div>';
 							}
 							?>

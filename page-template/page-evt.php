@@ -8,7 +8,7 @@ get_template_part('template-parts/banner'); ?>
     <div class="container">
         <div class="filter-events">
             <div>
-                <label for="filter-select">Filter by:</label>
+                <label for="filter-select"><?php echo get_theme_mod('cricket_league_pro_event_page_filter_by'); ?></label>
                 <select id="filter-select">
                     <option value="year">Year</option>
                     <option value="month">Month</option>
@@ -34,30 +34,4 @@ get_template_part('template-parts/banner'); ?>
 
 <?php get_footer(); ?>
 
-<script>
-    // Function to fetch events based on selected filter and page
-    function fetchEvents(filter, page) {
-        var data = {
-            action: 'fetch_events',
-            filter: filter,
-            paged: page // Include the page parameter
-        };
 
-        // AJAX request to fetch events
-        jQuery.post('<?php echo admin_url('admin-ajax.php'); ?>', data, function (response) {
-            jQuery('#events-container').html(response);
-        });
-    }
-
-    // Event listener for dropdown change
-    jQuery(document).ready(function ($) {
-        $('#filter-select').change(function () {
-            var selectedFilter = $(this).val();
-            fetchEvents(selectedFilter, 1); // Reset to page 1 when filter changes
-        });
-
-        // Fetch events for the default selected filter and page 1
-        fetchEvents($('#filter-select').val(), 1);
-    });
-
-</script>

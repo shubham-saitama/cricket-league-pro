@@ -1,4 +1,4 @@
-<i?php
+<?php
 /**
  * Template to show the use
  *

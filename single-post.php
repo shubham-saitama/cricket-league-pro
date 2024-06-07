@@ -11,9 +11,9 @@ get_template_part('template-parts/banner');
 <?php while (have_posts()):
 	the_post(); ?>
 	<div class=" blog-single">
-		<div class="container single-post  section-space" id="single-post-page">
+		<div class="container single-post" id="single-post-page">
 			<div class="row justify-content-center">
-				<div class="content_page col-lg-8 col-md-8 col-sm-12">
+				<div class="content_page col-lg-8 col-md-8 col-sm-12 pt-5">
 					<div class="single-post">
 						<?php if (has_post_thumbnail()) { ?>
 							<div class="single-post-img">
@@ -30,7 +30,7 @@ get_template_part('template-parts/banner');
 								<?php echo esc_html(get_post_meta($post->ID, 'post_para_1', true)); ?>
 							</p>
 						</div>
-						<ul class="d-flex text-lg-start  mb-4">
+						<ul class="d-flex justify-content-between align-items-center mb-4">
 							<?php
 							// Get the post categories
 							$categories = get_the_terms($post_id, 'category'); // Replace $post_id with the ID of your post
@@ -59,6 +59,7 @@ get_template_part('template-parts/banner');
 									</a>
 								</li>
 							<?php } ?>
+							<?php cricket_league_pro_social_share()?>
 							<li class="categories">
 								<i class="fa fa-tags" aria-hidden="true"></i>
 								<a href=""><?php
@@ -86,8 +87,8 @@ get_template_part('template-parts/banner');
 					the_content();
 					?>
 				</div>
-				<div class="page-sidebar col-lg-4 col-md-4 col-12">
-					<?php dynamic_sidebar('Page Sidebar') ?>
+				<div class="page-sidebar pt-5 col-lg-4 col-md-4 col-12">
+					<?php dynamic_sidebar('sidebar-2') ?>
 				</div>
 				<div class="single-post-comment col-lg-12 col-md-12 col-12 section-space">
 					<?php

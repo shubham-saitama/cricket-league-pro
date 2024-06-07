@@ -4,7 +4,28 @@
  *
  * @package cricket-league-pro
  */
-get_header(); ?>
+get_header(); 
+$img = get_theme_mod('cricket_league_pro_inner_page_banner_bgimage');
+?>
+<div class="title-box text-center banner-img" style="background-image:url(<?php echo esc_url($img); ?>)">
+		<div class="banner-page-text container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 col-12">
+					<div class="above_title">
+						<h1>
+						Search
+						</h1>
+						<?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+							<div class="bradcrumbs py-2 b1">
+								<?php cricket_league_pro_the_breadcrumb(); ?>
+							</div>
+						<?php }
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 <div class="container">
 	<h1 class="entry-title"><?php printf( __( 'Results For: %s', 'cricket-league-pro' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 </div>

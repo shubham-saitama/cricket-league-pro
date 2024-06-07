@@ -54,7 +54,7 @@ if (get_theme_mod('cricket_league_pro_whychooseus_bg_color', '')) {
                             <?php echo get_theme_mod('cricket_league_pro_about_whychooseus_heading_tag'); ?>
                         </div>
                         <h2 class="left">
-                            <?php echo get_theme_mod('cricket_league_pro_product_slider_heading'); ?>
+                            <?php echo get_theme_mod('cricket_league_pro_about_whychooseus_heading'); ?>
                         </h2>
                     </div>
                     <p>

@@ -2068,7 +2068,7 @@ class ThemeWhizzie
 						',
 				'regular_price' => '50',
 				'sale_price' => '45',
-				'categories' => array('Balls', 'Footwear'),
+				'categories' => array('Balls', 'Accessories'),
 				'image_url' => get_template_directory_uri() . '/assets/images/product/product01.png',     // Image URL for Product 2
 				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
 			),
@@ -2083,7 +2083,7 @@ class ThemeWhizzie
 						',
 				'regular_price' => '50',
 				'sale_price' => '45',
-				'categories' => array('Balls', 'Footwear'),
+				'categories' => array('Balls', 'Accessories'),
 				'image_url' => get_template_directory_uri() . '/assets/images/product/product03.png',     // Image URL for Product 2
 				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 2
 			),
@@ -2098,7 +2098,7 @@ class ThemeWhizzie
 						',
 				'regular_price' => '500',
 				'sale_price' => '450',
-				'categories' => array('Balls', 'Footwear'),
+				'categories' => array('Balls', 'Accessories'),
 				'image_url' => get_template_directory_uri() . '/assets/images/product/product04.png',     // Image URL for Product 2
 				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
 			),
@@ -2143,7 +2143,7 @@ class ThemeWhizzie
 						',
 				'regular_price' => '150',
 				'sale_price' => '125',
-				'categories' => array('Balls', 'Footwear'),
+				'categories' => array('Apparel', 'Footwear'),
 				'image_url' => get_template_directory_uri() . '/assets/images/product/product07.png',     // Image URL for Product 2
 				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',    // Image URL for Product 2
 			),
@@ -2176,6 +2176,36 @@ class ThemeWhizzie
 				'categories' => array('Balls', 'Footwear'),
 				'image_url' => get_template_directory_uri() . '/assets/images/product/product09.png',     // Image URL for Product 2
 				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',     // Image URL for Product 2
+			),
+			array(
+				'title' => 'Helmet Green - 2',
+				'content' => '
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+					</ul>
+						',
+				'regular_price' => '550',
+				'sale_price' => '500',
+				'categories' => array('Balls', 'Accessories'),
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product08.png',     // Image URL for Product 2
+				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
+			),
+			array(
+				'title' => 'Helmet Blue - 2',
+				'content' => '
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitor Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+					</ul>
+						',
+				'regular_price' => '550',
+				'sale_price' => '500',
+				'categories' => array('Balls', 'Footwear'),
+				'image_url' => get_template_directory_uri() . '/assets/images/product/product08.png',     // Image URL for Product 2
+				'post_excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula condimentum tincidunt, arcu orci laoreet massa, nec sagittis elit urna in diam. Sed consectetur dolor non nulla porttitorLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet, ligula.',      // Image URL for Product 2
 			),
 
 		);
@@ -2485,7 +2515,7 @@ class ThemeWhizzie
 		set_theme_mod('cricket_league_pro_about_whychooseus_heading_tag', 'Why Choose Us');
 
 		// Why Choose Heading
-		set_theme_mod('cricket_league_pro_about_whychooseus_heading', 'Experience The True Joy Of Professional Cricket!');
+		set_theme_mod('cricket_league_pro_about_whychooseus_heading', 'Experience The True Joy Of Professional Cricket Games!');
 
 		// Main Image
 		set_theme_mod('cricket_league_pro_whychooseus_main_image', get_template_directory_uri() . '/assets/new-images/WhyChooseUs/image.png');
@@ -4163,6 +4193,13 @@ class ThemeWhizzie
 			);
 			update_post_meta($match_id_4, 'sp_results', $random_score_4);
 		}
+		// Define match data for second match
+		$match_data_5 = array(
+			'post_title' => 'Cricket Match 4',
+			'post_type' => 'sp_event',
+			'post_status' => 'publish',
+			'post_content' => '20 overs match',
+		);
 		// Insert the second match as a post of type 'sp_event'
 		$match_id_5 = wp_insert_post($match_data_5);
 
@@ -4400,6 +4437,7 @@ class ThemeWhizzie
 			update_post_meta($post_id, '_entry_fees', $entry_fees_value);
 			update_post_meta($post_id, '_event_category', $event_category_value);
 			update_post_meta($post_id, '_event_date', $date_array[$i - 1]);
+			update_post_meta($post_id, '_event_date_end',$date_array[$i - 1]);
 			// Set the values
 			$venue_name_value = 'Vidarbha Cricket Association Stadium';
 			$phone_number_value = '123-456-7890';
@@ -4524,8 +4562,10 @@ class ThemeWhizzie
 		// //Shortcode
 		set_theme_mod('cricket_league_pro_gallery_section_shortcode', '[vw-galleryshow vw_gallery="' . $vw_gallery_id . '" numberofitem="7"]');
 
+		set_theme_mod('cricket_league_pro_gallery_heading_tag', 'Our Gallery');
 
-
+		set_theme_mod('cricket_league_pro_gallery_heading', 'Our Gallery');
+		set_theme_mod('cricket_league_pro_event_page_filter_by','Filter by:');
 		/*--- Latest Post---*/
 		set_theme_mod('cricket_league_pro_blog_heading_tagline', 'News & Blogs');
 		set_theme_mod('cricket_league_pro_blog_heading', 'Latest News & Blogs');
@@ -4555,10 +4595,10 @@ class ThemeWhizzie
 
 		$blog_title = array("Unlocking the Secrets to Mastering Your Cricket Swing", "Top 10 Cricket Drills Every Aspiring Player Should Practice", "The Evolution of Cricket: From Its Origins to Modern-Day Matches", "Exploring the Mental Side of Cricket: Strategies for Keeping Your Head in the Game", "Cricket Fitness: Essential Exercises to Improve Speed, Agility, and Endurance", "Behind the Scenes: A Day in the Life of a Cricket Groundskeeper");
 		$content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </li>
- 		<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </li>
- 		<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </li>  
- 		<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</li>
+		<li>> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </li>
+ 		<li>> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </li>
+ 		<li>> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </li>  
+ 		<li>> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</li>
 		';
 		for ($i = 0; $i <= 5; $i++) {
 			$vw_title = $blog_title[$i];
@@ -4957,6 +4997,8 @@ class ThemeWhizzie
 
 		set_theme_mod('cricket_league_pro_position_fixed','fixed');
 
+		set_theme_mod( 'cricket_league_pro_res_open_menu_icon', 'fas fa-bars' );
+		set_theme_mod( 'cricket_league_pro_res_close_menus_icon', 'fas fa-times' );
 
 		// About us 
 		$titleArr = array('Mission', 'Our Mission', 'Our History');

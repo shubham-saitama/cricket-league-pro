@@ -1,22 +1,22 @@
-<i?php
-/**
- * Template to show Products Slider
- *
- * @package cricket_league_pro
- */
+<?php /** * Template to show Products Slider * * @package cricket_league_pro */
 $section_hide = get_theme_mod('cricket_league_pro_productSlider_enabledisable');
 if ('Disable' == $section_hide) {
-  return;
+    return;
 }
 if (get_theme_mod('cricket_league_pro_productSlider_bg_color', '')) {
-  $per_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_productSlider_bg_color', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_productSlider_bg_image', '')) {
-  $per_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_productSlider_bg_image')) . '\')';
-} else {
-  $per_back = '';
+    $services_back = 'background-color:' .
+        esc_attr(get_theme_mod('cricket_league_pro_productSlider_bg_color', '')) . ';';
+} elseif
+(get_theme_mod('cricket_league_pro_productSlider_bg_image', '')) {
+    $services_back = 'background-image:url(\''. esc_url(get_theme_mod('cricket_league_pro_productSlider_bg_image')) . '\')';
 }
-?>
-<section class="products section-space" style="<?php echo esc_attr($per_back); ?>">
+ else {
+    $services_back = '';
+}
+ ?>
+
+
+<section class="products section-space" style="<?php echo esc_attr($services_back); ?>">
     <div class="container">
         <div class="heading-wrap">
             <div class="heading-tag">
@@ -41,6 +41,7 @@ if (get_theme_mod('cricket_league_pro_productSlider_bg_color', '')) {
                     // Start the loop
                     while ($products_query->have_posts()) {
                         $products_query->the_post();
+                        global $product;
                         // Get product meta fields
                         $product_price = get_post_meta(get_the_ID(), '_price', true);
                         $sale_price = get_post_meta(get_the_ID(), '_sale_price', true);
@@ -75,7 +76,12 @@ if (get_theme_mod('cricket_league_pro_productSlider_bg_color', '')) {
                                         // Get the add to cart URL
                                         $add_to_cart_url = esc_url(wc_get_product($product_id)->add_to_cart_url());
                                         ?>
-                                <a href="<?php echo $add_to_cart_url; ?>" class="button"><?php echo get_theme_mod('cricket_league_pro_product_slider_cart_button'); ?><i class="<?php echo get_theme_mod('cricket_league_pro_carrt_btn_icon'); ?>"></i></a>
+                                <div class="cat-btn-wrapper">
+                                    <?php if ($product->is_type('simple')) {
+                                        woocommerce_template_loop_add_to_cart($loop->post, $product);
+                                    } ?>
+                                    <i class="<?php echo get_theme_mod('cricket_league_pro_carrt_btn_icon'); ?>"></i>
+                                </div>
                             </div>
                         </div>
                         <?php

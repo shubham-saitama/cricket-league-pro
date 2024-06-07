@@ -439,22 +439,22 @@ $wp_customize->add_control(
 	)
 );
 
-$wp_customize->add_setting(
-	'cricket_league_pro_slider_btntext',
-	array(
-		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
-	)
-);
-$wp_customize->add_control(
-	'cricket_league_pro_slider_btntext',
-	array(
-		'label' => __('Button text', 'cricket-league-pro'),
-		'section' => 'cricket_league_pro_slider_sec',
-		'setting' => 'cricket_league_pro_slider_btntext',
-		'type' => 'text'
-	)
-);
+// $wp_customize->add_setting(
+// 	'cricket_league_pro_slider_btntext',
+// 	array(
+// 		'default' => '',
+// 		'sanitize_callback' => 'sanitize_text_field'
+// 	)
+// );
+// $wp_customize->add_control(
+// 	'cricket_league_pro_slider_btntext',
+// 	array(
+// 		'label' => __('Button text', 'cricket-league-pro'),
+// 		'section' => 'cricket_league_pro_slider_sec',
+// 		'setting' => 'cricket_league_pro_slider_btntext',
+// 		'type' => 'text'
+// 	)
+// );
 
 $wp_customize->add_setting(
 	'cricket_league_pro_slider_btntext_font_weight',

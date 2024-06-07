@@ -393,7 +393,9 @@ span.number {
   .primary-image {
     max-width: 100%;
   }
-
+  section#upcoming-evt .heading-tag {
+    text-align: left;
+}
   .experience-wrap {
     top: unset;
     bottom: -20%;
@@ -498,7 +500,7 @@ span.number {
 
 section#trophies h2,
 section.products h2 {
-  margin-bottom: 60px;
+  padding-bottom: 60px;
 }
 
 .trophy {
@@ -616,6 +618,46 @@ a.button::after {
   padding: 15px 40px;
 }
 
+section.event-page .upcoming-item {
+  padding: 0px;
+}
+a.prev.page-numbers,a.next.page-numbers {
+  background: var(--primary-color);
+  border-radius: 6px;
+  color: #fff;
+  padding: 2px 3px;
+  /* font-size: 14px; */
+  line-height: 15px;
+}
+section.event-page a.next.page-numbers,section.event-page a.prev.page-numbers{
+  padding: 10px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-cricket a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart::after {
+  display: none;
+}
+.cat-btn-wrapper i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 19px;
+  color: #fff;
+  height: 6px;
+  margin: auto;
+}
+.cat-btn-wrapper {
+  position: relative;
+}
+.cat-btn-wrapper {
+  position: relative;
+  max-width: 150px;
+  margin: 0;
+  display: inline-block;
+}
 .product-cricket:hover {
   border: 1px solid var(--primary-color);
 }
@@ -647,7 +689,11 @@ a.add_to_wishlist.single_add_to_wishlist {
   color: var(--secondary-color);
   border-radius: 3px;
 }
-
+.fsp-shop-wrapper a.add_to_wishlist.single_add_to_wishlist {
+  position: absolute;
+  left: 25px;
+  top: 15px;
+}
 a.add_to_wishlist.single_add_to_wishlist span {
   display: none;
 }
@@ -672,7 +718,16 @@ a.add_to_wishlist.single_add_to_wishlist i {
   width: 30px;
   height: 30px;
 }
-
+.fsp-shop-wrapper .yith-wcwl-wishlistaddedbrowse{
+  position: absolute;
+  left: 25px;
+  top: 15px;
+}
+.fsp-shop-wrapper .yith-wcwl-wishlistexistsbrowse{
+  position: absolute;
+  left: 25px;
+  top: 15px;
+}
 span.feedback i {
   margin: 0px !important;
 }
@@ -959,6 +1014,7 @@ h3.event-name.sp-event-name {
   border: 0px !important;
   width: max-content !important;
   display: flex !important;
+  align-items: center !important;
 }
 .next-match-wrapper .timer-wrapper {
   margin-bottom: 26px;
@@ -1049,6 +1105,7 @@ section.match {
 p.countdown.sp-countdown time span {
   font: normal normal bold 27px / 31px Inter Tight !important;
   color: #000 !important;
+  align-items: center !important;
 }
 
 .col-lg-5.col-md-5.col-12 .timer-wrapper {
@@ -1562,7 +1619,7 @@ section#leagueTable .heading-wrap h2, section#leagueTable .heading-tag {
   text-align: left;
 }
 .postion-right th {
-  padding: 7px 10px !important;
+  padding: 8px 10px !important;
 }
 #leagueTable thead {
   background-color: var(--primary-color) !important;
@@ -1587,7 +1644,7 @@ section#leagueTable tr[role="row"] {
 }
 .postion-right td {
   font: normal normal 300 14px / 20px Inter Tight;
-  padding: 10px;
+  padding: 11px;
 }
 .postion-right tbody tr:nth-child(even) {
   background: #ffffff30 !important;
@@ -1724,6 +1781,7 @@ section.event-page .evt-right h3 a:hover {
 
 input.category-filter-checkbox {
   width: 15px;
+  cursor: pointer;
 }
 .woocommerce p.stars a{
   color: gold !important;

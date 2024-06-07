@@ -162,7 +162,7 @@ th a cite reference:</p>
             </div>
         </div>
         <div class="col-lg-4" id="sidebar">
-             <?php dynamic_sidebar('sidebar-2'); ?>
+             <?php// dynamic_sidebar('sidebar-2'); ?>
         </div>
     </div>
 </div>

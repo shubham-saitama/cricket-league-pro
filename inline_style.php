@@ -579,7 +579,7 @@ $cricket_league_pro_blog_author_tag_settings_font_size = get_theme_mod('cricket_
 $cricket_league_pro_blog_author_tag_settings_font_family = get_theme_mod('cricket_league_pro_blog_author_tag_settings_font_family');
 $cricket_league_pro_blog_author_tag_settings_font_weight = get_theme_mod('cricket_league_pro_blog_author_tag_settings_font_weight');
 
-if ($cricket_league_pro_blog_author_tag_settings_color != false || $cricket_league_pro_blog_author_tag_settings_font_family != false || $cricket_league_pro_blog_author_tag_settings_font_size != false || $cricket_league_pro_blog_author_tag_settings_font_weight != false ) {
+if ($cricket_league_pro_blog_author_tag_settings_color != false || $cricket_league_pro_blog_author_tag_settings_font_family != false || $cricket_league_pro_blog_author_tag_settings_font_size != false || $cricket_league_pro_blog_author_tag_settings_font_weight != false) {
 	$custom_css .= '.info-bar p, .info-bar a{';
 	if ($cricket_league_pro_blog_author_tag_settings_color != false) {
 		$custom_css .= 'color: ' . esc_html($cricket_league_pro_blog_author_tag_settings_color) . ' ;';
@@ -602,7 +602,7 @@ $cricket_league_pro_blog_date_comment_settings_font_size = get_theme_mod('cricke
 $cricket_league_pro_blog_date_comment_settings_font_family = get_theme_mod('cricket_league_pro_blog_date_comment_settings_font_family');
 $cricket_league_pro_blog_date_comment_settings_font_weight = get_theme_mod('cricket_league_pro_blog_date_comment_settings_font_weight');
 
-if ($cricket_league_pro_blog_date_comment_settings_color != false || $cricket_league_pro_blog_date_comment_settings_font_family != false || $cricket_league_pro_blog_date_comment_settings_font_size != false || $cricket_league_pro_blog_date_comment_settings_font_weight != false ) {
+if ($cricket_league_pro_blog_date_comment_settings_color != false || $cricket_league_pro_blog_date_comment_settings_font_family != false || $cricket_league_pro_blog_date_comment_settings_font_size != false || $cricket_league_pro_blog_date_comment_settings_font_weight != false) {
 	$custom_css .= '.lower.bar p, .date-box{';
 	if ($cricket_league_pro_blog_date_comment_settings_color != false) {
 		$custom_css .= 'color: ' . esc_html($cricket_league_pro_blog_date_comment_settings_color) . ' ;';
@@ -624,7 +624,7 @@ $cricket_league_pro_blog_view_all_settings_font_size = get_theme_mod('cricket_le
 $cricket_league_pro_blog_view_all_settings_font_family = get_theme_mod('cricket_league_pro_blog_view_all_settings_font_family');
 $cricket_league_pro_blog_view_all_settings_font_weight = get_theme_mod('cricket_league_pro_blog_view_all_settings_font_weight');
 
-if ($cricket_league_pro_blog_view_all_settings_color != false || $cricket_league_pro_blog_view_all_settings_font_family != false || $cricket_league_pro_blog_view_all_settings_font_size != false || $cricket_league_pro_blog_view_all_settings_font_weight != false ) {
+if ($cricket_league_pro_blog_view_all_settings_color != false || $cricket_league_pro_blog_view_all_settings_font_family != false || $cricket_league_pro_blog_view_all_settings_font_size != false || $cricket_league_pro_blog_view_all_settings_font_weight != false) {
 	$custom_css .= 'section#blog-news a.theme-btn{';
 	if ($cricket_league_pro_blog_view_all_settings_color != false) {
 		$custom_css .= 'color: ' . esc_html($cricket_league_pro_blog_view_all_settings_color) . ' ;';
@@ -856,7 +856,7 @@ $cricket_league_pro_support_page_para_title_font_weight = get_theme_mod('cricket
 
 
 if ($cricket_league_pro_support_page_para_title_color != false || $cricket_league_pro_support_page_para_title_font_family != false || $cricket_league_pro_support_page_para_title_font_size != false || $cricket_league_pro_support_page_para_title_font_weight != false) {
-	$custom_css .= 'section.support-page p,section.support-page ul li{';
+	$custom_css .= '.support-contact-info p{';
 	if ($cricket_league_pro_support_page_para_title_color != false) {
 		$custom_css .= 'color: ' . esc_html($cricket_league_pro_support_page_para_title_color) . ' !important;';
 	}
@@ -990,15 +990,18 @@ if ($cricket_league_pro_post_general_settings_post_author != false) {
 }
 
 
-$cricket_league_pro_post_general_settings = get_theme_mod('cricket_league_pro_post_general_settings');
 
-if ($cricket_league_pro_post_general_settings != false) {
-	$custom_css .= 'li.entry-author.list-unstyled{';
-	if ($cricket_league_pro_post_general_settings != false) {
-		$custom_css .= 'display: ' . esc_html($cricket_league_pro_post_general_settings) . ' ;';
-	}
-	$custom_css .= '}';
-}
+
+
+// $cricket_league_pro_post_general_settings = get_theme_mod('cricket_league_pro_post_general_settings');
+
+// if ($cricket_league_pro_post_general_settings != false) {
+// 	$custom_css .= 'li.entry-author.list-unstyled{';
+// 	if ($cricket_league_pro_post_general_settings != false) {
+// 		$custom_css .= 'display: ' . esc_html($cricket_league_pro_post_general_settings) . ' ;';
+// 	}
+// 	$custom_css .= '}';
+// }
 
 
 
@@ -1007,7 +1010,7 @@ if ($cricket_league_pro_post_general_settings != false) {
 $cricket_league_pro_post_general_settings_post_date = get_theme_mod('cricket_league_pro_post_general_settings_post_date');
 
 if ($cricket_league_pro_post_general_settings_post_date != false) {
-	$custom_css .= 'li.entry-author.list-unstyled{';
+	$custom_css .= 'li.entry-date.before-dot{';
 	if ($cricket_league_pro_post_general_settings_post_date != false) {
 		$custom_css .= 'display: ' . esc_html($cricket_league_pro_post_general_settings_post_date) . ' ;';
 	}
@@ -1046,7 +1049,7 @@ $cricket_league_pro_post_general_settings_subheadings_font_weight = get_theme_mo
 
 
 if ($cricket_league_pro_post_general_settings_subheadings_color != false || $cricket_league_pro_post_general_settings_subheadings_font_family != false || $cricket_league_pro_post_general_settings_subheadings_font_size != false || $cricket_league_pro_post_general_settings_subheadings_font_weight != false) {
-	$custom_css .= 'div#single-post-page h3,div#single-post-page h4	,div#single-post-page .blog-que,div#single-post-page h5{';
+	$custom_css .= 'div#single-post-page h3,div#single-post-page h4	,div#single-post-page .blog-que,div#single-post-page h5,.content_page h6,h2#reply-title,.single-post h2{';
 	if ($cricket_league_pro_post_general_settings_subheadings_color != false) {
 		$custom_css .= 'color: ' . esc_html($cricket_league_pro_post_general_settings_subheadings_color) . ' ;';
 	}
@@ -1097,7 +1100,7 @@ $cricket_league_pro_policy_page_heading_font_weight = get_theme_mod('cricket_lea
 
 
 if ($cricket_league_pro_policy_page_heading_color != false || $cricket_league_pro_policy_page_heading_font_family != false || $cricket_league_pro_policy_page_heading_font_size != false || $cricket_league_pro_policy_page_heading_font_weight != false) {
-	$custom_css .= 'body.page-template-default h2{';
+	$custom_css .= 'body.page-template-default h2,.page-template-default h1{';
 	if ($cricket_league_pro_policy_page_heading_color != false) {
 		$custom_css .= 'color: ' . esc_html($cricket_league_pro_policy_page_heading_color) . ' ;';
 	}
@@ -1379,7 +1382,7 @@ $cricket_league_pro_blog_page_para_para_font_weight = get_theme_mod('cricket_lea
 
 
 if ($cricket_league_pro_blog_page_para_para_color != false || $cricket_league_pro_blog_page_para_para_font_family != false || $cricket_league_pro_blog_page_para_para_font_size != false || $cricket_league_pro_blog_page_para_para_font_weight != false) {
-	$custom_css .= '.blog-single .single-post p{';
+	$custom_css .= '.blog-single .content_page p,.blog-single .content_page p ~ li{';
 	if ($cricket_league_pro_blog_page_para_para_color != false) {
 		$custom_css .= 'color: ' . esc_html($cricket_league_pro_blog_page_para_para_color) . ' !important;';
 	}
@@ -1549,15 +1552,18 @@ if ($cricket_league_pro_body_font_family) {
 	if ($cricket_league_pro_body_font_family != false) {
 		$custom_css .= 'font-family: ' . esc_html($cricket_league_pro_body_font_family) . ' !important;';
 	}
+	$custom_css .= '}';
 }
 
 $cricket_league_pro_body_color = get_theme_mod('cricket_league_pro_body_color');
+$custom_css .= 'body{';
 if ($cricket_league_pro_body_color) {
 	if ($cricket_league_pro_body_color != false) {
 		$custom_css .= 'color: ' . esc_html($cricket_league_pro_body_color) . ' !important;';
 	}
 }
 $cricket_league_pro_body_font_size = get_theme_mod('cricket_league_pro_body_font_size');
+$custom_css .= 'body{';
 if ($cricket_league_pro_body_font_size) {
 	if ($cricket_league_pro_body_font_size != false) {
 		$custom_css .= 'font-size: ' . esc_html($cricket_league_pro_body_font_size) . 'px;';
@@ -1566,151 +1572,6 @@ if ($cricket_league_pro_body_font_size) {
 $custom_css .= '}';
 
 
-
-
-$cricket_league_pro_h1_font_family = get_theme_mod('cricket_league_pro_h1_font_family');
-$cricket_league_pro_h1_font_size = get_theme_mod('cricket_league_pro_h1_font_size');
-$cricket_league_pro_h1_font_weight = get_theme_mod('cricket_league_pro_h1_font_weight');
-$cricket_league_pro_h1_color = get_theme_mod('cricket_league_pro_h1_color');
-$cricket_league_pro_h2_font_family = get_theme_mod('cricket_league_pro_h2_font_family');
-$cricket_league_pro_h2_font_size = get_theme_mod('cricket_league_pro_h2_font_size');
-$cricket_league_pro_h2_font_weight = get_theme_mod('cricket_league_pro_h2_font_weight');
-$cricket_league_pro_h2_color = get_theme_mod('cricket_league_pro_h2_color');
-$cricket_league_pro_h3_font_family = get_theme_mod('cricket_league_pro_h3_font_family');
-$cricket_league_pro_h3_font_size = get_theme_mod('cricket_league_pro_h3_font_size');
-$cricket_league_pro_h3_font_weight = get_theme_mod('cricket_league_pro_h3_font_weight');
-$cricket_league_pro_h3_color = get_theme_mod('cricket_league_pro_h3_color');
-$cricket_league_pro_h4_font_family = get_theme_mod('cricket_league_pro_h4_font_family');
-$cricket_league_pro_h4_font_size = get_theme_mod('cricket_league_pro_h4_font_size');
-$cricket_league_pro_h4_color = get_theme_mod('cricket_league_pro_h4_color');
-$cricket_league_pro_h5_font_family = get_theme_mod('cricket_league_pro_h5_font_family');
-$cricket_league_pro_h5_font_size = get_theme_mod('cricket_league_pro_h5_font_size');
-$cricket_league_pro_h5_color = get_theme_mod('cricket_league_pro_h5_color');
-$cricket_league_pro_h6_font_family = get_theme_mod('cricket_league_pro_h6_font_family');
-$cricket_league_pro_h6_font_size = get_theme_mod('cricket_league_pro_h6_font_size');
-$cricket_league_pro_h6_color = get_theme_mod('cricket_league_pro_h6_color');
-$cricket_league_pro_paragarpah_font_family = get_theme_mod('cricket_league_pro_paragarpah_font_family');
-$cricket_league_pro_para_font_size = get_theme_mod('cricket_league_pro_para_font_size');
-$cricket_league_pro_para_font_weight = get_theme_mod('cricket_league_pro_para_font_weight');
-$cricket_league_pro_para_color = get_theme_mod('cricket_league_pro_para_color');
-/*-------------------h1-----------------------*/
-if ($cricket_league_pro_h1_font_family != false || $cricket_league_pro_h1_color != false || $cricket_league_pro_h1_font_size != false || $cricket_league_pro_h1_font_weight != false) {
-	$custom_css .= 'h1, #slider h1{';
-	if ($cricket_league_pro_h1_font_family != false) {
-		$custom_css .= 'font-family: ' . esc_html($cricket_league_pro_h1_font_family) . ' ;';
-	}
-	if ($cricket_league_pro_h1_color != false) {
-		$custom_css .= 'color: ' . esc_html($cricket_league_pro_h1_color) . ';';
-	}
-	if ($cricket_league_pro_h1_font_size != false) {
-		$custom_css .= 'font-size: ' . esc_html($cricket_league_pro_h1_font_size) . 'px ;';
-	}
-	if ($cricket_league_pro_h1_font_weight != false) {
-		$custom_css .= 'font-weight: ' . esc_html($cricket_league_pro_h1_font_weight) . ';';
-	}
-	$custom_css .= '}';
-}
-
-/*-------------------h2-----------------------*/
-if ($cricket_league_pro_h2_font_family != false || $cricket_league_pro_h2_color != false || $cricket_league_pro_h2_font_size != false || $cricket_league_pro_h2_font_weight != false) {
-	$custom_css .= 'body h2,h2,section h2, h2.woocommerce-loop-product__title, h2.woocommerce-loop-category__title, .postbox h2, #comments h2.comments-title, #comments h2#reply-title{';
-	if ($cricket_league_pro_h2_font_family != false) {
-		$custom_css .= 'font-family: ' . esc_html($cricket_league_pro_h2_font_family) . ' !important;';
-	}
-	if ($cricket_league_pro_h2_color != false) {
-		$custom_css .= 'color: ' . esc_html($cricket_league_pro_h2_color) . '!important;';
-	}
-	if ($cricket_league_pro_h2_font_size != false) {
-		$custom_css .= 'font-size: ' . esc_html($cricket_league_pro_h2_font_size) . 'px !important;';
-	}
-	if ($cricket_league_pro_h2_font_weight != false) {
-		$custom_css .= 'font-weight: ' . esc_html($cricket_league_pro_h2_font_weight) . '!important;';
-	}
-	$custom_css .= '}';
-}
-/*-------------------h3-----------------------*/
-if ($cricket_league_pro_h3_font_family != false || $cricket_league_pro_h3_color != false || $cricket_league_pro_h3_font_size != false || $cricket_league_pro_h3_font_weight != false) {
-	$custom_css .= 'h3, #new-product .product-name a, #feature-product .product-name a ,.footer-top-col h3,h3.product-name a ,.container #blog-right-sidebar h3, #footer h3, #category .section-title h3, .collectionbox-text h3 a, .collection-inner h3, #author .section-title h3, #testimonials .section-title h3, #testimonials h3 small, .collectionbox-text h3, .news_box_outer h3, .section-title h3, section h3, h3.contact-page, .contac_form h3, #full-width-blog .postbox h3, .postbox h3, #comments h3.comment-reply-title, #sidebar h3, .tesimonialtitle a{';
-	if ($cricket_league_pro_h3_font_family != false) {
-		$custom_css .= 'font-family: ' . esc_html($cricket_league_pro_h3_font_family) . ' !important;';
-	}
-	if ($cricket_league_pro_h3_color != false) {
-		$custom_css .= 'color: ' . esc_html($cricket_league_pro_h3_color) . '!important;';
-	}
-	if ($cricket_league_pro_h3_font_size != false) {
-		$custom_css .= 'font-size: ' . esc_html($cricket_league_pro_h3_font_size) . '!importantpx;';
-	}
-	if ($cricket_league_pro_h3_font_weight != false) {
-		$custom_css .= 'font-weight: ' . esc_html($cricket_league_pro_h3_font_weight) . '!important;';
-	}
-	$custom_css .= '}';
-
-}
-if ($cricket_league_pro_h4_font_family != false || $cricket_league_pro_h4_color != false || $cricket_league_pro_h4_font_size != false || $cricket_league_pro_h4_font_weight != false) {
-	$custom_css .= 'h4, section h4, .news-title a{';
-	if ($cricket_league_pro_h4_font_family != false) {
-		$custom_css .= 'font-family: ' . esc_html($cricket_league_pro_h4_font_family) . '!important;';
-	}
-	if ($cricket_league_pro_h4_color != false) {
-		$custom_css .= 'color: ' . esc_html($cricket_league_pro_h4_color) . '!important;';
-	}
-	if ($cricket_league_pro_h4_font_size != false) {
-		$custom_css .= 'font-size: ' . esc_html($cricket_league_pro_h4_font_size) . 'px!important;';
-	}
-	if ($cricket_league_pro_h4_font_weight != false) {
-		$custom_css .= 'font-weight: ' . esc_html($cricket_league_pro_h4_font_weight) . '!important;';
-	}
-	$custom_css .= '}';
-	$custom_css .= '}';
-}
-if ($cricket_league_pro_h5_font_family != false || $cricket_league_pro_h5_color != false || $cricket_league_pro_h5_font_size != false || $cricket_league_pro_h5_font_weight != false) {
-	$custom_css .= 'h5, section h5, .inner_product h5,#feature-product h5.product-offer-price, #slider h5,#use-code .code-no{';
-	if ($cricket_league_pro_h5_font_family != false) {
-		$custom_css .= 'font-family: ' . esc_html($cricket_league_pro_h5_font_family) . ' !important;';
-	}
-	if ($cricket_league_pro_h5_color != false) {
-		$custom_css .= 'color: ' . esc_html($cricket_league_pro_h5_color) . '!important;';
-	}
-	if ($cricket_league_pro_h5_font_size != false) {
-		$custom_css .= 'font-size: ' . esc_html($cricket_league_pro_h5_font_size) . 'px !important;';
-	}
-	if ($cricket_league_pro_h5_font_weight != false) {
-		$custom_css .= 'font-weight: ' . esc_html($cricket_league_pro_h5_font_weight) . '!important;';
-	}
-	$custom_css .= '}';
-}
-if ($cricket_league_pro_h6_font_family != false || $cricket_league_pro_h6_color != false || $cricket_league_pro_h6_font_size != false || $cricket_league_pro_h6_font_weight != false) {
-	$custom_css .= 'body h6,#new-product h6.product-brand, #feature-product h6.product-brand,h6,#latest_post .collectionbox-text h6, .postbox h6, #category .categorytitle a{';
-	if ($cricket_league_pro_h6_font_family != false) {
-		$custom_css .= 'font-family: ' . esc_html($cricket_league_pro_h6_font_family) . '!important;';
-	}
-	if ($cricket_league_pro_h6_color != false) {
-		$custom_css .= 'color: ' . esc_html($cricket_league_pro_h6_color) . '!important;';
-	}
-	if ($cricket_league_pro_h6_font_size != false) {
-		$custom_css .= 'font-size: ' . esc_html($cricket_league_pro_h6_font_size) . 'px!important;';
-	}
-	if ($cricket_league_pro_h6_font_weight != false) {
-		$custom_css .= 'font-weight: ' . esc_html($cricket_league_pro_h6_font_weight) . '!important;';
-	}
-	$custom_css .= '}';
-}
-if ($cricket_league_pro_paragarpah_font_family != false || $cricket_league_pro_para_color != false || $cricket_league_pro_para_font_size != false || $cricket_league_pro_para_font_weight != false) {
-	$custom_css .= '.testimonial-content p,.whyChooseUs-right p,.step-text p,.about-inner p,.banner-content p,#single-post-page p,p.error-para,p.text-bold,p.text-normal,p.best-text,.para,li.list-item,p.sevices_para,ul.featured-list li,section#pricing_sec-us p,.GetInTouch.heading p.section-desc,.accordion-wrapper .answer,.outer_dpage .middle-content p, .middle-content ul li,p{';
-	if ($cricket_league_pro_paragarpah_font_family != false) {
-		$custom_css .= 'font-family: ' . esc_html($cricket_league_pro_paragarpah_font_family) . ' !important;';
-	}
-	if ($cricket_league_pro_para_color != false) {
-		$custom_css .= 'color: ' . esc_html($cricket_league_pro_para_color) . '!important;';
-	}
-	if ($cricket_league_pro_para_font_size != false) {
-		$custom_css .= 'font-size: ' . esc_html($cricket_league_pro_para_font_size) . 'px!important;';
-	}
-	if ($cricket_league_pro_para_font_weight != false) {
-		$custom_css .= 'font-weight: ' . esc_html($cricket_league_pro_para_font_weight) . '!important;';
-	}
-	$custom_css .= '}';
-}
 
 // Banner section 
 $cricket_league_pro_banner_tag_color = get_theme_mod('cricket_league_pro_banner_tag_color');
@@ -1721,16 +1582,16 @@ $cricket_league_pro_banner_tag_font_weight = get_theme_mod('cricket_league_pro_b
 if ($cricket_league_pro_banner_tag_color != false || $cricket_league_pro_banner_tag_font_family != false || $cricket_league_pro_banner_tag_font_size != false || $cricket_league_pro_banner_tag_font_weight != false) {
 	$custom_css .= 'span.banner-tag{';
 	if ($cricket_league_pro_banner_tag_color != false) {
-		$custom_css .= 'color: ' . esc_html($cricket_league_pro_banner_tag_color) . ' ;';
+		$custom_css .= 'color: ' . esc_html($cricket_league_pro_banner_tag_color) . ';';
 	}
 	if ($cricket_league_pro_banner_tag_font_family != false) {
-		$custom_css .= 'font-family:' . esc_html($cricket_league_pro_banner_tag_font_family) . ' ;';
+		$custom_css .= 'font-family:' . esc_html($cricket_league_pro_banner_tag_font_family) . ';';
 	}
 	if ($cricket_league_pro_banner_tag_font_size != false) {
-		$custom_css .= 'font-size:' . esc_html($cricket_league_pro_banner_tag_font_size) . 'px ;';
+		$custom_css .= 'font-size:' . esc_html($cricket_league_pro_banner_tag_font_size) . 'px;';
 	}
 	if ($cricket_league_pro_banner_tag_font_weight != false) {
-		$custom_css .= 'font-weight:' . esc_html($cricket_league_pro_banner_tag_font_weight) . ' ;';
+		$custom_css .= 'font-weight:' . esc_html($cricket_league_pro_banner_tag_font_weight) . ';';
 	}
 	$custom_css .= '}';
 }
@@ -1787,6 +1648,7 @@ $cricket_league_pro_slider_btntext_font_size = get_theme_mod('cricket_league_pro
 $cricket_league_pro_slider_btntext_font_family = get_theme_mod('cricket_league_pro_slider_btntext_font_family');
 $cricket_league_pro_slider_btntext_font_weight = get_theme_mod('cricket_league_pro_slider_btntext_font_weight');
 $cricket_league_pro_slider_btn_bgcolor_one = get_theme_mod('cricket_league_pro_slider_btn_bgcolor_one');
+$cricket_league_pro_header_text_color = get_theme_mod('cricket_league_pro_header_text_color');
 
 
 if ($cricket_league_pro_slider_btntext_color != false || $cricket_league_pro_slider_btntext_font_family != false || $cricket_league_pro_slider_btntext_font_size != false || $cricket_league_pro_slider_btntext_font_weight != false) {
@@ -1808,9 +1670,6 @@ if ($cricket_league_pro_slider_btntext_color != false || $cricket_league_pro_sli
 	}
 	$custom_css .= '}';
 }
-
-
-$cricket_league_pro_header_text_color = get_theme_mod('cricket_league_pro_header_text_color');
 
 if ($cricket_league_pro_header_text_color != false || $cricket_league_pro_header_text_font_family != false || $cricket_league_pro_header_text_font_size != false) {
 	$custom_css .= '#site_top .topbar-text p,span.topbar.data{';
@@ -3162,7 +3021,6 @@ if ($cricket_league_pro_product_slider_heading_color != false || $cricket_league
 	if ($cricket_league_pro_product_slider_heading_font_weight != false) {
 		$custom_css .= 'font-weight:' . esc_html($cricket_league_pro_product_slider_heading_font_weight) . ';';
 	}
-
 	$custom_css .= '}';
 }
 ;
@@ -3171,9 +3029,8 @@ $cricket_league_pro_product_slider_product_name_font_size = get_theme_mod('crick
 $cricket_league_pro_product_slider_product_name_font_family = get_theme_mod('cricket_league_pro_product_slider_product_name_font_family');
 $cricket_league_pro_product_slider_product_name_font_weight = get_theme_mod('cricket_league_pro_product_slider_product_name_font_weight');
 
-
 if ($cricket_league_pro_product_slider_product_name_color != false || $cricket_league_pro_product_slider_product_name_font_family != false || $cricket_league_pro_product_slider_product_name_font_size != false || $cricket_league_pro_product_slider_product_name_font_weight != false) {
-	$custom_css .= 'body .item-product h3 a{';
+	$custom_css .= '.item-product h3 a{';
 	if ($cricket_league_pro_product_slider_product_name_color != false) {
 		$custom_css .= 'color: ' . esc_html($cricket_league_pro_product_slider_product_name_color) . ' ;';
 	}
@@ -3186,7 +3043,6 @@ if ($cricket_league_pro_product_slider_product_name_color != false || $cricket_l
 	if ($cricket_league_pro_product_slider_product_name_font_weight != false) {
 		$custom_css .= 'font-weight:' . esc_html($cricket_league_pro_product_slider_product_name_font_weight) . ';';
 	}
-
 	$custom_css .= '}';
 }
 ;
@@ -3470,7 +3326,7 @@ $cricket_league_pro_upcoming_evt_view_all_font_family = get_theme_mod('cricket_l
 $cricket_league_pro_upcoming_evt_view_all_font_weight = get_theme_mod('cricket_league_pro_upcoming_evt_view_all_font_weight');
 
 if ($cricket_league_pro_upcoming_evt_view_all_color != false || $cricket_league_pro_upcoming_evt_view_all_font_family != false || $cricket_league_pro_upcoming_evt_view_all_font_size != false || $cricket_league_pro_upcoming_evt_view_all_font_weight != false) {
-	$custom_css .= 'section#upcoming-evt a.theme-btn.black{';
+	$custom_css .= 'section#upcoming-evt a.theme-btn{';
 	if ($cricket_league_pro_upcoming_evt_view_all_color != false) {
 		$custom_css .= 'color: ' . esc_html($cricket_league_pro_upcoming_evt_view_all_color) . ' ;';
 	}
@@ -3842,7 +3698,7 @@ $cricket_league_pro_aboutus_section_heading_tag_font_family = get_theme_mod('cri
 $cricket_league_pro_aboutus_section_heading_tag_font_weight = get_theme_mod('cricket_league_pro_aboutus_section_heading_tag_font_weight');
 
 if ($cricket_league_pro_aboutus_section_heading_tag_color != false || $cricket_league_pro_aboutus_section_heading_tag_font_family != false || $cricket_league_pro_aboutus_section_heading_tag_font_size != false || $cricket_league_pro_aboutus_section_heading_tag_font_weight != false) {
-	$custom_css .= 'section.our-staff .heading-tag,section.aboutus-gallery .heading-tag{';
+	$custom_css .= 'section.our-staff .heading-tag,section.aboutus-gallery .heading-tag,section#about-us .heading-tag,section.aboutus-gallery .heading-tag,section.aboutus-gallery h2{';
 	if ($cricket_league_pro_aboutus_section_heading_tag_color != false) {
 		$custom_css .= 'color: ' . esc_html($cricket_league_pro_aboutus_section_heading_tag_color) . ' ;';
 	}
@@ -3856,8 +3712,7 @@ if ($cricket_league_pro_aboutus_section_heading_tag_color != false || $cricket_l
 		$custom_css .= 'font-weight:' . esc_html($cricket_league_pro_aboutus_section_heading_tag_font_weight) . ';';
 	}
 	$custom_css .= '}';
-}
-;
+};
 
 
 $cricket_league_pro_aboutus_section_heading_color = get_theme_mod('cricket_league_pro_aboutus_section_heading_color');
@@ -4325,7 +4180,8 @@ if ($cricket_league_pro_single_evt_add_chalender_color != false || $cricket_leag
 		$custom_css .= 'font-weight:' . esc_html($cricket_league_pro_single_evt_add_chalender_font_weight) . ';';
 	}
 	$custom_css .= '}';
-};
+}
+;
 
 
 $cricket_league_pro_headermenu_font_size = get_theme_mod('cricket_league_pro_headermenu_font_size');
@@ -4434,7 +4290,7 @@ $cricket_league_pro_footer_newsletter_button_font_family = get_theme_mod('cricke
 $cricket_league_pro_footer_newsletter_button_font_weight = get_theme_mod('cricket_league_pro_footer_newsletter_button_font_weight');
 $cricket_league_pro_footer_newsletter_button_bgcolor = get_theme_mod('cricket_league_pro_footer_newsletter_button_bgcolor');
 
-if ($cricket_league_pro_footer_newsletter_button_color != false || $cricket_league_pro_footer_newsletter_button_font_family != false || $cricket_league_pro_footer_newsletter_button_font_size != false || $cricket_league_pro_footer_newsletter_button_font_weight != false  || $cricket_league_pro_footer_newsletter_button_bgcolor) {
+if ($cricket_league_pro_footer_newsletter_button_color != false || $cricket_league_pro_footer_newsletter_button_font_family != false || $cricket_league_pro_footer_newsletter_button_font_size != false || $cricket_league_pro_footer_newsletter_button_font_weight != false || $cricket_league_pro_footer_newsletter_button_bgcolor) {
 	$custom_css .= '#footer input.wpcf7-form-control.wpcf7-submit{';
 	if ($cricket_league_pro_footer_newsletter_button_color != false) {
 		$custom_css .= 'color: ' . esc_html($cricket_league_pro_footer_newsletter_button_color) . ' ;';
@@ -4472,7 +4328,7 @@ $cricket_league_pro_aboutus_tab_heading_font_size = get_theme_mod('cricket_leagu
 $cricket_league_pro_aboutus_tab_heading_font_family = get_theme_mod('cricket_league_pro_aboutus_tab_heading_font_family');
 $cricket_league_pro_aboutus_tab_heading_font_weight = get_theme_mod('cricket_league_pro_aboutus_tab_heading_font_weight');
 
-if ($cricket_league_pro_aboutus_tab_heading_color != false || $cricket_league_pro_aboutus_tab_heading_font_family != false || $cricket_league_pro_aboutus_tab_heading_font_size != false || $cricket_league_pro_aboutus_tab_heading_font_weight != false ) {
+if ($cricket_league_pro_aboutus_tab_heading_color != false || $cricket_league_pro_aboutus_tab_heading_font_family != false || $cricket_league_pro_aboutus_tab_heading_font_size != false || $cricket_league_pro_aboutus_tab_heading_font_weight != false) {
 	$custom_css .= 'ul.tab-links a,ul.tab-links .active a{';
 	if ($cricket_league_pro_aboutus_tab_heading_color != false) {
 		$custom_css .= 'color: ' . esc_html($cricket_league_pro_aboutus_tab_heading_color) . ' ;';
@@ -4499,7 +4355,7 @@ if ($cricket_league_pro_header_bat_image != false) {
 	$custom_css .= '}';
 }
 
-$cricket_league_pro_testimonial_sec_text_color = get_theme_mod('cricket_league_pro_testimonial_sec_text_color');
+$cricket_league_pro_testimonial_sec_text_color_one = get_theme_mod('cricket_league_pro_testimonial_sec_text_color_one');
 $cricket_league_pro_testimonial_sec_text_font_size = get_theme_mod('cricket_league_pro_testimonial_sec_text_font_size');
 $cricket_league_pro_testimonial_sec_text_font_family = get_theme_mod('cricket_league_pro_testimonial_sec_text_font_family');
 $cricket_league_pro_testimonial_sec_text_font_weight = get_theme_mod('cricket_league_pro_testimonial_sec_text_font_weight');
@@ -4520,3 +4376,323 @@ if ($cricket_league_pro_testimonial_sec_text_color_one != false || $cricket_leag
 	$custom_css .= '}';
 }
 ;
+
+
+$cricket_league_pro_h1_font_family = get_theme_mod('cricket_league_pro_h1_font_family');
+$cricket_league_pro_h1_font_size = get_theme_mod('cricket_league_pro_h1_font_size');
+$cricket_league_pro_h1_font_weight = get_theme_mod('cricket_league_pro_h1_font_weight');
+$cricket_league_pro_h1_color = get_theme_mod('cricket_league_pro_h1_color');
+$cricket_league_pro_h2_font_family = get_theme_mod('cricket_league_pro_h2_font_family');
+$cricket_league_pro_h2_font_size = get_theme_mod('cricket_league_pro_h2_font_size');
+$cricket_league_pro_h2_font_weight = get_theme_mod('cricket_league_pro_h2_font_weight');
+$cricket_league_pro_h2_color = get_theme_mod('cricket_league_pro_h2_color');
+$cricket_league_pro_h3_font_family = get_theme_mod('cricket_league_pro_h3_font_family');
+$cricket_league_pro_h3_font_size = get_theme_mod('cricket_league_pro_h3_font_size');
+$cricket_league_pro_h3_font_weight = get_theme_mod('cricket_league_pro_h3_font_weight');
+$cricket_league_pro_h3_color = get_theme_mod('cricket_league_pro_h3_color');
+$cricket_league_pro_h4_font_family = get_theme_mod('cricket_league_pro_h4_font_family');
+$cricket_league_pro_h4_font_size = get_theme_mod('cricket_league_pro_h4_font_size');
+$cricket_league_pro_h4_color = get_theme_mod('cricket_league_pro_h4_color');
+$cricket_league_pro_h5_font_family = get_theme_mod('cricket_league_pro_h5_font_family');
+$cricket_league_pro_h5_font_size = get_theme_mod('cricket_league_pro_h5_font_size');
+$cricket_league_pro_h5_color = get_theme_mod('cricket_league_pro_h5_color');
+$cricket_league_pro_h6_font_family = get_theme_mod('cricket_league_pro_h6_font_family');
+$cricket_league_pro_h6_font_size = get_theme_mod('cricket_league_pro_h6_font_size');
+$cricket_league_pro_h6_color = get_theme_mod('cricket_league_pro_h6_color');
+$cricket_league_pro_paragarpah_font_family = get_theme_mod('cricket_league_pro_paragarpah_font_family');
+$cricket_league_pro_para_font_size = get_theme_mod('cricket_league_pro_para_font_size');
+$cricket_league_pro_para_font_weight = get_theme_mod('cricket_league_pro_para_font_weight');
+$cricket_league_pro_para_color = get_theme_mod('cricket_league_pro_para_color');
+/*-------------------h1-----------------------*/
+if ($cricket_league_pro_h1_font_family != false || $cricket_league_pro_h1_color != false || $cricket_league_pro_h1_font_size != false || $cricket_league_pro_h1_font_weight != false) {
+	$custom_css .= 'h1, #slider h1{';
+	if ($cricket_league_pro_h1_font_family != false) {
+		$custom_css .= 'font-family: ' . esc_html($cricket_league_pro_h1_font_family) . ' ;';
+	}
+	if ($cricket_league_pro_h1_color != false) {
+		$custom_css .= 'color: ' . esc_html($cricket_league_pro_h1_color) . ';';
+	}
+	if ($cricket_league_pro_h1_font_size != false) {
+		$custom_css .= 'font-size: ' . esc_html($cricket_league_pro_h1_font_size) . 'px ;';
+	}
+	if ($cricket_league_pro_h1_font_weight != false) {
+		$custom_css .= 'font-weight: ' . esc_html($cricket_league_pro_h1_font_weight) . ';';
+	}
+	$custom_css .= '}';
+}
+
+/*-------------------h2-----------------------*/
+if ($cricket_league_pro_h2_font_family != false || $cricket_league_pro_h2_color != false || $cricket_league_pro_h2_font_size != false || $cricket_league_pro_h2_font_weight != false) {
+	$custom_css .= 'body h2,h2,section h2, h2.woocommerce-loop-product__title, h2.woocommerce-loop-category__title, .postbox h2, #comments h2.comments-title, #comments h2#reply-title{';
+	if ($cricket_league_pro_h2_font_family != false) {
+		$custom_css .= 'font-family: ' . esc_html($cricket_league_pro_h2_font_family) . ' !important;';
+	}
+	if ($cricket_league_pro_h2_color != false) {
+		$custom_css .= 'color: ' . esc_html($cricket_league_pro_h2_color) . '!important;';
+	}
+	if ($cricket_league_pro_h2_font_size != false) {
+		$custom_css .= 'font-size: ' . esc_html($cricket_league_pro_h2_font_size) . 'px !important;';
+	}
+	if ($cricket_league_pro_h2_font_weight != false) {
+		$custom_css .= 'font-weight: ' . esc_html($cricket_league_pro_h2_font_weight) . '!important;';
+	}
+	$custom_css .= '}';
+}
+/*-------------------h3-----------------------*/
+if ($cricket_league_pro_h3_font_family != false || $cricket_league_pro_h3_color != false || $cricket_league_pro_h3_font_size != false || $cricket_league_pro_h3_font_weight != false) {
+	$custom_css .= 'h3, #new-product .product-name a, #feature-product .product-name a ,.footer-top-col h3,h3.product-name a ,.container #blog-right-sidebar h3, #footer h3, #category .section-title h3, .collectionbox-text h3 a, .collection-inner h3, #author .section-title h3, #testimonials .section-title h3, #testimonials h3 small, .collectionbox-text h3, .news_box_outer h3, .section-title h3, section h3, h3.contact-page, .contac_form h3, #full-width-blog .postbox h3, .postbox h3, #comments h3.comment-reply-title, #sidebar h3, .tesimonialtitle a{';
+	if ($cricket_league_pro_h3_font_family != false) {
+		$custom_css .= 'font-family: ' . esc_html($cricket_league_pro_h3_font_family) . ' !important;';
+	}
+	if ($cricket_league_pro_h3_color != false) {
+		$custom_css .= 'color: ' . esc_html($cricket_league_pro_h3_color) . '!important;';
+	}
+	if ($cricket_league_pro_h3_font_size != false) {
+		$custom_css .= 'font-size: ' . esc_html($cricket_league_pro_h3_font_size) . '!importantpx;';
+	}
+	if ($cricket_league_pro_h3_font_weight != false) {
+		$custom_css .= 'font-weight: ' . esc_html($cricket_league_pro_h3_font_weight) . '!important;';
+	}
+	$custom_css .= '}';
+
+}
+if ($cricket_league_pro_h4_font_family != false || $cricket_league_pro_h4_color != false || $cricket_league_pro_h4_font_size != false || $cricket_league_pro_h4_font_weight != false) {
+	$custom_css .= 'h4, section h4, .news-title a{';
+	if ($cricket_league_pro_h4_font_family != false) {
+		$custom_css .= 'font-family: ' . esc_html($cricket_league_pro_h4_font_family) . '!important;';
+	}
+	if ($cricket_league_pro_h4_color != false) {
+		$custom_css .= 'color: ' . esc_html($cricket_league_pro_h4_color) . '!important;';
+	}
+	if ($cricket_league_pro_h4_font_size != false) {
+		$custom_css .= 'font-size: ' . esc_html($cricket_league_pro_h4_font_size) . 'px!important;';
+	}
+	if ($cricket_league_pro_h4_font_weight != false) {
+		$custom_css .= 'font-weight: ' . esc_html($cricket_league_pro_h4_font_weight) . '!important;';
+	}
+	$custom_css .= '}';
+}
+;
+if ($cricket_league_pro_h5_font_family != false || $cricket_league_pro_h5_color != false || $cricket_league_pro_h5_font_size != false || $cricket_league_pro_h5_font_weight != false) {
+	$custom_css .= 'h5, section h5, .inner_product h5,#feature-product h5.product-offer-price, #slider h5,#use-code .code-no,.blog-card-content h5{';
+	if ($cricket_league_pro_h5_font_family != false) {
+		$custom_css .= 'font-family: ' . esc_html($cricket_league_pro_h5_font_family) . ' !important;';
+	}
+	if ($cricket_league_pro_h5_color != false) {
+		$custom_css .= 'color: ' . esc_html($cricket_league_pro_h5_color) . '!important;';
+	}
+	if ($cricket_league_pro_h5_font_size != false) {
+		$custom_css .= 'font-size: ' . esc_html($cricket_league_pro_h5_font_size) . 'px !important;';
+	}
+	if ($cricket_league_pro_h5_font_weight != false) {
+		$custom_css .= 'font-weight: ' . esc_html($cricket_league_pro_h5_font_weight) . '!important;';
+	}
+	$custom_css .= '}';
+}
+;
+if ($cricket_league_pro_h6_font_family != false || $cricket_league_pro_h6_color != false || $cricket_league_pro_h6_font_size != false || $cricket_league_pro_h6_font_weight != false) {
+	$custom_css .= 'body h6,#new-product h6.product-brand, #feature-product h6.product-brand,h6,#latest_post .collectionbox-text h6, .postbox h6, #category .categorytitle a{';
+	if ($cricket_league_pro_h6_font_family != false) {
+		$custom_css .= 'font-family: ' . esc_html($cricket_league_pro_h6_font_family) . '!important;';
+	}
+	if ($cricket_league_pro_h6_color != false) {
+		$custom_css .= 'color: ' . esc_html($cricket_league_pro_h6_color) . '!important;';
+	}
+	if ($cricket_league_pro_h6_font_size != false) {
+		$custom_css .= 'font-size: ' . esc_html($cricket_league_pro_h6_font_size) . 'px!important;';
+	}
+	if ($cricket_league_pro_h6_font_weight != false) {
+		$custom_css .= 'font-weight: ' . esc_html($cricket_league_pro_h6_font_weight) . '!important;';
+	}
+	$custom_css .= '}';
+}
+;
+if ($cricket_league_pro_paragarpah_font_family != false || $cricket_league_pro_para_color != false || $cricket_league_pro_para_font_size != false || $cricket_league_pro_para_font_weight != false) {
+	$custom_css .= '.testimonial-content p,.whyChooseUs-right p,.step-text p,.about-inner p,.banner-content p,#single-post-page p,p.error-para,p.text-bold,p.text-normal,p.best-text,.para,li.list-item,p.sevices_para,ul.featured-list li,section#pricing_sec-us p,.GetInTouch.heading p.section-desc,.accordion-wrapper .answer,.outer_dpage .middle-content p, .middle-content ul li,p {';
+	if ($cricket_league_pro_paragarpah_font_family != false) {
+		$custom_css .= 'font-family: ' . esc_html($cricket_league_pro_paragarpah_font_family) . ' !important;';
+	}
+	if ($cricket_league_pro_para_color != false) {
+		$custom_css .= 'color: ' . esc_html($cricket_league_pro_para_color) . '!important;';
+	}
+	if ($cricket_league_pro_para_font_size != false) {
+		$custom_css .= 'font-size: ' . esc_html($cricket_league_pro_para_font_size) . 'px!important;';
+	}
+	if ($cricket_league_pro_para_font_weight != false) {
+		$custom_css .= 'font-weight: ' . esc_html($cricket_league_pro_para_font_weight) . '!important;';
+	}
+	$custom_css .= '}';
+}
+;
+
+$cricket_league_pro_single_evt_price_text_color = get_theme_mod('cricket_league_pro_single_evt_price_text_color');
+$cricket_league_pro_single_evt_price_text_font_size = get_theme_mod('cricket_league_pro_single_evt_price_text_font_size');
+$cricket_league_pro_single_evt_price_text_font_family = get_theme_mod('cricket_league_pro_single_evt_price_text_font_family');
+$cricket_league_pro_single_evt_price_text_font_weight = get_theme_mod('cricket_league_pro_single_evt_price_text_font_weight');
+
+if ($cricket_league_pro_single_evt_price_text_color != false || $cricket_league_pro_single_evt_price_text_font_family != false || $cricket_league_pro_single_evt_price_text_font_size != false || $cricket_league_pro_single_evt_price_text_font_weight != false || $cricket_league_pro_slider_btn_bgcolor_one != false) {
+	$custom_css .= '.single-evt span.price{';
+	if ($cricket_league_pro_single_evt_price_text_color != false) {
+		$custom_css .= 'color: ' . esc_html($cricket_league_pro_single_evt_price_text_color) . ' ;';
+	}
+	if ($cricket_league_pro_single_evt_price_text_font_family != false) {
+		$custom_css .= 'font-family:' . esc_html($cricket_league_pro_single_evt_price_text_font_family) . ';';
+	}
+	if ($cricket_league_pro_single_evt_price_text_font_size != false) {
+		$custom_css .= 'font-size:' . esc_html($cricket_league_pro_single_evt_price_text_font_size) . 'px;';
+	}
+	if ($cricket_league_pro_single_evt_price_text_font_weight != false) {
+		$custom_css .= 'font-weight:' . esc_html($cricket_league_pro_single_evt_price_text_font_weight) . ';';
+	}
+	$custom_css .= '}';
+};
+$cricket_league_pro_single_evt_location_text_color = get_theme_mod('cricket_league_pro_single_evt_location_text_color');
+$cricket_league_pro_single_evt_location_text_font_size = get_theme_mod('cricket_league_pro_single_evt_location_text_font_size');
+$cricket_league_pro_single_evt_location_text_font_family = get_theme_mod('cricket_league_pro_single_evt_location_text_font_family');
+$cricket_league_pro_single_evt_location_text_font_weight = get_theme_mod('cricket_league_pro_single_evt_location_text_font_weight');
+
+if ($cricket_league_pro_single_evt_location_text_color != false || $cricket_league_pro_single_evt_location_text_font_family != false || $cricket_league_pro_single_evt_location_text_font_size != false || $cricket_league_pro_single_evt_location_text_font_weight != false || $cricket_league_pro_slider_btn_bgcolor_one != false) {
+	$custom_css .= 'section.single-evt .venue{';
+	if ($cricket_league_pro_single_evt_location_text_color != false) {
+		$custom_css .= 'color: ' . esc_html($cricket_league_pro_single_evt_location_text_color) . ' ;';
+	}
+	if ($cricket_league_pro_single_evt_location_text_font_family != false) {
+		$custom_css .= 'font-family:' . esc_html($cricket_league_pro_single_evt_location_text_font_family) . ';';
+	}
+	if ($cricket_league_pro_single_evt_location_text_font_size != false) {
+		$custom_css .= 'font-size:' . esc_html($cricket_league_pro_single_evt_location_text_font_size) . 'px;';
+	}
+	if ($cricket_league_pro_single_evt_location_text_font_weight != false) {
+		$custom_css .= 'font-weight:' . esc_html($cricket_league_pro_single_evt_location_text_font_weight) . ';';
+	}
+	$custom_css .= '}';
+};
+
+$cricket_league_pro_event_page_filter_dropdown_color = get_theme_mod('cricket_league_pro_event_page_filter_dropdown_color');
+$cricket_league_pro_event_page_filter_dropdown_font_size = get_theme_mod('cricket_league_pro_event_page_filter_dropdown_font_size');
+$cricket_league_pro_event_page_filter_dropdown_font_family = get_theme_mod('cricket_league_pro_event_page_filter_dropdown_font_family');
+$cricket_league_pro_event_page_filter_dropdown_font_weight = get_theme_mod('cricket_league_pro_event_page_filter_dropdown_font_weight');
+
+if ($cricket_league_pro_event_page_filter_dropdown_color != false || $cricket_league_pro_event_page_filter_dropdown_font_family != false || $cricket_league_pro_event_page_filter_dropdown_font_size != false || $cricket_league_pro_event_page_filter_dropdown_font_weight != false || $cricket_league_pro_slider_btn_bgcolor_one != false) {
+	$custom_css .= 'select#filter-select option{';
+	if ($cricket_league_pro_event_page_filter_dropdown_color != false) {
+		$custom_css .= 'color: ' . esc_html($cricket_league_pro_event_page_filter_dropdown_color) . ' ;';
+	}
+	if ($cricket_league_pro_event_page_filter_dropdown_font_family != false) {
+		$custom_css .= 'font-family:' . esc_html($cricket_league_pro_event_page_filter_dropdown_font_family) . ';';
+	}
+	if ($cricket_league_pro_event_page_filter_dropdown_font_size != false) {
+		$custom_css .= 'font-size:' . esc_html($cricket_league_pro_event_page_filter_dropdown_font_size) . 'px;';
+	}
+	if ($cricket_league_pro_event_page_filter_dropdown_font_weight != false) {
+		$custom_css .= 'font-weight:' . esc_html($cricket_league_pro_event_page_filter_dropdown_font_weight) . ';';
+	}
+	$custom_css .= '}';
+};
+
+$cricket_league_pro_event_page_filter_by_color = get_theme_mod('cricket_league_pro_event_page_filter_by_color');
+$cricket_league_pro_event_page_filter_by_font_size = get_theme_mod('cricket_league_pro_event_page_filter_by_font_size');
+$cricket_league_pro_event_page_filter_by_font_family = get_theme_mod('cricket_league_pro_event_page_filter_by_font_family');
+$cricket_league_pro_event_page_filter_by_font_weight = get_theme_mod('cricket_league_pro_event_page_filter_by_font_weight');
+
+if ($cricket_league_pro_event_page_filter_by_color != false || $cricket_league_pro_event_page_filter_by_font_family != false || $cricket_league_pro_event_page_filter_by_font_size != false || $cricket_league_pro_event_page_filter_by_font_weight != false || $cricket_league_pro_slider_btn_bgcolor_one != false) {
+	$custom_css .= 'label[for="filter-select"]{';
+	if ($cricket_league_pro_event_page_filter_by_color != false) {
+		$custom_css .= 'color: ' . esc_html($cricket_league_pro_event_page_filter_by_color) . ' ;';
+	}
+	if ($cricket_league_pro_event_page_filter_by_font_family != false) {
+		$custom_css .= 'font-family:' . esc_html($cricket_league_pro_event_page_filter_by_font_family) . ';';
+	}
+	if ($cricket_league_pro_event_page_filter_by_font_size != false) {
+		$custom_css .= 'font-size:' . esc_html($cricket_league_pro_event_page_filter_by_font_size) . 'px;';
+	}
+	if ($cricket_league_pro_event_page_filter_by_font_weight != false) {
+		$custom_css .= 'font-weight:' . esc_html($cricket_league_pro_event_page_filter_by_font_weight) . ';';
+	}
+	$custom_css .= '}';
+};
+$cricket_league_pro_post_general_settings_social_icons = get_theme_mod('cricket_league_pro_post_general_settings_social_icons');
+
+if ($cricket_league_pro_post_general_settings_social_icons == 0) {
+	$custom_css .= '.share{';
+	if ($cricket_league_pro_post_general_settings_social_icons == 0) {
+		$custom_css .= 'display: none !important ;';
+	}
+	$custom_css .= '}';
+}
+$cricket_league_pro_post_general_settings_tag = get_theme_mod('cricket_league_pro_post_general_settings_tag');
+
+if ($cricket_league_pro_post_general_settings_tag == 0) {
+	$custom_css .= 'li.categories{';
+	if ($cricket_league_pro_post_general_settings_tag == 0) {
+		$custom_css .= $custom_css .= 'display: none !important;';
+	}
+	$custom_css .= '}';
+}
+
+$cricket_league_pro_contactus_heading_color = get_theme_mod('cricket_league_pro_contactus_heading_color');
+$cricket_league_pro_contactus_heading_font_size = get_theme_mod('cricket_league_pro_contactus_heading_font_size');
+$cricket_league_pro_contactus_heading_font_family = get_theme_mod('cricket_league_pro_contactus_heading_font_family');
+$cricket_league_pro_contactus_heading_font_weight = get_theme_mod('cricket_league_pro_contactus_heading_font_weight');
+
+if ($cricket_league_pro_contactus_heading_color != false || $cricket_league_pro_contactus_heading_font_family != false || $cricket_league_pro_contactus_heading_font_size != false || $cricket_league_pro_contactus_heading_font_weight != false || $cricket_league_pro_slider_btn_bgcolor_one != false) {
+	$custom_css .= '.contactus-section h3{';
+	if ($cricket_league_pro_contactus_heading_color != false) {
+		$custom_css .= 'color: ' . esc_html($cricket_league_pro_contactus_heading_color) . ' ;';
+	}
+	if ($cricket_league_pro_contactus_heading_font_family != false) {
+		$custom_css .= 'font-family:' . esc_html($cricket_league_pro_contactus_heading_font_family) . ';';
+	}
+	if ($cricket_league_pro_contactus_heading_font_size != false) {
+		$custom_css .= 'font-size:' . esc_html($cricket_league_pro_contactus_heading_font_size) . 'px;';
+	}
+	if ($cricket_league_pro_contactus_heading_font_weight != false) {
+		$custom_css .= 'font-weight:' . esc_html($cricket_league_pro_contactus_heading_font_weight) . ';';
+	}
+	$custom_css .= '}';
+};
+
+$cricket_league_pro_contactus_form_paceholder_color = get_theme_mod('cricket_league_pro_contactus_form_paceholder_color');
+$cricket_league_pro_contactus_form_paceholder_font_size = get_theme_mod('cricket_league_pro_contactus_form_paceholder_font_size');
+$cricket_league_pro_contactus_form_paceholder_font_family = get_theme_mod('cricket_league_pro_contactus_form_paceholder_font_family');
+$cricket_league_pro_contactus_form_paceholder_font_weight = get_theme_mod('cricket_league_pro_contactus_form_paceholder_font_weight');
+
+if ($cricket_league_pro_contactus_form_paceholder_color != false || $cricket_league_pro_contactus_form_paceholder_font_family != false || $cricket_league_pro_contactus_form_paceholder_font_size != false || $cricket_league_pro_contactus_form_paceholder_font_weight != false || $cricket_league_pro_slider_btn_bgcolor_one != false) {
+	$custom_css .= '.contact.col-lg-6 span.wpcf7-form-control-wrap input::placeholder,.contact .input-wrapper textarea{';
+	if ($cricket_league_pro_contactus_form_paceholder_color != false) {
+		$custom_css .= 'color: ' . esc_html($cricket_league_pro_contactus_form_paceholder_color) . ' ;';
+	}
+	if ($cricket_league_pro_contactus_form_paceholder_font_family != false) {
+		$custom_css .= 'font-family:' . esc_html($cricket_league_pro_contactus_form_paceholder_font_family) . ';';
+	}
+	if ($cricket_league_pro_contactus_form_paceholder_font_size != false) {
+		$custom_css .= 'font-size:' . esc_html($cricket_league_pro_contactus_form_paceholder_font_size) . 'px;';
+	}
+	if ($cricket_league_pro_contactus_form_paceholder_font_weight != false) {
+		$custom_css .= 'font-weight:' . esc_html($cricket_league_pro_contactus_form_paceholder_font_weight) . ';';
+	}
+	$custom_css .= '}';
+};
+
+
+$cricket_league_pro_contactUs_submit_color = get_theme_mod('cricket_league_pro_contactUs_submit_color');
+$cricket_league_pro_contactUs_submit_font_size = get_theme_mod('cricket_league_pro_contactUs_submit_font_size');
+$cricket_league_pro_contactUs_submit_font_family = get_theme_mod('cricket_league_pro_contactUs_submit_font_family');
+$cricket_league_pro_contactUs_submit_font_weight = get_theme_mod('cricket_league_pro_contactUs_submit_font_weight');
+
+if ($cricket_league_pro_contactUs_submit_color != false || $cricket_league_pro_contactUs_submit_font_family != false || $cricket_league_pro_contactUs_submit_font_size != false || $cricket_league_pro_contactUs_submit_font_weight != false || $cricket_league_pro_slider_btn_bgcolor_one != false) {
+	$custom_css .= '.contact .input-wrapper input#submit-button{';
+	if ($cricket_league_pro_contactUs_submit_color != false) {
+		$custom_css .= 'color: ' . esc_html($cricket_league_pro_contactUs_submit_color) . ' ;';
+	}
+	if ($cricket_league_pro_contactUs_submit_font_family != false) {
+		$custom_css .= 'font-family:' . esc_html($cricket_league_pro_contactUs_submit_font_family) . ';';
+	}
+	if ($cricket_league_pro_contactUs_submit_font_size != false) {
+		$custom_css .= 'font-size:' . esc_html($cricket_league_pro_contactUs_submit_font_size) . 'px;';
+	}
+	if ($cricket_league_pro_contactUs_submit_font_weight != false) {
+		$custom_css .= 'font-weight:' . esc_html($cricket_league_pro_contactUs_submit_font_weight) . ';';
+	}
+	$custom_css .= '}';
+};

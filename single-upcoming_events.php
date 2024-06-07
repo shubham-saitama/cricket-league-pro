@@ -72,12 +72,15 @@ if ($img != '') { ?>
                 $date = date('d'); // Current date in YYYY-MM-DD format
                 $day = date('l', strtotime($date)); // Full day name (e.g., "Monday")
                 $event_date = get_post_meta(get_the_ID(), '_event_date', true);
+                $event_date_end = get_post_meta($post->ID, '_event_date_end', true);
                 // Convert event date to 'day-mon-year' format
-            
+        
                 $event_date_formatted = date('d M Y', strtotime($event_date));
+                $event_date_end_formatted =  date('d M Y', strtotime($event_date_end));
                 $month = date('M', strtotime($event_date));
-                $event_date_formatted = str_replace($month, date('M', strtotime($event_date)), $event_date_formatted);
-
+                $end_date_month = date('M', strtotime($event_date_end));
+                $event_date_formatted = str_replace($end_date_month, date('M', strtotime($event_date)), $event_date_formatted);
+                $event_date_formatted_end = str_replace($month, date('M', strtotime($end_date_month)), $event_date_end_formatted);
                 $start_time = get_post_meta(get_the_ID(), '_start_time', true);
                 // Convert start time to AM/PM format (assuming $start_time is in 'H:i' format)
                 $start_time_am_pm = date('h:i A', strtotime($start_time));
@@ -85,6 +88,7 @@ if ($img != '') { ?>
                 $end_time_am_pm = date('h:i A', strtotime($end_time));
                 $location = get_post_meta(get_the_ID(), '_venue_name', true);
                 $entry_fees = get_post_meta(get_the_ID(), '_entry_fees', true);
+                
                 // Get the x and y coordinates from meta fields
                 $map_x_coordinates = get_post_meta($post->ID, '_map_x_coordinates', true);
                 $map_y_coordinates = get_post_meta($post->ID, '_map_y_coordinates', true);
@@ -98,7 +102,7 @@ if ($img != '') { ?>
                     <div class="col-lg-5 col-md-7 col-12">
                         <p class="clock-before"><?php echo $event_date_formatted; ?> -
                             <?php echo esc_html($start_time_am_pm); ?> To
-                            <?php echo $event_date_formatted; ?> - <?php echo esc_html($end_time_am_pm); ?>
+                            <?php echo $event_date_formatted_end; ?> - <?php echo esc_html($end_time_am_pm); ?>
                         </p>
                         <div class="single-evt-content">
                             <h2><?php the_title(); ?></h2>
@@ -156,7 +160,7 @@ if ($img != '') { ?>
                             <?php if (!empty($entry_fees)) { ?>
                                 <div class="event-detail-wrap">
                                     <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_cost_heading'); ?></b></span>
-                                    <span class="event-detail-value">$ <?php echo $entry_fees; ?></span>
+                                    <span class="event-detail-value"><?php echo $entry_fees; ?></span>
                                 </div>
                             <?php } ?>
 

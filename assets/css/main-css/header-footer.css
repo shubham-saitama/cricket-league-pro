@@ -1566,6 +1566,7 @@ span#dropDown {
   .socialbox {
     width: 100%;
     justify-content: flex-end;
+    margin-bottom: 10px;
   }
 
 

@@ -42,11 +42,11 @@ if ($related_products): ?>
 
 				<?php
 				$post_object = get_post($related_product->get_id());
-
+				
 				setup_postdata($GLOBALS['post'] =& $post_object); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
 				// wc_get_template_part( 'content', 'product' );
 		
-
+				global $product;
 				// Get product meta fields
 				$product_price = get_post_meta(get_the_ID(), '_price', true);
 				$sale_price = get_post_meta(get_the_ID(), '_sale_price', true);
@@ -81,7 +81,12 @@ if ($related_products): ?>
 								// Get the add to cart URL
 								$add_to_cart_url = esc_url(wc_get_product($product_id)->add_to_cart_url());
 								?>
-						<a href="<?php echo $add_to_cart_url; ?>" class="button"><?php echo get_theme_mod('cricket_league_pro_product_slider_cart_button'); ?><i class="<?php echo get_theme_mod('cricket_league_pro_carrt_btn_icon'); ?>"></i></a>
+						<div class="cat-btn-wrapper">
+							<?php if ($product->is_type('simple')) {
+								woocommerce_template_loop_add_to_cart($loop->post, $product);
+							} ?>
+							<i class="<?php echo get_theme_mod('cricket_league_pro_carrt_btn_icon'); ?>"></i>
+						</div>
 					</div>
 				</div>
 

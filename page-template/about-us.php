@@ -158,9 +158,9 @@ $gallery_shortcode = get_theme_mod('cricket_league_pro_gallery_section_shortcode
   <div class="container">
     <div class="row justify-content-center">
       <div class="heading-tag text-center">
-        Our Gallery
+        <?php echo get_theme_mod('cricket_league_pro_gallery_heading'); ?>
       </div>
-      <h2 class="text-center">Our Gallery</h2>
+      <h2 class="text-center"><?php echo get_theme_mod('cricket_league_pro_gallery_heading_tag'); ?></h2>
       <?php echo do_shortcode($gallery_shortcode); ?>
     </div>
   </div>
