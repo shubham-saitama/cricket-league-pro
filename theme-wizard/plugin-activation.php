@@ -24,14 +24,14 @@ if ( ! class_exists( 'Vw_Premium_Theme_Plugin_Activation_Settings' ) ) {
 
             add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
             // ---------- Ibtana Plugin Activation -------
-            add_filter( 'cricket_league_pro_vw_theme_recommended_plugins', array($this, 'cricket_league_pro_recommended_plugins_array') );
+            add_filter( 'home_automation_pro_vw_theme_recommended_plugins', array($this, 'home_automation_pro_recommended_plugins_array') );
 
-            $actions                   = $this->cricket_league_pro_get_recommended_actions();
+            $actions                   = $this->home_automation_pro_get_recommended_actions();
             $this->action_count        = $actions['count'];
             $this->recommended_actions = $actions['actions'];
         }
 
-        public function cricket_league_pro_recommended_plugins_array($plugins){
+        public function home_automation_pro_recommended_plugins_array($plugins){
             $plugins[] = array(
                 'name'     => esc_html__('Ibtana - WordPress Website Builder', 'cricket-league-pro'),
                 'slug'     => 'ibtana-visual-editor',
@@ -50,7 +50,7 @@ if ( ! class_exists( 'Vw_Premium_Theme_Plugin_Activation_Settings' ) ) {
         public function enqueue_scripts() {
             wp_enqueue_script('updates');
             wp_register_script( 'vw-theme-plugin-activation-script', get_template_directory_uri() . '/theme-wizard/assets/js/plugin-activation.js', array('jquery') );
-            wp_localize_script('vw-theme-plugin-activation-script', 'cricket_league_pro_activate_plugin',
+            wp_localize_script('vw-theme-plugin-activation-script', 'home_automation_pro_activate_plugin',
                 array(
                     'installing' => esc_html__('Installing', 'cricket-league-pro'),
                     'activating' => esc_html__('Activating', 'cricket-league-pro'),
@@ -64,12 +64,12 @@ if ( ! class_exists( 'Vw_Premium_Theme_Plugin_Activation_Settings' ) ) {
         }
 
         // --------- Plugin Actions ---------
-        public function cricket_league_pro_get_recommended_actions() {
+        public function home_automation_pro_get_recommended_actions() {
 
             $act_count           = 0;
             $actions_todo = get_option( 'recommending_actions', array());
             
-            $plugins = $this->cricket_league_pro_get_recommended_plugins();
+            $plugins = $this->home_automation_pro_get_recommended_plugins();
 
             if ($plugins) {
                 foreach ($plugins as $key => $plugin) {
@@ -89,7 +89,7 @@ if ( ! class_exists( 'Vw_Premium_Theme_Plugin_Activation_Settings' ) ) {
                         $action['title'] = $plugin['name'];
                     }
 
-                    $link_and_is_done  = $this->cricket_league_pro_get_plugin_buttion($plugin['slug'], $plugin['name'], $plugin['function']);
+                    $link_and_is_done  = $this->home_automation_pro_get_plugin_buttion($plugin['slug'], $plugin['name'], $plugin['function']);
                     $action['link']    = $link_and_is_done['button'];
                     $action['is_done'] = $link_and_is_done['done'];
                     if (!$action['is_done'] && (!isset($actions_todo[$action['id']]) || !$actions_todo[$action['id']])) {
@@ -103,17 +103,17 @@ if ( ! class_exists( 'Vw_Premium_Theme_Plugin_Activation_Settings' ) ) {
 
         }
 
-        public function cricket_league_pro_get_recommended_plugins() {
+        public function home_automation_pro_get_recommended_plugins() {
                 
-            $plugins = apply_filters('cricket_league_pro_vw_theme_recommended_plugins', array());
+            $plugins = apply_filters('home_automation_pro_vw_theme_recommended_plugins', array());
             return $plugins;
         }
 
-        public function cricket_league_pro_get_plugin_buttion($slug, $name, $function) {
+        public function home_automation_pro_get_plugin_buttion($slug, $name, $function) {
                 $is_done      = false;
                 $button_html  = '';
-                $is_installed = $this->cricket_league_pro_is_plugin_installed($slug);
-                $plugin_path  = $this->cricket_league_pro_get_plugin_basename_from_slug($slug);
+                $is_installed = $this->home_automation_pro_is_plugin_installed($slug);
+                $plugin_path  = $this->home_automation_pro_get_plugin_basename_from_slug($slug);
                 $is_activeted = (class_exists($function)) ? true : false;
                 if (!$is_installed) {
                     $plugin_install_url = add_query_arg(
@@ -157,13 +157,13 @@ if ( ! class_exists( 'Vw_Premium_Theme_Plugin_Activation_Settings' ) ) {
 
                 return array('done' => $is_done, 'button' => $button_html);
             }
-        public function cricket_league_pro_is_plugin_installed($slug) {
-            $installed_plugins = $this->cricket_league_pro_get_installed_plugins(); // Retrieve a list of all installed plugins (WP cached).
-            $file_path         = $this->cricket_league_pro_get_plugin_basename_from_slug($slug);
+        public function home_automation_pro_is_plugin_installed($slug) {
+            $installed_plugins = $this->home_automation_pro_get_installed_plugins(); // Retrieve a list of all installed plugins (WP cached).
+            $file_path         = $this->home_automation_pro_get_plugin_basename_from_slug($slug);
             return (!empty($installed_plugins[$file_path]));
         }
-        public function cricket_league_pro_get_plugin_basename_from_slug($slug) {
-            $keys = array_keys($this->cricket_league_pro_get_installed_plugins());
+        public function home_automation_pro_get_plugin_basename_from_slug($slug) {
+            $keys = array_keys($this->home_automation_pro_get_installed_plugins());
             foreach ($keys as $key) {
                 if (preg_match('|^' . $slug . '/|', $key)) {
                     return $key;
@@ -172,7 +172,7 @@ if ( ! class_exists( 'Vw_Premium_Theme_Plugin_Activation_Settings' ) ) {
             return $slug;
         }
         
-        public function cricket_league_pro_get_installed_plugins() {
+        public function home_automation_pro_get_installed_plugins() {
 
             if (!function_exists('get_plugins')) {
                 require_once ABSPATH . 'wp-admin/includes/plugin.php';

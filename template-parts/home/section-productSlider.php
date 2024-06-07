@@ -1,14 +1,14 @@
-<?php /** * Template to show Products Slider * * @package cricket_league_pro */
-$section_hide = get_theme_mod('cricket_league_pro_productSlider_enabledisable');
+<?php /** * Template to show Products Slider * * @package home_automation_pro */
+$section_hide = get_theme_mod('home_automation_pro_productSlider_enabledisable');
 if ('Disable' == $section_hide) {
     return;
 }
-if (get_theme_mod('cricket_league_pro_productSlider_bg_color', '')) {
+if (get_theme_mod('home_automation_pro_productSlider_bg_color', '')) {
     $services_back = 'background-color:' .
-        esc_attr(get_theme_mod('cricket_league_pro_productSlider_bg_color', '')) . ';';
+        esc_attr(get_theme_mod('home_automation_pro_productSlider_bg_color', '')) . ';';
 } elseif
-(get_theme_mod('cricket_league_pro_productSlider_bg_image', '')) {
-    $services_back = 'background-image:url(\''. esc_url(get_theme_mod('cricket_league_pro_productSlider_bg_image')) . '\')';
+(get_theme_mod('home_automation_pro_productSlider_bg_image', '')) {
+    $services_back = 'background-image:url(\''. esc_url(get_theme_mod('home_automation_pro_productSlider_bg_image')) . '\')';
 }
  else {
     $services_back = '';
@@ -20,9 +20,9 @@ if (get_theme_mod('cricket_league_pro_productSlider_bg_color', '')) {
     <div class="container">
         <div class="heading-wrap">
             <div class="heading-tag">
-                <?php echo get_theme_mod('cricket_league_pro_product_slider_heading_tag'); ?>
+                <?php echo get_theme_mod('home_automation_pro_product_slider_heading_tag'); ?>
             </div>
-            <h2><?php echo get_theme_mod('cricket_league_pro_product_slider_heading'); ?></h2>
+            <h2><?php echo get_theme_mod('home_automation_pro_product_slider_heading'); ?></h2>
         </div>
         <div class="row">
             <div class="owl-carousel">
@@ -80,7 +80,7 @@ if (get_theme_mod('cricket_league_pro_productSlider_bg_color', '')) {
                                     <?php if ($product->is_type('simple')) {
                                         woocommerce_template_loop_add_to_cart($loop->post, $product);
                                     } ?>
-                                    <i class="<?php echo get_theme_mod('cricket_league_pro_carrt_btn_icon'); ?>"></i>
+                                    <i class="<?php echo get_theme_mod('home_automation_pro_carrt_btn_icon'); ?>"></i>
                                 </div>
                             </div>
                         </div>

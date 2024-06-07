@@ -6,9 +6,9 @@
  * @package cricket-league-pro
  */
 get_header();
-$background_img = get_theme_mod('cricket_league_pro_inner_page_banner_bgimage');
+$background_img = get_theme_mod('home_automation_pro_inner_page_banner_bgimage');
 global $post;
-$img = get_theme_mod('cricket_league_pro_inner_page_banner_bgimage');
+$img = get_theme_mod('home_automation_pro_inner_page_banner_bgimage');
 $display = '';
 $display_title_bbanner = '';
 $vw_title_banner_image_title_on_off = get_post_meta($post->ID, 'vw_title_banner_image_title_on_off', true);
@@ -27,9 +27,9 @@ if ($img != '') { ?>
                         <h1>
                             Single Event Page
                         </h1>
-                        <?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+                        <?php if (get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '') { ?>
                             <div class="bradcrumbs py-2 b1">
-                                <?php cricket_league_pro_the_breadcrumb(); ?>
+                                <?php home_automation_pro_the_breadcrumb(); ?>
                             </div>
                         <?php }
                         ?>
@@ -43,9 +43,9 @@ if ($img != '') { ?>
         <h1>
             <?php the_title(); ?>
         </h1>
-        <?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+        <?php if (get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '') { ?>
             <div class="container bradcrumbs py-3 b2">
-                <?php cricket_league_pro_the_breadcrumb(); ?>
+                <?php home_automation_pro_the_breadcrumb(); ?>
             </div>
         <?php } ?>
 
@@ -55,9 +55,9 @@ if ($img != '') { ?>
         <h1>
             <?php the_title(); ?>
         </h1>
-        <?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+        <?php if (get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '') { ?>
             <div class="container bradcrumbs py-3 b2">
-                <?php cricket_league_pro_the_breadcrumb(); ?>
+                <?php home_automation_pro_the_breadcrumb(); ?>
             </div>
         <?php } ?>
 
@@ -127,11 +127,11 @@ if ($img != '') { ?>
 
                             ?>
                             <a class="normal-btn black" href="<?php echo $location_link; ?>"
-                                target="_blank"><?php echo get_theme_mod('cricket_league_pro_single_evt_goto_location'); ?></a>
+                                target="_blank"><?php echo get_theme_mod('home_automation_pro_single_evt_goto_location'); ?></a>
 
                             <a class="calender-button" href="<?php echo $google_calendar_link; ?>"
-                                target="_blank"><?php echo get_theme_mod('cricket_league_pro_single_evt_add_chalender'); ?><i
-                                    class="<?php echo get_theme_mod('cricket_league_pro_evt_add_calender_icon'); ?>"
+                                target="_blank"><?php echo get_theme_mod('home_automation_pro_single_evt_add_chalender'); ?><i
+                                    class="<?php echo get_theme_mod('home_automation_pro_evt_add_calender_icon'); ?>"
                                     aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -140,10 +140,10 @@ if ($img != '') { ?>
 
                     <div class="row">
                         <div class="col-lg-3 col-md-6 col-12">
-                            <h5><?php echo get_theme_mod('cricket_league_pro_event_lable_heading_col1'); ?></h5>
+                            <h5><?php echo get_theme_mod('home_automation_pro_event_lable_heading_col1'); ?></h5>
                             <?php if (!empty($event_date_formatted) && !empty($start_time_am_pm)) { ?>
                                 <div class="event-detail-wrap">
-                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_start_heading'); ?></b></span>
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('home_automation_pro_event_lable_start_heading'); ?></b></span>
                                     <span class="event-detail-value"><?php echo $event_date_formatted; ?> -
                                         <?php echo $start_time_am_pm; ?></span>
                                 </div>
@@ -151,7 +151,7 @@ if ($img != '') { ?>
 
                             <?php if (!empty($event_date_formatted) && !empty($end_time_am_pm)) { ?>
                                 <div class="event-detail-wrap">
-                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_end_heading'); ?></b></span>
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('home_automation_pro_event_lable_end_heading'); ?></b></span>
                                     <span class="event-detail-value"><?php echo $event_date_formatted; ?> -
                                         <?php echo $end_time_am_pm; ?></span>
                                 </div>
@@ -159,21 +159,21 @@ if ($img != '') { ?>
 
                             <?php if (!empty($entry_fees)) { ?>
                                 <div class="event-detail-wrap">
-                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_cost_heading'); ?></b></span>
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('home_automation_pro_event_lable_cost_heading'); ?></b></span>
                                     <span class="event-detail-value"><?php echo $entry_fees; ?></span>
                                 </div>
                             <?php } ?>
 
                             <?php if (!empty($event_category)) { ?>
                                 <div class="event-detail-wrap">
-                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_ccategory_heading'); ?></b></span>
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('home_automation_pro_event_lable_ccategory_heading'); ?></b></span>
                                     <span class="event-detail-value"><?php echo $event_category; ?></span>
                                 </div>
                             <?php } ?>
                         </div>
 
                         <div class="col-lg-3 col-md-6 col-12">
-                            <h5><?php echo get_theme_mod('cricket_league_pro_event_lable_heading_col3'); ?></h5>
+                            <h5><?php echo get_theme_mod('home_automation_pro_event_lable_heading_col3'); ?></h5>
                             <?php $organizer_name = get_post_meta(get_the_ID(), '_organizer_name', true); ?>
                             <?php if (!empty($organizer_name)) { ?>
                                 <div class="event-detail-wrap">
@@ -184,7 +184,7 @@ if ($img != '') { ?>
                             <?php $phone_number = get_post_meta(get_the_ID(), '_phone_number', true); ?>
                             <?php if (!empty($phone_number)) { ?>
                                 <div class="event-detail-wrap">
-                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_phone_heading'); ?></b></span>
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('home_automation_pro_event_lable_phone_heading'); ?></b></span>
                                     <span class="event-detail-value"><?php echo $phone_number; ?></span>
                                 </div>
                             <?php } ?>
@@ -192,7 +192,7 @@ if ($img != '') { ?>
                             <?php $email = get_post_meta(get_the_ID(), '_email', true); ?>
                             <?php if (!empty($email)) { ?>
                                 <div class="event-detail-wrap">
-                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_mail_heading'); ?></b></span>
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('home_automation_pro_event_lable_mail_heading'); ?></b></span>
                                     <span class="event-detail-value"><?php echo $email; ?></span>
                                 </div>
                             <?php } ?>
@@ -200,14 +200,14 @@ if ($img != '') { ?>
                             <?php $website = get_post_meta(get_the_ID(), '_organizer_website', true); ?>
                             <?php if (!empty($website)) { ?>
                                 <div class="event-detail-wrap">
-                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_website_heading'); ?></b></span>
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('home_automation_pro_event_lable_website_heading'); ?></b></span>
                                     <span class="event-detail-value"><?php echo $website; ?></span>
                                 </div>
                             <?php } ?>
                         </div>
 
                         <div class="col-lg-3 col-md-6 col-12">
-                            <h5><?php echo get_theme_mod('cricket_league_pro_event_lable_heading_col2'); ?></h5>
+                            <h5><?php echo get_theme_mod('home_automation_pro_event_lable_heading_col2'); ?></h5>
                             <?php $venue_name = get_post_meta(get_the_ID(), '_venue_name', true); ?>
                             <?php if (!empty($venue_name)) { ?>
                                 <div class="event-detail-wrap">
@@ -218,7 +218,7 @@ if ($img != '') { ?>
                             <?php $address = get_post_meta(get_the_ID(), '_address', true); ?>
                             <?php if (!empty($address)) { ?>
                                 <div class="event-detail-wrap">
-                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_address_heading'); ?></b></span>
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('home_automation_pro_event_lable_address_heading'); ?></b></span>
                                     <span class="event-detail-value"><?php echo $address; ?></span>
                                 </div>
                             <?php } ?>
@@ -226,7 +226,7 @@ if ($img != '') { ?>
                             <?php $venue_phone_number = get_post_meta(get_the_ID(), '_phone_number', true); ?>
                             <?php if (!empty($venue_phone_number)) { ?>
                                 <div class="event-detail-wrap">
-                                    <span class="event-detail-title"><b><?php echo get_theme_mod('cricket_league_pro_event_lable_phone_venue_heading'); ?></b></span>
+                                    <span class="event-detail-title"><b><?php echo get_theme_mod('home_automation_pro_event_lable_phone_venue_heading'); ?></b></span>
                                     <span class="event-detail-value"><?php echo $venue_phone_number; ?></span>
                                 </div>
                             <?php } ?>

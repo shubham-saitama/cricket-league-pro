@@ -5,14 +5,14 @@
  * @package cricket-league-pro
  */
 
-$section_hide = get_theme_mod('cricket_league_pro_our_services_enable');
+$section_hide = get_theme_mod('home_automation_pro_our_services_enable');
 if ('Disable' == $section_hide) {
   return;
 }
-if (get_theme_mod('cricket_league_pro_our_services_bgcolor', '')) {
-  $services_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_our_services_bgcolor', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_our_services_bgimage', '')) {
-  $services_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_our_services_bgimage')) . '\')';
+if (get_theme_mod('home_automation_pro_our_services_bgcolor', '')) {
+  $services_back = 'background-color:' . esc_attr(get_theme_mod('home_automation_pro_our_services_bgcolor', '')) . ';';
+} elseif (get_theme_mod('home_automation_pro_our_services_bgimage', '')) {
+  $services_back = 'background-image:url(\'' . esc_url(get_theme_mod('home_automation_pro_our_services_bgimage')) . '\')';
 } else {
   $services_back = '';
 }
@@ -23,9 +23,9 @@ if (get_theme_mod('cricket_league_pro_our_services_bgcolor', '')) {
   <div class="container">
     <div class="services heading text-center">
       <div class="heading-tagline">
-        <?php echo get_theme_mod('cricket_league_pro_our_services_sub_heading');?>
+        <?php echo get_theme_mod('home_automation_pro_our_services_sub_heading');?>
       </div>
-      <h2><?php echo get_theme_mod('cricket_league_pro_our_services_heading'); ?></h2>
+      <h2><?php echo get_theme_mod('home_automation_pro_our_services_heading'); ?></h2>
       <div class="row">
         <div class="owl-carousel ">
           <?php

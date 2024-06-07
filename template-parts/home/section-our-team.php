@@ -2,28 +2,28 @@
 /**
  * Template to show the our team section
  *
- * @package cricket_league_pro
+ * @package home_automation_pro
  */
-$section_hide = get_theme_mod('cricket_league_pro_our_team_enable');
+$section_hide = get_theme_mod('home_automation_pro_our_team_enable');
 if ('Disable' == $section_hide) {
     return;
 }
-if (get_theme_mod('cricket_league_pro_our_team_bgcolor', '')) {
-    $per_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_our_team_bgcolor', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_our_team_bgimage', '')) {
-    $per_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_our_team_bgimage')) . '\')';
+if (get_theme_mod('home_automation_pro_our_team_bgcolor', '')) {
+    $per_back = 'background-color:' . esc_attr(get_theme_mod('home_automation_pro_our_team_bgcolor', '')) . ';';
+} elseif (get_theme_mod('home_automation_pro_our_team_bgimage', '')) {
+    $per_back = 'background-image:url(\'' . esc_url(get_theme_mod('home_automation_pro_our_team_bgimage')) . '\')';
 } else {
     $per_back = '';
 }
-$img_bg = get_theme_mod('cricket_league_pro_our_team_image');
+$img_bg = get_theme_mod('home_automation_pro_our_team_image');
 ?>
 <section id="Our-team" class="<?php echo esc_attr($img_bg); ?> section-space" style="<?php echo esc_attr($per_back); ?>">
     <div class="container">
         <div class="services heading text-center">
             <div class="heading-tagline">
-                <?php echo get_theme_mod('cricket_league_pro_our_team_heading_tag_font_text'); ?>
+                <?php echo get_theme_mod('home_automation_pro_our_team_heading_tag_font_text'); ?>
             </div>
-            <h2><?php echo get_theme_mod('cricket_league_pro_our_team_heading_font_text'); ?></h2>
+            <h2><?php echo get_theme_mod('home_automation_pro_our_team_heading_font_text'); ?></h2>
             <div class="row">
                 <div class="owl-carousel">
                     <?php
@@ -51,20 +51,20 @@ $img_bg = get_theme_mod('cricket_league_pro_our_team_image');
                                         <?php the_post_thumbnail('medium'); ?>
                                         <div class="social-media-links">
                                             <?php if (!empty($facebook)): ?>
-                                                <a target="_blank" href="<?php echo esc_url($facebook); ?>"><i class="<?php echo get_theme_mod('cricket_league_pro_social_icon1');?> align-middle "
+                                                <a target="_blank" href="<?php echo esc_url($facebook); ?>"><i class="<?php echo get_theme_mod('home_automation_pro_social_icon1');?> align-middle "
                                                         aria-hidden="true"></i></a>
                                             <?php endif; ?>
                                             <?php if (!empty($twitter)): ?>
-                                                <a target="_blank" href="<?php echo esc_url($twitter); ?>"><i class="<?php echo get_theme_mod('cricket_league_pro_social_icon2');?> align-middle "
+                                                <a target="_blank" href="<?php echo esc_url($twitter); ?>"><i class="<?php echo get_theme_mod('home_automation_pro_social_icon2');?> align-middle "
                                                         aria-hidden="true"></i></a>
                                             <?php endif; ?>
                                             <?php if (!empty($instagram)): ?>
-                                                <a target="_blank" href="<?php echo esc_url($instagram); ?>"><i class="<?php echo get_theme_mod('cricket_league_pro_social_icon3');?> align-middle "
+                                                <a target="_blank" href="<?php echo esc_url($instagram); ?>"><i class="<?php echo get_theme_mod('home_automation_pro_social_icon3');?> align-middle "
                                                         aria-hidden="true"></i></a>
                                             <?php endif; ?>
                                             <?php if (!empty($whatsapp)): ?>
                                                 <a target="_blank" href="https://wa.me/<?php echo sanitize_text_field($whatsapp); ?>"><i
-                                                        class="<?php echo get_theme_mod('cricket_league_pro_social_icon4');?> align-middle " aria-hidden="true"></i></a>
+                                                        class="<?php echo get_theme_mod('home_automation_pro_social_icon4');?> align-middle " aria-hidden="true"></i></a>
                                             <?php endif; ?>
                                         </div>
                                     </div>

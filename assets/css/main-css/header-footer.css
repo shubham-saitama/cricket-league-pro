@@ -1011,7 +1011,7 @@ input.wpcf7-form-control.wpcf7-submit.has-spinner {
   font: normal normal normal 11px / 21px Inter Tight;
   border: 1px solid #0000;
 }
-input.wpcf7-form-control.wpcf7-submit:hover {
+footer input.wpcf7-form-control.wpcf7-submit:hover {
   background: var(--primary-color);
   border: 1px solid #000;
 }
@@ -1690,7 +1690,13 @@ input#subBtn {
 }
 
 .main-navigation li:hover a {
-  color: #000 !important;
+  color: #fff !important;
+}
+.main-navigation ul.sub-menu li a{
+  color: #000 !important  ;
+}
+.main-navigation ul.sub-menu li:hover a {
+  color: #fff !important;
 }
 
 .white-back {

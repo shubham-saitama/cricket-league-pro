@@ -1,6 +1,6 @@
 <?php
 
-class cricket_league_pro_Fontawesome_Icon_Chooser extends WP_Customize_Control{
+class home_automation_pro_Fontawesome_Icon_Chooser extends WP_Customize_Control{
     public $type = 'icon';
 
     public function render_content(){
@@ -28,11 +28,11 @@ class cricket_league_pro_Fontawesome_Icon_Chooser extends WP_Customize_Control{
                         <i class="">None</i>
                     </li>
                     <?php
-                    $cricket_league_pro_font_awesome_icon_array = cricket_league_pro_font_awesome_icon_array();
-                    foreach ($cricket_league_pro_font_awesome_icon_array as $cricket_league_pro_font_awesome_icon) {
-                            $icon_class = $this->value() == $cricket_league_pro_font_awesome_icon ? 'icon-active' : '';
-                            echo '<li class='.esc_attr($icon_class).'><i class="'.esc_attr($cricket_league_pro_font_awesome_icon).'"></i>
-                                <span class="vw-social-class">'.esc_attr($cricket_league_pro_font_awesome_icon).'</span>
+                    $home_automation_pro_font_awesome_icon_array = home_automation_pro_font_awesome_icon_array();
+                    foreach ($home_automation_pro_font_awesome_icon_array as $home_automation_pro_font_awesome_icon) {
+                            $icon_class = $this->value() == $home_automation_pro_font_awesome_icon ? 'icon-active' : '';
+                            echo '<li class='.esc_attr($icon_class).'><i class="'.esc_attr($home_automation_pro_font_awesome_icon).'"></i>
+                                <span class="vw-social-class">'.esc_attr($home_automation_pro_font_awesome_icon).'</span>
                             </li>';
                         }
                     ?>
@@ -43,17 +43,17 @@ class cricket_league_pro_Fontawesome_Icon_Chooser extends WP_Customize_Control{
     }
 }
 
-function cricket_league_pro_customizer_script() {
+function home_automation_pro_customizer_script() {
     wp_enqueue_style( 'font-awesome-1', get_template_directory_uri(). '/inc/customize/controls/social-icons/css/font-awesome.css');
     // wp_enqueue_style('font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
     wp_enqueue_style( 'total-customizer-style', get_template_directory_uri(). '/inc/customize/controls/social-icons/css/customizer-style.css');
     wp_enqueue_script( 'total-customizer-script', get_template_directory_uri(). '/inc/customize/controls/social-icons/js/customizer-scripts.js', array("jquery"),'', true  );
 
 }
-add_action( 'customize_controls_enqueue_scripts', 'cricket_league_pro_customizer_script' );
+add_action( 'customize_controls_enqueue_scripts', 'home_automation_pro_customizer_script' );
 
-if(!function_exists('cricket_league_pro_font_awesome_icon_array')){
-    function cricket_league_pro_font_awesome_icon_array(){
+if(!function_exists('home_automation_pro_font_awesome_icon_array')){
+    function home_automation_pro_font_awesome_icon_array(){
         return array("fab fa-500px",
         "fa-brands fa-x-twitter",
 "fab fa-accessible-icon",

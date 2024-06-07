@@ -5,7 +5,7 @@
  * @since  1.0.0
  * @access public
  */
-class cricket_league_pro_customize_reviews_and_testimonials extends WP_Customize_Section {
+class home_automation_pro_customize_reviews_and_testimonials extends WP_Customize_Section {
 
     /**
      * The type of customize section being rendered.

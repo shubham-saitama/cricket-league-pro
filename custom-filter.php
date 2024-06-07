@@ -46,11 +46,13 @@ function get_shop_page_filter()
     if (isset($post_data['product_category']) && count($post_data['product_category'])) {
       $category = $post_data['product_category'];
 
-      array_push($tax_query_array, array(
-        'taxonomy' => 'product_cat',
-        'field' => 'term_id',
-        'terms' => $category
-      )
+      array_push(
+        $tax_query_array,
+        array(
+          'taxonomy' => 'product_cat',
+          'field' => 'term_id',
+          'terms' => $category
+        )
       );
     }
 
@@ -124,12 +126,12 @@ function get_shop_page_filter()
   if ($loop->have_posts()):
     while ($loop->have_posts()):
       $loop->the_post();
-
+      global $product;
       // Get product meta fields
       $product_price = get_post_meta(get_the_ID(), '_price', true);
       $sale_price = get_post_meta(get_the_ID(), '_sale_price', true);
       // Get product image URL
-      $product_image_url = get_the_post_thumbnail_url(get_the_ID(), 'post-thumbnails');
+      $product_image_url = get_the_post_thumbnail_url(get_the_ID(), 'product-slider');
       $current_currency = get_woocommerce_currency_symbol();
       ?>
       <div class="item-product col-lg-4 col-md-6 col-12 mb-3">
@@ -143,9 +145,7 @@ function get_shop_page_filter()
             <img src="<?php echo $product_image_url; ?>" alt="<?php the_title(); ?>">
           </div>
           <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-          <?php
-          echo get_star_rating_custom();
-          ?>
+          <?php echo wc_get_rating_html($product->get_average_rating()); ?>
           <div class="price-wrapper">
             <p class="regular-price"><?php echo $current_currency;
             echo $product_price; ?></p>
@@ -159,9 +159,12 @@ function get_shop_page_filter()
                 // Get the add to cart URL
                 $add_to_cart_url = esc_url(wc_get_product($product_id)->add_to_cart_url());
                 ?>
-          <a href="<?php echo $add_to_cart_url; ?>"
-            class="button"><?php echo get_theme_mod('cricket_league_pro_product_slider_cart_button'); ?><i
-              class="<?php echo get_theme_mod('cricket_league_pro_carrt_btn_icon'); ?>"></i></a>
+          <div class="cat-btn-wrapper">
+            <?php if ($product->is_type('simple')) {
+              woocommerce_template_loop_add_to_cart($loop->post, $product);
+            } ?>
+            <i class="<?php echo get_theme_mod('home_automation_pro_carrt_btn_icon'); ?>"></i>
+          </div>
         </div>
       </div>
       <?php

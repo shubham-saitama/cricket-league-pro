@@ -2,16 +2,16 @@
 /**
  * Template to show Client Slider
  *
- * @package cricket_league_pro
+ * @package home_automation_pro
  */
-$section_hide = get_theme_mod('cricket_league_pro_our_client_slider_image_enable');
+$section_hide = get_theme_mod('home_automation_pro_our_client_slider_image_enable');
 if ('Disable' == $section_hide) {
   return;
 }
-if (get_theme_mod('cricket_league_pro_our_client_slider_image_bgcolor', '')) {
-  $per_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_our_client_slider_image_bgcolor', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_our_client_slider_image_bgimage', '')) {
-  $per_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_our_client_slider_image_bgimage')) . '\')';
+if (get_theme_mod('home_automation_pro_our_client_slider_image_bgcolor', '')) {
+  $per_back = 'background-color:' . esc_attr(get_theme_mod('home_automation_pro_our_client_slider_image_bgcolor', '')) . ';';
+} elseif (get_theme_mod('home_automation_pro_our_client_slider_image_bgimage', '')) {
+  $per_back = 'background-image:url(\'' . esc_url(get_theme_mod('home_automation_pro_our_client_slider_image_bgimage')) . '\')';
 } else {
   $per_back = '';
 }
@@ -23,10 +23,10 @@ if (get_theme_mod('cricket_league_pro_our_client_slider_image_bgcolor', '')) {
         <!-- Slide loop -->
         <!-- Slider Container -->
           <?php
-          $num_image_fields = get_theme_mod('cricket_league_pro_client_images_count'); // Adjust this number to match the number of image fields you want to display
+          $num_image_fields = get_theme_mod('home_automation_pro_client_images_count'); // Adjust this number to match the number of image fields you want to display
           
           for ($i = 1; $i <= $num_image_fields; $i++) {
-            $setting_name = 'cricket_league_pro_client_slider_image_' . $i;
+            $setting_name = 'home_automation_pro_client_slider_image_' . $i;
             $image_url = get_theme_mod($setting_name);
 
             if (!empty($image_url)) {

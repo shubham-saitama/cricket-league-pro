@@ -1373,9 +1373,9 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * @since 2.0.0
 		 *
-		 * @param array $cricket_league_pro_config Array of config options to pass as class properties.
+		 * @param array $home_automation_pro_config Array of config options to pass as class properties.
 		 */
-		public function config( $cricket_league_pro_config ) {
+		public function config( $home_automation_pro_config ) {
 			$keys = array(
 				'id',
 				'default_path',
@@ -1391,11 +1391,11 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			);
 
 			foreach ( $keys as $key ) {
-				if ( isset( $cricket_league_pro_config[ $key ] ) ) {
-					if ( is_array( $cricket_league_pro_config[ $key ] ) ) {
-						$this->$key = array_merge( $this->$key, $cricket_league_pro_config[ $key ] );
+				if ( isset( $home_automation_pro_config[ $key ] ) ) {
+					if ( is_array( $home_automation_pro_config[ $key ] ) ) {
+						$this->$key = array_merge( $this->$key, $home_automation_pro_config[ $key ] );
 					} else {
-						$this->$key = $cricket_league_pro_config[ $key ];
+						$this->$key = $home_automation_pro_config[ $key ];
 					}
 				}
 			}
@@ -2024,32 +2024,32 @@ if ( ! function_exists( 'tgmpa' ) ) {
 	 * @api
 	 *
 	 * @param array $plugins An array of plugin arrays.
-	 * @param array $cricket_league_pro_config  Optional. An array of configuration values.
+	 * @param array $home_automation_pro_config  Optional. An array of configuration values.
 	 */
-	function tgmpa( $plugins, $cricket_league_pro_config = array() ) {
+	function tgmpa( $plugins, $home_automation_pro_config = array() ) {
 		$instance = call_user_func( array( get_class( $GLOBALS['tgmpa'] ), 'get_instance' ) );
 
 		foreach ( $plugins as $plugin ) {
 			call_user_func( array( $instance, 'register' ), $plugin );
 		}
 
-		if ( ! empty( $cricket_league_pro_config ) && is_array( $cricket_league_pro_config ) ) {
+		if ( ! empty( $home_automation_pro_config ) && is_array( $home_automation_pro_config ) ) {
 			// Send out notices for deprecated arguments passed.
-			if ( isset( $cricket_league_pro_config['notices'] ) ) {
+			if ( isset( $home_automation_pro_config['notices'] ) ) {
 				_deprecated_argument( __FUNCTION__, '2.2.0', 'The `notices` config parameter was renamed to `has_notices` in TGMPA 2.2.0. Please adjust your configuration.' );
-				if ( ! isset( $cricket_league_pro_config['has_notices'] ) ) {
-					$cricket_league_pro_config['has_notices'] = $cricket_league_pro_config['notices'];
+				if ( ! isset( $home_automation_pro_config['has_notices'] ) ) {
+					$home_automation_pro_config['has_notices'] = $home_automation_pro_config['notices'];
 				}
 			}
 
-			if ( isset( $cricket_league_pro_config['parent_menu_slug'] ) ) {
+			if ( isset( $home_automation_pro_config['parent_menu_slug'] ) ) {
 				_deprecated_argument( __FUNCTION__, '2.4.0', 'The `parent_menu_slug` config parameter was removed in TGMPA 2.4.0. In TGMPA 2.5.0 an alternative was (re-)introduced. Please adjust your configuration. For more information visit the website: http://tgmpluginactivation.com/configuration/#h-configuration-options.' );
 			}
-			if ( isset( $cricket_league_pro_config['parent_url_slug'] ) ) {
+			if ( isset( $home_automation_pro_config['parent_url_slug'] ) ) {
 				_deprecated_argument( __FUNCTION__, '2.4.0', 'The `parent_url_slug` config parameter was removed in TGMPA 2.4.0. In TGMPA 2.5.0 an alternative was (re-)introduced. Please adjust your configuration. For more information visit the website: http://tgmpluginactivation.com/configuration/#h-configuration-options.' );
 			}
 
-			call_user_func( array( $instance, 'config' ), $cricket_league_pro_config );
+			call_user_func( array( $instance, 'config' ), $home_automation_pro_config );
 		}
 	}
 }

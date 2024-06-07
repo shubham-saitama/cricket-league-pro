@@ -2,16 +2,16 @@
 /**
  * Template part for displaying Testimonials
  *
- * @package cricket_league_pro
+ * @package home_automation_pro
  */
-$section_hide = get_theme_mod('cricket_league_pro_testimonial_enable');
+$section_hide = get_theme_mod('home_automation_pro_testimonial_enable');
 if ('Disable' == $section_hide) {
     return;
 }
-if (get_theme_mod('cricket_league_pro_testimonial_bgcolor', '')) {
-    $per_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_testimonial_bgcolor', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_testimonial_bgimage', '')) {
-    $per_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_testimonial_bgimage')) . '\')';
+if (get_theme_mod('home_automation_pro_testimonial_bgcolor', '')) {
+    $per_back = 'background-color:' . esc_attr(get_theme_mod('home_automation_pro_testimonial_bgcolor', '')) . ';';
+} elseif (get_theme_mod('home_automation_pro_testimonial_bgimage', '')) {
+    $per_back = 'background-image:url(\'' . esc_url(get_theme_mod('home_automation_pro_testimonial_bgimage')) . '\')';
 } else {
     $per_back = '';
 }
@@ -78,12 +78,12 @@ if (get_theme_mod('cricket_league_pro_testimonial_bgcolor', '')) {
                 <div class="testimonial-right col-lg-6 col-md-12 col-12">
                     <div class="heading-wrap">
                         <div class="heading-tag">
-                            <?php echo get_theme_mod('cricket_league_pro_testimonial_heading_tag_font_text'); ?>
+                            <?php echo get_theme_mod('home_automation_pro_testimonial_heading_tag_font_text'); ?>
                         </div>
                         <h2 class="left">
-                            <?php echo get_theme_mod('cricket_league_pro_testimonial_heading_font_text'); ?>
+                            <?php echo get_theme_mod('home_automation_pro_testimonial_heading_font_text'); ?>
                         </h2>
-                        <p><?php echo get_theme_mod('cricket_league_pro_testimonial_sec_text'); ?></p>
+                        <p><?php echo get_theme_mod('home_automation_pro_testimonial_sec_text'); ?></p>
                         <div class="outer-thumbnai-wrapper">
                             <div class="thumbnail-slider">
                                 <?php if ($testimonials_query->have_posts()):

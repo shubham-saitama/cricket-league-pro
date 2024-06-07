@@ -8,7 +8,7 @@ get_template_part('template-parts/banner'); ?>
     <div class="container">
         <div class="filter-events">
             <div>
-                <label for="filter-select"><?php echo get_theme_mod('cricket_league_pro_event_page_filter_by'); ?></label>
+                <label for="filter-select"><?php echo get_theme_mod('home_automation_pro_event_page_filter_by'); ?></label>
                 <select id="filter-select">
                     <option value="year">Year</option>
                     <option value="month">Month</option>

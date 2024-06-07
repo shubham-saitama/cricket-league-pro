@@ -156,7 +156,7 @@ var Whizzie = (function($){
                         current_item_hash = response.hash;
                         jQuery.post(response.url, response, function(response2) {
                             process_current();
-                            $current_node.find('.wizard-plugin-status').text(response.message + cricket_league_pro_whizzie_params.verify_text);
+                            $current_node.find('.wizard-plugin-status').text(response.message + home_automation_pro_whizzie_params.verify_text);
                         }).fail(ajax_callback);
 
                     }
@@ -178,9 +178,9 @@ var Whizzie = (function($){
             if(current_item){
                 // query our ajax handler to get the ajax to send to TGM
                 // if we don't get a reply we can assume everything worked and continue onto the next one.
-                jQuery.post(cricket_league_pro_whizzie_params.ajaxurl, {
+                jQuery.post(home_automation_pro_whizzie_params.ajaxurl, {
                     action: 'setup_plugins',
-                    wpnonce: cricket_league_pro_whizzie_params.wpnonce,
+                    wpnonce: home_automation_pro_whizzie_params.wpnonce,
                     slug: current_item
                 }, ajax_callback).fail(ajax_callback);
             }
@@ -247,10 +247,10 @@ var Whizzie = (function($){
             jQuery('.vw-setup-finish .wz-btn-builder').css('display','inline-block');
             function import_widgets(){
                 jQuery.post(
-                    cricket_league_pro_whizzie_params.ajaxurl,
+                    home_automation_pro_whizzie_params.ajaxurl,
                     {
                         action: 'setup_builder',
-                        wpnonce: cricket_league_pro_whizzie_params.wpnonce
+                        wpnonce: home_automation_pro_whizzie_params.wpnonce
                     }, ajax_callback).fail(ajax_callback);
             }
             $('.nav-step-done').attr('data-enable',1);
@@ -259,10 +259,10 @@ var Whizzie = (function($){
             jQuery('.vw-setup-finish .wz-btn-builder').css('display','none');
             function import_widgets(){
                 jQuery.post(
-                    cricket_league_pro_whizzie_params.ajaxurl,
+                    home_automation_pro_whizzie_params.ajaxurl,
                     {
                         action: 'setup_widgets',
-                        wpnonce: cricket_league_pro_whizzie_params.wpnonce
+                        wpnonce: home_automation_pro_whizzie_params.wpnonce
                     }, ajax_callback_customizer).fail(ajax_callback_customizer);
             }
             $('.nav-step-done').attr('data-enable',1);
@@ -325,9 +325,9 @@ var Whizzie = (function($){
                 var $check = $current_node.find('input:checkbox');
                 if($check.is(':checked')) {
                     // process htis one!
-                    jQuery.post(cricket_league_pro_whizzie_params.ajaxurl, {
+                    jQuery.post(home_automation_pro_whizzie_params.ajaxurl, {
                         action: 'envato_setup_content',
-                        wpnonce: cricket_league_pro_whizzie_params.wpnonce,
+                        wpnonce: home_automation_pro_whizzie_params.wpnonce,
                         content: current_item
                     }, ajax_callback).fail(ajax_callback);
                 }else{
@@ -480,33 +480,33 @@ jQuery(document).ready(function(){
         jQuery('.get-stared-page-wrap .wz-video-model iframe').attr('src', '')
     });
 
-    jQuery('#cricket_league_pro_license_form button[id="change--key"]').on('click', function() {
-        var $cricket_league_pro_license_form = jQuery('#cricket_league_pro_license_form');
-        $cricket_league_pro_license_form.find('input[name="cricket_league_pro_license_key"]').val('');
-        $cricket_league_pro_license_form.find('input[name="cricket_league_pro_license_key"]').attr('disabled', false);
-        $cricket_league_pro_license_form.find('button[type="submit"]').val('');
-        $cricket_league_pro_license_form.find('button[type="submit"]').attr('disabled', false);
-        $cricket_league_pro_license_form.find('button[type="submit"]').text('Activate');
+    jQuery('#home_automation_pro_license_form button[id="change--key"]').on('click', function() {
+        var $home_automation_pro_license_form = jQuery('#home_automation_pro_license_form');
+        $home_automation_pro_license_form.find('input[name="home_automation_pro_license_key"]').val('');
+        $home_automation_pro_license_form.find('input[name="home_automation_pro_license_key"]').attr('disabled', false);
+        $home_automation_pro_license_form.find('button[type="submit"]').val('');
+        $home_automation_pro_license_form.find('button[type="submit"]').attr('disabled', false);
+        $home_automation_pro_license_form.find('button[type="submit"]').text('Activate');
         jQuery('#start-now-next').hide();
         jQuery(this).remove();
     });
 
-    jQuery('form#cricket_league_pro_license_form').on('submit', function(e) {
+    jQuery('form#home_automation_pro_license_form').on('submit', function(e) {
 
    
         jQuery('.theme_activation_spinner').show();
         e.preventDefault();
-        var key_to_send = jQuery('form#cricket_league_pro_license_form').serializeArray()[0].value;
+        var key_to_send = jQuery('form#home_automation_pro_license_form').serializeArray()[0].value;
 
         if (key_to_send == "") {
             alert('Please Enter the license key first!');
             return;
         } else {
             jQuery.post(
-                cricket_league_pro_whizzie_params.ajaxurl, {
-                    action: 'wz_activate_cricket_league_pro',
-                    wpnonce: cricket_league_pro_whizzie_params.wpnonce,
-                    cricket_league_pro_license_key: key_to_send
+                home_automation_pro_whizzie_params.ajaxurl, {
+                    action: 'wz_activate_home_automation_pro',
+                    wpnonce: home_automation_pro_whizzie_params.wpnonce,
+                    home_automation_pro_license_key: key_to_send
                 },
                 function(data, status) {
                     if (status == 'success') {
@@ -520,9 +520,9 @@ jQuery(document).ready(function(){
                             document.querySelector('.tablinks[data-tab="demo_offer"]').click();
 
                             jQuery('.theme_activation_spinner').hide();
-                            jQuery('form#cricket_league_pro_license_form button[type="submit"]').css("background-color:#0a9d2c");
-                            jQuery('form#cricket_league_pro_license_form button[type="submit"]').text('Activated');
-                            jQuery('form#cricket_league_pro_license_form button[type="submit"]').attr('disabled', 'disabled');
+                            jQuery('form#home_automation_pro_license_form button[type="submit"]').css("background-color:#0a9d2c");
+                            jQuery('form#home_automation_pro_license_form button[type="submit"]').text('Activated');
+                            jQuery('form#home_automation_pro_license_form button[type="submit"]').attr('disabled', 'disabled');
                            
                         } else {
                             jQuery.notify(data.msg, {

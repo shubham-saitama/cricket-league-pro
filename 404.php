@@ -6,16 +6,16 @@
  */
 get_header();
 
-if (get_theme_mod('cricket_league_pro_404_page_bgcolor', '')) {
-	$error_page_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_404_page_bgcolor', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_404_page_bgimage', '')) {
-	$error_page_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_404_page_bgimage')) . '\')';
+if (get_theme_mod('home_automation_pro_404_page_bgcolor', '')) {
+	$error_page_back = 'background-color:' . esc_attr(get_theme_mod('home_automation_pro_404_page_bgcolor', '')) . ';';
+} elseif (get_theme_mod('home_automation_pro_404_page_bgimage', '')) {
+	$error_page_back = 'background-image:url(\'' . esc_url(get_theme_mod('home_automation_pro_404_page_bgimage')) . '\')';
 } else {
 	$error_page_back = '';
 }
-$img_bg = get_theme_mod('cricket_league_pro_404_page_bg_attachment');
+$img_bg = get_theme_mod('home_automation_pro_404_page_bg_attachment');
 
-$img = get_theme_mod('cricket_league_pro_inner_page_banner_bgimage');
+$img = get_theme_mod('home_automation_pro_inner_page_banner_bgimage');
 $display = '';
 $display_title_bbanner = '';
 $vw_title_banner_image_title_on_off = get_post_meta($post->ID, 'vw_title_banner_image_title_on_off', true);
@@ -33,9 +33,9 @@ if ($img != '') { ?>
 						<h1>
 							Not Found
 						</h1>
-						<?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+						<?php if (get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '') { ?>
 							<div class="bradcrumbs py-2 b1">
-								<?php cricket_league_pro_the_breadcrumb(); ?>
+								<?php home_automation_pro_the_breadcrumb(); ?>
 							</div>
 						<?php }
 						?>
@@ -49,9 +49,9 @@ if ($img != '') { ?>
 		<h1>
 			<?php the_title(); ?>
 		</h1>
-		<?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+		<?php if (get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '') { ?>
 			<div class="container bradcrumbs py-3 b2">
-				<?php cricket_league_pro_the_breadcrumb(); ?>
+				<?php home_automation_pro_the_breadcrumb(); ?>
 			</div>
 		<?php } ?>
 
@@ -61,9 +61,9 @@ if ($img != '') { ?>
 		<h1>
 			<?php the_title(); ?>
 		</h1>
-		<?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+		<?php if (get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '') { ?>
 			<div class="container bradcrumbs py-3 b2">
-				<?php cricket_league_pro_the_breadcrumb(); ?>
+				<?php home_automation_pro_the_breadcrumb(); ?>
 			</div>
 		<?php } ?>
 
@@ -76,21 +76,21 @@ if ($img != '') { ?>
 		<div class="row text-center justify-content-center">
 			<div class="col-md-8 tablet-error">
 				<img class="errorimg"
-					src="<?php echo esc_html(get_theme_mod('cricket_league_pro_error_temp_bg_images')); ?>">
+					src="<?php echo esc_html(get_theme_mod('home_automation_pro_error_temp_bg_images')); ?>">
 				<div class="page-content error_bgs mt-4">
-					<?php if (get_theme_mod('cricket_league_pro_404_page_heading') != ''): ?>
+					<?php if (get_theme_mod('home_automation_pro_404_page_heading') != ''): ?>
 						<h2 class="error-heading mb-4">
-							<?php echo esc_html(get_theme_mod('cricket_league_pro_404_page_heading')); ?>
+							<?php echo esc_html(get_theme_mod('home_automation_pro_404_page_heading')); ?>
 						</h2>
 					<?php endif; ?>
-					<?php if (get_theme_mod('cricket_league_pro_404_page_content') != ''): ?>
+					<?php if (get_theme_mod('home_automation_pro_404_page_content') != ''): ?>
 						<p class="error-para mt-3">
-							<?php echo esc_html(get_theme_mod('cricket_league_pro_404_page_content')); ?>
+							<?php echo esc_html(get_theme_mod('home_automation_pro_404_page_content')); ?>
 						</p>
 					<?php endif; ?>
-					<?php if (get_theme_mod('cricket_league_pro_404_page_button_text') != ''): ?>
+					<?php if (get_theme_mod('home_automation_pro_404_page_button_text') != ''): ?>
 						<a class="theme-btn black mt-4" href="<?php echo esc_url(home_url()); ?>">
-							<?php echo esc_html(get_theme_mod('cricket_league_pro_404_page_button_text')); ?>
+							<?php echo esc_html(get_theme_mod('home_automation_pro_404_page_button_text')); ?>
 						</a>
 					<?php endif; ?>
 					<div class="clearfix"></div>

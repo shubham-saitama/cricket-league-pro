@@ -6,9 +6,9 @@
  * @package cricket-league-pro
  */
 get_header();
-$background_img = get_theme_mod('cricket_league_pro_inner_page_banner_bgimage');
+$background_img = get_theme_mod('home_automation_pro_inner_page_banner_bgimage');
 
-$count = get_theme_mod('cricket_league_pro_single_service_list_length');
+$count = get_theme_mod('home_automation_pro_single_service_list_length');
 ?>
 
 <div class="title-box text-center banner-img" style="background-image:url(<?php echo esc_url($background_img); ?>)">
@@ -19,9 +19,9 @@ $count = get_theme_mod('cricket_league_pro_single_service_list_length');
           <h1>
             <?php the_title(); ?>
           </h1>
-          <?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+          <?php if (get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '') { ?>
             <div class=" bradcrumbs">
-              <?php cricket_league_pro_the_breadcrumb(); ?>
+              <?php home_automation_pro_the_breadcrumb(); ?>
             </div>
           <?php }
           ?>
@@ -48,60 +48,60 @@ $count = get_theme_mod('cricket_league_pro_single_service_list_length');
           <?php echo the_content(); ?>
           <div class="row">
             <div class="single-left-img col-lg-6 col-md-12 col-12">
-              <img src="<?php echo get_theme_mod('cricket_league_pro_single_service_img'); ?>"
+              <img src="<?php echo get_theme_mod('home_automation_pro_single_service_img'); ?>"
                 alt="Single Services Image">
             </div>
             <div class="single-servics-list  col-lg-6 col-md-12 col-12">
               <div class="title">
-                <?php echo get_theme_mod('cricket_league_pro_single_service_list_title'); ?>
+                <?php echo get_theme_mod('home_automation_pro_single_service_list_title'); ?>
               </div>
               <ul class="featured-list">
                 <?php for ($i = 1; $i <= $count; $i++) { ?>
 
                   <li>
-                    <?php echo get_theme_mod('cricket_league_pro_single_services_list' . $i); ?>
+                    <?php echo get_theme_mod('home_automation_pro_single_services_list' . $i); ?>
                   </li>
                 <?php } ?>
               </ul>
               <a class="submit-btn single-page" href="<?php echo get_permalink(get_page_by_title('Get A Quote')); ?>">
-                <?php echo get_theme_mod('cricket_league_pro_single_service_btn_txt'); ?>
+                <?php echo get_theme_mod('home_automation_pro_single_service_btn_txt'); ?>
               </a>
             </div>
           </div>
           <div class="row my-5 with-gap px-4">
             <div class="counter-container col-lg-5 col-md-5 col-12">
               <div class="counter-img">
-                <img src="<?php echo get_theme_mod('cricket_league_pro_single_service_counter1_img'); ?>"
+                <img src="<?php echo get_theme_mod('home_automation_pro_single_service_counter1_img'); ?>"
                   alt="counter img">
               </div>
               <div class="counter-info">
                 <h5 class="counter-title">
-                  <?php echo get_theme_mod('cricket_league_pro_single_service_counter1_title'); ?>
+                  <?php echo get_theme_mod('home_automation_pro_single_service_counter1_title'); ?>
                 </h5>
                 <span class="counter-number">
-                  <?php echo get_theme_mod('cricket_league_pro_single_service_counter1'); ?><i class="fa fa-plus"
+                  <?php echo get_theme_mod('home_automation_pro_single_service_counter1'); ?><i class="fa fa-plus"
                     aria-hidden="true"></i>
                 </span>
                 <p class="counter-txt">
-                  <?php echo get_theme_mod('cricket_league_pro_single_service_counter1_text'); ?>
+                  <?php echo get_theme_mod('home_automation_pro_single_service_counter1_text'); ?>
                 </p>
               </div>
             </div>
             <div class="counter-container col-lg-5 col-md-5 col-12 ">
               <div class="counter-img">
-                <img src="<?php echo get_theme_mod('cricket_league_pro_single_service_counter2_img'); ?>"
+                <img src="<?php echo get_theme_mod('home_automation_pro_single_service_counter2_img'); ?>"
                   alt="counter img">
               </div>
               <div class="counter-info">
                 <h5 class="counter-title">
-                  <?php echo get_theme_mod('cricket_league_pro_single_service_counter2_title'); ?>
+                  <?php echo get_theme_mod('home_automation_pro_single_service_counter2_title'); ?>
                 </h5>
                 <span class="counter-number">
-                  <?php echo get_theme_mod('cricket_league_pro_single_service_counter2'); ?> <i class="fa fa-plus"
+                  <?php echo get_theme_mod('home_automation_pro_single_service_counter2'); ?> <i class="fa fa-plus"
                     aria-hidden="true"></i>
                 </span>
                 <p class="counter-txt">
-                  <?php echo get_theme_mod('cricket_league_pro_single_service_counter2_text'); ?>
+                  <?php echo get_theme_mod('home_automation_pro_single_service_counter2_text'); ?>
                 </p>
               </div>
             </div>
@@ -121,17 +121,17 @@ $count = get_theme_mod('cricket_league_pro_single_service_list_length');
               <?php dynamic_sidebar('services-sidebar'); ?>
               <div class="calling-widget mt-5">
                 <div class="widget-img-wrap">
-                  <img src="<?php echo get_theme_mod('cricket_league_pro_single_service_widget_image'); ?>"
+                  <img src="<?php echo get_theme_mod('home_automation_pro_single_service_widget_image'); ?>"
                     alt="widget-img">
                 </div>
                 <div class="widget-title">
-                  <?php echo get_theme_mod('cricket_league_pro_single_service_widget_title'); ?>
+                  <?php echo get_theme_mod('home_automation_pro_single_service_widget_title'); ?>
                 </div>
-                <a href="tel:<?php echo get_theme_mod('cricket_league_pro_single_service_widget_number'); ?>">
-                  <?php echo get_theme_mod('cricket_league_pro_single_service_widget_number'); ?>
+                <a href="tel:<?php echo get_theme_mod('home_automation_pro_single_service_widget_number'); ?>">
+                  <?php echo get_theme_mod('home_automation_pro_single_service_widget_number'); ?>
                 </a>
                 <div class="call-us-txt">
-                  <?php echo get_theme_mod('cricket_league_pro_single_service_widget_text'); ?>
+                  <?php echo get_theme_mod('home_automation_pro_single_service_widget_text'); ?>
                 </div>
               </div>
             </div>
@@ -140,13 +140,13 @@ $count = get_theme_mod('cricket_league_pro_single_service_list_length');
       <?php endwhile; // end of the loop. ?>
     </div>
     <div class="recent-posts">
-      <?php if (get_theme_mod('cricket_league_pro_single_services_heading_tag') != false && get_theme_mod('cricket_league_pro_single_services_heading') != false) { ?>
+      <?php if (get_theme_mod('home_automation_pro_single_services_heading_tag') != false && get_theme_mod('home_automation_pro_single_services_heading') != false) { ?>
         <div class="heading text-center">
           <div class="heading-tagline">
-            <?php echo get_theme_mod('cricket_league_pro_single_services_heading_tag'); ?>
+            <?php echo get_theme_mod('home_automation_pro_single_services_heading_tag'); ?>
           </div>
           <h2>
-            <?php echo get_theme_mod('cricket_league_pro_single_services_heading'); ?>
+            <?php echo get_theme_mod('home_automation_pro_single_services_heading'); ?>
           </h2>
         </div>
       <?php } ?>

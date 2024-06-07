@@ -5,7 +5,7 @@
  * @package vw-cricket-pro
  */
 
-if (!function_exists('cricket_league_pro_setup')):
+if (!function_exists('home_automation_pro_setup')):
 	// echo "<pre>";
 // echo print_r($terms_content);
 // echo "</pre>";
@@ -16,9 +16,9 @@ if (!function_exists('cricket_league_pro_setup')):
 	 * before the init hook. The init hook is too late for some features, such as indicating
 	 * support post thumbnails.
 	 */
-	function cricket_league_pro_setup()
+	function home_automation_pro_setup()
 	{
-		$GLOBALS['content_width'] = apply_filters('cricket_league_pro_content_width', 640);
+		$GLOBALS['content_width'] = apply_filters('home_automation_pro_content_width', 640);
 		if (!isset($content_width))
 			$content_width = 640;
 		load_theme_textdomain('vw-cricket-pro', get_template_directory() . '/languages');
@@ -57,10 +57,10 @@ if (!function_exists('cricket_league_pro_setup')):
 		add_editor_style(array('assets/css/editor-style.css'));
 	}
 endif;
-add_action('after_setup_theme', 'cricket_league_pro_setup');
+add_action('after_setup_theme', 'home_automation_pro_setup');
 
 /* Theme Widgets Setup */
-function cricket_league_pro_widgets_init()
+function home_automation_pro_widgets_init()
 {
 	register_sidebar(
 		array(
@@ -129,10 +129,10 @@ function cricket_league_pro_widgets_init()
 		)
 	);
 }
-add_action('widgets_init', 'cricket_league_pro_widgets_init');
+add_action('widgets_init', 'home_automation_pro_widgets_init');
 
 /* Theme Font URL */
-function cricket_league_pro_font_url()
+function home_automation_pro_font_url()
 {
 	$font_url = '';
 	$font_family = array();
@@ -245,10 +245,10 @@ add_image_size('custom-thumbnail', 240, 240, true);
 
 
 /* Theme enqueue scripts */
-function cricket_league_pro_scripts()
+function home_automation_pro_scripts()
 {
 	$custom_css = "";
-	wp_enqueue_style('vw-cricket-pro-font', cricket_league_pro_font_url(), array());
+	wp_enqueue_style('vw-cricket-pro-font', home_automation_pro_font_url(), array());
 	wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
 	wp_enqueue_style('vw-cricket-pro-basic-style', get_stylesheet_uri());
 	wp_style_add_data('vw-cricket-pro-style', 'rtl', 'replace');
@@ -361,13 +361,13 @@ function cricket_league_pro_scripts()
 
 	wp_register_script('vw-cricket-pro-customscripts', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'));
 
-	$cricket_league_pro_customscripts_obj = array(
+	$home_automation_pro_customscripts_obj = array(
 		'is_home' => (is_home() || is_front_page()),
 		'home_url' => home_url(),
 		'is_rtl' => is_rtl(),
 		'product_max_price' => $product_meta_price_max->product_max_price,
 		'listing_max_price' => $listing_meta_price_max->listing_max_price,
-		'listing_currency_symbol' => $currency_symbol,	// $cricket_league_pro_customscripts_obj = array(
+		'listing_currency_symbol' => $currency_symbol,	// $home_automation_pro_customscripts_obj = array(
 		'is_home' => (is_home() || is_front_page()),
 		'home_url' => home_url(),
 		'is_rtl' => is_rtl(),
@@ -383,19 +383,19 @@ function cricket_league_pro_scripts()
 		'product_max_price' => $product_meta_price_max->product_max_price
 	);
 	if (class_exists('WooCommerce')) {
-		$cricket_league_pro_customscripts_obj['get_woocommerce_currency_symbol'] = get_woocommerce_currency_symbol();
+		$home_automation_pro_customscripts_obj['get_woocommerce_currency_symbol'] = get_woocommerce_currency_symbol();
 	}
 
 
 
-	wp_localize_script('vw-cricket-pro-customscripts', 'cricket_league_pro_customscripts_obj', $cricket_league_pro_customscripts_obj);
+	wp_localize_script('vw-cricket-pro-customscripts', 'home_automation_pro_customscripts_obj', $home_automation_pro_customscripts_obj);
 
 	// wp_enqueue_script('vw-cricket-pro-customscripts');
 	// // 	'get_woocommerce_currency_symbol' => get_woocommerce_currency_symbol(),
 	// // 	'ajaxurl'				=>	admin_url('admin-ajax.php')
 	// // );
 
-	// // wp_localize_script('vw-cricket-pro-customscripts', 'cricket_league_pro_customscripts_obj' ,$cricket_league_pro_customscripts_obj);
+	// // wp_localize_script('vw-cricket-pro-customscripts', 'home_automation_pro_customscripts_obj' ,$home_automation_pro_customscripts_obj);
 
 	wp_enqueue_script('vw-cricket-pro-customscripts');
 
@@ -408,7 +408,7 @@ function cricket_league_pro_scripts()
 	wp_enqueue_style('vw-cricket-pro-ie', get_template_directory_uri() . '/assets/css/ie.css', array('vw-cricket-pro-basic-style'));
 	wp_style_add_data('vw-cricket-pro-ie', 'conditional', 'IE');
 }
-add_action('wp_enqueue_scripts', 'cricket_league_pro_scripts');
+add_action('wp_enqueue_scripts', 'home_automation_pro_scripts');
 
 /* Implement the Custom Header feature. */
 require get_parent_theme_file_path('/inc/custom-header.php');
@@ -443,14 +443,14 @@ require get_template_directory() . '/theme-wizard/config.php';
 require get_parent_theme_file_path('/theme-wizard/plugin-activation.php');
 // /* URL DEFINES */
 // require get_parent_theme_file_path('custom-filter.php');
-define('cricket_league_pro_SITE_URL', 'https://www.vwthemes.com/');
+define('home_automation_pro_SITE_URL', 'https://www.vwthemes.com/');
 /* Theme Credit link */
-function cricket_league_pro_credit_link()
+function home_automation_pro_credit_link()
 {
-	echo esc_html_e(' Design & Developed by', 'vw-cricket-pro') . "<a href=" . esc_url(cricket_league_pro_SITE_URL) . " target='_blank'> VW Themes</a>";
+	echo esc_html_e(' Design & Developed by', 'vw-cricket-pro') . "<a href=" . esc_url(home_automation_pro_SITE_URL) . " target='_blank'> VW Themes</a>";
 }
 /*Radio Button sanitization*/
-function cricket_league_pro_sanitize_choices($input, $setting)
+function home_automation_pro_sanitize_choices($input, $setting)
 {
 	global $wp_customize;
 	$control = $wp_customize->get_control($setting->id);
@@ -464,7 +464,7 @@ function cricket_league_pro_sanitize_choices($input, $setting)
 
 
 /* Excerpt Read more overwrite */
-function cricket_league_pro_excerpt_more($link)
+function home_automation_pro_excerpt_more($link)
 {
 	if (is_admin()) {
 		return $link;
@@ -477,20 +477,20 @@ function cricket_league_pro_excerpt_more($link)
 	);
 	return ' &hellip; ' . $link;
 }
-add_filter('excerpt_more', 'cricket_league_pro_excerpt_more');
+add_filter('excerpt_more', 'home_automation_pro_excerpt_more');
 
-define('cricket_league_pro_THEME_DOC', 'https://www.vwthemesdemo.com/docs/vw-cricket-pro/');
-define('cricket_league_pro_SUPPORT', 'https://www.vwthemes.com/support/vw-theme/');
-define('cricket_league_pro_FAQ', 'https://www.vwthemes.com/faqs/');
-define('cricket_league_pro_CONTACT', 'https://www.vwthemes.com/contact/');
-define('cricket_league_pro_REVIEW', 'https://www.vwthemes.com/topic/reviews-and-testimonials/');
+define('home_automation_pro_THEME_DOC', 'https://www.vwthemesdemo.com/docs/vw-cricket-pro/');
+define('home_automation_pro_SUPPORT', 'https://www.vwthemes.com/support/vw-theme/');
+define('home_automation_pro_FAQ', 'https://www.vwthemes.com/faqs/');
+define('home_automation_pro_CONTACT', 'https://www.vwthemes.com/contact/');
+define('home_automation_pro_REVIEW', 'https://www.vwthemes.com/topic/reviews-and-testimonials/');
 
-define('cricket_league_pro_banner_link', 'https://www.vwthemes.com/premium-plugin/vw-title-banner-plugin/');
-define('cricket_league_pro_social_media_plugin', 'https://www.vwthemes.com/free-plugin/vw-social-media/');
-define('cricket_league_pro_preloader_plugin', 'https://www.vwthemes.com/free-plugin/vw-preloader/');
-define('cricket_league_pro_accordion_plugin', 'https://www.vwthemes.com/free-plugin/vw-accordion/');
-define('cricket_league_pro_gallery_link', 'https://www.vwthemes.com/premium-plugin/vw-gallery-plugin/');
-define('cricket_league_pro_footer_link', 'https://www.youtube.com/watch?v=7BvTpLh-RB8');
+define('home_automation_pro_banner_link', 'https://www.vwthemes.com/premium-plugin/vw-title-banner-plugin/');
+define('home_automation_pro_social_media_plugin', 'https://www.vwthemes.com/free-plugin/vw-social-media/');
+define('home_automation_pro_preloader_plugin', 'https://www.vwthemes.com/free-plugin/vw-preloader/');
+define('home_automation_pro_accordion_plugin', 'https://www.vwthemes.com/free-plugin/vw-accordion/');
+define('home_automation_pro_gallery_link', 'https://www.vwthemes.com/premium-plugin/vw-gallery-plugin/');
+define('home_automation_pro_footer_link', 'https://www.youtube.com/watch?v=7BvTpLh-RB8');
 
 define('IBTANA_THEME_LICENCE_ENDPOINT', 'https://preview.vwthemesdemo.com/old_website/wp-json/ibtana-licence/v2/');
 define('SHOPIFY_THEME_LICENCE_ENDPOINT', 'https://license.vwthemes.com/api/public/');
@@ -527,16 +527,16 @@ function vw_theme_bundle_admin_notice()
 	<?php
 }
 
-add_action('switch_theme', 'cricket_league_pro_deactivate');
-function cricket_league_pro_deactivate()
+add_action('switch_theme', 'home_automation_pro_deactivate');
+function home_automation_pro_deactivate()
 {
 	ThemeWhizzie::remove_the_theme_key();
 	ThemeWhizzie::set_the_validation_status('false');
 }
 
 define('CUSTOM_TEXT_DOMAIN', 'vw-cricket-pro');
-add_filter('woocommerce_add_to_cart_fragments', 'cricket_league_pro_wc_refresh_mini_cart_count');
-function cricket_league_pro_wc_refresh_mini_cart_count($fragments)
+add_filter('woocommerce_add_to_cart_fragments', 'home_automation_pro_wc_refresh_mini_cart_count');
+function home_automation_pro_wc_refresh_mini_cart_count($fragments)
 {
 	ob_start();
 	$items_count = WC()->cart->get_cart_contents_count();
@@ -657,14 +657,14 @@ function woocommerce_additional_information_callback()
 }
 
 if (is_admin()) {
-	add_action('admin_menu', 'cricket_league_pro_bn_custom_meta_product');
+	add_action('admin_menu', 'home_automation_pro_bn_custom_meta_product');
 }
-function cricket_league_pro_bn_custom_meta_product()
+function home_automation_pro_bn_custom_meta_product()
 {
-	add_meta_box('bn_meta', __('Information Meta', 'vw-cricket-pro'), 'cricket_league_pro_bn_meta_callback_product', 'product', 'normal', 'high');
+	add_meta_box('bn_meta', __('Information Meta', 'vw-cricket-pro'), 'home_automation_pro_bn_meta_callback_product', 'product', 'normal', 'high');
 	// add_post_meta(69, 'age', 25);
 }
-function cricket_league_pro_bn_meta_callback_product($post)
+function home_automation_pro_bn_meta_callback_product($post)
 {
 	wp_nonce_field(basename(__FILE__), 'bn_nonce');
 	$bn_stored_meta = get_post_meta($post->ID);
@@ -714,7 +714,7 @@ function cricket_league_pro_bn_meta_callback_product($post)
 	</div>
 	<?php
 }
-function cricket_league_pro_bn_meta_save_product($post_id)
+function home_automation_pro_bn_meta_save_product($post_id)
 {
 	if (!isset($_POST['bn_nonce']) || !wp_verify_nonce($_POST['bn_nonce'], basename(__FILE__))) {
 		return;
@@ -743,7 +743,7 @@ function cricket_league_pro_bn_meta_save_product($post_id)
 		update_post_meta($post_id, 'meta-url', esc_url_raw($_POST['meta-url']));
 	}
 }
-add_action('save_post', 'cricket_league_pro_bn_meta_save_product');
+add_action('save_post', 'home_automation_pro_bn_meta_save_product');
 
 function enqueue_custom_admin_scripts()
 {
@@ -1455,13 +1455,13 @@ add_action('wp_ajax_nopriv_get_variation_data', 'get_variation_data');
 
 // -*-*--*-*-*-*-*-*-*-*-* listing Start-*-*-*-*-*-*-*-*-*-*-*
 if (is_admin()) {
-	add_action('admin_menu', 'cricket_league_pro_posttype_bn_custom_meta_listing');
+	add_action('admin_menu', 'home_automation_pro_posttype_bn_custom_meta_listing');
 }
-function cricket_league_pro_posttype_bn_custom_meta_listing()
+function home_automation_pro_posttype_bn_custom_meta_listing()
 {
-	add_meta_box('bn_meta', __('Single Page Details', 'vw-cricket-pro-posttype'), 'cricket_league_pro_posttype_bn_meta_callback_listing', 'auto-listing', 'normal', 'high');
+	add_meta_box('bn_meta', __('Single Page Details', 'vw-cricket-pro-posttype'), 'home_automation_pro_posttype_bn_meta_callback_listing', 'auto-listing', 'normal', 'high');
 }
-function cricket_league_pro_posttype_bn_meta_callback_listing($post)
+function home_automation_pro_posttype_bn_meta_callback_listing($post)
 {
 	wp_nonce_field(basename(__FILE__), 'bn_nonce');
 	$bn_stored_meta = get_post_meta($post->ID);
@@ -1526,7 +1526,7 @@ function cricket_league_pro_posttype_bn_meta_callback_listing($post)
 	</div>
 	<?php
 }
-function cricket_league_pro_posttype_bn_meta_save_news($post_id)
+function home_automation_pro_posttype_bn_meta_save_news($post_id)
 {
 	if (!isset($_POST['bn_nonce']) || !wp_verify_nonce($_POST['bn_nonce'], basename(__FILE__))) {
 		return;
@@ -1570,7 +1570,7 @@ function cricket_league_pro_posttype_bn_meta_save_news($post_id)
 		update_post_meta($post_id, 'meta_list_para6', sanitize_text_field($_POST['meta_list_para6']));
 	}
 }
-add_action('save_post', 'cricket_league_pro_posttype_bn_meta_save_news');
+add_action('save_post', 'home_automation_pro_posttype_bn_meta_save_news');
 // -*-*--*-*-*-*-*-*-*-*-* listing End -*-*-*-*-*-*-*-*-*-*-*
 
 
@@ -1919,16 +1919,16 @@ add_action('save_post', 'save_player_age_meta');
 
 
 if (is_admin()) {
-	add_action('admin_menu', 'cricket_league_pro_product_custom_meta');
+	add_action('admin_menu', 'home_automation_pro_product_custom_meta');
 }
 
-function cricket_league_pro_product_custom_meta()
+function home_automation_pro_product_custom_meta()
 {
 
-	add_meta_box('bn_meta', __('Products Meta', 'clothing-store-pro'), 'cricket_league_pro_posttype_bn_meta_callback_product', 'product', 'normal', 'high');
+	add_meta_box('bn_meta', __('Products Meta', 'clothing-store-pro'), 'home_automation_pro_posttype_bn_meta_callback_product', 'product', 'normal', 'high');
 }
 
-function cricket_league_pro_posttype_bn_meta_callback_product($post)
+function home_automation_pro_posttype_bn_meta_callback_product($post)
 {
 	wp_nonce_field(basename(__FILE__), 'bn_nonce');
 	$bn_stored_meta = get_post_meta($post->ID);
@@ -2038,7 +2038,7 @@ function cricket_league_pro_posttype_bn_meta_callback_product($post)
 	<?php
 }
 
-function cricket_league_pro_meta_save_product($post_id)
+function home_automation_pro_meta_save_product($post_id)
 {
 
 	if (!isset($_POST['bn_nonce']) || !wp_verify_nonce($_POST['bn_nonce'], basename(__FILE__))) {
@@ -2088,7 +2088,7 @@ function cricket_league_pro_meta_save_product($post_id)
 	}
 
 }
-add_action('save_post', 'cricket_league_pro_meta_save_product');
+add_action('save_post', 'home_automation_pro_meta_save_product');
 
 /* product meta field end*/
 

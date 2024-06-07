@@ -36,7 +36,7 @@ get_header(); ?>
 						<div class="entry-content">
 							<div class="entry-attachment">
 								<div class="attachment">
-									<?php cricket_league_pro_the_attached_image(); ?>
+									<?php home_automation_pro_the_attached_image(); ?>
 								</div>
 								<?php if ( has_excerpt() ) : ?>
 									<div class="entry-caption">

@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
     'use strict';
-    var this_obj = cricket_league_pro_activate_plugin;
+    var this_obj = home_automation_pro_activate_plugin;
 
     $(document).on('click', '.vw-theme-plugin-install', function(event) {
         

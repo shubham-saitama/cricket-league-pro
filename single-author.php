@@ -6,7 +6,7 @@
  */
 get_header(); 
 get_template_part( 'template-parts/banner' );?>
-<?php do_action('cricket_league_pro_before_contact_title'); ?> 
+<?php do_action('home_automation_pro_before_contact_title'); ?> 
 <div class="container">
     <div class="row">
         <div id="author_single" class="col-lg-9 col-md-7">

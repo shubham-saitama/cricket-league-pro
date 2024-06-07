@@ -21,8 +21,8 @@
         }
 
         $theme_mods_match_id = [
-          'cricket_league_pro_header_address_icon' => ['default'=> 'fas fa-location-arrow'],
-          'cricket_league_pro_header_address' => ['default'=> '455 Martinson, Los Angeles']
+          'home_automation_pro_header_address_icon' => ['default'=> 'fas fa-location-arrow'],
+          'home_automation_pro_header_address' => ['default'=> '455 Martinson, Los Angeles']
         ];
 
       //POST and update the customizer and other related data of Cricket League Pro
@@ -98,10 +98,10 @@
 
            /*customizer-custom-variables.php*/
            //Typography Section-First Highlight Color
-           set_theme_mod( 'cricket_league_pro_hi_first_color', '#00A3FC' );
+           set_theme_mod( 'home_automation_pro_hi_first_color', '#00A3FC' );
 
            //Typography Section-Second Highlight Color
-           set_theme_mod( 'cricket_league_pro_hi_second_color', '#F82938' );
+           set_theme_mod( 'home_automation_pro_hi_second_color', '#F82938' );
 
            /* customizer-part-topbar.php */
            /*Address*/
@@ -114,103 +114,103 @@
 
             // -------------- Section Ordering ---------------
 
-            set_theme_mod( 'cricket_league_pro_section_ordering_settings_repeater', 'slider,feature,sale,offers,new-product,feature-product,limited-offer,testimonial,latest-posts,Our-team' );
+            set_theme_mod( 'home_automation_pro_section_ordering_settings_repeater', 'slider,feature,sale,offers,new-product,feature-product,limited-offer,testimonial,latest-posts,Our-team' );
 
 
 
            /*customizer-part-slide.php*/
            //Slide Delay
-          set_theme_mod( 'cricket_league_pro_slide_delay', '10000' );
+          set_theme_mod( 'home_automation_pro_slide_delay', '10000' );
 
            //Number of slides to show section
-           set_theme_mod( 'cricket_league_pro_slide_heading_image', get_template_directory_uri().'/assets/images/pinkicon.png' );
-           set_theme_mod( 'cricket_league_pro_slide_number', '3' );
+           set_theme_mod( 'home_automation_pro_slide_heading_image', get_template_directory_uri().'/assets/images/pinkicon.png' );
+           set_theme_mod( 'home_automation_pro_slide_number', '3' );
            //Slider Images section
            for($i=1; $i<=3; $i++) {
-                 set_theme_mod( 'cricket_league_pro_slide_image'.$i, get_template_directory_uri().'/assets/images/slides/slide'.$i.'.png' );
-                  if(!isset($data_array['cricket_league_pro_slide_heading'.$i])){
+                 set_theme_mod( 'home_automation_pro_slide_image'.$i, get_template_directory_uri().'/assets/images/slides/slide'.$i.'.png' );
+                  if(!isset($data_array['home_automation_pro_slide_heading'.$i])){
                    //Slide Heading Title section
-                   set_theme_mod( 'cricket_league_pro_slide_heading'.$i, 'WELCOME TO THE BAKERY' );
+                   set_theme_mod( 'home_automation_pro_slide_heading'.$i, 'WELCOME TO THE BAKERY' );
                 }
-                if(!isset($data_array['cricket_league_pro_slide_text'.$i])){
+                if(!isset($data_array['home_automation_pro_slide_text'.$i])){
                    //Slide Text section
-                   set_theme_mod( 'cricket_league_pro_slide_text'.$i, 'Te obtinuit ut adepto satis somno. Aliisque institoribus iter deliciae vivet vita. Nam exempli gratia, quotiens ego vadam ad diversorum peregrinorum in mane ut effingo ex contractus.' );
+                   set_theme_mod( 'home_automation_pro_slide_text'.$i, 'Te obtinuit ut adepto satis somno. Aliisque institoribus iter deliciae vivet vita. Nam exempli gratia, quotiens ego vadam ad diversorum peregrinorum in mane ut effingo ex contractus.' );
                 }
-                if(!isset($data_array['cricket_league_pro_slide_btnurl'.$i])){
-                  set_theme_mod( 'cricket_league_pro_slide_btnurl'.$i, '#' );
+                if(!isset($data_array['home_automation_pro_slide_btnurl'.$i])){
+                  set_theme_mod( 'home_automation_pro_slide_btnurl'.$i, '#' );
                 }
                  //Slider Button Text section
-                 set_theme_mod( 'cricket_league_pro_slide_btntext'.$i, 'GET STARTED' );
+                 set_theme_mod( 'home_automation_pro_slide_btntext'.$i, 'GET STARTED' );
 
                  //Slider Button Text section
-                 set_theme_mod( 'cricket_league_pro_slide_btntext2'.$i, 'CONTACT US' );
+                 set_theme_mod( 'home_automation_pro_slide_btntext2'.$i, 'CONTACT US' );
            }
 
 
 
            /*customizer-part-home.php*/
            //Home Contact details
-              $count = set_theme_mod( 'cricket_league_pro_home_contact_details_number', '4' );
+              $count = set_theme_mod( 'home_automation_pro_home_contact_details_number', '4' );
               $box_content = array(" Opening Times:-", "Monday - Friday: 8AM - 8PM", "Saturday: 9AM - 4PM", "Sunday: Closed");
               for($i=1; $i<=4; $i++){
                  //Box Icon
-                 set_theme_mod( 'cricket_league_pro_home_contact_details_box'.$i, $box_content[$i-1] );
+                 set_theme_mod( 'home_automation_pro_home_contact_details_box'.$i, $box_content[$i-1] );
               }
               // Phone Text
-              set_theme_mod( 'cricket_league_pro_home_phone_text', 'Call Us For Knew Todays Menu' );
+              set_theme_mod( 'home_automation_pro_home_phone_text', 'Call Us For Knew Todays Menu' );
               // Phone
-              set_theme_mod( 'cricket_league_pro_home_phone_number', '+123 456 7890' );
+              set_theme_mod( 'home_automation_pro_home_phone_number', '+123 456 7890' );
               // Email Text
-              set_theme_mod( 'cricket_league_pro_home_email_text', 'Or Chat With Us For Knew Todays Menu' );
+              set_theme_mod( 'home_automation_pro_home_email_text', 'Or Chat With Us For Knew Todays Menu' );
               // Email Address
-              set_theme_mod( 'cricket_league_pro_home_email_address', 'bakery@gmail.com' );
+              set_theme_mod( 'home_automation_pro_home_email_address', 'bakery@gmail.com' );
               // Button Text
-              set_theme_mod( 'cricket_league_pro_contact_homebtn_text', 'CONTACT US' );
+              set_theme_mod( 'home_automation_pro_contact_homebtn_text', 'CONTACT US' );
               // Button URL
-              set_theme_mod( 'cricket_league_pro_contact_homebtn_url', '#' );
-              set_theme_mod( 'cricket_league_pro_home_phone_icon', 'fas fa-phone' );
-              set_theme_mod( 'cricket_league_pro_home_email_icon', 'fas fa-envelope-open' );
+              set_theme_mod( 'home_automation_pro_contact_homebtn_url', '#' );
+              set_theme_mod( 'home_automation_pro_home_phone_icon', 'fas fa-phone' );
+              set_theme_mod( 'home_automation_pro_home_email_icon', 'fas fa-envelope-open' );
 
 
            //About section-
               //about Image
-              set_theme_mod( 'cricket_league_pro_about_section_image',get_template_directory_uri().'/assets/images/aboutimg.png' );
+              set_theme_mod( 'home_automation_pro_about_section_image',get_template_directory_uri().'/assets/images/aboutimg.png' );
               //about icon Image
-              set_theme_mod( 'cricket_league_pro_about_heading_image',get_template_directory_uri().'/assets/images/pinkicon.png' );
+              set_theme_mod( 'home_automation_pro_about_heading_image',get_template_directory_uri().'/assets/images/pinkicon.png' );
               //Section Title
-              set_theme_mod( 'cricket_league_pro_about_title', 'Discover Our Story' );
+              set_theme_mod( 'home_automation_pro_about_title', 'Discover Our Story' );
               //Section Description
-              set_theme_mod( 'cricket_league_pro_about_description', 'Te obtinuit ut adepto satis somno. Aliisque institoribus iter deliciae vivet vita. Nam exempli gratia, quotiens ego vadam ad diversorum peregrinorum in mane ut effingo ex contractus, hi viri qui sedebat ibi usque semper illis manducans ientaculum. Solum cum bulla ut debui; EGO youd adepto a macula proiciendi. Sed quis scit si forte quod esset optima res pro me. sicut ea quae sentio. Qui vellem cadunt off ius desk ejus! Tale negotium a mauris et ad mensam sederent ibi loquitur.' );
+              set_theme_mod( 'home_automation_pro_about_description', 'Te obtinuit ut adepto satis somno. Aliisque institoribus iter deliciae vivet vita. Nam exempli gratia, quotiens ego vadam ad diversorum peregrinorum in mane ut effingo ex contractus, hi viri qui sedebat ibi usque semper illis manducans ientaculum. Solum cum bulla ut debui; EGO youd adepto a macula proiciendi. Sed quis scit si forte quod esset optima res pro me. sicut ea quae sentio. Qui vellem cadunt off ius desk ejus! Tale negotium a mauris et ad mensam sederent ibi loquitur.' );
               //button link text
-              set_theme_mod( 'cricket_league_pro_viewmore_btn_text', 'DISCOVER MORE' );
+              set_theme_mod( 'home_automation_pro_viewmore_btn_text', 'DISCOVER MORE' );
 
            //Services Tabs
-              set_theme_mod( 'cricket_league_pro_services_tab_sec_title', 'Services We Provide' );
-              set_theme_mod( 'cricket_league_pro_services_tab_number', '6' );
-              set_theme_mod( 'cricket_league_pro_services_tab_bgimage',get_template_directory_uri().'/assets/images/services-tab/servicesbg.png' );
-              set_theme_mod( 'cricket_league_pro_services_heading_image',get_template_directory_uri().'/assets/images/whitblue.png' );
+              set_theme_mod( 'home_automation_pro_services_tab_sec_title', 'Services We Provide' );
+              set_theme_mod( 'home_automation_pro_services_tab_number', '6' );
+              set_theme_mod( 'home_automation_pro_services_tab_bgimage',get_template_directory_uri().'/assets/images/services-tab/servicesbg.png' );
+              set_theme_mod( 'home_automation_pro_services_heading_image',get_template_directory_uri().'/assets/images/whitblue.png' );
 
               $service_title = array("Cake Design", "Best Cupcakes", "Desserts", "Home Delivery", "Cake Design", "Best Cupcakes" );
               for($i=1; $i<=6; $i++){
                   //Tab Image
-                 set_theme_mod( 'cricket_league_pro_services_tab_image'.$i,get_template_directory_uri().'/assets/images/services-tab/serviceicon'.$i.'.png' );
+                 set_theme_mod( 'home_automation_pro_services_tab_image'.$i,get_template_directory_uri().'/assets/images/services-tab/serviceicon'.$i.'.png' );
                  //Tab Title
-                 set_theme_mod( 'cricket_league_pro_services_title'.$i, $service_title[$i-1] );
+                 set_theme_mod( 'home_automation_pro_services_title'.$i, $service_title[$i-1] );
 
                  //Tab Content
-                 set_theme_mod( 'cricket_league_pro_services_tab_content'.$i, 'Te obtinuit ut adepto satis somno. Aliisque institoribus iter deliciae vivet vita. ' );
+                 set_theme_mod( 'home_automation_pro_services_tab_content'.$i, 'Te obtinuit ut adepto satis somno. Aliisque institoribus iter deliciae vivet vita. ' );
                  //Button Title
-                 set_theme_mod( 'cricket_league_pro_services_title_url'.$i, '#' );
+                 set_theme_mod( 'home_automation_pro_services_title_url'.$i, '#' );
               }
 
            /*----Popular Products----*/
             // Background Color
-            set_theme_mod( 'cricket_league_pro_products_bgcolor', '#f7f7f7' );
+            set_theme_mod( 'home_automation_pro_products_bgcolor', '#f7f7f7' );
             // heading
-            set_theme_mod( 'cricket_league_pro_products_title_image', get_template_directory_uri().'/assets/images/pinkicon.png' );
-            set_theme_mod( 'cricket_league_pro_products_title', 'Our Popular Bakery Products' );
+            set_theme_mod( 'home_automation_pro_products_title_image', get_template_directory_uri().'/assets/images/pinkicon.png' );
+            set_theme_mod( 'home_automation_pro_products_title', 'Our Popular Bakery Products' );
             // Product Count
-            set_theme_mod( 'cricket_league_pro_products_number', '4' );
+            set_theme_mod( 'home_automation_pro_products_number', '4' );
             wp_insert_term(
             'Popular Products', // the term
             'product_cat', // the taxonomy
@@ -231,7 +231,7 @@
             'post_status'   => 'publish',
             'post_type'     => 'product',
             );
-            set_theme_mod( 'cricket_league_pro_products_category', 'popular-products' );
+            set_theme_mod( 'home_automation_pro_products_category', 'popular-products' );
             // Insert the post into the database
             $vw_post_id = wp_insert_post( $my_post );
             // Gets term object from Tree in the database.
@@ -288,180 +288,180 @@
 
            //Events Section
            //Section Title
-           set_theme_mod( 'cricket_league_pro_events_title', 'Upcoming Events' );
+           set_theme_mod( 'home_automation_pro_events_title', 'Upcoming Events' );
            //Section Sub Title
-           set_theme_mod( 'cricket_league_pro_events_subtitle_title', 'Te obtinuit ut adepto satis somno. Aliisque institoribus iter deliciae vivet vita. Nam exempli .' );
+           set_theme_mod( 'home_automation_pro_events_subtitle_title', 'Te obtinuit ut adepto satis somno. Aliisque institoribus iter deliciae vivet vita. Nam exempli .' );
 
            //Our Skills
-           set_theme_mod( 'cricket_league_pro_choose_skills_bgimage',get_template_directory_uri().'/assets/images/ourskillsbg.png' );
+           set_theme_mod( 'home_automation_pro_choose_skills_bgimage',get_template_directory_uri().'/assets/images/ourskillsbg.png' );
            //Section Title
-           set_theme_mod( 'cricket_league_pro_choose_skills_title', 'Our Skills' );
+           set_theme_mod( 'home_automation_pro_choose_skills_title', 'Our Skills' );
            // Title
-           set_theme_mod( 'cricket_league_pro_choose_skills_title_image',get_template_directory_uri().'/assets/images/whitblue.png' );
+           set_theme_mod( 'home_automation_pro_choose_skills_title_image',get_template_directory_uri().'/assets/images/whitblue.png' );
 
            //Why Choose us Section
            //Number of Details to show
-           set_theme_mod( 'cricket_league_pro_choose_box_number', '3' );
+           set_theme_mod( 'home_automation_pro_choose_box_number', '3' );
            $choosetitle = array("We Use Fresh Ingredients", "We Bake With Love", "We Deliver On Time" );
            for($i=1; $i<=3; $i++){
                  //Box Icon
-                 set_theme_mod( 'cricket_league_pro_choose_box_image'.$i,get_template_directory_uri().'/assets/images/why-choose-us/whychoose'.$i.'.png' );
+                 set_theme_mod( 'home_automation_pro_choose_box_image'.$i,get_template_directory_uri().'/assets/images/why-choose-us/whychoose'.$i.'.png' );
                  //Sub Title
-                 set_theme_mod( 'cricket_league_pro_choose_box_title'.$i, $choosetitle[$i-1] );
+                 set_theme_mod( 'home_automation_pro_choose_box_title'.$i, $choosetitle[$i-1] );
                  //Description
-                 set_theme_mod( 'cricket_league_pro_choose_box_des'.$i, 'Te obtinuit ut adepto satis somno. Aliisque institoribus iter deliciae vivet vita. Nam exempli gratia.' );
+                 set_theme_mod( 'home_automation_pro_choose_box_des'.$i, 'Te obtinuit ut adepto satis somno. Aliisque institoribus iter deliciae vivet vita. Nam exempli gratia.' );
            }
            //Skills
-               set_theme_mod( 'cricket_league_pro_skills_number', '4' );
+               set_theme_mod( 'home_automation_pro_skills_number', '4' );
               //To set bar title and percentage
               for($i=1; $i<=4; $i++) {
                  if($i==1){
-                    set_theme_mod( 'cricket_league_pro_skills_bar_percent'.$i, '92%' );
-                    set_theme_mod( 'cricket_league_pro_skills_bar_title'.$i, 'All Types Of Breads & Croissants' );
+                    set_theme_mod( 'home_automation_pro_skills_bar_percent'.$i, '92%' );
+                    set_theme_mod( 'home_automation_pro_skills_bar_title'.$i, 'All Types Of Breads & Croissants' );
                  }
                  if($i==2){
-                    set_theme_mod( 'cricket_league_pro_skills_bar_percent'.$i, '99%' );
-                    set_theme_mod( 'cricket_league_pro_skills_bar_title'.$i, 'All Types Of Cakes & Cupcakes' );
+                    set_theme_mod( 'home_automation_pro_skills_bar_percent'.$i, '99%' );
+                    set_theme_mod( 'home_automation_pro_skills_bar_title'.$i, 'All Types Of Cakes & Cupcakes' );
                  }
                  if($i==3){
-                    set_theme_mod( 'cricket_league_pro_skills_bar_percent'.$i, '80%' );
-                    set_theme_mod( 'cricket_league_pro_skills_bar_title'.$i, 'All Types Of Cookies & Chocolates' );
+                    set_theme_mod( 'home_automation_pro_skills_bar_percent'.$i, '80%' );
+                    set_theme_mod( 'home_automation_pro_skills_bar_title'.$i, 'All Types Of Cookies & Chocolates' );
                  }
                  if($i==4){
-                    set_theme_mod( 'cricket_league_pro_skills_bar_percent'.$i, '90%' );
-                    set_theme_mod( 'cricket_league_pro_skills_bar_title'.$i, 'All Types Of Pastries & Muffins' );
+                    set_theme_mod( 'home_automation_pro_skills_bar_percent'.$i, '90%' );
+                    set_theme_mod( 'home_automation_pro_skills_bar_title'.$i, 'All Types Of Pastries & Muffins' );
                  }
               }
 
            //Team Section
            //Section Title
-           set_theme_mod( 'cricket_league_pro_team_title', 'Our Bakers' );
+           set_theme_mod( 'home_automation_pro_team_title', 'Our Bakers' );
            //Title image
-           set_theme_mod( 'cricket_league_pro_team_title_image', get_template_directory_uri().'/assets/images/pinkicon.png');
+           set_theme_mod( 'home_automation_pro_team_title_image', get_template_directory_uri().'/assets/images/pinkicon.png');
 
            //Gallery
               //Title Image
-              set_theme_mod( 'cricket_league_pro_gallery_section_title', 'Some Of Our Creations' );
+              set_theme_mod( 'home_automation_pro_gallery_section_title', 'Some Of Our Creations' );
               //Heading Image
-              set_theme_mod( 'cricket_league_pro_gallery_section_title_image', get_template_directory_uri().'/assets/images/pinkicon.png' );
+              set_theme_mod( 'home_automation_pro_gallery_section_title_image', get_template_directory_uri().'/assets/images/pinkicon.png' );
               //Shortcode
-              set_theme_mod( 'cricket_league_pro_gallery_shortcode', '[vw-galleryshow vw_gallery="80" numberofitem="6" bootstraponecolsize="4"]' );
+              set_theme_mod( 'home_automation_pro_gallery_shortcode', '[vw-galleryshow vw_gallery="80" numberofitem="6" bootstraponecolsize="4"]' );
 
            //Our Records section-
               //background image
-              set_theme_mod( 'cricket_league_pro_our_records_bg_image', get_template_directory_uri().'/assets/images/counterbg.png');
+              set_theme_mod( 'home_automation_pro_our_records_bg_image', get_template_directory_uri().'/assets/images/counterbg.png');
               //Number of counter to show section
-              set_theme_mod( 'cricket_league_pro_our_records_number', '4' );
-              set_theme_mod( 'cricket_league_pro_our_team_excerpt_no', 40 );
+              set_theme_mod( 'home_automation_pro_our_records_number', '4' );
+              set_theme_mod( 'home_automation_pro_our_team_excerpt_no', 40 );
               $recordnumber = array("1200", "550", "80000", "6400" );
               $recordtext = array("Happy Customers", "Cooked Dishes", "Social Media Fans", "Worked Hours" );
               for($i=1; $i<=4; $i++){
-                    set_theme_mod( 'cricket_league_pro_our_records_image'.$i, get_template_directory_uri().'/assets/images/counter'.$i.'.png' );
+                    set_theme_mod( 'home_automation_pro_our_records_image'.$i, get_template_directory_uri().'/assets/images/counter'.$i.'.png' );
                     //counter Number
-                    set_theme_mod( 'cricket_league_pro_number_title1'.$i, $recordnumber[$i-1] );
+                    set_theme_mod( 'home_automation_pro_number_title1'.$i, $recordnumber[$i-1] );
                     //Counter Title
-                    set_theme_mod( 'cricket_league_pro_circle_content1'.$i, $recordtext[$i-1] );
+                    set_theme_mod( 'home_automation_pro_circle_content1'.$i, $recordtext[$i-1] );
               }
 
            //Testimonial Partner BG
-              set_theme_mod( 'cricket_league_pro_testimonial_partner_bgimage', get_template_directory_uri().'/assets/images/testimonial_partner.png' );
+              set_theme_mod( 'home_automation_pro_testimonial_partner_bgimage', get_template_directory_uri().'/assets/images/testimonial_partner.png' );
 
            //Testimonial Section
               //Title
-              set_theme_mod( 'cricket_league_pro_testimonial_title', 'What People Say' );
+              set_theme_mod( 'home_automation_pro_testimonial_title', 'What People Say' );
               //Title Image
-              set_theme_mod( 'cricket_league_pro_testimonial_title_image', get_template_directory_uri().'/assets/images/whitepink.png' );
+              set_theme_mod( 'home_automation_pro_testimonial_title_image', get_template_directory_uri().'/assets/images/whitepink.png' );
 
            //Our Partners
-              set_theme_mod( 'cricket_league_pro_partners_title', 'Our Partners' );
+              set_theme_mod( 'home_automation_pro_partners_title', 'Our Partners' );
               //Title Image
-              set_theme_mod( 'cricket_league_pro_partners_title_image', get_template_directory_uri().'/assets/images/whitepink.png' );
+              set_theme_mod( 'home_automation_pro_partners_title_image', get_template_directory_uri().'/assets/images/whitepink.png' );
               //Number of boxes to show
-              set_theme_mod( 'cricket_league_pro_our_partners_number', '4' );
-              //cricket_league_pro_our_partners_image
+              set_theme_mod( 'home_automation_pro_our_partners_number', '4' );
+              //home_automation_pro_our_partners_image
               for($i=1; $i<=4; $i++) {
-                    set_theme_mod( 'cricket_league_pro_our_partners_image'.$i, get_template_directory_uri().'/assets/images/partners/partner'.$i.'.png' );
+                    set_theme_mod( 'home_automation_pro_our_partners_image'.$i, get_template_directory_uri().'/assets/images/partners/partner'.$i.'.png' );
               }
 
            //Latest Post
            //Section Title
-            set_theme_mod( 'cricket_league_pro_latestpost_title', 'Our Blog' );
-            set_theme_mod( 'cricket_league_pro_latestblogpost_readmore', 'READ MORE' );
-            set_theme_mod( 'cricket_league_pro_our_post_excerpt_no', 25 );
+            set_theme_mod( 'home_automation_pro_latestpost_title', 'Our Blog' );
+            set_theme_mod( 'home_automation_pro_latestblogpost_readmore', 'READ MORE' );
+            set_theme_mod( 'home_automation_pro_our_post_excerpt_no', 25 );
 
            //Get In Touch
-              set_theme_mod( 'cricket_league_pro_GetInTouch_bgimage', get_template_directory_uri().'/assets/images/GetInTouchbg.png' );
-              $count = set_theme_mod( 'cricket_league_pro_GetInTouch_number', '4' );
+              set_theme_mod( 'home_automation_pro_GetInTouch_bgimage', get_template_directory_uri().'/assets/images/GetInTouchbg.png' );
+              $count = set_theme_mod( 'home_automation_pro_GetInTouch_number', '4' );
               $box_icon = array("fas fa-map-marker-alt", "fas fa-phone", "fas fa-envelope", "far fa-clock");
               $box_content = array("351 Montreal Ave, Staten Island, NY 10306", "Mon - Sat: 08 Am - 17 Pm", "1234567890", "Expample@gmail.com",);
               for($i=1; $i<=4; $i++){
                 //Box Icon
-                set_theme_mod( 'cricket_league_pro_GetInTouch_box_icon'.$i, $box_icon[$i-1] );
+                set_theme_mod( 'home_automation_pro_GetInTouch_box_icon'.$i, $box_icon[$i-1] );
                 //Box Text
-                set_theme_mod( 'cricket_league_pro_GetInTouch_box'.$i, $box_content[$i-1] );
+                set_theme_mod( 'home_automation_pro_GetInTouch_box'.$i, $box_content[$i-1] );
               }
 
            /*customizer-part-social-icons.php*/
            //twitter link
-           set_theme_mod( 'cricket_league_pro_headertwitter', 'https://twitter.com/' );
+           set_theme_mod( 'home_automation_pro_headertwitter', 'https://twitter.com/' );
            //facebook link
-           set_theme_mod( 'cricket_league_pro_headerfacebook', 'https://www.facebook.com/' );
+           set_theme_mod( 'home_automation_pro_headerfacebook', 'https://www.facebook.com/' );
            //Linkedin link
-           set_theme_mod( 'cricket_league_pro_headerlinkedin', 'https://www.linkedin.com' );
+           set_theme_mod( 'home_automation_pro_headerlinkedin', 'https://www.linkedin.com' );
            //GooglePlus link
-           set_theme_mod( 'cricket_league_pro_headergoogleplus', 'https://plus.google.com/' );
+           set_theme_mod( 'home_automation_pro_headergoogleplus', 'https://plus.google.com/' );
 
            /*customizer-part-footer.php*/
            //Background image
-           set_theme_mod( 'cricket_league_pro_section_footer_bgcolor', '#ff7c93' );
+           set_theme_mod( 'home_automation_pro_section_footer_bgcolor', '#ff7c93' );
            // Title
-           set_theme_mod( 'cricket_league_pro_subscribe_title', 'Subscribe' );
+           set_theme_mod( 'home_automation_pro_subscribe_title', 'Subscribe' );
            // Sub Title
-           set_theme_mod( 'cricket_league_pro_subscribe_subtitle', 'Sign Up with your email to get fresh updates.' );
+           set_theme_mod( 'home_automation_pro_subscribe_subtitle', 'Sign Up with your email to get fresh updates.' );
            // Shortcode
-           set_theme_mod( 'cricket_league_pro_subscribe_form_code', 'Add Contact Form 7 Shortcode Here' );
+           set_theme_mod( 'home_automation_pro_subscribe_form_code', 'Add Contact Form 7 Shortcode Here' );
 
 
            //Contact Page
            //Longitude
-           set_theme_mod( 'cricket_league_pro_address_longitude', '-80.053361' );
+           set_theme_mod( 'home_automation_pro_address_longitude', '-80.053361' );
            //Latitude
-           set_theme_mod( 'cricket_league_pro_address_latitude', '26.704241' );
+           set_theme_mod( 'home_automation_pro_address_latitude', '26.704241' );
            //Email Title text
-           set_theme_mod( 'cricket_league_pro_contactpage_email_title', 'Email: ' );
+           set_theme_mod( 'home_automation_pro_contactpage_email_title', 'Email: ' );
            //Email ID
-           set_theme_mod( 'cricket_league_pro_contactpage_email', 'business@gmail.com' );
+           set_theme_mod( 'home_automation_pro_contactpage_email', 'business@gmail.com' );
            //Address Title text
-           set_theme_mod( 'cricket_league_pro_address_title', 'Address' );
+           set_theme_mod( 'home_automation_pro_address_title', 'Address' );
            //Address
-           set_theme_mod( 'cricket_league_pro_address', '455 Martinson, Los Angeles' );
+           set_theme_mod( 'home_automation_pro_address', '455 Martinson, Los Angeles' );
            //Phone Title text
-           set_theme_mod( 'cricket_league_pro_contactpage_phone_title', 'Phone' );
+           set_theme_mod( 'home_automation_pro_contactpage_phone_title', 'Phone' );
            //Phone No.
-           set_theme_mod( 'cricket_league_pro_contactpage_phone', '123-456-7890' );
+           set_theme_mod( 'home_automation_pro_contactpage_phone', '123-456-7890' );
 
            //Working Hours Title
-           set_theme_mod( 'cricket_league_pro_contactpage_working_hours_title', 'Working Hours' );
+           set_theme_mod( 'home_automation_pro_contactpage_working_hours_title', 'Working Hours' );
 
-           $working_number = set_theme_mod( 'cricket_league_pro_contactpage_working_number', '3' );
+           $working_number = set_theme_mod( 'home_automation_pro_contactpage_working_number', '3' );
            $days_hour = array("Monday-Friday, 8am - 6pm", "Saturday, 8am - 2pm", "Sunday - Closed" );
            for($i=1;$i<=3;$i++){
               //Working Days
-              set_theme_mod( 'cricket_league_pro_contactpage_working_hours'.$i, $days_hour[$i-1] );
+              set_theme_mod( 'home_automation_pro_contactpage_working_hours'.$i, $days_hour[$i-1] );
            }
 
            //Contact From Title
-           set_theme_mod( 'cricket_league_pro_contactpage_form_title', 'SAY HELLO!' );
+           set_theme_mod( 'home_automation_pro_contactpage_form_title', 'SAY HELLO!' );
            //Phone No.
-           set_theme_mod( 'cricket_league_pro_contactpage_form_subtitle', 'We would love to hear from you!' );
+           set_theme_mod( 'home_automation_pro_contactpage_form_subtitle', 'We would love to hear from you!' );
 
            //footer text
            //Copyright Text
-           set_theme_mod( 'cricket_league_pro_footer_copy', 'Bakery Shop WordPress Theme 2018 | All Rights Reserved.' );
+           set_theme_mod( 'home_automation_pro_footer_copy', 'Bakery Shop WordPress Theme 2018 | All Rights Reserved.' );
 
            //Shortcode
-          // set_theme_mod( 'cricket_league_pro_shortcode', '[cricket-league-pro-testimonials], [cricket-league-pro-team]' );
-          set_theme_mod( 'cricket_league_pro_shortcode', '[cricket-league-pro-team]' );
+          // set_theme_mod( 'home_automation_pro_shortcode', '[cricket-league-pro-testimonials], [cricket-league-pro-team]' );
+          set_theme_mod( 'home_automation_pro_shortcode', '[cricket-league-pro-team]' );
            /*--- Latest Post---*/
         //     for($i=1;$i<=3;$i++){
         //       $vw_title = 'Praesent suscipit m'.$i;
@@ -524,7 +524,7 @@
         // }
 
         //     /*--- Testimonial---*/
-        //     set_theme_mod( 'cricket_league_pro_our_testimonial_excerpt_no', 25 );
+        //     set_theme_mod( 'home_automation_pro_our_testimonial_excerpt_no', 25 );
         //     for($i=1;$i<=4;$i++){
         //       $vw_title = 'Testimonial'.$i;
         //       $content = 'Te obtinuit ut adepto satis somno. Aliisque institoribus iter deliciae vivet vita. Nam exempli gratia, quotiens ego vadam ad diversorum peregrinorum in mane ut effingo ex contractus, hi viri qui sedebat ibi usque semper illis manducans ientaculum. Solum cum bulla ut debui; EGO youd adepto a macula proiciendi. Sed quis scit si forte quod esset optima res pro me.';
@@ -540,7 +540,7 @@
         //       $vw_post_id = wp_insert_post( $my_post );
 
         //         // Now replafile_urice meta w/ new updated value array
-        //         update_post_meta( $vw_post_id, 'cricket_league_pro_posttype_testimonial_desigstory', 'Teacher');
+        //         update_post_meta( $vw_post_id, 'home_automation_pro_posttype_testimonial_desigstory', 'Teacher');
 
         //       $image_url = get_template_directory_uri().'/assets/images/testimonials/testimonial'.$i.'.png';
 
@@ -662,13 +662,13 @@
             }
             /* ------------- Responsive Media Settings ------------ */
 
-          set_theme_mod( 'cricket_league_pro_res_open_menu_icon', 'fas fa-bars' );
-          set_theme_mod( 'cricket_league_pro_res_close_menus_icon', 'fas fa-times' );
+          set_theme_mod( 'home_automation_pro_res_open_menu_icon', 'fas fa-bars' );
+          set_theme_mod( 'home_automation_pro_res_close_menus_icon', 'fas fa-times' );
            //post setting
-          set_theme_mod( 'cricket_league_pro_related_posts_title', 'Related Posts' );
-          set_theme_mod( 'cricket_league_pro_related_post_count', 3 );
-          set_theme_mod( 'cricket_league_pro_blog_category_prev_title', 'Previous' );
-          set_theme_mod( 'cricket_league_pro_blog_category_next_title', 'Next' );
+          set_theme_mod( 'home_automation_pro_related_posts_title', 'Related Posts' );
+          set_theme_mod( 'home_automation_pro_related_post_count', 3 );
+          set_theme_mod( 'home_automation_pro_blog_category_prev_title', 'Previous' );
+          set_theme_mod( 'home_automation_pro_blog_category_next_title', 'Next' );
 
       }
     ?>
@@ -678,7 +678,7 @@
 			<span class="dashicons dashicons-format-aside"></span><?php _e('Click on the below content to get demo content installed.','cricket-league-pro'); ?>
 			<br><small><b><?php _e('Please take backup if your website is already live with data.This importer will fill the Cricket League Pro new customizer values.','cricket-league-pro'); ?></b></small>
 			<br><br>
-	        <form action="<?php echo esc_url(home_url()); ?>/wp-admin/themes.php?page=cricket_league_pro_guide" method="POST" onsubmit="return validate(this);">
+	        <form action="<?php echo esc_url(home_url()); ?>/wp-admin/themes.php?page=home_automation_pro_guide" method="POST" onsubmit="return validate(this);">
 	            <input type="submit" name="submit" value="<?php esc_html_e('Run Importer','cricket-league-pro'); ?>" class="button button-primary button-large">
 	        </form>
 			 <script type="text/javascript">

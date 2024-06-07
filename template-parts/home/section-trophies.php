@@ -5,14 +5,14 @@
  * @package cricket-league-pro
  */
 
-$section_hide = get_theme_mod('cricket_league_pro_trophies_enable');
+$section_hide = get_theme_mod('home_automation_pro_trophies_enable');
 if ('Disable' == $section_hide) {
     return;
 }
-if (get_theme_mod('cricket_league_pro_trophies_bgcolor', '')) {
-    $services_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_trophies_bgcolor', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_trophies_bgimage', '')) {
-    $services_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_trophies_bgimage')) . '\')';
+if (get_theme_mod('home_automation_pro_trophies_bgcolor', '')) {
+    $services_back = 'background-color:' . esc_attr(get_theme_mod('home_automation_pro_trophies_bgcolor', '')) . ';';
+} elseif (get_theme_mod('home_automation_pro_trophies_bgimage', '')) {
+    $services_back = 'background-image:url(\'' . esc_url(get_theme_mod('home_automation_pro_trophies_bgimage')) . '\')';
 } else {
     $services_back = '';
 }
@@ -23,10 +23,10 @@ if (get_theme_mod('cricket_league_pro_trophies_bgcolor', '')) {
         <div class="row justify-content-between">
             <div class="heading-wrap">
                 <div class="heading-tag">
-                    <?php echo get_theme_mod('cricket_league_pro_trophies_heading_tag'); ?>
+                    <?php echo get_theme_mod('home_automation_pro_trophies_heading_tag'); ?>
                 </div>
                 <h2>
-                    <?php echo get_theme_mod('cricket_league_pro_trophies_heading'); ?>
+                    <?php echo get_theme_mod('home_automation_pro_trophies_heading'); ?>
                 </h2>
             </div>
             <?php

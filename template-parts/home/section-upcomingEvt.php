@@ -1,16 +1,16 @@
 <?php
 
 
-$section_hide = get_theme_mod('cricket_league_pro_upcoming_evt_enabledisable');
+$section_hide = get_theme_mod('home_automation_pro_upcoming_evt_enabledisable');
 if ('Disable' == $section_hide) { ?>
     <?php
     return;
 }
 
-if (get_theme_mod('cricket_league_pro_upcoming_evt_bg_color')) {
-    $upcoming_evt_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_upcoming_evt_bg_color', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_upcoming_evt_bg_image')) {
-    $upcoming_evt_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_upcoming_evt_bg_image')) . '\')';
+if (get_theme_mod('home_automation_pro_upcoming_evt_bg_color')) {
+    $upcoming_evt_back = 'background-color:' . esc_attr(get_theme_mod('home_automation_pro_upcoming_evt_bg_color', '')) . ';';
+} elseif (get_theme_mod('home_automation_pro_upcoming_evt_bg_image')) {
+    $upcoming_evt_back = 'background-image:url(\'' . esc_url(get_theme_mod('home_automation_pro_upcoming_evt_bg_image')) . '\')';
 } else {
     $upcoming_evt_back = '';
 } ?>
@@ -21,12 +21,12 @@ if (get_theme_mod('cricket_league_pro_upcoming_evt_bg_color')) {
             <div class="button-holder">
                 <div class="heading-wrap">
                     <div class="heading-tag">
-                        <?php echo get_theme_mod('cricket_league_pro_upcoming_evt_heading_tag'); ?>
+                        <?php echo get_theme_mod('home_automation_pro_upcoming_evt_heading_tag'); ?>
                     </div>
-                    <h2 class="left"><?php echo get_theme_mod('cricket_league_pro_upcoming_evt_heading'); ?></h2>
+                    <h2 class="left"><?php echo get_theme_mod('home_automation_pro_upcoming_evt_heading'); ?></h2>
                 </div>
                 <a href="<?php echo get_permalink(get_page_by_title('Events'))?>" class="theme-btn white">
-                   <?php echo get_theme_mod('cricket_league_pro_upcoming_evt_view_all'); ?><i class="<?php echo get_theme_mod('cricket_league_pro_upcoming_evt_btn_icon') ?>"></i>
+                   <?php echo get_theme_mod('home_automation_pro_upcoming_evt_view_all'); ?><i class="<?php echo get_theme_mod('home_automation_pro_upcoming_evt_btn_icon') ?>"></i>
                 </a>
             </div>
         </div>

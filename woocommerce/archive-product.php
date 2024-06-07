@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
 get_header('shop');
 
 global $post;
-$img = get_theme_mod('cricket_league_pro_inner_page_banner_bgimage');
+$img = get_theme_mod('home_automation_pro_inner_page_banner_bgimage');
 $display = '';
 $display_title_bbanner = '';
 $vw_title_banner_image_title_on_off = get_post_meta($post->ID, 'vw_title_banner_image_title_on_off', true);
@@ -43,9 +43,9 @@ if ($img != '') { ?>
 						<h1>
 							SHOP
 						</h1>
-						<?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+						<?php if (get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '') { ?>
 							<div class="bradcrumbs py-2 b1">
-								<?php cricket_league_pro_the_breadcrumb(); ?>
+								<?php home_automation_pro_the_breadcrumb(); ?>
 							</div>
 						<?php } ?>
 					</div>
@@ -58,9 +58,9 @@ if ($img != '') { ?>
 		<h1>
 			<?php the_title(); ?>
 		</h1>
-		<?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+		<?php if (get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '') { ?>
 			<div class="container bradcrumbs py-3 b2">
-				<?php cricket_league_pro_the_breadcrumb(); ?>
+				<?php home_automation_pro_the_breadcrumb(); ?>
 			</div>
 		<?php } ?>
 	</div>
@@ -69,9 +69,9 @@ if ($img != '') { ?>
 		<h1>
 			<?php the_title(); ?>
 		</h1>
-		<?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+		<?php if (get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '') { ?>
 			<div class="container bradcrumbs py-3 b2">
-				<?php cricket_league_pro_the_breadcrumb(); ?>
+				<?php home_automation_pro_the_breadcrumb(); ?>
 			</div>
 		<?php } ?>
 	</div>
@@ -139,7 +139,7 @@ if ($img != '') { ?>
 											$product_price = get_post_meta(get_the_ID(), '_price', true);
 											$sale_price = get_post_meta(get_the_ID(), '_sale_price', true);
 											// Get product image URL
-											$product_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+											$product_image_url = get_the_post_thumbnail_url(get_the_ID(), 'product-slider');
 											$current_currency = get_woocommerce_currency_symbol();
 											?>
 											<div class="item-product col-lg-4 col-md-6 col-12 mb-3">
@@ -154,9 +154,7 @@ if ($img != '') { ?>
 															alt="<?php the_title(); ?>">
 													</div>
 													<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-													<?php
-													echo get_star_rating_custom();
-													?>
+													<?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
 													<div class="price-wrapper">
 														<p class="regular-price"><?php echo $current_currency;
 														echo $product_price; ?></p>
@@ -175,7 +173,7 @@ if ($img != '') { ?>
 															woocommerce_template_loop_add_to_cart($loop->post, $product);
 														} ?>
 														<i
-															class="<?php echo get_theme_mod('cricket_league_pro_carrt_btn_icon'); ?>"></i>
+															class="<?php echo get_theme_mod('home_automation_pro_carrt_btn_icon'); ?>"></i>
 													</div>
 												</div>
 											</div>

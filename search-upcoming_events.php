@@ -7,7 +7,7 @@
 get_header();
 global $post;
 
-$img = get_theme_mod('cricket_league_pro_inner_page_banner_bgimage');
+$img = get_theme_mod('home_automation_pro_inner_page_banner_bgimage');
 $display = '';
 $display_title_bbanner = '';
 $vw_title_banner_image_title_on_off = get_post_meta($post->ID, 'vw_title_banner_image_title_on_off', true);
@@ -25,9 +25,9 @@ if ($img != '') { ?>
                         <h1 class="entry-title">
                             <?php printf(__('Results For: %s', 'cricket-league-pro'), '<span>' . get_search_query() . '</span>'); ?>
                         </h1>
-                        <?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+                        <?php if (get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '') { ?>
                             <div class="bradcrumbs py-2 b1">
-                                <?php cricket_league_pro_the_breadcrumb(); ?>
+                                <?php home_automation_pro_the_breadcrumb(); ?>
                             </div>
                         <?php }
                         ?>

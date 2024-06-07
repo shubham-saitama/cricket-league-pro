@@ -4,12 +4,12 @@
 * Related Post
 */
 
-if ( !function_exists('cricket_league_pro_related_posts') ) {
-    function cricket_league_pro_related_posts(){ ?>
+if ( !function_exists('home_automation_pro_related_posts') ) {
+    function home_automation_pro_related_posts(){ ?>
         <div class="related-post-wrapper">
-            <?php if(get_theme_mod('cricket_league_pro_related_posts_title')!=''){ ?>
+            <?php if(get_theme_mod('home_automation_pro_related_posts_title')!=''){ ?>
                 <h3>
-                    <?php echo esc_html(get_theme_mod('cricket_league_pro_related_posts_title')); ?>
+                    <?php echo esc_html(get_theme_mod('home_automation_pro_related_posts_title')); ?>
                 </h3>
             <?php } ?>
             <div class="row">
@@ -18,7 +18,7 @@ if ( !function_exists('cricket_league_pro_related_posts') ) {
                     $args = array(
                     'post_type' => 'post',
                     'post_status' => 'publish',
-                    'posts_per_page' => get_theme_mod('cricket_league_pro_related_post_count')
+                    'posts_per_page' => get_theme_mod('home_automation_pro_related_post_count')
                     );
                     $query = new WP_Query($args);
                     if ( $query->have_posts() ) :  while ($query->have_posts()) : $query->the_post();
@@ -31,7 +31,7 @@ if ( !function_exists('cricket_league_pro_related_posts') ) {
                         }
                         ?>
                         <a href="<?php the_permalink(); ?>" class="post-page-title pt-2"><?php the_title(); ?></a>
-                        <div class="post-single-text"><?php $excerpt = get_the_excerpt(); echo esc_html(cricket_league_pro_string_limit_words($excerpt,15)); ?></div>
+                        <div class="post-single-text"><?php $excerpt = get_the_excerpt(); echo esc_html(home_automation_pro_string_limit_words($excerpt,15)); ?></div>
                     </div>
                 <?php } endwhile; endif; ?>
             </div>
@@ -42,13 +42,13 @@ if ( !function_exists('cricket_league_pro_related_posts') ) {
 /*
 * Post navigation
 */
-if ( !function_exists('cricket_league_pro_single_navigation') ) {
-    function cricket_league_pro_single_navigation(){
+if ( !function_exists('home_automation_pro_single_navigation') ) {
+    function home_automation_pro_single_navigation(){
         the_post_navigation( array(
-            'next_text' => '<span class="meta-nav" aria-hidden="true">' . __(get_theme_mod('cricket_league_pro_blog_category_next_title'), 'cricket-league-pro' ) .'</span> ' .
+            'next_text' => '<span class="meta-nav" aria-hidden="true">' . __(get_theme_mod('home_automation_pro_blog_category_next_title'), 'cricket-league-pro' ) .'</span> ' .
                 '<span class="screen-reader-text">' . __( 'Next post:', 'cricket-league-pro' ) . '</span> ' .
                 '<span class="post-title">%title</span>',
-            'prev_text' => '<span class="meta-nav" aria-hidden="true">'. __(get_theme_mod('cricket_league_pro_blog_category_prev_title'), 'cricket-league-pro' ) . '</span> ' .
+            'prev_text' => '<span class="meta-nav" aria-hidden="true">'. __(get_theme_mod('home_automation_pro_blog_category_prev_title'), 'cricket-league-pro' ) . '</span> ' .
                 '<span class="screen-reader-text">' . __( 'Previous post:', 'cricket-league-pro' ) . '</span> ' .
                 '<span class="post-title">%title</span>',
         ) );
@@ -58,9 +58,9 @@ if ( !function_exists('cricket_league_pro_single_navigation') ) {
 /*
 * Show Page title on pages, post.
 */
-if ( !function_exists('cricket_league_pro_post_auther_bio') ) {
+if ( !function_exists('home_automation_pro_post_auther_bio') ) {
 
-    function cricket_league_pro_post_auther_bio(){ ?>
+    function home_automation_pro_post_auther_bio(){ ?>
         <div class="authordetails">
             <div class="authordescription">
                 <?php
@@ -122,32 +122,32 @@ if ( !function_exists('cricket_league_pro_post_auther_bio') ) {
 /*
 * Show post Share
 */
-if ( !function_exists('cricket_league_pro_social_share') ) {
+if ( !function_exists('home_automation_pro_social_share') ) {
     /**
-     * [cricket_league_pro_social_share show all the social share buttons
+     * [home_automation_pro_social_share show all the social share buttons
      * @return [type] string
      */
-    function cricket_league_pro_social_share(){
+    function home_automation_pro_social_share(){
         ?>
          
-        <?php do_action('cricket_league_pro_before_blog_sharing'); ?>
+        <?php do_action('home_automation_pro_before_blog_sharing'); ?>
 
             <div class="share">
             <b><i class="fa fa-share-alt" aria-hidden="true"></i><?php echo esc_html('Share','cricket-league-pro'); ?></b>
             <div class="share_icon row p-0 m-0">
                 <p class="socila_share col-md-12 p-0">
-                    <?php if(get_theme_mod('cricket_league_pro_post_general_settings_post_share_facebook',true)==1 || get_theme_mod('cricket_league_pro_post_general_settings_post_share_linkedin',true)==1 || get_theme_mod('cricket_league_pro_post_general_settings_post_share_twitter',true)==1){ ?>
+                    <?php if(get_theme_mod('home_automation_pro_post_general_settings_post_share_facebook',true)==1 || get_theme_mod('home_automation_pro_post_general_settings_post_share_linkedin',true)==1 || get_theme_mod('home_automation_pro_post_general_settings_post_share_twitter',true)==1){ ?>
                     <?php }
 
-                    if ( get_theme_mod('cricket_league_pro_post_general_settings_post_share_facebook',true) == "1" ) { ?>
+                    if ( get_theme_mod('home_automation_pro_post_general_settings_post_share_facebook',true) == "1" ) { ?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo the_permalink(); ?>" target="_blank"><i class="fab fa-facebook-f"></i><span class="screen-reader-text"><?php echo esc_html('facebook.com', 'cricket-league-pro' ) ; ?></span></a>
                     <?php }
 
-                    if ( get_theme_mod('cricket_league_pro_post_general_settings_post_share_linkedin',true) == "1" ) { ?>
+                    if ( get_theme_mod('home_automation_pro_post_general_settings_post_share_linkedin',true) == "1" ) { ?>
                         <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&source=<?php the_title(); ?>" target="_blank"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php echo esc_html('linkedin.com', 'cricket-league-pro' ) ; ?></span></a>
                     <?php }
 
-                    if ( get_theme_mod('cricket_league_pro_post_general_settings_post_share_twitter',true) == "1" ) { ?>
+                    if ( get_theme_mod('home_automation_pro_post_general_settings_post_share_twitter',true) == "1" ) { ?>
                         <a href="https://twitter.com/share?url=<?php the_permalink(); ?>&amp;text=<?php echo the_title(); ?>" target="_blank"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php echo esc_html('twitter.com', 'cricket-league-pro' ) ; ?></span></a>
                     <?php } ?>
                 </p>
@@ -158,7 +158,7 @@ if ( !function_exists('cricket_league_pro_social_share') ) {
 }
 
  /* Breadcrumb Begin */
- function cricket_league_pro_shop_breadcrumbs() {
+ function home_automation_pro_shop_breadcrumbs() {
  	if (!is_home()) {
  		  echo '<a href="';
  	      	echo esc_url(home_url());
@@ -167,7 +167,7 @@ if ( !function_exists('cricket_league_pro_social_share') ) {
  	   	 	echo "</a> ";
  		}
  }
- function cricket_league_pro_listing_breadcrumbs() {
+ function home_automation_pro_listing_breadcrumbs() {
  	if (!is_home()) {
  		  echo '<a href="';
  	      	echo esc_url(home_url());
@@ -177,7 +177,7 @@ if ( !function_exists('cricket_league_pro_social_share') ) {
  		}
  }
 
- function cricket_league_pro_the_breadcrumb() {
+ function home_automation_pro_the_breadcrumb() {
     if (!is_home()) {
         echo '<a href="' . esc_url(home_url()) . '">Home</a>';
         
@@ -202,7 +202,7 @@ if ( !function_exists('cricket_league_pro_social_share') ) {
 }
 
 
-function cricket_league_pro_string_limit_words($string, $word_limit) {
+function home_automation_pro_string_limit_words($string, $word_limit) {
   $words = explode(' ', $string, ($word_limit + 1));
   if(count($words) > $word_limit)
   array_pop($words);
@@ -210,7 +210,7 @@ function cricket_league_pro_string_limit_words($string, $word_limit) {
 }
 
 // Recent post widget with thumbnails
-// include cricket_league_pro_EXT_DIR.'../../../wp-includes/default-widgets.php';
+// include home_automation_pro_EXT_DIR.'../../../wp-includes/default-widgets.php';
 Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
     function widget($args, $instance) {
         if ( ! isset( $args['widget_id'] ) ) {

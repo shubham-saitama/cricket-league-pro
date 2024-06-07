@@ -7,7 +7,7 @@ get_header();
 
 get_template_part('template-parts/banner'); ?>
 
-<?php do_action('cricket_league_pro_before_blog'); ?>
+<?php do_action('home_automation_pro_before_blog'); ?>
 
 <div id="blog-right-sidebar">
 	<div class="container">
@@ -19,7 +19,7 @@ get_template_part('template-parts/banner'); ?>
 					      	<?php $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 								$args = array(
 								   'paged' => $paged,
-								   'category_name' => get_theme_mod('cricket_league_pro_category_setting')
+								   'category_name' => get_theme_mod('home_automation_pro_category_setting')
 								);
 							$custom_query = new WP_Query( $args );
 							while($custom_query->have_posts()) :
@@ -53,6 +53,6 @@ get_template_part('template-parts/banner'); ?>
 	</div>
 </div>
 
-<?php do_action('cricket_league_pro_after_blog'); ?>
+<?php do_action('home_automation_pro_after_blog'); ?>
 
 <?php get_footer(); ?>

@@ -51,7 +51,7 @@ if ($related_products): ?>
 				$product_price = get_post_meta(get_the_ID(), '_price', true);
 				$sale_price = get_post_meta(get_the_ID(), '_sale_price', true);
 				// Get product image URL
-				$product_image_url = get_the_post_thumbnail_url(get_the_ID(), 'post-thumbnails');
+				$product_image_url = get_the_post_thumbnail_url(get_the_ID(), 'product-slider');
 				$current_currency = get_woocommerce_currency_symbol();
 				?>
 				<div class="item-product col-lg-3 col-md-6 col-12 mb-4">
@@ -65,9 +65,7 @@ if ($related_products): ?>
 							<img src="<?php echo $product_image_url; ?>" alt="<?php the_title(); ?>">
 						</div>
 						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<?php
-						echo get_star_rating_custom();
-						?>
+						<?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
 						<div class="price-wrapper">
 							<p class="regular-price"><?php echo $current_currency;
 							echo $product_price; ?></p>
@@ -85,7 +83,7 @@ if ($related_products): ?>
 							<?php if ($product->is_type('simple')) {
 								woocommerce_template_loop_add_to_cart($loop->post, $product);
 							} ?>
-							<i class="<?php echo get_theme_mod('cricket_league_pro_carrt_btn_icon'); ?>"></i>
+							<i class="<?php echo get_theme_mod('home_automation_pro_carrt_btn_icon'); ?>"></i>
 						</div>
 					</div>
 				</div>

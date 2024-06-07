@@ -1073,3 +1073,18 @@ p.link-more a:hover{
 select#filter-select option {
   font-size: 20px;
 }
+
+.star-rating {
+  margin: 10px auto;
+  color: gold;
+}
+input#submit:hover {
+  background: var(--primary-color) !important;
+}
+.input-wrapper.quantity.border-custom {
+  border-bottom: 1px solid;
+}
+.from-inner-wrap input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+}

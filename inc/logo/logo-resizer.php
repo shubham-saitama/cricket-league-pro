@@ -4,7 +4,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function cricket_league_pro_logo_customize_register( $wp_customize ) {
+function home_automation_pro_logo_customize_register( $wp_customize ) {
 	// Logo Resizer additions
 	$wp_customize->add_setting( 'logo_size', array(
 		'default'              => 50,
@@ -32,12 +32,12 @@ function cricket_league_pro_logo_customize_register( $wp_customize ) {
 		),
 	) );
 }
-add_action( 'customize_register', 'cricket_league_pro_logo_customize_register' );
+add_action( 'customize_register', 'home_automation_pro_logo_customize_register' );
 
 /**
  * Add support for logo resizing by filtering `get_custom_logo`
  */
-function cricket_league_pro_customize_logo_resize( $html ) {
+function home_automation_pro_customize_logo_resize( $html ) {
 	$size = get_theme_mod( 'logo_size' );
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
 	// set the short side minimum
@@ -59,14 +59,14 @@ function cricket_league_pro_customize_logo_resize( $html ) {
 
 		// landscape or square
 		if ( $logo['width'] >= $logo['height'] ) {
-			$output = cricket_league_pro_min_max( $logo['height'], $logo['width'], $max['height'], $max['width'], $size, $min );
+			$output = home_automation_pro_min_max( $logo['height'], $logo['width'], $max['height'], $max['width'], $size, $min );
 			$img = array(
 				'height'	=> $output['short'],
 				'width'		=> $output['long']
 			);
 		// portrait
 		} else if ( $logo['width'] < $logo['height'] ) {
-			$output = cricket_league_pro_min_max( $logo['width'], $logo['height'], $max['width'], $max['height'], $size, $min );
+			$output = home_automation_pro_min_max( $logo['width'], $logo['height'], $max['width'], $max['height'], $size, $min );
 			$img = array(
 				'height'	=> $output['long'],
 				'width'		=> $output['short']
@@ -89,10 +89,10 @@ function cricket_league_pro_customize_logo_resize( $html ) {
 
 	return $html;
 }
-add_filter( 'get_custom_logo', 'cricket_league_pro_customize_logo_resize' );
+add_filter( 'get_custom_logo', 'home_automation_pro_customize_logo_resize' );
 
 /* Helper function to determine the max size of the logo */
-function cricket_league_pro_min_max( $short, $long, $short_max, $long_max, $percent, $min ){
+function home_automation_pro_min_max( $short, $long, $short_max, $long_max, $percent, $min ){
 	$ratio = ( $long / $short );
 	$max['long'] = ( $long_max >= $long ) ? $long : $long_max;
 	$max['short'] = ( $short_max >= ( $max['long'] / $ratio ) ) ? floor( $max['long'] / $ratio ) : $short_max;
@@ -108,25 +108,25 @@ function cricket_league_pro_min_max( $short, $long, $short_max, $long_max, $perc
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function cricket_league_pro_customize_preview_js() {
+function home_automation_pro_customize_preview_js() {
 	wp_enqueue_script( 'customize-preview', get_template_directory_uri() . '/inc/logo/js/customize-preview.js', array( 'jquery', 'customize-preview' ), '201709081119', true );
 }
-add_action( 'customize_preview_init', 'cricket_league_pro_customize_preview_js' );
+add_action( 'customize_preview_init', 'home_automation_pro_customize_preview_js' );
 
 /**
  * JS handlers for Customizer Controls
  */
-function cricket_league_pro_customize_controls_js() {
+function home_automation_pro_customize_controls_js() {
 	wp_enqueue_script( 'customize-controls', get_template_directory_uri() . '/inc/logo/js/customize-controls.js', array( 'jquery', 'customize-preview' ), '201709071000', true );
 }
-add_action( 'customize_controls_enqueue_scripts', 'cricket_league_pro_customize_controls_js' );
+add_action( 'customize_controls_enqueue_scripts', 'home_automation_pro_customize_controls_js' );
 
 /**
  * Testing function to remove logo_size theme mod
  */
-function cricket_league_pro_remove_theme_mod() {
+function home_automation_pro_remove_theme_mod() {
 	if ( isset( $_GET['remove_logo_size'] ) && 'true' == $_GET['remove_logo_size'] ){
 		set_theme_mod( 'logo_size', '' );
 	}
 }
-add_action( 'wp_loaded', 'cricket_league_pro_remove_theme_mod' );
+add_action( 'wp_loaded', 'home_automation_pro_remove_theme_mod' );

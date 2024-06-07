@@ -12,7 +12,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class cricket_league_pro_Toggle_Switch_Custom_control extends WP_Customize_Control {
+	class home_automation_pro_Toggle_Switch_Custom_control extends WP_Customize_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -47,7 +47,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		}
 	}
 	// Image Toggle Radio Buttpon
-	class cricket_league_pro_Image_Radio_Control extends WP_Customize_Control {
+	class home_automation_pro_Image_Radio_Control extends WP_Customize_Control {
 
 	    public function render_content() {
 	 
@@ -85,8 +85,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @param  string		Switch value
 	 * @return integer	Sanitized value
 	 */
-	if ( ! function_exists( 'cricket_league_pro_switch_sanitization' ) ) {
-		function cricket_league_pro_switch_sanitization( $input ) {
+	if ( ! function_exists( 'home_automation_pro_switch_sanitization' ) ) {
+		function home_automation_pro_switch_sanitization( $input ) {
 			if ( true === $input ) {
 				return 1;
 			} else {

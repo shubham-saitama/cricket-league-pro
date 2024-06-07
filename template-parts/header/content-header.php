@@ -1,13 +1,13 @@
 <?php
 
-$header_widgets_section = get_theme_mod('cricket_league_pro_header_widgets_enable');
+$header_widgets_section = get_theme_mod('home_automation_pro_header_widgets_enable');
 if ('Disable' == $header_widgets_section) {
   return;
 }
-if (get_theme_mod('cricket_league_pro_header_widgets_bgcolor', '')) {
-  $background_setting = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_header_widgets_bgcolor', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_header_bgimage', '')) {
-  $background_setting = 'background-image:url(' . esc_attr(get_theme_mod('cricket_league_pro_header_bgimage', '')) . ');';
+if (get_theme_mod('home_automation_pro_header_widgets_bgcolor', '')) {
+  $background_setting = 'background-color:' . esc_attr(get_theme_mod('home_automation_pro_header_widgets_bgcolor', '')) . ';';
+} elseif (get_theme_mod('home_automation_pro_header_bgimage', '')) {
+  $background_setting = 'background-image:url(' . esc_attr(get_theme_mod('home_automation_pro_header_bgimage', '')) . ');';
 } else {
   $background_setting = '';
 }
@@ -43,22 +43,22 @@ $items_count = WC()->cart->get_cart_contents_count();
           $logo = get_theme_mod('custom_logo');
           if ($logo != '') {
             if (has_custom_logo()) {
-              cricket_league_pro_the_custom_logo();
+              home_automation_pro_the_custom_logo();
             }
           } else { ?>
-            <?php if (get_theme_mod('cricket_league_pro_display_default_logo', true) != false) { ?>
+            <?php if (get_theme_mod('home_automation_pro_display_default_logo', true) != false) { ?>
               <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" target="_blank"><img
                   src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png"
                   alt="<?php bloginfo('name'); ?>" /></a>
             <?php } ?>
           <?php } ?>
           <div class="logo-text">
-            <?php if (get_theme_mod('cricket_league_pro_display_title') != false) { ?>
+            <?php if (get_theme_mod('home_automation_pro_display_title') != false) { ?>
               <h2><a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                   <?php esc_attr(bloginfo('name')); ?>
                 </a></h2>
             <?php }
-            if (get_theme_mod('cricket_league_pro_display_tagline') != false) {
+            if (get_theme_mod('home_automation_pro_display_tagline') != false) {
               $description = get_bloginfo('description', 'display');
               if ($description || is_customize_preview()): ?>
                 <p>
@@ -96,13 +96,13 @@ $items_count = WC()->cart->get_cart_contents_count();
           <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12 text-center">
             <div class="header-right">
               <a href="<?php echo $wishlist_page_url; ?>"><i
-                  class="<?php echo get_theme_mod('cricket_league_pro_header_right_icons_heart'); ?>"></i></a>
+                  class="<?php echo get_theme_mod('home_automation_pro_header_right_icons_heart'); ?>"></i></a>
               <div class="search-button"><i
-                  class="<?php echo get_theme_mod('cricket_league_pro_header_right_icons_search'); ?>"></i></div>
+                  class="<?php echo get_theme_mod('home_automation_pro_header_right_icons_search'); ?>"></i></div>
               <a class="top-cart"  href="<?php echo wc_get_cart_url(); ?>" title="<?php _e('Cart View', 'pest-control-treatment-pro'); ?>">
                           <?php $items_count = WC()->cart->get_cart_contents_count();  ?>
                           <!-- <i class="<?php echo esc_html(get_theme_mod('pest_control_treatment_pro_header_cart_icon')); ?>"></i> -->
-                          <i class="<?php echo get_theme_mod('cricket_league_pro_header_right_icons_cart') ?>"></i>
+                          <i class="<?php echo get_theme_mod('home_automation_pro_header_right_icons_cart') ?>"></i>
                             <span id="mini-cart-count" class="count cart-value">
                             (<?php echo $items_count ? $items_count : '0'; ?>)
                             </span>
@@ -113,7 +113,7 @@ $items_count = WC()->cart->get_cart_contents_count();
                     <?php echo esc_html('Menu', 'cricket-league-pro'); ?>
                   </span>
                   <i
-                    class="<?php echo esc_html(get_theme_mod('cricket_league_pro_res_open_menu_icon', 'fas fa-bars')); ?> menu-open"></i>
+                    class="<?php echo esc_html(get_theme_mod('home_automation_pro_res_open_menu_icon', 'fas fa-bars')); ?> menu-open"></i>
                   <i class="fa fa-times menu-close"></i>
                 </div>
               </div>

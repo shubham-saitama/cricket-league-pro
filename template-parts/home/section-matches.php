@@ -1,28 +1,28 @@
 <?php
-$section_hide = get_theme_mod('cricket_league_pro_our_services_enable');
+$section_hide = get_theme_mod('home_automation_pro_our_services_enable');
 if ('Disable' == $section_hide) {
     return;
 }
-if (get_theme_mod('cricket_league_pro_our_services_bgcolor', '')) {
-    $per_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_our_services_bgcolor', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_our_services_bgimage', '')) {
-    $per_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_our_services_bgimage')) . '\')';
+if (get_theme_mod('home_automation_pro_our_services_bgcolor', '')) {
+    $per_back = 'background-color:' . esc_attr(get_theme_mod('home_automation_pro_our_services_bgcolor', '')) . ';';
+} elseif (get_theme_mod('home_automation_pro_our_services_bgimage', '')) {
+    $per_back = 'background-image:url(\'' . esc_url(get_theme_mod('home_automation_pro_our_services_bgimage')) . '\')';
 } else {
     $per_back = '';
 }
-$img_bg = get_theme_mod('cricket_league_pro_our_team_image');
+$img_bg = get_theme_mod('home_automation_pro_our_team_image');
 
 // Define the post ID you want to fetch
-$next_match_id = get_theme_mod('cricket_league_pro_next_match_id_latest'); // Replace 123 with the actual post ID you want to fetch
+$next_match_id = get_theme_mod('home_automation_pro_next_match_id_latest'); // Replace 123 with the actual post ID you want to fetch
 ?>
 <section id="banner-below"  class="match section-space" style="<?php echo esc_attr($per_back); ?>"> 
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-12 col-12">
                 <div class="timer-wrapper d-flex justify-content-between align-items-center">
-                    <h2><?php echo get_theme_mod('cricket_league_pro_latest_heading_heading'); ?></h2>
+                    <h2><?php echo get_theme_mod('home_automation_pro_latest_heading_heading'); ?></h2>
                     <a href="<?php echo get_permalink(get_page_by_title('Matches')) ?>"
-                        class="theme-btn"><?php echo get_theme_mod('cricket_league_pro_latest_see_all_btn_heading'); ?> <i class="<?php echo get_theme_mod('cricket_league_pro_latest_button_icon'); ?>"></i></a>
+                        class="theme-btn"><?php echo get_theme_mod('home_automation_pro_latest_see_all_btn_heading'); ?> <i class="<?php echo get_theme_mod('home_automation_pro_latest_button_icon'); ?>"></i></a>
                 </div>
                 <?php
                 // Custom WP Query to retrieve all events (matches) in SportPress plugin
@@ -117,7 +117,7 @@ $next_match_id = get_theme_mod('cricket_league_pro_next_match_id_latest'); // Re
             </div>
             <div class="col-lg-5 col-md-12 col-12 next-match-wrapper">
                 <div class="timer-wrapper d-flex justify-content-between">
-                    <h2><?php echo get_theme_mod('cricket_league_pro_next_match_title_heading'); ?></h2>
+                    <h2><?php echo get_theme_mod('home_automation_pro_next_match_title_heading'); ?></h2>
                     <?php echo do_shortcode('[countdown id="' . $next_match_id . '"]'); ?>
                 </div>
                 <div class="next-match-wrap">
@@ -188,10 +188,10 @@ $next_match_id = get_theme_mod('cricket_league_pro_next_match_id_latest'); // Re
                         <div class="card-bottom">
                             <div class="loaction-wrapper">
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <p><?php echo get_theme_mod('cricket_league_pro_latest_location_text_heading'); ?></p>
+                                <p><?php echo get_theme_mod('home_automation_pro_latest_location_text_heading'); ?></p>
                             </div>
                             <a href="<?php echo get_permalink(get_page_by_title('Match Schedule')); ?>" class="theme-btn">
-                                <?php echo get_theme_mod('cricket_league_pro_latest_locationbtn_text_heading'); ?><i class="<?php echo get_theme_mod('cricket_league_pro_book_now_button'); ?>"></i>
+                                <?php echo get_theme_mod('home_automation_pro_latest_locationbtn_text_heading'); ?><i class="<?php echo get_theme_mod('home_automation_pro_book_now_button'); ?>"></i>
                             </a>
                         </div>
                     </div>

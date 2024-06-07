@@ -3,10 +3,10 @@
  * Custom About us Widget
  */
 
-class cricket_league_pro_About_Widget extends WP_Widget {
+class home_automation_pro_About_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
-			'cricket_league_pro_About_Widget',
+			'home_automation_pro_About_Widget',
 			__('VW About Us', 'cricket-league-pro'),
 			array( 'description' => __( 'Widget for about us section in sidebar', 'cricket-league-pro' ), ) 
 		);
@@ -103,7 +103,7 @@ class cricket_league_pro_About_Widget extends WP_Widget {
 	}
 }
 // Register and load the widget
-function cricket_league_pro_about_custom_load_widget() {
-	register_widget( 'cricket_league_pro_About_Widget' );
+function home_automation_pro_about_custom_load_widget() {
+	register_widget( 'home_automation_pro_About_Widget' );
 }
-add_action( 'widgets_init', 'cricket_league_pro_about_custom_load_widget' );
+add_action( 'widgets_init', 'home_automation_pro_about_custom_load_widget' );

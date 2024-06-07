@@ -1,18 +1,18 @@
 <?php
 
-$section_hide = get_theme_mod('cricket_league_pro_league_table_enable');
+$section_hide = get_theme_mod('home_automation_pro_league_table_enable');
 if ('Disable' == $section_hide) { ?>
     <?php
     return;
 }
-if (get_theme_mod('cricket_league_pro_league_table_bgcolor')) {
-    $table_back = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_league_table_bgcolor', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_league_table_bgimage')) {
-    $table_back = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_league_table_bgimage')) . '\')';
+if (get_theme_mod('home_automation_pro_league_table_bgcolor')) {
+    $table_back = 'background-color:' . esc_attr(get_theme_mod('home_automation_pro_league_table_bgcolor', '')) . ';';
+} elseif (get_theme_mod('home_automation_pro_league_table_bgimage')) {
+    $table_back = 'background-image:url(\'' . esc_url(get_theme_mod('home_automation_pro_league_table_bgimage')) . '\')';
 } else {
     $table_back = '';
 }
-$table_id = get_theme_mod('cricket_league_pro_league_table_sec_id');
+$table_id = get_theme_mod('home_automation_pro_league_table_sec_id');
 ?>
 <section id="leagueTable" style="<?php echo esc_attr($table_back); ?>">
     <div class="container">
@@ -20,9 +20,9 @@ $table_id = get_theme_mod('cricket_league_pro_league_table_sec_id');
             <div class="col-lg-7 col-md-12 col-12">
                 <div class="heading-wrap">
                     <div class="heading-tag">
-                        <?php echo get_theme_mod('cricket_league_pro_league_table_section_headding_tag'); ?>
+                        <?php echo get_theme_mod('home_automation_pro_league_table_section_headding_tag'); ?>
                     </div>
-                    <h2><?php echo get_theme_mod('cricket_league_pro_league_table_section_headding'); ?></h2>
+                    <h2><?php echo get_theme_mod('home_automation_pro_league_table_section_headding'); ?></h2>
                 </div>
                 <?php echo do_shortcode('[team_standings ' . $table_id . ']'); ?>
             </div>
@@ -30,12 +30,12 @@ $table_id = get_theme_mod('cricket_league_pro_league_table_sec_id');
                 <div class="button-holder">
                     <div class="heading-wrap">
                         <div class="heading-tag">
-                            <?php echo get_theme_mod('cricket_league_pro_upcoming_table_heading_tag_one'); ?>
+                            <?php echo get_theme_mod('home_automation_pro_upcoming_table_heading_tag_one'); ?>
                         </div>
-                        <h2><?php echo get_theme_mod('cricket_league_pro_upcoming_table_heading_one'); ?></h2>
+                        <h2><?php echo get_theme_mod('home_automation_pro_upcoming_table_heading_one'); ?></h2>
                     </div>
                     <a href="<?php echo get_permalink(get_page_by_title('Match Schedule')) ?>" class="theme-btn white">
-                    <?php echo get_theme_mod('cricket_league_pro_upcoming_view_all'); ?><i class="<?php echo get_theme_mod('cricket_league_pro_league_table_icon') ?>"></i>
+                    <?php echo get_theme_mod('home_automation_pro_upcoming_view_all'); ?><i class="<?php echo get_theme_mod('home_automation_pro_league_table_icon') ?>"></i>
                     </a>
                 </div>
                 <?php

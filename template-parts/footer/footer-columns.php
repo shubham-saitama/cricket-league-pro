@@ -1,20 +1,20 @@
 <?php
-$address_section = get_theme_mod( 'cricket_league_pro_radiolast_enable' );
+$address_section = get_theme_mod( 'home_automation_pro_radiolast_enable' );
 if ( 'Disable' == $address_section ) {
 	return;
 }
-// $img_bg = get_theme_mod('cricket_league_pro_footer_bgimage');
+// $img_bg = get_theme_mod('home_automation_pro_footer_bgimage');
 
-if( get_theme_mod('cricket_league_pro_section_footer_bgcolor','') ) {
- $footer_backg = 'background-color:'.esc_attr(get_theme_mod('cricket_league_pro_section_footer_bgcolor','')).';';
-}elseif( get_theme_mod('cricket_league_pro_footer_bgimage','') ){
- $footer_backg = 'background-image:url(\''.esc_url(get_theme_mod('cricket_league_pro_footer_bgimage')).'\')';
+if( get_theme_mod('home_automation_pro_section_footer_bgcolor','') ) {
+ $footer_backg = 'background-color:'.esc_attr(get_theme_mod('home_automation_pro_section_footer_bgcolor','')).';';
+}elseif( get_theme_mod('home_automation_pro_footer_bgimage','') ){
+ $footer_backg = 'background-image:url(\''.esc_url(get_theme_mod('home_automation_pro_footer_bgimage')).'\')';
 }else{
  $footer_backg='';
 }
-$img_bg =get_theme_mod('cricket_league_pro_section_footer_bg_attachment');
+$img_bg =get_theme_mod('home_automation_pro_section_footer_bg_attachment');
 ?>
-<?php if (get_theme_mod('cricket_league_pro_custom_footer_widget_section', 'true') !='') { ?>
+<?php if (get_theme_mod('home_automation_pro_custom_footer_widget_section', 'true') !='') { ?>
 <div id="footer" style="">
 	<div id="footer_box" class="darkbox">
 		<div class="container footer-cols">

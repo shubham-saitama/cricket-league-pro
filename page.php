@@ -12,7 +12,7 @@
 get_header();
 get_template_part( 'template-parts/banner' );
 ?>
-<?php do_action( 'cricket_league_pro_after_page_header' ); ?>
+<?php do_action( 'home_automation_pro_after_page_header' ); ?>
 <div class="outer_dpage">
 	<div class="container">
 		<div class="middle-content">
@@ -26,6 +26,6 @@ get_template_part( 'template-parts/banner' );
 		<div class="clearfix"></div>
 	</div>
 </div>
-<?php do_action( 'cricket_league_pro_before_page_footer' ); ?>
+<?php do_action( 'home_automation_pro_before_page_footer' ); ?>
 
 <?php get_footer(); ?>

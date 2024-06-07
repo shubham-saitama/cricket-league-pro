@@ -6,13 +6,13 @@
  *
  * @package cricket-league-pro
  */
-if ( ! function_exists( 'cricket_league_pro_the_attached_image' ) ) :
+if ( ! function_exists( 'home_automation_pro_the_attached_image' ) ) :
 /**
  * Prints the attached image with a link to the next attached image.
  */
-function cricket_league_pro_the_attached_image() {
+function home_automation_pro_the_attached_image() {
 	$post                = get_post();
-	$attachment_size     = apply_filters( 'cricket_league_pro_attachment_size', array( 1200, 1200 ) );
+	$attachment_size     = apply_filters( 'home_automation_pro_attachment_size', array( 1200, 1200 ) );
 	$next_attachment_url = wp_get_attachment_url();
 	/**
 	 * Grab the IDs of all the image attachments in a gallery so we can get the
@@ -54,25 +54,25 @@ endif;
 /**
  * Returns true if a blog has more than 1 category
  */
-function cricket_league_pro_categorized_blog() {
-	if ( false === ( $cricket_league_pro_all_the_cool_cats = get_transient( 'cricket_league_pro_all_the_cool_cats' ) ) ) {
+function home_automation_pro_categorized_blog() {
+	if ( false === ( $home_automation_pro_all_the_cool_cats = get_transient( 'home_automation_pro_all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts
-		$cricket_league_pro_all_the_cool_cats = get_categories( array(
+		$home_automation_pro_all_the_cool_cats = get_categories( array(
 			'hide_empty' => 1,
 		) );
 		// Count the number of categories that are attached to the posts
-		$cricket_league_pro_all_the_cool_cats = count( $cricket_league_pro_all_the_cool_cats );
-		set_transient( 'cricket_league_pro_all_the_cool_cats', $cricket_league_pro_all_the_cool_cats );
+		$home_automation_pro_all_the_cool_cats = count( $home_automation_pro_all_the_cool_cats );
+		set_transient( 'home_automation_pro_all_the_cool_cats', $home_automation_pro_all_the_cool_cats );
 	}
-	if ( '1' != $cricket_league_pro_all_the_cool_cats ) {
-		// This blog has more than 1 category so cricket_league_pro_categorized_blog should return true
+	if ( '1' != $home_automation_pro_all_the_cool_cats ) {
+		// This blog has more than 1 category so home_automation_pro_categorized_blog should return true
 		return true;
 	} else {
-		// This blog has only 1 category so cricket_league_pro_categorized_blog should return false
+		// This blog has only 1 category so home_automation_pro_categorized_blog should return false
 		return false;
 	}
 }
-if ( ! function_exists( 'cricket_league_pro_the_custom_logo' ) ) :
+if ( ! function_exists( 'home_automation_pro_the_custom_logo' ) ) :
 	/**
 	 * Displays the optional custom logo.
 	 *
@@ -80,7 +80,7 @@ if ( ! function_exists( 'cricket_league_pro_the_custom_logo' ) ) :
 	 *
 	 * @since cricket-league-pro
 	 */
-	// function cricket_league_pro_the_custom_logo() {
+	// function home_automation_pro_the_custom_logo() {
 	// 	if ( function_exists( 'the_custom_logo' ) ) {
 	// 		if( has_custom_logo() ){
 	// 			the_custom_logo();
@@ -90,7 +90,7 @@ if ( ! function_exists( 'cricket_league_pro_the_custom_logo' ) ) :
 	// 	}
 	// }
 
-	function cricket_league_pro_the_custom_logo() {
+	function home_automation_pro_the_custom_logo() {
 	if ( function_exists( 'the_custom_logo' ) ) {
 		if( has_custom_logo() ){
 			the_custom_logo();
@@ -101,11 +101,11 @@ if ( ! function_exists( 'cricket_league_pro_the_custom_logo' ) ) :
 }
 endif;
 /**
- * Flush out the transients used in cricket_league_pro_categorized_blog
+ * Flush out the transients used in home_automation_pro_categorized_blog
  */
-function cricket_league_pro_category_transient_flusher() {
+function home_automation_pro_category_transient_flusher() {
 	// Like, beat it. Dig?
-	delete_transient( 'cricket_league_pro_all_the_cool_cats' );
+	delete_transient( 'home_automation_pro_all_the_cool_cats' );
 }
-add_action( 'edit_category', 'cricket_league_pro_category_transient_flusher' );
-add_action( 'save_post',     'cricket_league_pro_category_transient_flusher' );
+add_action( 'edit_category', 'home_automation_pro_category_transient_flusher' );
+add_action( 'save_post',     'home_automation_pro_category_transient_flusher' );

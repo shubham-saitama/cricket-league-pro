@@ -12,8 +12,8 @@ get_template_part('template-parts/banner');
 	the_post(); ?>
 	<div class=" blog-single">
 		<div class="container single-post" id="single-post-page">
-			<div class="row justify-content-center">
-				<div class="content_page col-lg-8 col-md-8 col-sm-12 pt-5">
+			<div class="row justify-content-center pb-3">
+				<div class="content_page col-lg-8 col-md-8 col-sm-12 py-5">
 					<div class="single-post">
 						<?php if (has_post_thumbnail()) { ?>
 							<div class="single-post-img">
@@ -35,7 +35,7 @@ get_template_part('template-parts/banner');
 							// Get the post categories
 							$categories = get_the_terms($post_id, 'category'); // Replace $post_id with the ID of your post
 							?>
-							<?php if (get_theme_mod('cricket_league_pro_post_general_settings_post_author', true) == "1") { ?>
+							<?php if (get_theme_mod('home_automation_pro_post_general_settings_post_author', true) == "1") { ?>
 								<li class="entry-author list-unstyled">
 									<img class="single-author-image"
 										src="<?php echo esc_url(get_avatar_url($current_user->ID)); ?>">
@@ -45,13 +45,13 @@ get_template_part('template-parts/banner');
 								</li>
 							<?php } ?>
 
-							<?php if (get_theme_mod('cricket_league_pro_post_general_settings_post_date', true) == "1") { ?>
+							<?php if (get_theme_mod('home_automation_pro_post_general_settings_post_date', true) == "1") { ?>
 								<li class="entry-date before-dot self-align-center">
 									<i class="fa fa-calendar" aria-hidden="true"></i>
 									<?php echo esc_html(get_the_date('M d, Y')); ?>
 								</li>
 							<?php } ?>
-							<?php if (get_theme_mod('cricket_league_pro_post_general_settings_post_comments', true) == "1") { ?>
+							<?php if (get_theme_mod('home_automation_pro_post_general_settings_post_comments', true) == "1") { ?>
 								<li class="entry-comments">
 									<i class="fa fa-comments" aria-hidden="true"></i>
 									<a href="#comments">
@@ -59,19 +59,27 @@ get_template_part('template-parts/banner');
 									</a>
 								</li>
 							<?php } ?>
-							<?php cricket_league_pro_social_share()?>
-							<li class="categories">
-								<i class="fa fa-tags" aria-hidden="true"></i>
-								<a href=""><?php
-								// Check if categories exist
-								if ($categories && !is_wp_error($categories)) {
-									// Loop through each category
-									foreach ($categories as $category) {
-										// Output category name
-										echo $category->name;
+							<?php if (get_theme_mod('home_automation_pro_post_general_settings_social_icons', true) == "1") { ?>
+								<li>
+									<?php home_automation_pro_social_share() ?>
+								</li>
+							<?php } ?>
+
+							<?php if (get_theme_mod('home_automation_pro_post_general_settings_tag', true) == "1") { ?>
+								<li class="categories">
+									<i class="fa fa-tags" aria-hidden="true"></i>
+									<a href=""><?php
+									// Check if categories exist
+									if ($categories && !is_wp_error($categories)) {
+										// Loop through each category
+										foreach ($categories as $category) {
+											// Output category name
+											echo $category->name;
+										}
 									}
-								}
-								?></a>
+									?></a>
+								</li>
+							<?php } ?>
 							</li>
 						</ul>
 					</div>
@@ -98,13 +106,13 @@ get_template_part('template-parts/banner');
 					?>
 				</div>
 				<div class="recent-posts">
-					<?php if (get_theme_mod('cricket_league_pro_single_blog_heading_tag') != false && get_theme_mod('cricket_league_pro_blog_heading') != false) { ?>
+					<?php if (get_theme_mod('home_automation_pro_single_blog_heading_tag') != false && get_theme_mod('home_automation_pro_blog_heading') != false) { ?>
 						<div class="heading text-center">
-							<div class="heading-tagline">
-								<?php echo get_theme_mod('cricket_league_pro_single_blog_heading_tag'); ?>
+							<div class="heading-tag text-center">
+								<?php echo get_theme_mod('home_automation_pro_single_blog_heading_tag'); ?>
 							</div>
 							<h2>
-								<?php echo get_theme_mod('cricket_league_pro_single_blog_heading'); ?>
+								<?php echo get_theme_mod('home_automation_pro_single_blog_heading'); ?>
 							</h2>
 						</div>
 					<?php } ?>
@@ -132,7 +140,7 @@ get_template_part('template-parts/banner');
 											<div class="info-bar">
 												<p>
 													<i
-														class="<?php echo get_theme_mod('cricket_league_pro_blog_fright_icon'); ?>"></i>
+														class="<?php echo get_theme_mod('home_automation_pro_blog_fright_icon'); ?>"></i>
 													<?php
 													$post_categories = get_the_category();
 													if ($post_categories) {
@@ -148,7 +156,7 @@ get_template_part('template-parts/banner');
 												</p>
 
 												<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
-													<p><i class="<?php echo get_theme_mod('cricket_league_pro_blog_author'); ?>"
+													<p><i class="<?php echo get_theme_mod('home_automation_pro_blog_author'); ?>"
 															aria-hidden="true"></i><?php the_author(); ?></p>
 												</a>
 											</div>
@@ -158,7 +166,7 @@ get_template_part('template-parts/banner');
 										</div>
 										<div class="lower bar">
 											<p><i
-													class="<?php echo get_theme_mod('cricket_league_pro_blog_comment_icon'); ?>"></i><?php comments_number(); ?>
+													class="<?php echo get_theme_mod('home_automation_pro_blog_comment_icon'); ?>"></i><?php comments_number(); ?>
 											</p>
 											<div class="date-box">
 												<i class="fa-solid fa-calendar-days"></i><?php echo get_the_date('D,M,Y'); ?>

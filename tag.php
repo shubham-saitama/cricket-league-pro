@@ -10,7 +10,7 @@
  * @package cricket-league-pro
  */
 get_header();
-$background_img = get_theme_mod('cricket_league_pro_inner_page_banner_bgimage');
+$background_img = get_theme_mod('home_automation_pro_inner_page_banner_bgimage');
 
 ?>
 
@@ -22,9 +22,9 @@ $background_img = get_theme_mod('cricket_league_pro_inner_page_banner_bgimage');
 					<h1>
 						<?php the_archive_title(); ?>
 					</h1>
-					<?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+					<?php if (get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '') { ?>
 						<div class=" bradcrumbs">
-							<?php cricket_league_pro_the_breadcrumb(); ?>
+							<?php home_automation_pro_the_breadcrumb(); ?>
 						</div>
 					<?php }
 					?>
@@ -63,18 +63,18 @@ $background_img = get_theme_mod('cricket_league_pro_inner_page_banner_bgimage');
 								<div class="blog-card-content">
 									<div class="info-bar">
 										<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
-											<p><i class="<?php echo get_theme_mod('cricket_league_pro_blog_author'); ?>"
+											<p><i class="<?php echo get_theme_mod('home_automation_pro_blog_author'); ?>"
 													aria-hidden="true"> </i>
 												<?php the_author(); ?>
 											</p>
 										</a>
 										<p>
 											<i
-												class="<?php echo get_theme_mod('cricket_league_pro_blog_comment_icon'); ?>"></i>
+												class="<?php echo get_theme_mod('home_automation_pro_blog_comment_icon'); ?>"></i>
 											<?php comments_number(); ?>
 										</p>
 										<p><i
-												class="<?php echo get_theme_mod('cricket_league_pro_blog_fright_icon'); ?>"></i>
+												class="<?php echo get_theme_mod('home_automation_pro_blog_fright_icon'); ?>"></i>
 											<?php
 											// Check if the post has tags
 											$post_tags = get_the_tags();

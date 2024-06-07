@@ -5,7 +5,7 @@ class VW_Widget_Importer {
 	/**
 	 * Constructor
 	 *
-	 * @param $cricket_league_pro_config	Our config parameters
+	 * @param $home_automation_pro_config	Our config parameters
 	 */
 	public function __construct() {
 	}

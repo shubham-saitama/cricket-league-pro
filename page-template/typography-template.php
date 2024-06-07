@@ -4,7 +4,7 @@
  */
 get_header();
 get_template_part( 'template-parts/banner' ); ?>
-<?php do_action('cricket_league_pro_before_about_title'); ?>
+<?php do_action('home_automation_pro_before_about_title'); ?>
 <div id="typography-sec" class="container pb-5">
     <div class="row">
         <div class="col-lg-8">
@@ -167,5 +167,5 @@ th a cite reference:</p>
     </div>
 </div>
 
-<?php do_action('cricket_league_pro_before_footer'); ?>
+<?php do_action('home_automation_pro_before_footer'); ?>
 <?php get_footer(); ?>

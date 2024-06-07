@@ -7,7 +7,7 @@
 /**
  * Loads custom control for layout settings
  */
-function cricket_league_pro_custom_controls()
+function home_automation_pro_custom_controls()
 {
     require_once get_template_directory() . '/inc/customize/controls/admin/customize-texteditor-control.php';
     require_once get_template_directory() . '/inc/customize/controls/custom-controls.php';
@@ -19,13 +19,13 @@ function cricket_league_pro_custom_controls()
     get_stylesheet_directory_uri() . '/assets/css/alpha-color-picker.css';
 
 }
-add_action('customize_register', 'cricket_league_pro_custom_controls');
+add_action('customize_register', 'home_automation_pro_custom_controls');
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function cricket_league_pro_customize_register($wp_customize)
+function home_automation_pro_customize_register($wp_customize)
 {
     $wp_customize->get_setting('blogname')->transport = 'postMessage';
     $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
@@ -39,30 +39,30 @@ function cricket_league_pro_customize_register($wp_customize)
         'render_callback' => 'twentyfifteen_customize_partial_blogdescription',
     ));
 
-    $wp_customize->add_setting('cricket_league_pro_display_title', array(
+    $wp_customize->add_setting('home_automation_pro_display_title', array(
         'default' => 'false',
         'sanitize_callback' => 'sanitize_text_field'
     )
     );
-    $wp_customize->add_control('cricket_league_pro_display_title', array(
+    $wp_customize->add_control('home_automation_pro_display_title', array(
         'type' => 'checkbox',
         'label' => __('Show Title', 'cricket-league-pro'),
         'section' => 'title_tagline',
     )
     );
-    $wp_customize->add_setting('cricket_league_pro_display_tagline', array(
+    $wp_customize->add_setting('home_automation_pro_display_tagline', array(
         'default' => 'false',
         'sanitize_callback' => 'sanitize_text_field'
     )
     );
-    $wp_customize->add_control('cricket_league_pro_display_tagline', array(
+    $wp_customize->add_control('home_automation_pro_display_tagline', array(
         'type' => 'checkbox',
         'label' => __('Show Tagline', 'cricket-league-pro'),
         'section' => 'title_tagline',
     )
     );
     //add home page setting pannel
-    $wp_customize->add_panel('cricket_league_pro_panel_id', array(
+    $wp_customize->add_panel('home_automation_pro_panel_id', array(
         'priority' => 10,
         'capability' => 'edit_theme_options',
         'theme_supports' => '',
@@ -164,8 +164,8 @@ function cricket_league_pro_customize_register($wp_customize)
 
     $Check_option = array(
         '' => __('Not Selected', 'logistics_services_pr'),
-        'Check' => __('Check', 'cricket_league_pro'),
-        'Uncheck' => __('Cross', 'cricket_league_pro'),
+        'Check' => __('Check', 'home_automation_pro'),
+        'Uncheck' => __('Cross', 'home_automation_pro'),
     );
     $font_weight_array = array(
         '' => __('Not Selected','cricket-league-pro'),
@@ -199,9 +199,9 @@ function cricket_league_pro_customize_register($wp_customize)
 
     }
 }
-add_action('customize_register', 'cricket_league_pro_customize_register');
+add_action('customize_register', 'home_automation_pro_customize_register');
 //Integer
-function cricket_league_pro_sanitize_integer($input)
+function home_automation_pro_sanitize_integer($input)
 {
     if (is_numeric($input)) {
         return intval($input);
@@ -217,7 +217,7 @@ load_template(trailingslashit(get_template_directory()) . '/inc/logo/logo-resize
  * @since  1.0.0
  * @access public
  */
-final class cricket_league_pro_customize
+final class home_automation_pro_customize
 {
     /**
      * Returns the instance.
@@ -273,10 +273,10 @@ final class cricket_league_pro_customize
         // Load custom sections.
         load_template(trailingslashit(get_template_directory()) . '/inc/review-section.php');
         // Register custom section types.
-        $manager->register_section_type('cricket_league_pro_customize_reviews_and_testimonials');
+        $manager->register_section_type('home_automation_pro_customize_reviews_and_testimonials');
         // Register sections.
         $manager->add_section(
-            new cricket_league_pro_customize_reviews_and_testimonials(
+            new home_automation_pro_customize_reviews_and_testimonials(
                 $manager,
                 'example_1',
                 array(
@@ -294,10 +294,10 @@ final class cricket_league_pro_customize
         // Load custom sections.
         load_template(trailingslashit(get_template_directory()) . '/inc/review-section.php');
         // Register custom section types.
-        $manager->register_section_type('cricket_league_pro_customize_reviews_and_testimonials');
+        $manager->register_section_type('home_automation_pro_customize_reviews_and_testimonials');
         // Register sections.
         $manager->add_section(
-            new cricket_league_pro_customize_reviews_and_testimonials(
+            new home_automation_pro_customize_reviews_and_testimonials(
                 $manager,
                 'example_2',
                 array(
@@ -323,4 +323,4 @@ final class cricket_league_pro_customize
     }
 }
 // Doing this customizer thang!
-cricket_league_pro_customize::get_instance();
+home_automation_pro_customize::get_instance();

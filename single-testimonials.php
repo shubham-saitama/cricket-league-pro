@@ -5,9 +5,9 @@
  * @package cricket-league-pro
  */
 get_header();
-$background_img = get_theme_mod('cricket_league_pro_inner_page_banner_bgimage');
+$background_img = get_theme_mod('home_automation_pro_inner_page_banner_bgimage');
 ?>
-<?php do_action('cricket_league_pro_before_contact_title'); ?>
+<?php do_action('home_automation_pro_before_contact_title'); ?>
 
 <div class="title-box text-center banner-img" style="background-image:url(<?php echo esc_url($background_img); ?>)">
     <div class="banner-page-text container">
@@ -17,9 +17,9 @@ $background_img = get_theme_mod('cricket_league_pro_inner_page_banner_bgimage');
                     <h1>
                         <?php the_title(); ?>
                     </h1>
-                    <?php if (get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '') { ?>
+                    <?php if (get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '') { ?>
                         <div class=" bradcrumbs">
-                            <?php cricket_league_pro_the_breadcrumb(); ?>
+                            <?php home_automation_pro_the_breadcrumb(); ?>
                         </div>
                     <?php }
                     ?>

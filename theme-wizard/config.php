@@ -25,12 +25,12 @@ $theme_title = $current_theme->get( 'Name' );
  **/
 
 // Change the title and slug of your wizard page
-$cricket_league_pro_config['page_slug'] 	= 'cricket-league-pro';
-$cricket_league_pro_config['page_title']	= 'Get Started';
+$home_automation_pro_config['page_slug'] 	= 'cricket-league-pro';
+$home_automation_pro_config['page_title']	= 'Get Started';
 
 // You can remove elements here as required
 // Don't rename the IDs - nothing will break but your changes won't get carried through
-$cricket_league_pro_config['steps'] = array( 
+$home_automation_pro_config['steps'] = array( 
 	'intro' => array(
 		'id'			=> 'intro', // ID for section - don't rename
 		'title'			=> __( 'Welcome to ', 'cricket-league-pro' ) . $theme_title, // Section title
@@ -68,5 +68,5 @@ $cricket_league_pro_config['steps'] = array(
  * This kicks off the wizard
  **/
 if( class_exists( 'ThemeWhizzie' ) ) {
-	$ThemeWhizzie = new ThemeWhizzie( $cricket_league_pro_config );
+	$ThemeWhizzie = new ThemeWhizzie( $home_automation_pro_config );
 }

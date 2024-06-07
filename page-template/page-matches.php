@@ -7,7 +7,7 @@ get_header();
 
 get_template_part('template-parts/banner'); ?>
 
-<?php do_action('cricket_league_pro_before_blog'); ?>
+<?php do_action('home_automation_pro_before_blog'); ?>
 
 <div id="full-width-blog">
     <div class="container">
@@ -105,7 +105,7 @@ get_template_part('template-parts/banner'); ?>
             </div>
         </div>
 
-        <?php do_action('cricket_league_pro_after_blog'); ?>
+        <?php do_action('home_automation_pro_after_blog'); ?>
     </div>
 </div>
 

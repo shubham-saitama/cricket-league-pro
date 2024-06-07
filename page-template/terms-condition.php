@@ -7,7 +7,7 @@ get_header();
 
 get_template_part('template-parts/banner'); ?>
 
-<?php do_action('cricket_league_pro_before_page'); ?>
+<?php do_action('home_automation_pro_before_page'); ?>
 <section id="term_condition">
     <div class="container">
       <div class="middle-align">
@@ -25,6 +25,6 @@ get_template_part('template-parts/banner'); ?>
       </div>
     </div>
 </section>
-<?php do_action('cricket_league_pro_after_page'); ?>
+<?php do_action('home_automation_pro_after_page'); ?>
 
 <?php get_footer(); ?>

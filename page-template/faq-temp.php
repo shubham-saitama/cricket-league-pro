@@ -4,7 +4,7 @@
  */
 get_header();
 
-$faqCount = get_theme_mod('cricket_league_pro_faq_count', 5); // Number of FAQ questions to display
+$faqCount = get_theme_mod('home_automation_pro_faq_count', 5); // Number of FAQ questions to display
 get_template_part('template-parts/banner');
 ?>
 <section class="faq-section py-5">
@@ -14,8 +14,8 @@ get_template_part('template-parts/banner');
                 <div class="accordion-wrapper">
                     <?php
                     for ($i = 1; $i <= $faqCount; $i++) {
-                        $faqQuestion = get_theme_mod('cricket_league_pro_faq' . $i);
-                        $faqAnswer = get_theme_mod('cricket_league_pro_faq_answer' . $i);
+                        $faqQuestion = get_theme_mod('home_automation_pro_faq' . $i);
+                        $faqAnswer = get_theme_mod('home_automation_pro_faq_answer' . $i);
                         ?>
 
                         <?php
@@ -23,7 +23,7 @@ get_template_part('template-parts/banner');
                             ?>
                             <h3 class="accordion-click">
                                 <?php echo esc_html($faqQuestion); ?> <i
-                                    class="<?php echo get_theme_mod('cricket_league_pro_dropdown_icon_setting') ?>"></i>
+                                    class="<?php echo get_theme_mod('home_automation_pro_dropdown_icon_setting') ?>"></i>
                             </h3>
                             <div class="answer">
                                 <?php echo esc_html($faqAnswer); ?>

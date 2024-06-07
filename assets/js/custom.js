@@ -95,7 +95,7 @@ jQuery(document).ready(function () {
   jQuery('.archive .product a.added').removeClass("loading");
 })
 
-function cricket_league_pro_filters(event, ui) {
+function home_automation_pro_filters(event, ui) {
   var data_obj = {};
 
   data_obj['values'] = jQuery('#product-price-slider').slider("values");
@@ -108,7 +108,7 @@ function cricket_league_pro_filters(event, ui) {
     data_obj[jQuery(element).attr('name')].push(jQuery(element).val())
   });
 
-  jQuery.post(cricket_league_pro_customscripts_obj.ajaxurl, {
+  jQuery.post(home_automation_pro_customscripts_obj.ajaxurl, {
     'action': 'get_shop_page_filter',
     'data': data_obj
   },
@@ -118,12 +118,12 @@ function cricket_league_pro_filters(event, ui) {
 
 }
 
-function cricket_league_pro_filters_listings(event, ui) {
+function home_automation_pro_filters_listings(event, ui) {
   var data_obj = {};
 
   data_obj['values'] = jQuery('#listing-price-slider').slider("values");
 
-  jQuery.post(cricket_league_pro_customscripts_obj.ajaxurl, {
+  jQuery.post(home_automation_pro_customscripts_obj.ajaxurl, {
     'action': 'get_listing_page_filter',
     'data': data_obj
   },
@@ -269,7 +269,7 @@ jQuery(document).ready(function ($) {
     var variationId = jQuery(this).attr('variation-id');
 
     jQuery.ajax({
-      url: cricket_league_pro_customscripts_obj.ajaxurl,
+      url: home_automation_pro_customscripts_obj.ajaxurl,
       type: 'POST',
       data: {
         action: 'get_variation_data',
@@ -768,7 +768,7 @@ jQuery('body').on('added_to_cart', function (e, fragments, cart_hash, button) {
   var title = '';
   var url = '';
 
-  if (cricket_league_pro_customscripts_obj.is_home == "1") {
+  if (home_automation_pro_customscripts_obj.is_home == "1") {
     var product = jQuery(button).closest('.product-cricket');
     var img = product.find('img').attr('src');
     var title = product.find('.product_head').text();
@@ -1099,8 +1099,8 @@ jQuery(document).ready(function(){
 
 
   
-  const get_woocommerce_currency_symbol = cricket_league_pro_customscripts_obj.get_woocommerce_currency_symbol;
-  const finalAmount = get_woocommerce_currency_symbol + parseInt(cricket_league_pro_customscripts_obj.product_max_price);
+  const get_woocommerce_currency_symbol = home_automation_pro_customscripts_obj.get_woocommerce_currency_symbol;
+  const finalAmount = get_woocommerce_currency_symbol + parseInt(home_automation_pro_customscripts_obj.product_max_price);
   const StartAmountProduct = get_woocommerce_currency_symbol + 0;
  
 
@@ -1114,10 +1114,10 @@ jQuery(document).ready(function(){
      jQuery( "#product-price-slider" ).slider({
        range: true,
        min: 0,
-       max: parseInt(cricket_league_pro_customscripts_obj.product_max_price),
-       values: [ 0, parseInt(cricket_league_pro_customscripts_obj.product_max_price) ],
+       max: parseInt(home_automation_pro_customscripts_obj.product_max_price),
+       values: [ 0, parseInt(home_automation_pro_customscripts_obj.product_max_price) ],
        change: function( event, ui ) {
-        cricket_league_pro_filters();
+        home_automation_pro_filters();
        },
        slide: function( event, ui ) {
  
@@ -1139,7 +1139,7 @@ jQuery(document).ready(function(){
    // Get the name of the selected category checkbox
   
    
-   cricket_league_pro_filters();
+   home_automation_pro_filters();
  });
  
  
@@ -1149,11 +1149,11 @@ jQuery(document).ready(function(){
  jQuery(document).on('click', '#contentwoocom .pagination a.page-numbers', function(event) {
   event.preventDefault(); // Prevent default link behavior
   var page = jQuery(this).text(); // Get the page number from the clicked pagination link
-  cricket_league_pro_filters(page); // Trigger the AJAX request with the page number
+  home_automation_pro_filters(page); // Trigger the AJAX request with the page number
  });
  
  
- function cricket_league_pro_filters(page){
+ function home_automation_pro_filters(page){
  
    var data_obj = {};
  
@@ -1182,7 +1182,7 @@ jQuery(document).ready(function(){
  
  //data_obj['shop_template'] = shop_template;
  
- jQuery.post(cricket_league_pro_customscripts_obj.ajaxurl, {
+ jQuery.post(home_automation_pro_customscripts_obj.ajaxurl, {
  'action': 'get_shop_page_filter',
  'data': data_obj,
  
@@ -1256,7 +1256,7 @@ jQuery(document).ready(function($) {
         return;
       }
       jQuery.ajax({
-          url: cricket_league_pro_customscripts_obj.ajaxurl,
+          url: home_automation_pro_customscripts_obj.ajaxurl,
           type: 'POST',
           data: {
               action: 'search_events',
@@ -1287,7 +1287,7 @@ jQuery(document).ready(function($) {
     // console.log('Fetching events with data:', data);
 
     // AJAX request to fetch events
-    jQuery.post(cricket_league_pro_customscripts_obj.ajaxurl, data, function(response) {
+    jQuery.post(home_automation_pro_customscripts_obj.ajaxurl, data, function(response) {
         jQuery('#events-container').html(response);
     }).fail(function(jqXHR, textStatus, errorThrown) {
         console.error('AJAX request failed:', textStatus, errorThrown);

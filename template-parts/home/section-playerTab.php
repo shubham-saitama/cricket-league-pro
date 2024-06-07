@@ -3,16 +3,16 @@ set_theme_mod('player_info_heading_tag', 'Explore Players');
 set_theme_mod('player_info_heading', 'Popular Player Details');
 
 
-$section_hide = get_theme_mod('cricket_league_pro_steps_enable');
+$section_hide = get_theme_mod('home_automation_pro_steps_enable');
 if ('Disable' == $section_hide) { ?>
     <?php
     return;
 }
 
-if (get_theme_mod('cricket_league_pro_steps_bgcolor')) {
-    $player_tabback = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_steps_bgcolor', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_steps_bgimage')) {
-    $player_tabback = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_steps_bgimage')) . '\')';
+if (get_theme_mod('home_automation_pro_steps_bgcolor')) {
+    $player_tabback = 'background-color:' . esc_attr(get_theme_mod('home_automation_pro_steps_bgcolor', '')) . ';';
+} elseif (get_theme_mod('home_automation_pro_steps_bgimage')) {
+    $player_tabback = 'background-image:url(\'' . esc_url(get_theme_mod('home_automation_pro_steps_bgimage')) . '\')';
 } else {
     $player_tabback = '';
 } ?>
@@ -22,9 +22,9 @@ if (get_theme_mod('cricket_league_pro_steps_bgcolor')) {
         <div class="row align-items-start justify-content-center">
             <div class="heading-wrap">
                 <div class="heading-tag text-center">
-                    <?php echo get_theme_mod('cricket_league_pro_playerTab_tag'); ?>
+                    <?php echo get_theme_mod('home_automation_pro_playerTab_tag'); ?>
                 </div>
-                <h2 class="text-center"><?php echo get_theme_mod('cricket_league_pro_playerTab_heading'); ?></h2>
+                <h2 class="text-center"><?php echo get_theme_mod('home_automation_pro_playerTab_heading'); ?></h2>
             </div>
             <div class="col-lg-3 col-md-6 col-12 player-tab-left-wrapper">
                 <div class="width-helper">

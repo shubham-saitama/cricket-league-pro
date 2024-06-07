@@ -16,7 +16,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 /**
  * Text Radio Button Custom Control
  */
- class cricket_league_pro_Text_Radio_Button_Custom_Control extends WP_Customize_Control {
+ class home_automation_pro_Text_Radio_Button_Custom_Control extends WP_Customize_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -59,8 +59,8 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
  * @param  string	Input to be sanitized (either a string containing a single string or multiple, separated by commas)
  * @return string	Sanitized input
  */
-if ( ! function_exists( 'cricket_league_pro_text_sanitization' ) ) {
-	function cricket_league_pro_text_sanitization( $input ) {
+if ( ! function_exists( 'home_automation_pro_text_sanitization' ) ) {
+	function home_automation_pro_text_sanitization( $input ) {
 		if ( strpos( $input, ',' ) !== false) {
 			$input = explode( ',', $input );
 		}

@@ -14,7 +14,7 @@ if (!class_exists('WP_Customize_Control')) {
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  * @link https://github.com/maddisondesigns
  */
-class cricket_league_pro_Repeater_Custom_Control extends WP_Customize_Control
+class home_automation_pro_Repeater_Custom_Control extends WP_Customize_Control
 {
 	/**
 	 * The type of control being rendered

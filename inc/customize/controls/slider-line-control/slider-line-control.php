@@ -6,7 +6,7 @@
 	 *  */
 
 
-	class cricket_league_pro_Slider_Custom_Control extends WP_Customize_Control {
+	class home_automation_pro_Slider_Custom_Control extends WP_Customize_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -28,13 +28,13 @@
 		}
 	}
 
-	function cricket_league_pro_slider_line_script() {
+	function home_automation_pro_slider_line_script() {
      
 	    wp_enqueue_style( 'custom-toggle-swtch', get_template_directory_uri(). '/inc/customize/controls/slider-line-control/slider-line-control.css');
 	    wp_enqueue_script( 'custom-toggle-swtch-js', get_template_directory_uri(). '/inc/customize/controls/slider-line-control/slider-line-control.js');
 	    
 	}
-	add_action( 'customize_controls_enqueue_scripts', 'cricket_league_pro_slider_line_script' );
+	add_action( 'customize_controls_enqueue_scripts', 'home_automation_pro_slider_line_script' );
 
 ?>
 

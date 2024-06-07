@@ -16,9 +16,9 @@ if( $img != '' ){ ?>
 					<div class="banner-page-text">
 					<div class="above_title ">
 							<h1><?php the_title();?></h1>
-							<?php if ( get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '' ) { ?>
+							<?php if ( get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '' ) { ?>
 										<div class=" bradcrumbs py-3 b1">
-											<?php cricket_league_pro_the_breadcrumb(); ?>
+											<?php home_automation_pro_the_breadcrumb(); ?>
 										</div>
 								<?php }
 								?>
@@ -32,9 +32,9 @@ if( $img != '' ){ ?>
 	</div> -->
 	<div class="container main_title" <?php echo esc_attr($display_title_bbanner); ?>>
 		<h1><?php the_title();?></h1>
-		<?php if ( get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '' ) { ?>
+		<?php if ( get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '' ) { ?>
 			    <div class="container bradcrumbs py-3 b2">
-			        <?php cricket_league_pro_the_breadcrumb(); ?>
+			        <?php home_automation_pro_the_breadcrumb(); ?>
 			    </div>
 			<?php } ?>
 
@@ -42,9 +42,9 @@ if( $img != '' ){ ?>
 <?php }else{ ?>
 	<div class="container main_title">
 		<h1><?php the_title();?></h1>
-	<?php if ( get_theme_mod('cricket_league_pro_site_breadcrumb_enable', true) != '' ) { ?>
+	<?php if ( get_theme_mod('home_automation_pro_site_breadcrumb_enable', true) != '' ) { ?>
 			    <div class="container bradcrumbs py-3 b2">
-			        <?php cricket_league_pro_the_breadcrumb(); ?>
+			        <?php home_automation_pro_the_breadcrumb(); ?>
 			    </div>
 			<?php } ?>
 

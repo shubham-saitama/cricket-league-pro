@@ -6,33 +6,33 @@
  */
 get_header();
 get_template_part('template-parts/banner');
-$img_bg = get_theme_mod('cricket_league_pro_services_page_image_bg');
-if (get_theme_mod('cricket_league_pro_services_page_bg_color', '')) {
-  $service_backg = 'background-color:' . esc_attr(get_theme_mod('cricket_league_pro_services_page_bg_color', '')) . ';';
-} elseif (get_theme_mod('cricket_league_pro_services_page_bg_image', '')) {
-  $service_backg = 'background-image:url(\'' . esc_url(get_theme_mod('cricket_league_pro_services_page_bg_image')) . '\')';
+$img_bg = get_theme_mod('home_automation_pro_services_page_image_bg');
+if (get_theme_mod('home_automation_pro_services_page_bg_color', '')) {
+  $service_backg = 'background-color:' . esc_attr(get_theme_mod('home_automation_pro_services_page_bg_color', '')) . ';';
+} elseif (get_theme_mod('home_automation_pro_services_page_bg_image', '')) {
+  $service_backg = 'background-image:url(\'' . esc_url(get_theme_mod('home_automation_pro_services_page_bg_image')) . '\')';
 } else {
   $service_backg = '';
 }
-$img_bg = get_theme_mod('cricket_league_pro_services_page_image_bg_setting');
+$img_bg = get_theme_mod('home_automation_pro_services_page_image_bg_setting');
 ?>
 <section id="service-page" class="<?php echo esc_attr($img_bg); ?>" style="<?php echo esc_attr($service_backg); ?>">
   <div class="container">
     <div class="row mb-2 justify-content-center text-center">
       <div class="col-lg-6 col-md-6">
-        <!-- <?php //if (get_theme_mod('cricket_league_pro_our_services_page_sub_heading') != ''): ?>
+        <!-- <?php //if (get_theme_mod('home_automation_pro_our_services_page_sub_heading') != ''): ?>
           <p class="sub-head-border position-relative">
-            <?php//echo esc_html(get_theme_mod('cricket_league_pro_our_services_page_sub_heading')); ?>
+            <?php//echo esc_html(get_theme_mod('home_automation_pro_our_services_page_sub_heading')); ?>
           </p>
         <?php// endif; ?>
-        <?php// if (get_theme_mod('cricket_league_pro_our_services_page_heading') != ''): ?>
+        <?php// if (get_theme_mod('home_automation_pro_our_services_page_heading') != ''): ?>
           <h2 class="">
-            <?php// echo esc_html(get_theme_mod('cricket_league_pro_our_services_page_heading')); ?>
+            <?php// echo esc_html(get_theme_mod('home_automation_pro_our_services_page_heading')); ?>
           </h2>
         <?php// endif; ?>
-        <?php //if (get_theme_mod('cricket_league_pro_our_services_page_paragraph') != ''): ?>
+        <?php //if (get_theme_mod('home_automation_pro_our_services_page_paragraph') != ''): ?>
           <p class="performance-para">
-            <?php // esc_html(get_theme_mod('cricket_league_pro_our_services_page_paragraph')); ?>
+            <?php // esc_html(get_theme_mod('home_automation_pro_our_services_page_paragraph')); ?>
           </p>
         <?php //endif; ?> -->
       </div>

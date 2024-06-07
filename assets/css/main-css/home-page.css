@@ -1151,6 +1151,7 @@ section#upcoming-evt {
 .evt-left {
   font: normal normal 600 20px / 25px Inter Tight;
   text-align: center;
+  width: 100px;
 }
 
 .evt-right {
@@ -1321,6 +1322,12 @@ a.components-button.wc-block-components-button.wp-element-button.wc-block-cart__
   background: #000;
   color: #fff;
   border-radius: 6px;
+}
+a.components-button.wc-block-components-button.wp-element-button.wc-block-cart__submit-button:hover{
+  background-color: var(--primary-color);
+}
+button.components-button.wc-block-components-button.wp-element-button.wc-block-components-checkout-place-order-button:hover{
+  background-color: var(--primary-color);
 }
 button.components-button.wc-block-components-button.wp-element-button.wc-block-components-totals-coupon__button {
   background: #000;
@@ -1786,3 +1793,7 @@ input.category-filter-checkbox {
 .woocommerce p.stars a{
   color: gold !important;
 }
+input#Submit-btn:hover {
+  background: var(--primary-color);
+}
+

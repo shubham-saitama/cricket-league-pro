@@ -6,8 +6,13 @@ i[class^="fa"] {
 section.event-page .upcoming-item {
   padding: 0px;
 }
-
-
+.body-wrap{
+  background-color: #fff;
+}
+h4.news-title {
+  font-size: 25px;
+  line-height: 30px;
+}
 .product-cricket a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart::after {
   display: none;
 }
@@ -244,7 +249,9 @@ a.added_to_cart.wc-forward {
     flex-direction: column;
     align-items: center;
   }
-
+  .main-navigation li:hover a{
+    color: #000 !important;
+  }
   .input-wrapper-search {
     max-width: 311px;
     width: 100%;
@@ -1109,10 +1116,18 @@ a.added_to_cart.wc-forward {
 
 
 @media(max-width:575px) {
+  .share b {
+    font: 16px / 28px Inter Tight;
+    justify-content: center;
+}
+
   p.clock-before {
     margin-top: 10px;
   }
 
+  ul.d-flex.justify-content-between.align-items-center.mb-4 li {
+    width: calc(100% / 3);
+}
   li.entry-author.list-unstyled {
     width: 100%;
     text-align: center;

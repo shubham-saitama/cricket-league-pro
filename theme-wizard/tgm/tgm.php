@@ -5,7 +5,7 @@ require get_template_directory() . '/theme-wizard/tgm/class-tgm-plugin-activatio
 /**
  * Recommended plugins.
  */
-function cricket_league_pro_register_recommended_plugins()
+function home_automation_pro_register_recommended_plugins()
 {
 	$plugins = array(
 		array(
@@ -71,9 +71,9 @@ function cricket_league_pro_register_recommended_plugins()
 			'force_activation' => false,
 		),
 	);
-	$cricket_league_pro_config = array();
-	tgmpa($plugins, $cricket_league_pro_config);
+	$home_automation_pro_config = array();
+	tgmpa($plugins, $home_automation_pro_config);
 }
-add_action('tgmpa_register', 'cricket_league_pro_register_recommended_plugins');
+add_action('tgmpa_register', 'home_automation_pro_register_recommended_plugins');
 
 

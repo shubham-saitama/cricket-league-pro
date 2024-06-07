@@ -130,10 +130,10 @@
 .toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch {
 	right: 0px;
 }
-input#_customize-input-cricket_league_pro_slider_section_content_spacing {
+input#_customize-input-home_automation_pro_slider_section_content_spacing {
     display: none;
 }
-li#customize-control-cricket_league_pro_slider_section_slider_top_spacing, li#customize-control-cricket_league_pro_slider_section_slider_bottom_spacing, li#customize-control-cricket_league_pro_slider_section_slider_left_spacing, li#customize-control-cricket_league_pro_slider_section_slider_right_spacing {
+li#customize-control-home_automation_pro_slider_section_slider_top_spacing, li#customize-control-home_automation_pro_slider_section_slider_bottom_spacing, li#customize-control-home_automation_pro_slider_section_slider_left_spacing, li#customize-control-home_automation_pro_slider_section_slider_right_spacing {
     width: 20%;
     clear: none;
     margin-right: 10px;

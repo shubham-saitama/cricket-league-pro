@@ -97,7 +97,7 @@ $review_count = $product->get_review_count();
 			</div>
 		</div>
 		<div class="meta-field-call">
-			<i class="<?php echo get_theme_mod('cricket_league_pro_single_shop_helpline_icon'); ?>"></i>
+			<i class="<?php echo get_theme_mod('home_automation_pro_single_shop_helpline_icon'); ?>"></i>
 			<div class="helpline-text">
 				<span><?php echo get_theme_mod('product_helpline_fields'); ?></span>
 				<span><?php echo get_theme_mod('product_helpline_timing'); ?></span>

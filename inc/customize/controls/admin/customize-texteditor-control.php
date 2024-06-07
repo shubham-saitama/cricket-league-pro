@@ -4,7 +4,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
 /**
  * Class to create a custom text editor control
  */
-class cricket_league_pro_Editor_Control extends WP_Customize_Control {
+class home_automation_pro_Editor_Control extends WP_Customize_Control {
 	public $type = 'editor';
 	public function render_content() { ?>
 		<script type="text/javascript">
